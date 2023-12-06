@@ -56,6 +56,7 @@
             // 
             // btn_qly
             // 
+            this.btn_qly.ForeColor = System.Drawing.Color.Red;
             this.btn_qly.Location = new System.Drawing.Point(766, 315);
             this.btn_qly.Name = "btn_qly";
             this.btn_qly.Size = new System.Drawing.Size(178, 73);
