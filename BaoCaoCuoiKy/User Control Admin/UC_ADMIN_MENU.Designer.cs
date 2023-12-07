@@ -33,9 +33,6 @@
             this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.radio_all = new System.Windows.Forms.RadioButton();
-            this.radio_drink = new System.Windows.Forms.RadioButton();
-            this.radio_food = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,7 +45,8 @@
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
-            this.cb_loai = new System.Windows.Forms.ComboBox();
+            this.cb_danhmuc = new System.Windows.Forms.ComboBox();
+            this.cb_loc_danhmuc = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dg_menu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,47 +83,8 @@
             // 
             // col_loai
             // 
-            this.col_loai.HeaderText = "Loại";
+            this.col_loai.HeaderText = "Danh mục";
             this.col_loai.Name = "col_loai";
-            // 
-            // radio_all
-            // 
-            this.radio_all.AutoSize = true;
-            this.radio_all.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold);
-            this.radio_all.Location = new System.Drawing.Point(594, 32);
-            this.radio_all.Name = "radio_all";
-            this.radio_all.Size = new System.Drawing.Size(85, 28);
-            this.radio_all.TabIndex = 1;
-            this.radio_all.TabStop = true;
-            this.radio_all.Text = "Tất cả";
-            this.radio_all.UseVisualStyleBackColor = true;
-            this.radio_all.CheckedChanged += new System.EventHandler(this.radio_all_CheckedChanged);
-            // 
-            // radio_drink
-            // 
-            this.radio_drink.AutoSize = true;
-            this.radio_drink.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold);
-            this.radio_drink.Location = new System.Drawing.Point(684, 32);
-            this.radio_drink.Name = "radio_drink";
-            this.radio_drink.Size = new System.Drawing.Size(127, 28);
-            this.radio_drink.TabIndex = 3;
-            this.radio_drink.TabStop = true;
-            this.radio_drink.Text = "Nước uống";
-            this.radio_drink.UseVisualStyleBackColor = true;
-            this.radio_drink.CheckedChanged += new System.EventHandler(this.radio_drink_CheckedChanged);
-            // 
-            // radio_food
-            // 
-            this.radio_food.AutoSize = true;
-            this.radio_food.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radio_food.Location = new System.Drawing.Point(844, 32);
-            this.radio_food.Name = "radio_food";
-            this.radio_food.Size = new System.Drawing.Size(81, 28);
-            this.radio_food.TabIndex = 4;
-            this.radio_food.TabStop = true;
-            this.radio_food.Text = "Đồ ăn";
-            this.radio_food.UseVisualStyleBackColor = true;
-            this.radio_food.CheckedChanged += new System.EventHandler(this.radio_food_CheckedChanged);
             // 
             // label1
             // 
@@ -169,9 +128,10 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(44, 308);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 9;
-            this.label5.Text = "Loại";
+            this.label5.Text = "Danh mục";
             // 
             // tb_ma
             // 
@@ -234,20 +194,30 @@
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
-            // cb_loai
+            // cb_danhmuc
             // 
-            this.cb_loai.FormattingEnabled = true;
-            this.cb_loai.Location = new System.Drawing.Point(36, 338);
-            this.cb_loai.Name = "cb_loai";
-            this.cb_loai.Size = new System.Drawing.Size(238, 21);
-            this.cb_loai.TabIndex = 18;
+            this.cb_danhmuc.FormattingEnabled = true;
+            this.cb_danhmuc.Location = new System.Drawing.Point(36, 338);
+            this.cb_danhmuc.Name = "cb_danhmuc";
+            this.cb_danhmuc.Size = new System.Drawing.Size(238, 21);
+            this.cb_danhmuc.TabIndex = 18;
             // 
-            // UC_QuanLyMenu
+            // cb_loc_danhmuc
+            // 
+            this.cb_loc_danhmuc.FormattingEnabled = true;
+            this.cb_loc_danhmuc.Location = new System.Drawing.Point(561, 32);
+            this.cb_loc_danhmuc.Name = "cb_loc_danhmuc";
+            this.cb_loc_danhmuc.Size = new System.Drawing.Size(238, 21);
+            this.cb_loc_danhmuc.TabIndex = 19;
+            this.cb_loc_danhmuc.SelectedIndexChanged += new System.EventHandler(this.cb_loc_danhmuc_SelectedIndexChanged);
+            // 
+            // UC_ADMIN_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.cb_loai);
+            this.Controls.Add(this.cb_loc_danhmuc);
+            this.Controls.Add(this.cb_danhmuc);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_xoa);
@@ -260,11 +230,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radio_food);
-            this.Controls.Add(this.radio_drink);
-            this.Controls.Add(this.radio_all);
             this.Controls.Add(this.dg_menu);
-            this.Name = "UC_QuanLyMenu";
+            this.Name = "UC_ADMIN_MENU";
             this.Padding = new System.Windows.Forms.Padding(12);
             this.Size = new System.Drawing.Size(1163, 670);
             this.Load += new System.EventHandler(this.UC_QuanLyMenu_Load);
@@ -277,13 +244,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dg_menu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ma;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_gia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_loai;
-        private System.Windows.Forms.RadioButton radio_all;
-        private System.Windows.Forms.RadioButton radio_drink;
-        private System.Windows.Forms.RadioButton radio_food;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -296,6 +256,11 @@
         private System.Windows.Forms.Button btn_xoa;
         private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Button btn_clear;
-        private System.Windows.Forms.ComboBox cb_loai;
+        private System.Windows.Forms.ComboBox cb_danhmuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_loai;
+        private System.Windows.Forms.ComboBox cb_loc_danhmuc;
     }
 }

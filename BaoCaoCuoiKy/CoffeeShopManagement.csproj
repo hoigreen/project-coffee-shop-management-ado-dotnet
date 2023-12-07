@@ -213,6 +213,7 @@
       <DependentUpon>UC_ADMIN_STATIS.cs</DependentUpon>
     </Compile>
     <Compile Include="XL_ADMIN.cs" />
+    <Compile Include="XL_CATEGORY.cs" />
     <Compile Include="XL_WORK_TIME.cs" />
     <Compile Include="XL_DETAIL_ORDER.cs" />
     <Compile Include="XL_ORDER.cs" />
@@ -280,6 +281,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="User Control Staff\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" />

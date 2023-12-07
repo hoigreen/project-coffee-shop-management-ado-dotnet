@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using CoffeeShopManagement;
+using System.Xml.Linq;
+using ComboBox = System.Windows.Forms.ComboBox;
 
 namespace BaoCaoCuoiKy.User_Control
 {
@@ -18,50 +21,24 @@ namespace BaoCaoCuoiKy.User_Control
         {
             InitializeComponent();
         }
-        private string MaMon, Ten, Loai;
+        private string MaMon, Ten;
+        private int DanhMuc;
         private int Gia;
 
         private DataTable dtMenu = new DataTable();
         private XL_MENU menu = new XL_MENU();
+        private XL_CATEGORY category = new XL_CATEGORY();
         private Global global = new Global();
 
+        
         private void UC_QuanLyMenu_Load(object sender, EventArgs e)
         {
-            radio_all.Checked = true;
+            resetDataTable();
             dg_menu.SelectionChanged += DgMenu_SelectionChanged;
-            cb_loai.Items.Add("nước uống");
-            cb_loai.Items.Add("đồ ăn");
+            setDropCombox_Category(cb_loc_danhmuc);
+            setDropCombox_Category(cb_danhmuc);
         }
-
-        private void radio_all_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radio_all.Checked)
-            {
-                dtMenu = menu.getListMenuAll();
-                global.addDataGridView(dtMenu, dg_menu);
-            }
-        }
-
-        private void radio_drink_CheckedChanged(object sender, EventArgs e)
-        {
-            string loai = "nước uống";
-            if (radio_drink.Checked)
-            {
-                dtMenu = menu.getListMenu_Category(loai);
-                global.addDataGridView(dtMenu, dg_menu);
-            }
-        }
-
-        private void radio_food_CheckedChanged(object sender, EventArgs e)
-        {
-            string loai = "đồ ăn";
-            if (radio_food.Checked)
-            {
-                dtMenu = menu.getListMenu_Category(loai);
-                global.addDataGridView(dtMenu, dg_menu);
-            }
-        }
-
+        
         private void btn_xoa_Click(object sender, EventArgs e)
         {
             if (tb_ma.Text != "")
@@ -95,7 +72,7 @@ namespace BaoCaoCuoiKy.User_Control
                 if (menu.ExistsMenu(tb_ma.Text))
                 {
                     getData();
-                    if (menu.UpdateMenu(MaMon, Ten, Gia, Loai))
+                    if (menu.UpdateMenu(MaMon, Ten, Gia, DanhMuc))
                     {
                         resetDataTable();
                         global.notify("Cập nhật món ăn thành công");
@@ -112,14 +89,14 @@ namespace BaoCaoCuoiKy.User_Control
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            if (tb_ma.Text != "" && tb_ten.Text != "" && tb_gia.Text != "" && cb_loai.Text != "")
+            if (tb_ma.Text != "" && tb_ten.Text != "" && tb_gia.Text != "" && cb_danhmuc.Text != "")
             {
                 if (menu.ExistsMenu(tb_ma.Text))
                     global.notify("Mã món ăn đã tồn tại");
                 else
                 {
                     getData();
-                    if (menu.AddMenu(MaMon, Ten, Gia, Loai))
+                    if (menu.AddMenu(MaMon, Ten, Gia, DanhMuc))
                     {
                         resetDataTable();
                         global.notify("Thêm món ăn thành công");
@@ -145,20 +122,48 @@ namespace BaoCaoCuoiKy.User_Control
                 string maMon = selectedRow.Cells["col_ma"].Value.ToString();
                 string tenMon = selectedRow.Cells["col_ten"].Value.ToString();
                 string donGia = selectedRow.Cells["col_gia"].Value.ToString();
-                string loai = selectedRow.Cells["col_loai"].Value.ToString();
+                string danhMuc = selectedRow.Cells["col_loai"].Value.ToString();
                 tb_ma.Text = maMon;
                 tb_ten.Text = tenMon;
                 tb_gia.Text = donGia;
-                cb_loai.Text = loai;
+                cb_danhmuc.Text = danhMuc;
             }
+        }
+
+        private void cb_loc_danhmuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView selectedRow = (DataRowView)cb_loc_danhmuc.SelectedItem;
+            int realValue = Convert.ToInt32(selectedRow.Row[0]);
+            if(realValue == 0)
+                dtMenu = menu.getListMenuAll();
+            else
+                dtMenu = menu.getListMenu_Category(realValue);
+            global.addDataGridView(dtMenu, dg_menu);
+        }
+
+        private void setDropCombox_Category(ComboBox combobox)
+        {
+            DataTable dtCategory = new DataTable();
+            dtCategory = category.getListNameCategory();
+            DataRow allRow = dtCategory.NewRow();
+            allRow["id"] = 0;
+            allRow["ten"] = "--";
+            dtCategory.Rows.Add(allRow);
+
+            combobox.DataSource = dtCategory;
+            combobox.DisplayMember = dtCategory.Columns[1].ColumnName;
+            combobox.ValueMember = dtCategory.Columns[0].ColumnName;
+            combobox.SelectedIndex = cb_loc_danhmuc.Items.Count - 1;
         }
 
         private void getData()
         {
+            DataRowView selectedRow = (DataRowView)cb_danhmuc.SelectedItem;
+            int idCate = Convert.ToInt32(selectedRow.Row[0]);
             MaMon = tb_ma.Text;
             Ten = tb_ten.Text;
             Gia = int.Parse(tb_gia.Text);
-            Loai = cb_loai.Text;
+            DanhMuc = idCate;
         }
 
         private void clearData()
@@ -166,13 +171,12 @@ namespace BaoCaoCuoiKy.User_Control
             tb_ma.Text = "";
             tb_ten.Text = "";
             tb_gia.Text = "";
-            cb_loai.Text = "";
+            cb_danhmuc.Text = "";
         }
         
         private void resetDataTable()
         {
             clearData();
-            radio_all.Checked = true;
             dtMenu = menu.getListMenuAll();
             global.addDataGridView(dtMenu,dg_menu);
         }
