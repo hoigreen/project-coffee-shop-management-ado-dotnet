@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BaoCaoCuoiKy.User_Control;
+using CoffeeShopManagement.User_Control_Staff;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,8 @@ namespace BaoCaoCuoiKy
         public Form_Main_Staff()
         {
             InitializeComponent();
+            UC_STAFF_CREATEORDER uc = new UC_STAFF_CREATEORDER();
+            addUserControl(uc);
         }
 
         private void Form_Main_Staff_Load(object sender, EventArgs e)
@@ -30,6 +34,26 @@ namespace BaoCaoCuoiKy
                 e.Cancel = true; // Hủy sự kiện đóng form để xử lý tại sự kiện FormClosed
                 this.Close();
             }
+        }
+
+        private void addUserControl(UserControl userControl)
+        {
+            userControl.Dock = DockStyle.Fill;
+            panel_staff_container.Controls.Clear();
+            panel_staff_container.Controls.Add(userControl);
+            userControl.BringToFront();
+        }
+
+        private void btn_tao_hoadon_Click(object sender, EventArgs e)
+        {
+            UC_STAFF_CREATEORDER uc = new UC_STAFF_CREATEORDER();
+            addUserControl(uc);
+        }
+
+        private void btn_ban_Click(object sender, EventArgs e)
+        {
+            UC_STAFF_TABLE uc = new UC_STAFF_TABLE();
+            addUserControl(uc);
         }
     }
 }

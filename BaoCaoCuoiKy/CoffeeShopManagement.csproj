@@ -212,8 +212,21 @@
     <Compile Include="User Control Admin\UC_ADMIN_STATIS.Designer.cs">
       <DependentUpon>UC_ADMIN_STATIS.cs</DependentUpon>
     </Compile>
+    <Compile Include="User Control Staff\UC_STAFF_CREATEORDER.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Staff\UC_STAFF_CREATEORDER.Designer.cs">
+      <DependentUpon>UC_STAFF_CREATEORDER.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User Control Staff\UC_STAFF_TABLE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Control Staff\UC_STAFF_TABLE.Designer.cs">
+      <DependentUpon>UC_STAFF_TABLE.cs</DependentUpon>
+    </Compile>
     <Compile Include="XL_ADMIN.cs" />
     <Compile Include="XL_CATEGORY.cs" />
+    <Compile Include="XL_TABLE.cs" />
     <Compile Include="XL_WORK_TIME.cs" />
     <Compile Include="XL_DETAIL_ORDER.cs" />
     <Compile Include="XL_ORDER.cs" />
@@ -260,6 +273,12 @@
     <EmbeddedResource Include="User Control Admin\UC_ADMIN_STATIS.resx">
       <DependentUpon>UC_ADMIN_STATIS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User Control Staff\UC_STAFF_CREATEORDER.resx">
+      <DependentUpon>UC_STAFF_CREATEORDER.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Control Staff\UC_STAFF_TABLE.resx">
+      <DependentUpon>UC_STAFF_TABLE.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />
     <None Include="packages.config" />
@@ -282,9 +301,7 @@
   <ItemGroup>
     <Content Include="mongocrypt.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="User Control Staff\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.8.0\build\MongoDB.Libmongocrypt.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

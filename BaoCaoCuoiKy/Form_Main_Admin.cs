@@ -17,17 +17,19 @@ namespace BaoCaoCuoiKy
     {
         public string ValueFromForm1 { get; set; }
         private XL_ADMIN admin = new XL_ADMIN();
-        public Form_Main_Admin()
-        {
-            InitializeComponent();
-            UC_ADMIN_MENU uc = new UC_ADMIN_MENU();
-            addUserControl(uc);
-        }
+        private Global global = new Global();
+        private string connectionString;
         private SqlConnection connection;
         private SqlDataAdapter adapter;
         private DataSet dataSet;
         private SqlCommand command;
-        string connectionString = @"Data Source=DangQuocHuy\SQLEXPRESS;Initial Catalog=QL_CAFE;Integrated Security=True";
+        public Form_Main_Admin()
+        {
+            InitializeComponent();
+            connectionString = global.pathDatabase;
+            UC_ADMIN_MENU uc = new UC_ADMIN_MENU();
+            addUserControl(uc);
+        }
 
         private void Form_Main_Admin_Load(object sender, EventArgs e)
         {
