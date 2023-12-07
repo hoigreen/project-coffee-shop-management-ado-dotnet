@@ -26,7 +26,7 @@ namespace BaoCaoCuoiKy
             connectionString = global.pathDatabase;
             connection = new SqlConnection(connectionString);
         }
-        public DataTable getDSMenu_All()
+        public DataTable getListMenuAll()
         {
             string query = "SELECT * FROM MENU";
             adapter = new SqlDataAdapter(query, connection);
@@ -35,7 +35,7 @@ namespace BaoCaoCuoiKy
             return dataSet.Tables[0];
         }
 
-        public int getSumMenu()
+        public int getCountSumMenu()
         {
             try
             {
@@ -51,7 +51,7 @@ namespace BaoCaoCuoiKy
                 return 0;
             }
         }
-        public DataTable getDSMenu_Loai(string loai)
+        public DataTable getListMenu_Category(string loai)
         {
             string query = "SELECT * FROM MENU WHERE loai = @loai";
             using (SqlCommand command = new SqlCommand(query, connection))

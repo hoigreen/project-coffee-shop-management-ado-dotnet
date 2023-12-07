@@ -11,24 +11,24 @@ using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy.User_Control_Admin
 {
-    public partial class UC_QuanLyThongKe : UserControl
+    public partial class UC_ADMIN_STATIS : UserControl
     {
-        public UC_QuanLyThongKe()
+        public UC_ADMIN_STATIS()
         {
             InitializeComponent();
         }
-        private XL_NHANVIEN nhanvien = new XL_NHANVIEN();
+        private XL_STAFF nhanvien = new XL_STAFF();
         private XL_MENU menu = new XL_MENU();
-        private XL_HOADON hoadon = new XL_HOADON();
+        private XL_ORDER hoadon = new XL_ORDER();
         private DataTable dtThongKe = new DataTable();
         private Global global = new Global();
 
         private void UC_QuanLyThongKe_Load(object sender, EventArgs e)
         {
-            lb_nhanvien.Text = nhanvien.getSumNhanVien().ToString();
-            lb_hoadon.Text = hoadon.getSumHoaDon().ToString();
-            lb_menu.Text = menu.getSumMenu().ToString();
-            dtThongKe = hoadon.getThongKe();
+            lb_nhanvien.Text = nhanvien.getCountSumStaff().ToString();
+            lb_hoadon.Text = hoadon.getCountSumOrder().ToString();
+            lb_menu.Text = menu.getCountSumMenu().ToString();
+            dtThongKe = hoadon.getStatis();
             global.addDataGridView(dtThongKe, dg_thongke);
         }
     }

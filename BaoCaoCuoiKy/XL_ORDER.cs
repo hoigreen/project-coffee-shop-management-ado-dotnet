@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BaoCaoCuoiKy
 {
-    internal class XL_HOADON
+    internal class XL_ORDER
     {
         private SqlConnection connection;
         private SqlDataAdapter adapter;
@@ -16,13 +16,13 @@ namespace BaoCaoCuoiKy
         private SqlCommand command;
         private Global global = new Global();
         private string connectionString;
-        public XL_HOADON()
+        public XL_ORDER()
         {
             connectionString = global.pathDatabase;
             connection = new SqlConnection(connectionString);
         }
 
-        public int getSumHoaDon()
+        public int getCountSumOrder()
         {
             try
             {
@@ -39,7 +39,7 @@ namespace BaoCaoCuoiKy
             }
         }
 
-        public DataTable getThongKe()
+        public DataTable getStatis()
         {
             string query = "SELECT " +
                 "MONTH(Ngay) AS Thang, " +
@@ -54,7 +54,7 @@ namespace BaoCaoCuoiKy
             return dataSet.Tables[0];
         }
 
-        public DataTable getDSHoaDon()
+        public DataTable getListOrder()
         {
             string query = "SELECT " +
                 "HOADON.MaHD, " +
@@ -69,7 +69,7 @@ namespace BaoCaoCuoiKy
             adapter.Fill(dataSet);
             return dataSet.Tables[0];
         }
-        public DataTable getDSHoaDon_Thang(string thang)
+        public DataTable getListOrder_Month(string thang)
         {
             string query = "SELECT " +
                 "HOADON.MaHD, " +
@@ -85,7 +85,7 @@ namespace BaoCaoCuoiKy
             adapter.Fill(dataSet);
             return dataSet.Tables[0];
         }
-        public DataTable getDSHoaDon_Ngay(string ngay)
+        public DataTable getListOrder_Day(string ngay)
         {
             string query = "SELECT " +
                 "HOADON.MaHD, " +

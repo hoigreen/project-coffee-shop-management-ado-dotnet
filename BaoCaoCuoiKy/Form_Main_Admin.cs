@@ -20,7 +20,7 @@ namespace BaoCaoCuoiKy
         public Form_Main_Admin()
         {
             InitializeComponent();
-            UC_QuanLyMenu uc = new UC_QuanLyMenu();
+            UC_ADMIN_MENU uc = new UC_ADMIN_MENU();
             addUserControl(uc);
         }
         private SqlConnection connection;
@@ -72,19 +72,19 @@ namespace BaoCaoCuoiKy
 
         private void btn_qly_menu_Click(object sender, EventArgs e)
         {
-            UC_QuanLyMenu uc = new UC_QuanLyMenu();
+            UC_ADMIN_MENU uc = new UC_ADMIN_MENU();
             addUserControl(uc);
         }
 
         private void btn_qly_nhanvien_Click(object sender, EventArgs e)
         {
-            UC_QuanLyNhanVien uc = new UC_QuanLyNhanVien();
+            UC_ADMIN_STAFF uc = new UC_ADMIN_STAFF();
             addUserControl(uc);
         }
 
         private void btn_qly_calam_Click(object sender, EventArgs e)
         {
-            UC_QuanLyCaLam uc = new UC_QuanLyCaLam();
+            UC_ADMIN_WORKTIME uc = new UC_ADMIN_WORKTIME();
             addUserControl(uc);
         }
 
@@ -96,13 +96,13 @@ namespace BaoCaoCuoiKy
 
         private void btn_qly_hoadon_Click(object sender, EventArgs e)
         {
-            UC_QuanLyHoaDon uc = new UC_QuanLyHoaDon();
+            UC_ADMIN_ORDER uc = new UC_ADMIN_ORDER();
             addUserControl(uc);
         }
 
         private void btn_thongke_Click(object sender, EventArgs e)
         {
-            UC_QuanLyThongKe uc = new UC_QuanLyThongKe();
+            UC_ADMIN_STATIS uc = new UC_ADMIN_STATIS();
             addUserControl(uc);
         }
     }

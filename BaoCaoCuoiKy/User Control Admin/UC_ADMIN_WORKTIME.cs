@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy.User_Control
 {
-    public partial class UC_QuanLyCaLam : UserControl
+    public partial class UC_ADMIN_WORKTIME : UserControl
     {
-        public UC_QuanLyCaLam()
+        public UC_ADMIN_WORKTIME()
         {
             InitializeComponent();
         }
@@ -22,7 +22,7 @@ namespace BaoCaoCuoiKy.User_Control
         private int Luong;
 
         private DataTable dtCaLam = new DataTable();
-        private XL_CALAM calam = new XL_CALAM();
+        private XL_WORK_TIME work_time = new XL_WORK_TIME();
         private Global global = new Global();
 
         private void UC_QuanLyCaLam_Load(object sender, EventArgs e)
@@ -40,12 +40,12 @@ namespace BaoCaoCuoiKy.User_Control
         {
             if (!checkEmpty())
             {
-                if (calam.ExistsCaLam(tb_ma.Text))
+                if (work_time.ExistsWorkTime(tb_ma.Text))
                     global.notify("Mã ca làm đã tồn tại");
                 else
                 {
                     getData();
-                    if (calam.AddCaLam(MaCa, TenCa, ThoiGian,Luong))
+                    if (work_time.AddWorkTime(MaCa, TenCa, ThoiGian,Luong))
                     {
                         resetDataTable();
                         global.notify("Thêm ca làm thành công");
@@ -62,13 +62,13 @@ namespace BaoCaoCuoiKy.User_Control
         {
             if (tb_ma.Text != "")
             {
-                if (calam.ExistsCaLam(tb_ma.Text))
+                if (work_time.ExistsWorkTime(tb_ma.Text))
                 {
                     var result = MessageBox.Show("Bạn chắc chắn muốn xóa ca làm?", "Thông báo",
                         MessageBoxButtons.YesNo);
                     if (result == DialogResult.Yes)
                     {
-                        if (calam.DeleteCaLam(tb_ma.Text))
+                        if (work_time.DeleteWorkTime(tb_ma.Text))
                         {
                             resetDataTable();
                             global.notify("Xóa ca làm thành công");
@@ -88,10 +88,10 @@ namespace BaoCaoCuoiKy.User_Control
         {
             if (tb_ma.Text != "")
             {
-                if (calam.ExistsCaLam(tb_ma.Text))
+                if (work_time.ExistsWorkTime(tb_ma.Text))
                 {
                     getData();
-                    if (calam.UpdateCaLam(MaCa,TenCa,ThoiGian,Luong))
+                    if (work_time.UpdateWorkTIme(MaCa,TenCa,ThoiGian,Luong))
                     {
                         resetDataTable();
                         global.notify("Cập nhật thông tin ca làm thành công");
@@ -126,7 +126,7 @@ namespace BaoCaoCuoiKy.User_Control
         private void resetDataTable()
         {
             clearData();
-            dtCaLam = calam.getDSCaLam();
+            dtCaLam = work_time.getListWorkTime();
             global.addDataGridView(dtCaLam, dg_calam);
 
         }

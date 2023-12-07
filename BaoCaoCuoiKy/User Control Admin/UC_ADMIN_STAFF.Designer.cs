@@ -1,6 +1,6 @@
 ﻿namespace BaoCaoCuoiKy.User_Control
 {
-    partial class UC_QuanLyNhanVien
+    partial class UC_ADMIN_STAFF
     {
         /// <summary> 
         /// Required designer variable.

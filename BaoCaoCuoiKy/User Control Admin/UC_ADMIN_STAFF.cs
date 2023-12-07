@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy.User_Control
 {
-    public partial class UC_QuanLyNhanVien : UserControl
+    public partial class UC_ADMIN_STAFF : UserControl
     {
-        public UC_QuanLyNhanVien()
+        public UC_ADMIN_STAFF()
         {
             InitializeComponent();
         }
@@ -23,8 +23,8 @@ namespace BaoCaoCuoiKy.User_Control
 
         private DataTable dtNhanVien = new DataTable();
         private DataTable dtNgayCong = new DataTable();
-        private XL_NHANVIEN nhanvien = new XL_NHANVIEN();
-        private XL_NGAYCONG ngaycong = new XL_NGAYCONG();
+        private XL_STAFF staff = new XL_STAFF();
+        private XL_WORK_DAY ngaycong = new XL_WORK_DAY();
         private Global global = new Global();
 
         private void UC_QuanLyNhanVien_Load(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace BaoCaoCuoiKy.User_Control
                 tb_diachi.Text = diaChi;
                 dt_ngayvaolam.Text = ngayVaoLam;
 
-                dtNgayCong = ngaycong.getDSNgayCong_NhanVien(maNV);
+                dtNgayCong = ngaycong.getListWorkDay_Staff(maNV);
                 global.addDataGridView(dtNgayCong, dg_ngaycong);
                 dg_ngaycong.Columns["col_ngayLam"].DefaultCellStyle.Format = "dd/MM/yyyy";
             }
@@ -71,12 +71,12 @@ namespace BaoCaoCuoiKy.User_Control
         {
             if (!checkEmpty())
             {
-                if (nhanvien.ExistsNhanVien(tb_ma.Text))
+                if (staff.ExistsStaff(tb_ma.Text))
                     global.notify("Mã nhân viên đã tồn tại");
                 else
                 {
                     getData();
-                    if(nhanvien.AddNhanVien(MaNV, TenNV, DienThoai, GioiTinh, ChucVu, DiaChi, NgaySinh, NgayVaoLam))
+                    if(staff.AddStaff(MaNV, TenNV, DienThoai, GioiTinh, ChucVu, DiaChi, NgaySinh, NgayVaoLam))
                     {
                         resetDataTable();
                         global.notify("Thêm nhân viên thành công");
@@ -93,13 +93,13 @@ namespace BaoCaoCuoiKy.User_Control
         {
             if (tb_ma.Text != "")
             {
-                if (nhanvien.ExistsNhanVien(tb_ma.Text))
+                if (staff.ExistsStaff(tb_ma.Text))
                 {
                     var result = MessageBox.Show("Bạn chắc chắn muốn xóa nhân viên?","Thông báo",
                         MessageBoxButtons.YesNo);
                     if(result == DialogResult.Yes)
                     {
-                        if (nhanvien.DeleteNhanVien(tb_ma.Text))
+                        if (staff.DeleteStaff(tb_ma.Text))
                         {
                             resetDataTable();
                             global.notify("Xóa nhân viên thành công");
@@ -119,10 +119,10 @@ namespace BaoCaoCuoiKy.User_Control
         {
             if (tb_ma.Text != "")
             {
-                if (nhanvien.ExistsNhanVien(tb_ma.Text))
+                if (staff.ExistsStaff(tb_ma.Text))
                 {
                     getData();
-                    if (nhanvien.UpdateNhanVien(MaNV, TenNV, DienThoai, GioiTinh, ChucVu, DiaChi, NgaySinh, NgayVaoLam))
+                    if (staff.UpdateStaff(MaNV, TenNV, DienThoai, GioiTinh, ChucVu, DiaChi, NgaySinh, NgayVaoLam))
                     {
                         resetDataTable();
                         global.notify("Cập nhật thông tin nhân viên thành công");
@@ -173,7 +173,7 @@ namespace BaoCaoCuoiKy.User_Control
         private void resetDataTable()
         {
             clearData();
-            dtNhanVien = nhanvien.getDSNhanVien();
+            dtNhanVien = staff.getListStaff();
             global.addDataGridView(dtNhanVien, dg_nhanvien);
             dg_nhanvien.Columns["col_ns"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dg_nhanvien.Columns["col_nvl"].DefaultCellStyle.Format = "dd/MM/yyyy";

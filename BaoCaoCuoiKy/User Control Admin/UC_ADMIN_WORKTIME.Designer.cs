@@ -1,6 +1,6 @@
 ﻿namespace BaoCaoCuoiKy.User_Control
 {
-    partial class UC_QuanLyCaLam
+    partial class UC_ADMIN_WORKTIME
     {
         /// <summary> 
         /// Required designer variable.

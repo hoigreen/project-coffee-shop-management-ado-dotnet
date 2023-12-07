@@ -21,13 +21,13 @@ namespace BaoCaoCuoiKy.User_Control
 
         private DataTable dtNgayCong = new DataTable();
         private DataTable dtCaLam = new DataTable();
-        private XL_NGAYCONG ngaycong = new XL_NGAYCONG();
-        private XL_CALAM calam = new XL_CALAM();
+        private XL_WORK_DAY work_day = new XL_WORK_DAY();
+        private XL_WORK_TIME calam = new XL_WORK_TIME();
         private Global global = new Global();
 
         private void UC_QuanLyNgayCong_Load(object sender, EventArgs e)
         {
-            dtCaLam = calam.getDSMaCaLam();
+            dtCaLam = calam.getListIdWorkTime();
             dtCaLam.Rows.Add("--");
             cb_ca.DataSource = dtCaLam;
             cb_ca.DisplayMember = dtCaLam.Columns[0].ColumnName;
@@ -71,9 +71,9 @@ namespace BaoCaoCuoiKy.User_Control
         {
             clearData();
             if(cb_thang.Text == "--" && cb_ca.Text == "--")
-                dtNgayCong = ngaycong.getDSNgayCong();
+                dtNgayCong = work_day.getListWorkDay();
             else
-               dtNgayCong = ngaycong.getDSNgayCong_Thang_Ca(cb_thang.Text, cb_ca.Text);
+               dtNgayCong = work_day.getListWorkDay_Month_Time(cb_thang.Text, cb_ca.Text);
             global.addDataGridView(dtNgayCong, dg_ngayCong);
         }
 

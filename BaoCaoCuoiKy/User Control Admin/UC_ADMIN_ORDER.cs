@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy.User_Control
 {
-    public partial class UC_QuanLyHoaDon : UserControl
+    public partial class UC_ADMIN_ORDER : UserControl
     {
-        public UC_QuanLyHoaDon()
+        public UC_ADMIN_ORDER()
         {
             InitializeComponent();
         }
         private DataTable dtHoaDon = new DataTable();
-        private DataTable dtChiTietHoaDon = new DataTable();
-        private XL_HOADON hoadon = new XL_HOADON();
-        private XL_CHITIETHOADON chitiethoadon = new XL_CHITIETHOADON();
+        private DataTable dtdetail_order = new DataTable();
+        private XL_ORDER order = new XL_ORDER();
+        private XL_DETAIL_ORDER detail_order = new XL_DETAIL_ORDER();
         private Global global = new Global();
 
         private string MaHD, TenNV, MaNV, Ngay, Tong;
@@ -68,8 +68,8 @@ namespace BaoCaoCuoiKy.User_Control
                 dt_ngay.Text = Ngay;
                 tb_tong.Text = Tong;
 
-                dtChiTietHoaDon = chitiethoadon.getDSChiTietHoaDon(MaHD);
-                global.addDataGridView(dtChiTietHoaDon, dg_chitiethoadon);
+                dtdetail_order = detail_order.getListDetailOrder(MaHD);
+                global.addDataGridView(dtdetail_order, dg_chitiethoadon);
             }
         }
         private void clearData()
@@ -85,11 +85,11 @@ namespace BaoCaoCuoiKy.User_Control
             clearData();
             if (cb_locThang.Text == "--")
             {
-                dtHoaDon = hoadon.getDSHoaDon();
+                dtHoaDon = order.getListOrder();
             }
             else
             {
-                dtHoaDon = hoadon.getDSHoaDon_Thang(cb_locThang.Text);
+                dtHoaDon = order.getListOrder_Month(cb_locThang.Text);
             }
             global.addDataGridView(dtHoaDon, dg_hoadon);
         }

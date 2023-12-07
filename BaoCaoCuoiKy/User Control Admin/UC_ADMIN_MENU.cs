@@ -12,9 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BaoCaoCuoiKy.User_Control
 {
-    public partial class UC_QuanLyMenu : UserControl
+    public partial class UC_ADMIN_MENU : UserControl
     {
-        public UC_QuanLyMenu()
+        public UC_ADMIN_MENU()
         {
             InitializeComponent();
         }
@@ -37,7 +37,7 @@ namespace BaoCaoCuoiKy.User_Control
         {
             if (radio_all.Checked)
             {
-                dtMenu = menu.getDSMenu_All();
+                dtMenu = menu.getListMenuAll();
                 global.addDataGridView(dtMenu, dg_menu);
             }
         }
@@ -47,7 +47,7 @@ namespace BaoCaoCuoiKy.User_Control
             string loai = "nước uống";
             if (radio_drink.Checked)
             {
-                dtMenu = menu.getDSMenu_Loai(loai);
+                dtMenu = menu.getListMenu_Category(loai);
                 global.addDataGridView(dtMenu, dg_menu);
             }
         }
@@ -57,7 +57,7 @@ namespace BaoCaoCuoiKy.User_Control
             string loai = "đồ ăn";
             if (radio_food.Checked)
             {
-                dtMenu = menu.getDSMenu_Loai(loai);
+                dtMenu = menu.getListMenu_Category(loai);
                 global.addDataGridView(dtMenu, dg_menu);
             }
         }
@@ -173,7 +173,7 @@ namespace BaoCaoCuoiKy.User_Control
         {
             clearData();
             radio_all.Checked = true;
-            dtMenu = menu.getDSMenu_All();
+            dtMenu = menu.getListMenuAll();
             global.addDataGridView(dtMenu,dg_menu);
         }
     }

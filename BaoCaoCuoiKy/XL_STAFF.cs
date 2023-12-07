@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy
 {
-    internal class XL_NHANVIEN
+    internal class XL_STAFF
     {
         private SqlConnection connection;
         private SqlDataAdapter adapter;
@@ -21,13 +21,13 @@ namespace BaoCaoCuoiKy
         private string connectionString;
 
 
-        public XL_NHANVIEN()
+        public XL_STAFF()
         {
             connectionString = global.pathDatabase;
             connection = new SqlConnection(connectionString);
         }
 
-        public int getSumNhanVien()
+        public int getCountSumStaff()
         {
             try
             {
@@ -44,7 +44,7 @@ namespace BaoCaoCuoiKy
             }
         }
 
-        public DataTable getDSNhanVien()
+        public DataTable getListStaff()
         {
             string query = "SELECT * FROM NHANVIEN";
             adapter = new SqlDataAdapter(query, connection);
@@ -52,7 +52,7 @@ namespace BaoCaoCuoiKy
             adapter.Fill(dataSet);
             return dataSet.Tables[0];
         }
-        public bool ExistsNhanVien(string MaNV)
+        public bool ExistsStaff(string MaNV)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
-        public bool AddNhanVien(string MaNV, string TenNV, string DienThoai, string GioiTinh,string ChucVu, string DiaChi, DateTime NgaySinh,DateTime NgayVaoLam )
+        public bool AddStaff(string MaNV, string TenNV, string DienThoai, string GioiTinh,string ChucVu, string DiaChi, DateTime NgaySinh,DateTime NgayVaoLam )
         {
             try
             {
@@ -93,7 +93,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
-        public bool DeleteNhanVien(string MaNV)
+        public bool DeleteStaff(string MaNV)
         {
             try
             {
@@ -110,7 +110,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
-        public bool UpdateNhanVien(string MaNV, string TenNV, string DienThoai, string GioiTinh, string ChucVu, string DiaChi, DateTime NgaySinh, DateTime NgayVaoLam)
+        public bool UpdateStaff(string MaNV, string TenNV, string DienThoai, string GioiTinh, string ChucVu, string DiaChi, DateTime NgaySinh, DateTime NgayVaoLam)
         {
             try
             {

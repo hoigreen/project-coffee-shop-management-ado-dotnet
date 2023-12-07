@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy
 {
-    internal class XL_NGAYCONG
+    internal class XL_WORK_DAY
     {
         private SqlConnection connection;
         private SqlDataAdapter adapter;
@@ -20,12 +20,12 @@ namespace BaoCaoCuoiKy
         private Global global = new Global();
         private string connectionString;
 
-        public XL_NGAYCONG()
+        public XL_WORK_DAY()
         {
             connectionString = global.pathDatabase;
             connection = new SqlConnection(connectionString);
         }
-        public DataTable getDSNgayCong()
+        public DataTable getListWorkDay()
         {
             string query = "SELECT " +
                 "NGAYCONG.MaCa, " +
@@ -41,7 +41,7 @@ namespace BaoCaoCuoiKy
             adapter.Fill(dataSet);
             return dataSet.Tables[0];
         }
-        public DataTable getDSNgayCong_Thang_Ca(string thang, string MaCa)
+        public DataTable getListWorkDay_Month_Time(string thang, string MaCa)
         {
             string query_where = "";
             if(thang == "--" )
@@ -72,7 +72,7 @@ namespace BaoCaoCuoiKy
             adapter.Fill(dataSet);
             return dataSet.Tables[0];
         }
-        public DataTable getDSNgayCong_NhanVien(string MaNV)
+        public DataTable getListWorkDay_Staff(string MaNV)
         {
             string query = "SELECT " +
                "NGAYCONG.MaCa, " +

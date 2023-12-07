@@ -176,49 +176,49 @@
     <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User Control Admin\UC_QuanLyCaLam.cs">
+    <Compile Include="User Control Admin\UC_ADMIN_WORKTIME.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyCaLam.Designer.cs">
-      <DependentUpon>UC_QuanLyCaLam.cs</DependentUpon>
+    <Compile Include="User Control Admin\UC_ADMIN_WORKTIME.Designer.cs">
+      <DependentUpon>UC_ADMIN_WORKTIME.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyHoaDon.cs">
+    <Compile Include="User Control Admin\UC_ADMIN_ORDER.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyHoaDon.Designer.cs">
-      <DependentUpon>UC_QuanLyHoaDon.cs</DependentUpon>
+    <Compile Include="User Control Admin\UC_ADMIN_ORDER.Designer.cs">
+      <DependentUpon>UC_ADMIN_ORDER.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyMenu.cs">
+    <Compile Include="User Control Admin\UC_ADMIN_MENU.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyMenu.Designer.cs">
-      <DependentUpon>UC_QuanLyMenu.cs</DependentUpon>
+    <Compile Include="User Control Admin\UC_ADMIN_MENU.Designer.cs">
+      <DependentUpon>UC_ADMIN_MENU.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyNgayCong.cs">
+    <Compile Include="User Control Admin\UC_ADMIN-WORKDAY.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyNgayCong.Designer.cs">
-      <DependentUpon>UC_QuanLyNgayCong.cs</DependentUpon>
+    <Compile Include="User Control Admin\UC_ADMIN-WORKDAY.Designer.cs">
+      <DependentUpon>UC_ADMIN-WORKDAY.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyNhanVien.cs">
+    <Compile Include="User Control Admin\UC_ADMIN_STAFF.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyNhanVien.Designer.cs">
-      <DependentUpon>UC_QuanLyNhanVien.cs</DependentUpon>
+    <Compile Include="User Control Admin\UC_ADMIN_STAFF.Designer.cs">
+      <DependentUpon>UC_ADMIN_STAFF.cs</DependentUpon>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyThongKe.cs">
+    <Compile Include="User Control Admin\UC_ADMIN_STATIS.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="User Control Admin\UC_QuanLyThongKe.Designer.cs">
-      <DependentUpon>UC_QuanLyThongKe.cs</DependentUpon>
+    <Compile Include="User Control Admin\UC_ADMIN_STATIS.Designer.cs">
+      <DependentUpon>UC_ADMIN_STATIS.cs</DependentUpon>
     </Compile>
     <Compile Include="XL_ADMIN.cs" />
-    <Compile Include="XL_CALAM.cs" />
-    <Compile Include="XL_CHITIETHOADON.cs" />
-    <Compile Include="XL_HOADON.cs" />
+    <Compile Include="XL_WORK_TIME.cs" />
+    <Compile Include="XL_DETAIL_ORDER.cs" />
+    <Compile Include="XL_ORDER.cs" />
     <Compile Include="XL_MENU.cs" />
-    <Compile Include="XL_NGAYCONG.cs" />
-    <Compile Include="XL_NHANVIEN.cs" />
+    <Compile Include="XL_WORK_DAY.cs" />
+    <Compile Include="XL_STAFF.cs" />
     <EmbeddedResource Include="Form_Begin.resx">
       <DependentUpon>Form_Begin.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,23 +241,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="User Control Admin\UC_QuanLyCaLam.resx">
-      <DependentUpon>UC_QuanLyCaLam.cs</DependentUpon>
+    <EmbeddedResource Include="User Control Admin\UC_ADMIN_WORKTIME.resx">
+      <DependentUpon>UC_ADMIN_WORKTIME.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control Admin\UC_QuanLyHoaDon.resx">
-      <DependentUpon>UC_QuanLyHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="User Control Admin\UC_ADMIN_ORDER.resx">
+      <DependentUpon>UC_ADMIN_ORDER.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control Admin\UC_QuanLyMenu.resx">
-      <DependentUpon>UC_QuanLyMenu.cs</DependentUpon>
+    <EmbeddedResource Include="User Control Admin\UC_ADMIN_MENU.resx">
+      <DependentUpon>UC_ADMIN_MENU.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control Admin\UC_QuanLyNgayCong.resx">
-      <DependentUpon>UC_QuanLyNgayCong.cs</DependentUpon>
+    <EmbeddedResource Include="User Control Admin\UC_ADMIN-WORKDAY.resx">
+      <DependentUpon>UC_ADMIN-WORKDAY.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control Admin\UC_QuanLyNhanVien.resx">
-      <DependentUpon>UC_QuanLyNhanVien.cs</DependentUpon>
+    <EmbeddedResource Include="User Control Admin\UC_ADMIN_STAFF.resx">
+      <DependentUpon>UC_ADMIN_STAFF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User Control Admin\UC_QuanLyThongKe.resx">
-      <DependentUpon>UC_QuanLyThongKe.cs</DependentUpon>
+    <EmbeddedResource Include="User Control Admin\UC_ADMIN_STATIS.resx">
+      <DependentUpon>UC_ADMIN_STATIS.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="libmongocrypt.dylib" />
     <None Include="libmongocrypt.so" />

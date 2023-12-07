@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BaoCaoCuoiKy
 {
-    internal class XL_CHITIETHOADON
+    internal class XL_DETAIL_ORDER
     {
         private SqlConnection connection;
         private SqlDataAdapter adapter;
@@ -16,12 +16,12 @@ namespace BaoCaoCuoiKy
         private SqlCommand command;
         private Global global = new Global();
         private string connectionString;
-        public XL_CHITIETHOADON()
+        public XL_DETAIL_ORDER()
         {
             connectionString = global.pathDatabase;
             connection = new SqlConnection(connectionString);
         }
-        public DataTable getDSChiTietHoaDon(string MaHD)
+        public DataTable getListDetailOrder(string MaHD)
         {
             string query = "SELECT " +
                 "CHITIETHOADON.MaMon, " +

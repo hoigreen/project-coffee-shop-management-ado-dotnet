@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy
 {
-    internal class XL_CALAM
+    internal class XL_WORK_TIME
     {
         private SqlConnection connection;
         private SqlDataAdapter adapter;
@@ -18,13 +18,13 @@ namespace BaoCaoCuoiKy
         private Global global = new Global();
         private string connectionString;
 
-        public XL_CALAM()
+        public XL_WORK_TIME()
         {
             connectionString = global.pathDatabase;
             connection = new SqlConnection(connectionString);
         }
 
-        public DataTable getDSMaCaLam()
+        public DataTable getListIdWorkTime()
         {
             string query = "SELECT MaCa FROM CALAM";
             adapter = new SqlDataAdapter(query, connection);
@@ -32,7 +32,7 @@ namespace BaoCaoCuoiKy
             adapter.Fill(dataSet);
             return dataSet.Tables[0];
         }
-        public DataTable getDSCaLam()
+        public DataTable getListWorkTime()
         {
             string query = "SELECT * FROM CALAM";
             adapter = new SqlDataAdapter(query, connection);
@@ -40,7 +40,7 @@ namespace BaoCaoCuoiKy
             adapter.Fill(dataSet);
             return dataSet.Tables[0];
         }
-        public bool ExistsCaLam(string MaCa)
+        public bool ExistsWorkTime(string MaCa)
         {
             try
             {
@@ -57,7 +57,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
-        public bool AddCaLam(string MaCa, string TenCa, string ThoiGian, int Luong)
+        public bool AddWorkTime(string MaCa, string TenCa, string ThoiGian, int Luong)
         {
             try
             {
@@ -77,7 +77,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
-        public bool DeleteCaLam(string MaCa)
+        public bool DeleteWorkTime(string MaCa)
         {
             try
             {
@@ -94,7 +94,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
-        public bool UpdateCaLam(string MaCa, string TenCa, string ThoiGian, int Luong)
+        public bool UpdateWorkTIme(string MaCa, string TenCa, string ThoiGian, int Luong)
         {
             try
             {
