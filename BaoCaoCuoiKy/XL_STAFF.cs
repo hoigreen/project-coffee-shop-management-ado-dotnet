@@ -27,6 +27,24 @@ namespace BaoCaoCuoiKy
             connection = new SqlConnection(connectionString);
         }
 
+
+        public string getIdStaffLastRow()
+        {
+            try
+            {
+                connection.Open();
+                string selectCommand = "SELECT * FROM NHANVIEN ORDER BY MaNV DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+
+                command = new SqlCommand(selectCommand, connection);
+                string id = command.ExecuteScalar().ToString();
+                connection.Close();
+                return id;
+            }
+            catch
+            {
+                return "";
+            }
+        }
         public int getCountSumStaff()
         {
             try

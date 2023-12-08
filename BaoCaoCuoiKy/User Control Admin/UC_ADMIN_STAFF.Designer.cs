@@ -62,6 +62,8 @@
             this.col_maCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_tenCa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ngayLam = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_cancelSave = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_nhanvien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_ngaycong)).BeginInit();
             this.SuspendLayout();
@@ -314,7 +316,7 @@
             this.col_maCa,
             this.col_tenCa,
             this.col_ngayLam});
-            this.dg_ngaycong.Location = new System.Drawing.Point(488, 376);
+            this.dg_ngaycong.Location = new System.Drawing.Point(724, 376);
             this.dg_ngaycong.Name = "dg_ngaycong";
             this.dg_ngaycong.Size = new System.Drawing.Size(380, 247);
             this.dg_ngaycong.TabIndex = 22;
@@ -334,11 +336,43 @@
             this.col_ngayLam.HeaderText = "Ngày làm";
             this.col_ngayLam.Name = "col_ngayLam";
             // 
-            // UC_QuanLyNhanVien
+            // btn_cancelSave
+            // 
+            this.btn_cancelSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cancelSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cancelSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_cancelSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_cancelSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_cancelSave.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelSave.Location = new System.Drawing.Point(315, 577);
+            this.btn_cancelSave.Name = "btn_cancelSave";
+            this.btn_cancelSave.Size = new System.Drawing.Size(180, 45);
+            this.btn_cancelSave.TabIndex = 23;
+            this.btn_cancelSave.Text = "Không lưu";
+            this.btn_cancelSave.Click += new System.EventHandler(this.btn_cancelSave_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_save.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(315, 505);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(180, 45);
+            this.btn_save.TabIndex = 24;
+            this.btn_save.Text = "Lưu";
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // UC_ADMIN_STAFF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btn_save);
+            this.Controls.Add(this.btn_cancelSave);
             this.Controls.Add(this.dg_ngaycong);
             this.Controls.Add(this.dt_ngayvaolam);
             this.Controls.Add(this.dt_ngaysinh);
@@ -362,7 +396,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dg_nhanvien);
             this.Controls.Add(this.label1);
-            this.Name = "UC_QuanLyNhanVien";
+            this.Name = "UC_ADMIN_STAFF";
             this.Size = new System.Drawing.Size(1163, 670);
             this.Load += new System.EventHandler(this.UC_QuanLyNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_nhanvien)).EndInit();
@@ -408,5 +442,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_maCa;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_tenCa;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_ngayLam;
+        private Guna.UI2.WinForms.Guna2Button btn_cancelSave;
+        private Guna.UI2.WinForms.Guna2Button btn_save;
     }
 }
