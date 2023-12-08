@@ -26,6 +26,24 @@ namespace BaoCaoCuoiKy
             connectionString = global.pathDatabase;
             connection = new SqlConnection(connectionString);
         }
+
+        public string getIdMenuLastRow()
+        {
+            try
+            {
+                connection.Open();
+                string selectCommand = "SELECT * FROM MENU ORDER BY MaMon DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+
+                command = new SqlCommand(selectCommand, connection);
+                string id = command.ExecuteScalar().ToString();
+                connection.Close();
+                return id;
+            }
+            catch
+            {
+                return "";
+            }
+        }
         public DataTable getListMenuAll()
         {
             string query = "SELECT " +

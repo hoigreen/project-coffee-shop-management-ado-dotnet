@@ -29,89 +29,87 @@ namespace BaoCaoCuoiKy.User_Control
         private XL_MENU menu = new XL_MENU();
         private XL_CATEGORY category = new XL_CATEGORY();
         private Global global = new Global();
+        private string functionSave;
 
         
         private void UC_QuanLyMenu_Load(object sender, EventArgs e)
         {
-            resetDataTable();
             dg_menu.SelectionChanged += DgMenu_SelectionChanged;
             setDropCombox_Category(cb_loc_danhmuc);
             setDropCombox_Category(cb_danhmuc);
+
+            btn_save.Enabled = false;
+            btn_cancelSave.Enabled = false;
+            btn_sua.Enabled = false;
+            btn_xoa.Enabled = false;
+            btn_clear.Enabled = false;
+
+            isEnableTextBox(false);
+            resetDataTable();
         }
         
         private void btn_xoa_Click(object sender, EventArgs e)
         {
-            if (tb_ma.Text != "")
+            var result = MessageBox.Show("Bạn chắc chắn muốn xóa sản phẩm?", "Thông báo",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
             {
-                if (menu.ExistsMenu(tb_ma.Text))
+                if (menu.DeleteMenu(tb_ma.Text))
                 {
-                    var result = MessageBox.Show("Bạn chắc chắn muốn xóa món ăn?", "Thông báo?",
-                        MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes) 
-                    { 
-                        if (menu.DeleteMenu(tb_ma.Text))
-                        {
-                            resetDataTable();
-                            global.notify("Xóa món ăn thành công");
-                        }
-                        else
-                            global.notify("Xóa món ăn không thành công");
-                    }
+                    tb_ma.Text = "";
+                    resetDataTable();
+                    global.notify("Xóa sản phẩm thành công");
                 }
                 else
-                    global.notify("Mã món ăn không tồn tại");
+                    global.notify("Xóa sản phẩm không thành công");
             }
-            else
-                global.notify("Vui lòng nhập mã món ăn");
         }
 
         private void btn_sua_Click(object sender, EventArgs e)
         {
-            if (tb_ma.Text != "")
-            {
-                if (menu.ExistsMenu(tb_ma.Text))
-                {
-                    getData();
-                    if (menu.UpdateMenu(MaMon, Ten, Gia, DanhMuc))
-                    {
-                        resetDataTable();
-                        global.notify("Cập nhật món ăn thành công");
-                    }
-                    else
-                        global.notify("Cập nhật món ăn không thành công");
-                }
-                else
-                    global.notify("Mã món ăn không tồn tại");
-            }
-            else
-                global.notify("Vui lòng nhập mã món ăn");
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btn_xoa.Enabled = false;
+            btn_sua.Enabled = false;
+            btn_clear.Enabled = true;
+            functionSave = "update";
         }
 
         private void btn_them_Click(object sender, EventArgs e)
         {
-            if (tb_ma.Text != "" && tb_ten.Text != "" && tb_gia.Text != "" && cb_danhmuc.Text != "")
-            {
-                if (menu.ExistsMenu(tb_ma.Text))
-                    global.notify("Mã món ăn đã tồn tại");
-                else
-                {
-                    getData();
-                    if (menu.AddMenu(MaMon, Ten, Gia, DanhMuc))
-                    {
-                        resetDataTable();
-                        global.notify("Thêm món ăn thành công");
-                    }
-                    else
-                        global.notify("Thêm món ăn không thành công");
-                }
-            }
-            else
-                global.notify("Nhập đầy đủ các trường dữ liệu");
+            clearData();
+            string id = menu.getIdMenuLastRow();
+            tb_ma.Text = global.autoIncrementId(id);
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btn_sua.Enabled = false;
+            btn_xoa.Enabled = false;
+            btn_clear.Enabled = true;
+            functionSave = "insert";
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            clearData();
+            if (functionSave == "insert" || functionSave == "update")
+            {
+                var result = MessageBox.Show("Thông tin chưa được lưu!\nBạn chắc chắn muốn xóa chứ?", "Thông báo",
+                        MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    btn_cancelSave.Enabled = false;
+                    btn_save.Enabled = false;
+                    btn_sua.Enabled = false;
+                    btn_xoa.Enabled = false;
+                    btn_them.Enabled = true;
+                    btn_clear.Enabled = false;
+                    tb_ma.Text = "";
+                    functionSave = "";
+                    isEnableTextBox(false);
+                    clearData();
+                }
+            }
         }
 
         private void DgMenu_SelectionChanged(object sender, EventArgs e)
@@ -127,6 +125,11 @@ namespace BaoCaoCuoiKy.User_Control
                 tb_ten.Text = tenMon;
                 tb_gia.Text = donGia;
                 cb_danhmuc.Text = danhMuc;
+
+                btn_sua.Enabled = true;
+                btn_xoa.Enabled = true;
+                btn_save.Enabled = false;
+                btn_cancelSave.Enabled = false;
             }
         }
 
@@ -134,7 +137,7 @@ namespace BaoCaoCuoiKy.User_Control
         {
             DataRowView selectedRow = (DataRowView)cb_loc_danhmuc.SelectedItem;
             int realValue = Convert.ToInt32(selectedRow.Row[0]);
-            if(realValue == 0)
+            if (realValue == 0)
                 dtMenu = menu.getListMenuAll();
             else
                 dtMenu = menu.getListMenu_Category(realValue);
@@ -168,15 +171,87 @@ namespace BaoCaoCuoiKy.User_Control
 
         private void clearData()
         {
-            tb_ma.Text = "";
             tb_ten.Text = "";
             tb_gia.Text = "";
-            cb_danhmuc.Text = "";
+            cb_danhmuc.SelectedIndex = cb_loc_danhmuc.Items.Count - 1;
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("huy");
+            if (isEmpty())
+                global.notify("Vui lòng nhập đây đủ các trường");
+            else
+            {
+                switch (functionSave)
+                {
+                    case "insert":
+                        addMenu();
+                        break;
+                    case "update":
+                        updateMenu();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            isEnableTextBox(false);
+            btn_save.Enabled = false;
+            btn_cancelSave.Enabled = false;
+            btn_sua.Enabled = false;
+            btn_xoa.Enabled = true;
+            btn_clear.Enabled = false;
+            tb_ma.Text = "";
+            functionSave = "";
+        }
+
+        private void btn_cancelSave_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn chắc chắn không muốn lưu?", "Thông báo",
+                        MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                btn_cancelSave.Enabled = false;
+                btn_save.Enabled = false;
+                btn_sua.Enabled = false;
+                btn_xoa.Enabled = false;
+                btn_them.Enabled = true;
+                btn_clear.Enabled = false;
+                tb_ma.Text = "";
+                functionSave = "";
+                isEnableTextBox(false);
+                clearData();
+            }
+        }
+        private bool isEmpty()
+        {
+            bool isEmpty = true;
+            if (tb_ten.Text == "" || tb_gia.Text == "" || cb_danhmuc.Text == "")
+                isEmpty = true;
+            else
+                isEmpty = false;
+            return isEmpty;
+        }
+        public void addMenu()
+        {
+            getData();
+            if (menu.AddMenu(MaMon, Ten, Gia, DanhMuc))
+            {
+                resetDataTable();
+                global.notify("Thêm sản phẩm thành công");
+            }
+            else
+                global.notify("Thêm sản phẩm không thành công");
+        }
+        public void updateMenu()
+        {
+            getData();
+            if (menu.UpdateMenu(MaMon, Ten, Gia, DanhMuc))
+            {
+                resetDataTable();
+                global.notify("Cập nhật sản phẩm thành công");
+            }
+            else
+                global.notify("Cập nhật sản phẩm không thành công");
         }
 
         private void resetDataTable()
@@ -184,6 +259,13 @@ namespace BaoCaoCuoiKy.User_Control
             clearData();
             dtMenu = menu.getListMenuAll();
             global.addDataGridView(dtMenu,dg_menu);
+        }
+        public void isEnableTextBox(bool isEnable)
+        {
+            tb_ma.Enabled = false;
+            tb_ten.Enabled = isEnable;
+            tb_gia.Enabled = isEnable;
+            cb_danhmuc.Enabled = isEnable;
         }
     }
 }

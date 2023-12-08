@@ -47,7 +47,8 @@
             this.btn_clear = new System.Windows.Forms.Button();
             this.cb_danhmuc = new System.Windows.Forms.ComboBox();
             this.cb_loc_danhmuc = new System.Windows.Forms.ComboBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_save = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_cancelSave = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_menu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,9 +178,9 @@
             // 
             // btn_sua
             // 
-            this.btn_sua.Location = new System.Drawing.Point(221, 504);
+            this.btn_sua.Location = new System.Drawing.Point(210, 494);
             this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(75, 56);
+            this.btn_sua.Size = new System.Drawing.Size(111, 33);
             this.btn_sua.TabIndex = 16;
             this.btn_sua.Text = "Sửa";
             this.btn_sua.UseVisualStyleBackColor = true;
@@ -197,6 +198,7 @@
             // 
             // cb_danhmuc
             // 
+            this.cb_danhmuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_danhmuc.FormattingEnabled = true;
             this.cb_danhmuc.Location = new System.Drawing.Point(36, 338);
             this.cb_danhmuc.Name = "cb_danhmuc";
@@ -205,6 +207,7 @@
             // 
             // cb_loc_danhmuc
             // 
+            this.cb_loc_danhmuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_loc_danhmuc.FormattingEnabled = true;
             this.cb_loc_danhmuc.Location = new System.Drawing.Point(561, 32);
             this.cb_loc_danhmuc.Name = "cb_loc_danhmuc";
@@ -212,27 +215,43 @@
             this.cb_loc_danhmuc.TabIndex = 19;
             this.cb_loc_danhmuc.SelectedIndexChanged += new System.EventHandler(this.cb_loc_danhmuc_SelectedIndexChanged);
             // 
-            // guna2Button1
+            // btn_save
             // 
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(24, 574);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 20;
-            this.guna2Button1.Text = "guna2Button1";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btn_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_save.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(16, 558);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(87, 45);
+            this.btn_save.TabIndex = 20;
+            this.btn_save.Text = "Lưu";
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_cancelSave
+            // 
+            this.btn_cancelSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cancelSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cancelSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_cancelSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_cancelSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_cancelSave.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelSave.Location = new System.Drawing.Point(132, 558);
+            this.btn_cancelSave.Name = "btn_cancelSave";
+            this.btn_cancelSave.Size = new System.Drawing.Size(180, 45);
+            this.btn_cancelSave.TabIndex = 21;
+            this.btn_cancelSave.Text = "Không lưu";
+            this.btn_cancelSave.Click += new System.EventHandler(this.btn_cancelSave_Click);
             // 
             // UC_ADMIN_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.btn_cancelSave);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.cb_loc_danhmuc);
             this.Controls.Add(this.cb_danhmuc);
             this.Controls.Add(this.btn_clear);
@@ -279,6 +298,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_loai;
         private System.Windows.Forms.ComboBox cb_loc_danhmuc;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btn_save;
+        private Guna.UI2.WinForms.Guna2Button btn_cancelSave;
     }
 }
