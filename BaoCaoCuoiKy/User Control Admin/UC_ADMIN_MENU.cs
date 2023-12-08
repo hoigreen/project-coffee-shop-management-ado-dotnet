@@ -47,70 +47,6 @@ namespace BaoCaoCuoiKy.User_Control
             isEnableTextBox(false);
             resetDataTable();
         }
-        
-        private void btn_xoa_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Bạn chắc chắn muốn xóa sản phẩm?", "Thông báo",
-                MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                if (menu.DeleteMenu(tb_ma.Text))
-                {
-                    tb_ma.Text = "";
-                    resetDataTable();
-                    global.notify("Xóa sản phẩm thành công");
-                }
-                else
-                    global.notify("Xóa sản phẩm không thành công");
-            }
-        }
-
-        private void btn_sua_Click(object sender, EventArgs e)
-        {
-            isEnableTextBox(true);
-            btn_save.Enabled = true;
-            btn_cancelSave.Enabled = true;
-            btn_xoa.Enabled = false;
-            btn_sua.Enabled = false;
-            btn_clear.Enabled = true;
-            functionSave = "update";
-        }
-
-        private void btn_them_Click(object sender, EventArgs e)
-        {
-            clearData();
-            string id = menu.getIdMenuLastRow();
-            tb_ma.Text = global.autoIncrementId(id);
-            isEnableTextBox(true);
-            btn_save.Enabled = true;
-            btn_cancelSave.Enabled = true;
-            btn_sua.Enabled = false;
-            btn_xoa.Enabled = false;
-            btn_clear.Enabled = true;
-            functionSave = "insert";
-        }
-
-        private void btn_clear_Click(object sender, EventArgs e)
-        {
-            if (functionSave == "insert" || functionSave == "update")
-            {
-                var result = MessageBox.Show("Thông tin chưa được lưu!\nBạn chắc chắn muốn xóa chứ?", "Thông báo",
-                        MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    btn_cancelSave.Enabled = false;
-                    btn_save.Enabled = false;
-                    btn_sua.Enabled = false;
-                    btn_xoa.Enabled = false;
-                    btn_them.Enabled = true;
-                    btn_clear.Enabled = false;
-                    tb_ma.Text = "";
-                    functionSave = "";
-                    isEnableTextBox(false);
-                    clearData();
-                }
-            }
-        }
 
         private void DgMenu_SelectionChanged(object sender, EventArgs e)
         {
@@ -159,21 +95,46 @@ namespace BaoCaoCuoiKy.User_Control
             combobox.SelectedIndex = cb_loc_danhmuc.Items.Count - 1;
         }
 
-        private void getData()
+        private void btn_xoa_Click(object sender, EventArgs e)
         {
-            DataRowView selectedRow = (DataRowView)cb_danhmuc.SelectedItem;
-            int idCate = Convert.ToInt32(selectedRow.Row[0]);
-            MaMon = tb_ma.Text;
-            Ten = tb_ten.Text;
-            Gia = int.Parse(tb_gia.Text);
-            DanhMuc = idCate;
+            var result = MessageBox.Show("Bạn chắc chắn muốn xóa sản phẩm?", "Thông báo",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (menu.DeleteMenu(tb_ma.Text))
+                {
+                    tb_ma.Text = "";
+                    resetDataTable();
+                    global.notify("Xóa sản phẩm thành công");
+                }
+                else
+                    global.notify("Xóa sản phẩm không thành công");
+            }
         }
 
-        private void clearData()
+        private void btn_sua_Click(object sender, EventArgs e)
         {
-            tb_ten.Text = "";
-            tb_gia.Text = "";
-            cb_danhmuc.SelectedIndex = cb_loc_danhmuc.Items.Count - 1;
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btn_xoa.Enabled = false;
+            btn_sua.Enabled = false;
+            btn_clear.Enabled = true;
+            functionSave = "update";
+        }
+
+        private void btn_them_Click(object sender, EventArgs e)
+        {
+            clearData();
+            string id = menu.getIdMenuLastRow();
+            tb_ma.Text = global.autoIncrementId(id);
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btn_sua.Enabled = false;
+            btn_xoa.Enabled = false;
+            btn_clear.Enabled = true;
+            functionSave = "insert";
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -222,15 +183,29 @@ namespace BaoCaoCuoiKy.User_Control
                 clearData();
             }
         }
-        private bool isEmpty()
+
+        private void btn_clear_Click(object sender, EventArgs e)
         {
-            bool isEmpty = true;
-            if (tb_ten.Text == "" || tb_gia.Text == "" || cb_danhmuc.Text == "")
-                isEmpty = true;
-            else
-                isEmpty = false;
-            return isEmpty;
+            if (functionSave == "insert" || functionSave == "update")
+            {
+                var result = MessageBox.Show("Thông tin chưa được lưu!\nBạn chắc chắn muốn xóa chứ?", "Thông báo",
+                        MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    btn_cancelSave.Enabled = false;
+                    btn_save.Enabled = false;
+                    btn_sua.Enabled = false;
+                    btn_xoa.Enabled = false;
+                    btn_them.Enabled = true;
+                    btn_clear.Enabled = false;
+                    tb_ma.Text = "";
+                    functionSave = "";
+                    isEnableTextBox(false);
+                    clearData();
+                }
+            }
         }
+
         public void addMenu()
         {
             getData();
@@ -242,6 +217,7 @@ namespace BaoCaoCuoiKy.User_Control
             else
                 global.notify("Thêm sản phẩm không thành công");
         }
+
         public void updateMenu()
         {
             getData();
@@ -254,18 +230,46 @@ namespace BaoCaoCuoiKy.User_Control
                 global.notify("Cập nhật sản phẩm không thành công");
         }
 
-        private void resetDataTable()
+        private void getData()
         {
-            clearData();
-            dtMenu = menu.getListMenuAll();
-            global.addDataGridView(dtMenu,dg_menu);
+            DataRowView selectedRow = (DataRowView)cb_danhmuc.SelectedItem;
+            int idCate = Convert.ToInt32(selectedRow.Row[0]);
+            MaMon = tb_ma.Text;
+            Ten = tb_ten.Text;
+            Gia = int.Parse(tb_gia.Text);
+            DanhMuc = idCate;
         }
+
+        private void clearData()
+        {
+            tb_ten.Text = "";
+            tb_gia.Text = "";
+            cb_danhmuc.SelectedIndex = cb_loc_danhmuc.Items.Count - 1;
+        }
+
+        private bool isEmpty()
+        {
+            bool isEmpty = true;
+            if (tb_ten.Text == "" || tb_gia.Text == "" || cb_danhmuc.Text == "")
+                isEmpty = true;
+            else
+                isEmpty = false;
+            return isEmpty;
+        }
+
         public void isEnableTextBox(bool isEnable)
         {
             tb_ma.Enabled = false;
             tb_ten.Enabled = isEnable;
             tb_gia.Enabled = isEnable;
             cb_danhmuc.Enabled = isEnable;
+        }
+
+        private void resetDataTable()
+        {
+            clearData();
+            dtMenu = menu.getListMenuAll();
+            global.addDataGridView(dtMenu,dg_menu);
         }
     }
 }

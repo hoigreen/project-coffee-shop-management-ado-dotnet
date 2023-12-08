@@ -27,23 +27,6 @@ namespace BaoCaoCuoiKy
             connection = new SqlConnection(connectionString);
         }
 
-        public string getIdMenuLastRow()
-        {
-            try
-            {
-                connection.Open();
-                string selectCommand = "SELECT * FROM MENU ORDER BY MaMon DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
-
-                command = new SqlCommand(selectCommand, connection);
-                string id = command.ExecuteScalar().ToString();
-                connection.Close();
-                return id;
-            }
-            catch
-            {
-                return "";
-            }
-        }
         public DataTable getListMenuAll()
         {
             string query = "SELECT " +
@@ -59,23 +42,6 @@ namespace BaoCaoCuoiKy
             return dataSet.Tables[0];
         }
 
-        public int getCountSumMenu()
-        {
-            try
-            {
-                connection.Open();
-                string selectCommand = "SELECT COUNT(*) FROM MENU";
-                    
-                command = new SqlCommand(selectCommand, connection);
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-                return count;
-            }
-            catch
-            {
-                return 0;
-            }
-        }
         public DataTable getListMenu_Category(int id)
         {
             string query = "SELECT " +
@@ -95,6 +61,43 @@ namespace BaoCaoCuoiKy
                 return dataSet.Tables[0];
             }
         }
+
+        public string getIdMenuLastRow()
+        {
+            try
+            {
+                connection.Open();
+                string selectCommand = "SELECT * FROM MENU ORDER BY MaMon DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+
+                command = new SqlCommand(selectCommand, connection);
+                string id = command.ExecuteScalar().ToString();
+                connection.Close();
+                return id;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
+        public int getCountSumMenu()
+        {
+            try
+            {
+                connection.Open();
+                string selectCommand = "SELECT COUNT(*) FROM MENU";
+                    
+                command = new SqlCommand(selectCommand, connection);
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                connection.Close();
+                return count;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
         public bool ExistsMenu(string MaMon)
         {
             try
@@ -112,6 +115,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
+
         public bool AddMenu(string MaMon, string Ten, int Gia, int DanhMuc)
         {
             try
@@ -132,6 +136,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
+
         public bool DeleteMenu(string MaMon)
         {
             try

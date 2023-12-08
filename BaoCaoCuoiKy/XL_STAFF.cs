@@ -27,6 +27,14 @@ namespace BaoCaoCuoiKy
             connection = new SqlConnection(connectionString);
         }
 
+        public DataTable getListStaff()
+        {
+            string query = "SELECT * FROM NHANVIEN";
+            adapter = new SqlDataAdapter(query, connection);
+            dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            return dataSet.Tables[0];
+        }
 
         public string getIdStaffLastRow()
         {
@@ -45,6 +53,7 @@ namespace BaoCaoCuoiKy
                 return "";
             }
         }
+
         public int getCountSumStaff()
         {
             try
@@ -62,14 +71,6 @@ namespace BaoCaoCuoiKy
             }
         }
 
-        public DataTable getListStaff()
-        {
-            string query = "SELECT * FROM NHANVIEN";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
-        }
         public bool ExistsStaff(string MaNV)
         {
             try
@@ -87,7 +88,10 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
+
         public bool AddStaff(string MaNV, string TenNV, string DienThoai, string GioiTinh,string ChucVu, string DiaChi, DateTime NgaySinh,DateTime NgayVaoLam )
+
+
         {
             try
             {
@@ -111,7 +115,9 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
+
         public bool DeleteStaff(string MaNV)
+
         {
             try
             {
@@ -128,6 +134,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
+
         public bool UpdateStaff(string MaNV, string TenNV, string DienThoai, string GioiTinh, string ChucVu, string DiaChi, DateTime NgaySinh, DateTime NgayVaoLam)
         {
             try

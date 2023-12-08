@@ -23,6 +23,25 @@ namespace BaoCaoCuoiKy
             connectionString = global.pathDatabase;
             connection = new SqlConnection(connectionString);
         }
+
+        public DataTable getListIdWorkTime()
+        {
+            string query = "SELECT MaCa FROM CALAM";
+            adapter = new SqlDataAdapter(query, connection);
+            dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            return dataSet.Tables[0];
+        }
+
+        public DataTable getListWorkTime()
+        {
+            string query = "SELECT * FROM CALAM";
+            adapter = new SqlDataAdapter(query, connection);
+            dataSet = new DataSet();
+            adapter.Fill(dataSet);
+            return dataSet.Tables[0];
+        }
+
         public string getIdWorkTimeLastRow()
         {
             try
@@ -41,22 +60,6 @@ namespace BaoCaoCuoiKy
             }
         }
 
-        public DataTable getListIdWorkTime()
-        {
-            string query = "SELECT MaCa FROM CALAM";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
-        }
-        public DataTable getListWorkTime()
-        {
-            string query = "SELECT * FROM CALAM";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
-        }
         public bool ExistsWorkTime(string MaCa)
         {
             try
@@ -74,6 +77,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
+
         public bool AddWorkTime(string MaCa, string TenCa, string ThoiGian, int Luong)
         {
             try
@@ -94,6 +98,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
+
         public bool DeleteWorkTime(string MaCa)
         {
             try
@@ -111,6 +116,7 @@ namespace BaoCaoCuoiKy
                 return false;
             }
         }
+
         public bool UpdateWorkTIme(string MaCa, string TenCa, string ThoiGian, int Luong)
         {
             try

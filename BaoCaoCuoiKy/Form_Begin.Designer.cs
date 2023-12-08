@@ -30,8 +30,8 @@
         {
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblQuestion = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.lblQuestion = new System.Windows.Forms.Label();
             this.btnExitWindow = new Guna.UI2.WinForms.Guna2Button();
             this.btnViewStaff = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.btnViewAdmin = new Guna.UI2.WinForms.Guna2GradientTileButton();
@@ -60,6 +60,17 @@
             this.panel1.Size = new System.Drawing.Size(1921, 125);
             this.panel1.TabIndex = 4;
             // 
+            // picLogo
+            // 
+            this.picLogo.Image = global::CoffeeShopManagement.Properties.Resources.Simple_Coffee_Cup_Logo_Template_Download_on_Pngtree;
+            this.picLogo.InitialImage = global::CoffeeShopManagement.Properties.Resources.Simple_Coffee_Cup_Logo_Template_Download_on_Pngtree;
+            this.picLogo.Location = new System.Drawing.Point(0, -3);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(137, 128);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 5;
+            this.picLogo.TabStop = false;
+            // 
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
@@ -71,19 +82,6 @@
             this.lblQuestion.TabIndex = 1;
             this.lblQuestion.Text = "Bạn có vai trò là:";
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblQuestion.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // picLogo
-            // 
-            this.picLogo.Image = global::CoffeeShopManagement.Properties.Resources.Simple_Coffee_Cup_Logo_Template_Download_on_Pngtree;
-            this.picLogo.InitialImage = global::CoffeeShopManagement.Properties.Resources.Simple_Coffee_Cup_Logo_Template_Download_on_Pngtree;
-            this.picLogo.Location = new System.Drawing.Point(0, -3);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(137, 128);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 5;
-            this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnExitWindow
             // 
@@ -108,7 +106,7 @@
             this.btnExitWindow.TabIndex = 5;
             this.btnExitWindow.Text = "Thoát hệ thống";
             this.btnExitWindow.UseTransparentBackground = true;
-            this.btnExitWindow.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.btnExitWindow.Click += new System.EventHandler(this.btnExitWindow_Click);
             // 
             // btnViewStaff
             // 
@@ -154,7 +152,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1920, 1061);
             this.Controls.Add(this.btnViewAdmin);
             this.Controls.Add(this.btnViewStaff);
             this.Controls.Add(this.btnExitWindow);
@@ -166,7 +164,6 @@
             this.Name = "Form_Begin";
             this.Text = "Coffee Management CMS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form_Begin_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();

@@ -116,6 +116,34 @@ namespace BaoCaoCuoiKy.User_Control
             functionSave = "insert";
         }
 
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn chắc chắn muốn xóa nhân viên?", "Thông báo",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (staff.DeleteStaff(tb_ma.Text))
+                {
+                    tb_ma.Text = "";
+                    resetDataTable();
+                    global.notify("Xóa nhân viên thành công");
+                }
+                else
+                    global.notify("Xóa nhân viên không thành công");
+            }
+        }
+
+        private void btn_sua_Click(object sender, EventArgs e)
+        {
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btn_xoa.Enabled = false;
+            btn_them.Enabled = false;
+            btn_clear.Enabled = true;
+            functionSave = "update";
+        }
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             if (isEmpty())
@@ -163,33 +191,6 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
-        private void btn_xoa_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Bạn chắc chắn muốn xóa nhân viên?", "Thông báo",
-                MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                if (staff.DeleteStaff(tb_ma.Text))
-                {
-                    tb_ma.Text = "";
-                    resetDataTable();
-                    global.notify("Xóa nhân viên thành công");
-                }
-                else
-                    global.notify("Xóa nhân viên không thành công");
-            }
-        }
-
-        private void btn_sua_Click(object sender, EventArgs e)
-        {
-            isEnableTextBox(true);
-            btn_save.Enabled = true;
-            btn_cancelSave.Enabled = true;
-            btn_xoa.Enabled = false;
-            btn_them.Enabled = false;
-            btn_clear.Enabled = true;
-            functionSave = "update";
-        }
         private void updateStaff()
         {
             getData();
@@ -201,6 +202,7 @@ namespace BaoCaoCuoiKy.User_Control
             else
                 global.notify("Cập nhật thông tin nhân viên không thành công");
         }
+
         private void addStaff()
         {
             getData();
@@ -257,6 +259,7 @@ namespace BaoCaoCuoiKy.User_Control
             dt_ngayvaolam.Text = "01/01/2023";
 
         }
+
         public void isEnableTextBox(bool isEnable)
         {
             tb_ma.Enabled = false;
