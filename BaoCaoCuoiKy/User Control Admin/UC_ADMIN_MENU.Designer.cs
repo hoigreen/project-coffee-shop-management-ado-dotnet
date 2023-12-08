@@ -47,6 +47,7 @@
             this.btn_clear = new System.Windows.Forms.Button();
             this.cb_danhmuc = new System.Windows.Forms.ComboBox();
             this.cb_loc_danhmuc = new System.Windows.Forms.ComboBox();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_menu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,11 +212,27 @@
             this.cb_loc_danhmuc.TabIndex = 19;
             this.cb_loc_danhmuc.SelectedIndexChanged += new System.EventHandler(this.cb_loc_danhmuc_SelectedIndexChanged);
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Location = new System.Drawing.Point(24, 574);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(180, 45);
+            this.guna2Button1.TabIndex = 20;
+            this.guna2Button1.Text = "guna2Button1";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // UC_ADMIN_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.cb_loc_danhmuc);
             this.Controls.Add(this.cb_danhmuc);
             this.Controls.Add(this.btn_clear);
@@ -262,5 +279,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_loai;
         private System.Windows.Forms.ComboBox cb_loc_danhmuc;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

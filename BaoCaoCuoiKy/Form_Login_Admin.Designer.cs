@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_loign_maNV = new System.Windows.Forms.TextBox();
             this.tb_login_mk = new System.Windows.Forms.TextBox();
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_login = new System.Windows.Forms.Button();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -116,5 +118,6 @@
         private System.Windows.Forms.TextBox tb_login_mk;
         private System.Windows.Forms.Button btn_huy;
         private System.Windows.Forms.Button btn_login;
+        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
     }
 }

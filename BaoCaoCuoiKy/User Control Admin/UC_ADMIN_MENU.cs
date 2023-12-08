@@ -173,7 +173,12 @@ namespace BaoCaoCuoiKy.User_Control
             tb_gia.Text = "";
             cb_danhmuc.Text = "";
         }
-        
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("huy");
+        }
+
         private void resetDataTable()
         {
             clearData();
