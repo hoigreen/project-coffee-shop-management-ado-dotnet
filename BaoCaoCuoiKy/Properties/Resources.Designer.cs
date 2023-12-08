@@ -59,5 +59,15 @@ namespace CoffeeShopManagement.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Simple_Coffee_Cup_Logo_Template_Download_on_Pngtree {
+            get {
+                object obj = ResourceManager.GetObject("Simple Coffee Cup Logo Template Download on Pngtree", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
