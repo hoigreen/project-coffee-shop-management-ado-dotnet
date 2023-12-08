@@ -173,6 +173,7 @@
     <Compile Include="Form_Main_Staff.Designer.cs">
       <DependentUpon>Form_Main_Staff.cs</DependentUpon>
     </Compile>
+    <None Include="Global.cs.example" />
     <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
