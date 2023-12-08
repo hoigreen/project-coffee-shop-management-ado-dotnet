@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btn_nvien = new System.Windows.Forms.Button();
-            this.btn_qly = new System.Windows.Forms.Button();
-            this.btn_quit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnExitWindow = new Guna.UI2.WinForms.Guna2Button();
+            this.btnViewStaff = new Guna.UI2.WinForms.Guna2GradientTileButton();
+            this.btnViewAdmin = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
@@ -51,37 +51,6 @@
             this.lblTitle.Text = "Quản lý quán cà phê";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btn_nvien
-            // 
-            this.btn_nvien.Location = new System.Drawing.Point(562, 350);
-            this.btn_nvien.Name = "btn_nvien";
-            this.btn_nvien.Size = new System.Drawing.Size(423, 343);
-            this.btn_nvien.TabIndex = 1;
-            this.btn_nvien.Text = "Nhân viên";
-            this.btn_nvien.UseVisualStyleBackColor = true;
-            this.btn_nvien.Click += new System.EventHandler(this.btn_nvien_Click);
-            // 
-            // btn_qly
-            // 
-            this.btn_qly.ForeColor = System.Drawing.Color.Red;
-            this.btn_qly.Location = new System.Drawing.Point(1054, 350);
-            this.btn_qly.Name = "btn_qly";
-            this.btn_qly.Size = new System.Drawing.Size(431, 343);
-            this.btn_qly.TabIndex = 2;
-            this.btn_qly.Text = "Quản lý";
-            this.btn_qly.UseVisualStyleBackColor = true;
-            this.btn_qly.Click += new System.EventHandler(this.btn_qly_Click);
-            // 
-            // btn_quit
-            // 
-            this.btn_quit.Location = new System.Drawing.Point(1730, 995);
-            this.btn_quit.Name = "btn_quit";
-            this.btn_quit.Size = new System.Drawing.Size(178, 73);
-            this.btn_quit.TabIndex = 3;
-            this.btn_quit.Text = "Thoát";
-            this.btn_quit.UseVisualStyleBackColor = true;
-            this.btn_quit.Click += new System.EventHandler(this.btn_quit_Click);
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.picLogo);
@@ -96,7 +65,7 @@
             this.lblQuestion.AutoSize = true;
             this.lblQuestion.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lblQuestion.ForeColor = System.Drawing.Color.Green;
-            this.lblQuestion.Location = new System.Drawing.Point(919, 250);
+            this.lblQuestion.Location = new System.Drawing.Point(909, 295);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(169, 25);
             this.lblQuestion.TabIndex = 1;
@@ -116,21 +85,86 @@
             this.picLogo.TabStop = false;
             this.picLogo.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnExitWindow
+            // 
+            this.btnExitWindow.Animated = true;
+            this.btnExitWindow.BackColor = System.Drawing.Color.Transparent;
+            this.btnExitWindow.BorderColor = System.Drawing.Color.IndianRed;
+            this.btnExitWindow.BorderRadius = 20;
+            this.btnExitWindow.BorderThickness = 2;
+            this.btnExitWindow.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitWindow.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExitWindow.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExitWindow.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExitWindow.FillColor = System.Drawing.Color.Red;
+            this.btnExitWindow.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitWindow.ForeColor = System.Drawing.Color.White;
+            this.btnExitWindow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExitWindow.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnExitWindow.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
+            this.btnExitWindow.Location = new System.Drawing.Point(1624, 966);
+            this.btnExitWindow.Name = "btnExitWindow";
+            this.btnExitWindow.Size = new System.Drawing.Size(284, 102);
+            this.btnExitWindow.TabIndex = 5;
+            this.btnExitWindow.Text = "Thoát hệ thống";
+            this.btnExitWindow.UseTransparentBackground = true;
+            this.btnExitWindow.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // btnViewStaff
+            // 
+            this.btnViewStaff.BorderColor = System.Drawing.Color.Transparent;
+            this.btnViewStaff.BorderRadius = 40;
+            this.btnViewStaff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewStaff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewStaff.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewStaff.FillColor = System.Drawing.Color.Wheat;
+            this.btnViewStaff.FillColor2 = System.Drawing.Color.PaleTurquoise;
+            this.btnViewStaff.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewStaff.ForeColor = System.Drawing.Color.Black;
+            this.btnViewStaff.Location = new System.Drawing.Point(508, 389);
+            this.btnViewStaff.Name = "btnViewStaff";
+            this.btnViewStaff.Size = new System.Drawing.Size(423, 343);
+            this.btnViewStaff.TabIndex = 6;
+            this.btnViewStaff.Text = "Nhân viên";
+            this.btnViewStaff.Click += new System.EventHandler(this.btnViewStaff_Click);
+            // 
+            // btnViewAdmin
+            // 
+            this.btnViewAdmin.BorderColor = System.Drawing.Color.Transparent;
+            this.btnViewAdmin.BorderRadius = 40;
+            this.btnViewAdmin.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewAdmin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewAdmin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewAdmin.FillColor = System.Drawing.Color.MediumPurple;
+            this.btnViewAdmin.FillColor2 = System.Drawing.Color.Magenta;
+            this.btnViewAdmin.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnViewAdmin.Location = new System.Drawing.Point(1061, 389);
+            this.btnViewAdmin.Name = "btnViewAdmin";
+            this.btnViewAdmin.Size = new System.Drawing.Size(423, 343);
+            this.btnViewAdmin.TabIndex = 7;
+            this.btnViewAdmin.Text = "Quản trị viên";
+            this.btnViewAdmin.Click += new System.EventHandler(this.btnViewAdmin_Click);
+            // 
             // Form_Begin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.Controls.Add(this.btnViewAdmin);
+            this.Controls.Add(this.btnViewStaff);
+            this.Controls.Add(this.btnExitWindow);
             this.Controls.Add(this.lblQuestion);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_quit);
-            this.Controls.Add(this.btn_qly);
-            this.Controls.Add(this.btn_nvien);
             this.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Begin";
-            this.Text = "Form1";
+            this.Text = "Coffee Management CMS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form_Begin_Load);
             this.panel1.ResumeLayout(false);
@@ -144,12 +178,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btn_nvien;
-        private System.Windows.Forms.Button btn_qly;
-        private System.Windows.Forms.Button btn_quit;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.PictureBox picLogo;
+        private Guna.UI2.WinForms.Guna2Button btnExitWindow;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnViewStaff;
+        private Guna.UI2.WinForms.Guna2GradientTileButton btnViewAdmin;
     }
 }
 

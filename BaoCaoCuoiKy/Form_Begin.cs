@@ -76,5 +76,37 @@ namespace BaoCaoCuoiKy
         {
 
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void guna2GradientTileButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewStaff_Click(object sender, EventArgs e)
+        {
+            if (form_main_staff == null || form_main_staff.IsDisposed)
+            {
+                form_main_staff = new Form_Main_Staff();
+                form_main_staff.FormClosed += Form_Main_Staff_FormClosed;
+                this.Hide();
+                form_main_staff.Show();
+            }
+        }
+
+        private void btnViewAdmin_Click(object sender, EventArgs e)
+        {
+            if (form_login_admin == null || form_login_admin.IsDisposed)
+            {
+                form_login_admin = new Form_Login_Admin();
+                form_login_admin.FormClosed += Form_Login_Admin_FormClosed;
+                this.Hide();
+                form_login_admin.Show();
+            }
+        }
     }
 }
