@@ -50,7 +50,6 @@
             this.tb_tong = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dt_ngay = new System.Windows.Forms.DateTimePicker();
-            this.btn_clear = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cb_locThang = new System.Windows.Forms.ComboBox();
             this.btn_all = new System.Windows.Forms.Button();
@@ -151,6 +150,7 @@
             // 
             // tb_maHD
             // 
+            this.tb_maHD.Enabled = false;
             this.tb_maHD.Location = new System.Drawing.Point(31, 53);
             this.tb_maHD.Name = "tb_maHD";
             this.tb_maHD.Size = new System.Drawing.Size(100, 20);
@@ -158,6 +158,7 @@
             // 
             // tb_tenNV
             // 
+            this.tb_tenNV.Enabled = false;
             this.tb_tenNV.Location = new System.Drawing.Point(31, 120);
             this.tb_tenNV.Name = "tb_tenNV";
             this.tb_tenNV.Size = new System.Drawing.Size(100, 20);
@@ -174,6 +175,7 @@
             // 
             // tb_maNV
             // 
+            this.tb_maNV.Enabled = false;
             this.tb_maNV.Location = new System.Drawing.Point(31, 192);
             this.tb_maNV.Name = "tb_maNV";
             this.tb_maNV.Size = new System.Drawing.Size(100, 20);
@@ -199,6 +201,7 @@
             // 
             // tb_tong
             // 
+            this.tb_tong.Enabled = false;
             this.tb_tong.Location = new System.Drawing.Point(31, 318);
             this.tb_tong.Name = "tb_tong";
             this.tb_tong.Size = new System.Drawing.Size(100, 20);
@@ -216,21 +219,12 @@
             // dt_ngay
             // 
             this.dt_ngay.CustomFormat = "dd/MM/yyyy";
+            this.dt_ngay.Enabled = false;
             this.dt_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dt_ngay.Location = new System.Drawing.Point(31, 268);
             this.dt_ngay.Name = "dt_ngay";
             this.dt_ngay.Size = new System.Drawing.Size(200, 20);
             this.dt_ngay.TabIndex = 12;
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.Location = new System.Drawing.Point(56, 415);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(175, 23);
-            this.btn_clear.TabIndex = 13;
-            this.btn_clear.Text = "Xóa thông tin";
-            this.btn_clear.UseVisualStyleBackColor = true;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // label7
             // 
@@ -243,6 +237,7 @@
             // 
             // cb_locThang
             // 
+            this.cb_locThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_locThang.FormattingEnabled = true;
             this.cb_locThang.Items.AddRange(new object[] {
             "--",
@@ -274,14 +269,13 @@
             this.btn_all.UseVisualStyleBackColor = true;
             this.btn_all.Click += new System.EventHandler(this.btn_all_Click);
             // 
-            // UC_QuanLyHoaDon
+            // UC_ADMIN_ORDER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btn_all);
             this.Controls.Add(this.cb_locThang);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.dt_ngay);
             this.Controls.Add(this.tb_tong);
             this.Controls.Add(this.label5);
@@ -294,7 +288,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dg_chitiethoadon);
             this.Controls.Add(this.dg_hoadon);
-            this.Name = "UC_QuanLyHoaDon";
+            this.Name = "UC_ADMIN_ORDER";
             this.Size = new System.Drawing.Size(1163, 670);
             this.Load += new System.EventHandler(this.UC_QuanLyHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_hoadon)).EndInit();
@@ -328,7 +322,6 @@
         private System.Windows.Forms.TextBox tb_tong;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dt_ngay;
-        private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cb_locThang;
         private System.Windows.Forms.Button btn_all;

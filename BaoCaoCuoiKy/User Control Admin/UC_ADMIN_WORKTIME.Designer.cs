@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dg_calam = new System.Windows.Forms.DataGridView();
+            this.col_ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_thoigian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_ma = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,12 +43,10 @@
             this.btn_them = new System.Windows.Forms.Button();
             this.btn_xoa = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
-            this.col_ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_thoigian = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_luong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.tb_luong = new System.Windows.Forms.TextBox();
+            this.btn_save = new Guna.UI2.WinForms.Guna2Button();
+            this.btn_cancelSave = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_calam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +63,26 @@
             this.dg_calam.Name = "dg_calam";
             this.dg_calam.Size = new System.Drawing.Size(449, 296);
             this.dg_calam.TabIndex = 0;
+            // 
+            // col_ma
+            // 
+            this.col_ma.HeaderText = "Mã ca";
+            this.col_ma.Name = "col_ma";
+            // 
+            // col_ten
+            // 
+            this.col_ten.HeaderText = "Tên ca";
+            this.col_ten.Name = "col_ten";
+            // 
+            // col_thoigian
+            // 
+            this.col_thoigian.HeaderText = "Thời gian";
+            this.col_thoigian.Name = "col_thoigian";
+            // 
+            // col_luong
+            // 
+            this.col_luong.HeaderText = "Lương";
+            this.col_luong.Name = "col_luong";
             // 
             // tb_ma
             // 
@@ -150,26 +172,6 @@
             this.btn_sua.UseVisualStyleBackColor = true;
             this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
-            // col_ma
-            // 
-            this.col_ma.HeaderText = "Mã ca";
-            this.col_ma.Name = "col_ma";
-            // 
-            // col_ten
-            // 
-            this.col_ten.HeaderText = "Tên ca";
-            this.col_ten.Name = "col_ten";
-            // 
-            // col_thoigian
-            // 
-            this.col_thoigian.HeaderText = "Thời gian";
-            this.col_thoigian.Name = "col_thoigian";
-            // 
-            // col_luong
-            // 
-            this.col_luong.HeaderText = "Lương";
-            this.col_luong.Name = "col_luong";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -186,10 +188,42 @@
             this.tb_luong.Size = new System.Drawing.Size(100, 20);
             this.tb_luong.TabIndex = 11;
             // 
-            // UC_QuanLyCaLam
+            // btn_save
+            // 
+            this.btn_save.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_save.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_save.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_save.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_save.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_save.ForeColor = System.Drawing.Color.White;
+            this.btn_save.Location = new System.Drawing.Point(497, 471);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(180, 45);
+            this.btn_save.TabIndex = 13;
+            this.btn_save.Text = "Lưu";
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_cancelSave
+            // 
+            this.btn_cancelSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cancelSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_cancelSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_cancelSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_cancelSave.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_cancelSave.ForeColor = System.Drawing.Color.White;
+            this.btn_cancelSave.Location = new System.Drawing.Point(481, 545);
+            this.btn_cancelSave.Name = "btn_cancelSave";
+            this.btn_cancelSave.Size = new System.Drawing.Size(180, 45);
+            this.btn_cancelSave.TabIndex = 14;
+            this.btn_cancelSave.Text = "Không lưu";
+            this.btn_cancelSave.Click += new System.EventHandler(this.btn_cancelSave_Click);
+            // 
+            // UC_ADMIN_WORKTIME
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_cancelSave);
+            this.Controls.Add(this.btn_save);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.tb_luong);
             this.Controls.Add(this.btn_sua);
@@ -203,7 +237,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_ma);
             this.Controls.Add(this.dg_calam);
-            this.Name = "UC_QuanLyCaLam";
+            this.Name = "UC_ADMIN_WORKTIME";
             this.Size = new System.Drawing.Size(1163, 670);
             this.Load += new System.EventHandler(this.UC_QuanLyCaLam_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_calam)).EndInit();
@@ -231,5 +265,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_luong;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tb_luong;
+        private Guna.UI2.WinForms.Guna2Button btn_save;
+        private Guna.UI2.WinForms.Guna2Button btn_cancelSave;
     }
 }

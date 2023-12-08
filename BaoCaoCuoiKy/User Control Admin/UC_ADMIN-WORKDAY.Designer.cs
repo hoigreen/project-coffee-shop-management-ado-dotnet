@@ -43,7 +43,6 @@
             this.tb_tenNV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_clear = new System.Windows.Forms.Button();
             this.dt_ngayLam = new System.Windows.Forms.DateTimePicker();
             this.cb_thang = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -104,6 +103,7 @@
             // 
             // tb_maCa
             // 
+            this.tb_maCa.Enabled = false;
             this.tb_maCa.Location = new System.Drawing.Point(92, 145);
             this.tb_maCa.Name = "tb_maCa";
             this.tb_maCa.Size = new System.Drawing.Size(100, 20);
@@ -111,6 +111,7 @@
             // 
             // tb_tenCa
             // 
+            this.tb_tenCa.Enabled = false;
             this.tb_tenCa.Location = new System.Drawing.Point(92, 219);
             this.tb_tenCa.Name = "tb_tenCa";
             this.tb_tenCa.Size = new System.Drawing.Size(100, 20);
@@ -127,6 +128,7 @@
             // 
             // tb_maNV
             // 
+            this.tb_maNV.Enabled = false;
             this.tb_maNV.Location = new System.Drawing.Point(92, 293);
             this.tb_maNV.Name = "tb_maNV";
             this.tb_maNV.Size = new System.Drawing.Size(100, 20);
@@ -143,6 +145,7 @@
             // 
             // tb_tenNV
             // 
+            this.tb_tenNV.Enabled = false;
             this.tb_tenNV.Location = new System.Drawing.Point(101, 371);
             this.tb_tenNV.Name = "tb_tenNV";
             this.tb_tenNV.Size = new System.Drawing.Size(100, 20);
@@ -166,19 +169,10 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Ngày làm";
             // 
-            // btn_clear
-            // 
-            this.btn_clear.Location = new System.Drawing.Point(92, 529);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(192, 23);
-            this.btn_clear.TabIndex = 11;
-            this.btn_clear.Text = "Xóa thông tin";
-            this.btn_clear.UseVisualStyleBackColor = true;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
             // dt_ngayLam
             // 
             this.dt_ngayLam.CustomFormat = "dd/MM/yyyy";
+            this.dt_ngayLam.Enabled = false;
             this.dt_ngayLam.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dt_ngayLam.Location = new System.Drawing.Point(92, 456);
             this.dt_ngayLam.Name = "dt_ngayLam";
@@ -187,6 +181,7 @@
             // 
             // cb_thang
             // 
+            this.cb_thang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_thang.FormattingEnabled = true;
             this.cb_thang.Location = new System.Drawing.Point(418, 49);
             this.cb_thang.Name = "cb_thang";
@@ -214,6 +209,7 @@
             // 
             // cb_ca
             // 
+            this.cb_ca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_ca.FormattingEnabled = true;
             this.cb_ca.Location = new System.Drawing.Point(583, 49);
             this.cb_ca.Name = "cb_ca";
@@ -240,7 +236,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.cb_thang);
             this.Controls.Add(this.dt_ngayLam);
-            this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.tb_tenNV);
             this.Controls.Add(this.label4);
@@ -277,7 +272,6 @@
         private System.Windows.Forms.TextBox tb_tenNV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.DateTimePicker dt_ngayLam;
         private System.Windows.Forms.ComboBox cb_thang;
         private System.Windows.Forms.Label label6;
