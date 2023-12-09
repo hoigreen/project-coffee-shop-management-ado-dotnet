@@ -101,9 +101,9 @@
             this.btnExitWindow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnExitWindow.ImageSize = new System.Drawing.Size(40, 40);
             this.btnExitWindow.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.btnExitWindow.Location = new System.Drawing.Point(1624, 966);
+            this.btnExitWindow.Location = new System.Drawing.Point(1624, 994);
             this.btnExitWindow.Name = "btnExitWindow";
-            this.btnExitWindow.Size = new System.Drawing.Size(284, 102);
+            this.btnExitWindow.Size = new System.Drawing.Size(284, 74);
             this.btnExitWindow.TabIndex = 5;
             this.btnExitWindow.Text = "Thoát hệ thống";
             this.btnExitWindow.UseTransparentBackground = true;
