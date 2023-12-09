@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -45,6 +46,10 @@ namespace BaoCaoCuoiKy
                 numberIncrement = numberInt < 10 ? "0" + numberInt.ToString() : numberInt.ToString();
             }
             return text + numberIncrement;
+        }
+        public string FormatPrice(int price)
+        {
+            return $"{price:0,0}đ";
         }
     }
 

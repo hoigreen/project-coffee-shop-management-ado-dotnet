@@ -29,28 +29,69 @@ namespace BaoCaoCuoiKy
 
         public DataTable getListStaff()
         {
-            string query = "SELECT * FROM NHANVIEN";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                string query = "SELECT * FROM NHANVIEN";
+                using (adapter = new SqlDataAdapter(query, connection))
+                {
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+                    return dataSet.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null; 
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
 
         public string getIdStaffLastRow()
         {
             try
             {
-                connection.Open();
-                string selectCommand = "SELECT * FROM NHANVIEN ORDER BY MaNV DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
 
-                command = new SqlCommand(selectCommand, connection);
-                string id = command.ExecuteScalar().ToString();
-                connection.Close();
-                return id;
+                string selectCommand = "SELECT MaNV FROM NHANVIEN ORDER BY MaNV DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+                using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return "";
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -58,16 +99,29 @@ namespace BaoCaoCuoiKy
         {
             try
             {
-                connection.Open();
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
                 string selectCommand = "SELECT COUNT(*) FROM NHANVIEN";
-                command = new SqlCommand(selectCommand, connection);
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-                return count ;
+                using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count;
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return 0;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -75,42 +129,72 @@ namespace BaoCaoCuoiKy
         {
             try
             {
-                connection.Open();
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
                 string selectCommand = "SELECT COUNT(*) FROM NHANVIEN WHERE MaNV = @MaNV";
-                command = new SqlCommand(selectCommand, connection);
-                command.Parameters.AddWithValue("@MaNV", MaNV);
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-                return count > 0;
+                using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@MaNV", MaNV);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
 
-        public bool AddStaff(string MaNV, string TenNV, string DienThoai, string GioiTinh,string ChucVu, string DiaChi, DateTime NgaySinh,DateTime NgayVaoLam )
+        public bool AddStaff(string MaNV, string TenNV, string DienThoai, string GioiTinh, string ChucVu, string DiaChi, DateTime NgaySinh, DateTime NgayVaoLam)
         {
             try
             {
-                connection.Open();
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
                 string insertCommand = "INSERT INTO NHANVIEN VALUES(" +
-                    "N'" + MaNV + "'," +
-                    "N'" + TenNV + "'," +
-                    "N'" + DienThoai + "'," +
-                    "N'" + GioiTinh + "'," +
-                    "'" + NgaySinh.ToShortDateString() + "'," +
-                    "N'" + ChucVu + "'," +
-                    "N'" + DiaChi + "'," +
-                    "'" + NgayVaoLam.ToShortDateString() + "')";
-                command = new SqlCommand(insertCommand, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
+                    "@MaNV, @TenNV, @DienThoai, @GioiTinh, @NgaySinh, @ChucVu, @DiaChi, @NgayVaoLam)";
+
+                using (SqlCommand command = new SqlCommand(insertCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@MaNV", MaNV);
+                    command.Parameters.AddWithValue("@TenNV", TenNV);
+                    command.Parameters.AddWithValue("@DienThoai", DienThoai);
+                    command.Parameters.AddWithValue("@GioiTinh", GioiTinh);
+                    command.Parameters.AddWithValue("@NgaySinh", NgaySinh);
+                    command.Parameters.AddWithValue("@ChucVu", ChucVu);
+                    command.Parameters.AddWithValue("@DiaChi", DiaChi);
+                    command.Parameters.AddWithValue("@NgayVaoLam", NgayVaoLam);
+
+                    command.ExecuteNonQuery();
+                }
+
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
 
@@ -137,39 +221,50 @@ namespace BaoCaoCuoiKy
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                if (connection.State != ConnectionState.Open)
                 {
                     connection.Open();
-                    string updateCommand = "UPDATE NHANVIEN SET " +
-                                           "HoTenNV = @TenNV, " +
-                                           "DienThoai = @DienThoai, " +
-                                           "GioiTinh = @GioiTinh, " +
-                                           "NgaySinh = @NgaySinh, " +
-                                           "ChucVu = @ChucVu, " +
-                                           "DiaChi = @DiaChi, " +
-                                           "NgayVaoLam = @NgayVaoLam " +
-                                           "Where MaNV = @MaNV";
-
-                    using (SqlCommand command = new SqlCommand(updateCommand, connection))
-                    {
-                        command.Parameters.AddWithValue("@TenNV", TenNV);
-                        command.Parameters.AddWithValue("@DienThoai", DienThoai);
-                        command.Parameters.AddWithValue("@GioiTinh", GioiTinh);
-                        command.Parameters.AddWithValue("@NgaySinh", NgaySinh.ToShortDateString());
-                        command.Parameters.AddWithValue("@ChucVu", ChucVu);
-                        command.Parameters.AddWithValue("@DiaChi", DiaChi);
-                        command.Parameters.AddWithValue("@NgayVaoLam", NgayVaoLam.ToShortDateString());
-                        command.Parameters.AddWithValue("@MaNV", MaNV);
-                        command.ExecuteNonQuery();
-                    }
                 }
-                connection.Close();
+
+                string updateCommand = "UPDATE NHANVIEN SET " +
+                                       "HoTenNV = @TenNV, " +
+                                       "DienThoai = @DienThoai, " +
+                                       "GioiTinh = @GioiTinh, " +
+                                       "NgaySinh = @NgaySinh, " +
+                                       "ChucVu = @ChucVu, " +
+                                       "DiaChi = @DiaChi, " +
+                                       "NgayVaoLam = @NgayVaoLam " +
+                                       "Where MaNV = @MaNV";
+
+                using (SqlCommand command = new SqlCommand(updateCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@TenNV", TenNV);
+                    command.Parameters.AddWithValue("@DienThoai", DienThoai);
+                    command.Parameters.AddWithValue("@GioiTinh", GioiTinh);
+                    command.Parameters.AddWithValue("@NgaySinh", NgaySinh);
+                    command.Parameters.AddWithValue("@ChucVu", ChucVu);
+                    command.Parameters.AddWithValue("@DiaChi", DiaChi);
+                    command.Parameters.AddWithValue("@NgayVaoLam", NgayVaoLam);
+                    command.Parameters.AddWithValue("@MaNV", MaNV);
+
+                    command.ExecuteNonQuery();
+                }
+
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
             }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
+
     }
 }
