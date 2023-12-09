@@ -30,18 +30,19 @@ namespace BaoCaoCuoiKy
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main_Admin));
             this.btn_logout = new System.Windows.Forms.Button();
             this.panel_container = new System.Windows.Forms.Panel();
             this.btn_qly_menu = new System.Windows.Forms.Button();
             this.btn_qly_nhanvien = new System.Windows.Forms.Button();
             this.panel_nav = new System.Windows.Forms.Panel();
+            this.btn_thongke = new System.Windows.Forms.Button();
+            this.btn_qly_hoadon = new System.Windows.Forms.Button();
             this.btn_qly_ngaycong = new System.Windows.Forms.Button();
             this.btn_qly_calam = new System.Windows.Forms.Button();
             this.lb_ma_admin = new System.Windows.Forms.Label();
             this.lb_name_admin = new System.Windows.Forms.Label();
             this.panel_header = new System.Windows.Forms.Panel();
-            this.btn_qly_hoadon = new System.Windows.Forms.Button();
-            this.btn_thongke = new System.Windows.Forms.Button();
             this.panel_nav.SuspendLayout();
             this.panel_header.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +99,26 @@ namespace BaoCaoCuoiKy
             this.panel_nav.Size = new System.Drawing.Size(220, 670);
             this.panel_nav.TabIndex = 7;
             // 
+            // btn_thongke
+            // 
+            this.btn_thongke.Location = new System.Drawing.Point(0, 400);
+            this.btn_thongke.Name = "btn_thongke";
+            this.btn_thongke.Size = new System.Drawing.Size(220, 80);
+            this.btn_thongke.TabIndex = 12;
+            this.btn_thongke.Text = "Thống kê";
+            this.btn_thongke.UseVisualStyleBackColor = true;
+            this.btn_thongke.Click += new System.EventHandler(this.btn_thongke_Click);
+            // 
+            // btn_qly_hoadon
+            // 
+            this.btn_qly_hoadon.Location = new System.Drawing.Point(0, 320);
+            this.btn_qly_hoadon.Name = "btn_qly_hoadon";
+            this.btn_qly_hoadon.Size = new System.Drawing.Size(220, 80);
+            this.btn_qly_hoadon.TabIndex = 11;
+            this.btn_qly_hoadon.Text = "Quản lý hóa đơn";
+            this.btn_qly_hoadon.UseVisualStyleBackColor = true;
+            this.btn_qly_hoadon.Click += new System.EventHandler(this.btn_qly_hoadon_Click);
+            // 
             // btn_qly_ngaycong
             // 
             this.btn_qly_ngaycong.Location = new System.Drawing.Point(0, 240);
@@ -146,26 +167,6 @@ namespace BaoCaoCuoiKy
             this.panel_header.Size = new System.Drawing.Size(1383, 90);
             this.panel_header.TabIndex = 8;
             // 
-            // btn_qly_hoadon
-            // 
-            this.btn_qly_hoadon.Location = new System.Drawing.Point(0, 320);
-            this.btn_qly_hoadon.Name = "btn_qly_hoadon";
-            this.btn_qly_hoadon.Size = new System.Drawing.Size(220, 80);
-            this.btn_qly_hoadon.TabIndex = 11;
-            this.btn_qly_hoadon.Text = "Quản lý hóa đơn";
-            this.btn_qly_hoadon.UseVisualStyleBackColor = true;
-            this.btn_qly_hoadon.Click += new System.EventHandler(this.btn_qly_hoadon_Click);
-            // 
-            // btn_thongke
-            // 
-            this.btn_thongke.Location = new System.Drawing.Point(0, 400);
-            this.btn_thongke.Name = "btn_thongke";
-            this.btn_thongke.Size = new System.Drawing.Size(220, 80);
-            this.btn_thongke.TabIndex = 12;
-            this.btn_thongke.Text = "Thống kê";
-            this.btn_thongke.UseVisualStyleBackColor = true;
-            this.btn_thongke.Click += new System.EventHandler(this.btn_thongke_Click);
-            // 
             // Form_Main_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -174,6 +175,7 @@ namespace BaoCaoCuoiKy
             this.Controls.Add(this.panel_header);
             this.Controls.Add(this.panel_nav);
             this.Controls.Add(this.panel_container);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Main_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Main_Admin";

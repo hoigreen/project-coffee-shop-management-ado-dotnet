@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login_Admin));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_loign_maNV = new System.Windows.Forms.TextBox();
@@ -96,15 +97,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 761);
+            this.ClientSize = new System.Drawing.Size(1920, 1080);
             this.Controls.Add(this.btn_login);
             this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.tb_login_mk);
             this.Controls.Add(this.tb_loign_maNV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Login_Admin";
-            this.Text = "Form_Login_Admin";
+            this.Text = "Đăng nhập dành cho Quản trị viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

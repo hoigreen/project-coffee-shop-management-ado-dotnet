@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main_Staff));
             this.panel_staff_container = new System.Windows.Forms.Panel();
             this.btn_tao_hoadon = new System.Windows.Forms.Button();
             this.btn_ban = new System.Windows.Forms.Button();
@@ -68,6 +69,7 @@
             this.Controls.Add(this.btn_ban);
             this.Controls.Add(this.btn_tao_hoadon);
             this.Controls.Add(this.panel_staff_container);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Main_Staff";
             this.Text = "Form_Main_Staff";
             this.Load += new System.EventHandler(this.Form_Main_Staff_Load);
