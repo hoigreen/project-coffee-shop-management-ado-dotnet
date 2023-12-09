@@ -168,7 +168,7 @@
             this.textBoxPassword.BorderColor = System.Drawing.Color.Olive;
             this.textBoxPassword.BorderRadius = 10;
             this.textBoxPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxPassword.DefaultText = "";
+            this.textBoxPassword.DefaultText = "123456";
             this.textBoxPassword.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textBoxPassword.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -193,7 +193,7 @@
             this.textBoxUsername.BorderColor = System.Drawing.Color.Olive;
             this.textBoxUsername.BorderRadius = 10;
             this.textBoxUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxUsername.DefaultText = "";
+            this.textBoxUsername.DefaultText = "ADMIN01";
             this.textBoxUsername.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.textBoxUsername.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxUsername.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));

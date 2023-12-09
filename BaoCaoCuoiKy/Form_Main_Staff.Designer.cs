@@ -35,14 +35,12 @@
             this.lblLogoDescription = new System.Windows.Forms.Label();
             this.lblLogo = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelSidebar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnList = new Guna.UI2.WinForms.Guna2Button();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
             this.lblTitleSidebar = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.panelSidebar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +84,6 @@
             this.panelHeader.Controls.Add(this.lblLogoDescription);
             this.panelHeader.Controls.Add(this.lblLogo);
             this.panelHeader.Controls.Add(this.guna2PictureBox2);
-            this.panelHeader.Controls.Add(this.guna2PictureBox1);
             this.panelHeader.Controls.Add(this.btnExitWindow);
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(0, 0);
@@ -128,15 +125,6 @@
             this.guna2PictureBox2.TabIndex = 1;
             this.guna2PictureBox2.TabStop = false;
             this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(11, 11);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(300, 200);
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // panelSidebar
             // 
@@ -232,7 +220,6 @@
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
             this.ResumeLayout(false);
@@ -245,7 +232,6 @@
         private Guna.UI2.WinForms.Guna2Button btnExitWindow;
         private System.Windows.Forms.Panel panelHeader;
         private Guna.UI2.WinForms.Guna2Panel panelSidebar;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
         private System.Windows.Forms.Label lblLogoDescription;
         private System.Windows.Forms.Label lblLogo;

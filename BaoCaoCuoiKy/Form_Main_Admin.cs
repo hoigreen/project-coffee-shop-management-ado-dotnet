@@ -33,8 +33,9 @@ namespace BaoCaoCuoiKy
 
         private void Form_Main_Admin_Load(object sender, EventArgs e)
         {
-            lb_ma_admin.Text = ValueFromForm1;
+            lblInfoID.Text = ValueFromForm1;
             lb_name_admin.Text = getNameAdmin(ValueFromForm1);
+            lblInfoName.Text = getNameAdmin(ValueFromForm1);
         }
 
         // Hiển thị lại form trước đó khi form hiện tại đóng
@@ -106,6 +107,46 @@ namespace BaoCaoCuoiKy
         {
             UC_ADMIN_STATIS uc = new UC_ADMIN_STATIS();
             addUserControl(uc);
+        }
+
+        private void btnExitWindow_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void lb_name_admin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2PictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_nav_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnExitWindow_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
