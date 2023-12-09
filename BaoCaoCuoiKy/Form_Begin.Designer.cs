@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Begin));
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
@@ -97,12 +98,13 @@
             this.btnExitWindow.FillColor = System.Drawing.Color.Red;
             this.btnExitWindow.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExitWindow.ForeColor = System.Drawing.Color.White;
+            this.btnExitWindow.Image = ((System.Drawing.Image)(resources.GetObject("btnExitWindow.Image")));
             this.btnExitWindow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnExitWindow.ImageSize = new System.Drawing.Size(40, 40);
             this.btnExitWindow.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.btnExitWindow.Location = new System.Drawing.Point(1624, 966);
+            this.btnExitWindow.Location = new System.Drawing.Point(1624, 994);
             this.btnExitWindow.Name = "btnExitWindow";
-            this.btnExitWindow.Size = new System.Drawing.Size(284, 102);
+            this.btnExitWindow.Size = new System.Drawing.Size(284, 74);
             this.btnExitWindow.TabIndex = 5;
             this.btnExitWindow.Text = "Thoát hệ thống";
             this.btnExitWindow.UseTransparentBackground = true;
@@ -161,6 +163,7 @@
             this.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.Desktop;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Begin";
             this.Text = "Coffee Management CMS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

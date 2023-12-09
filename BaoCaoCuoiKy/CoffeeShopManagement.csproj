@@ -142,6 +142,7 @@
     <Compile Include="XL_STAFF.cs" />
     <EmbeddedResource Include="Form_Begin.resx">
       <DependentUpon>Form_Begin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Login_Admin.resx">
       <DependentUpon>Form_Login_Admin.cs</DependentUpon>

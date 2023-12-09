@@ -90,8 +90,6 @@ namespace BaoCaoCuoiKy
         }
 
         public bool AddStaff(string MaNV, string TenNV, string DienThoai, string GioiTinh,string ChucVu, string DiaChi, DateTime NgaySinh,DateTime NgayVaoLam )
-
-
         {
             try
             {
