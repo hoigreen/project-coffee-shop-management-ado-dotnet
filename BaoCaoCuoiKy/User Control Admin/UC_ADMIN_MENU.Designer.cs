@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_menu = new System.Windows.Forms.DataGridView();
-            this.col_ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,15 +41,19 @@
             this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.btn_cancelSave = new Guna.UI2.WinForms.Guna2Button();
             this.panelControl = new Guna.UI2.WinForms.Guna2Panel();
+            this.comboBoxType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.textBoxPrice = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBoxName = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBoxId = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnClear = new Guna.UI2.WinForms.Guna2Button();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
-            this.textBoxId = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textBoxName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.textBoxPrice = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comboBoxType = new Guna.UI2.WinForms.Guna2ComboBox();
             this.comboBoxSortByType = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.col_ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_menu)).BeginInit();
             this.panelControl.SuspendLayout();
             this.SuspendLayout();
@@ -60,40 +62,31 @@
             // 
             this.dg_menu.AllowUserToAddRows = false;
             this.dg_menu.BackgroundColor = System.Drawing.Color.White;
-            this.dg_menu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_menu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dg_menu.ColumnHeadersHeight = 40;
             this.dg_menu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_ma,
             this.col_ten,
             this.col_gia,
             this.col_loai});
             this.dg_menu.GridColor = System.Drawing.Color.Black;
-            this.dg_menu.Location = new System.Drawing.Point(28, 482);
+            this.dg_menu.Location = new System.Drawing.Point(28, 498);
             this.dg_menu.Margin = new System.Windows.Forms.Padding(4);
             this.dg_menu.Name = "dg_menu";
-            this.dg_menu.Size = new System.Drawing.Size(1646, 190);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dg_menu.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dg_menu.RowTemplate.Height = 32;
+            this.dg_menu.Size = new System.Drawing.Size(1646, 474);
             this.dg_menu.TabIndex = 0;
-            // 
-            // col_ma
-            // 
-            this.col_ma.HeaderText = "Mã Món";
-            this.col_ma.Name = "col_ma";
-            // 
-            // col_ten
-            // 
-            this.col_ten.HeaderText = "Tên";
-            this.col_ten.Name = "col_ten";
-            this.col_ten.Width = 200;
-            // 
-            // col_gia
-            // 
-            this.col_gia.HeaderText = "Đơn giá";
-            this.col_gia.Name = "col_gia";
-            this.col_gia.Width = 150;
-            // 
-            // col_loai
-            // 
-            this.col_loai.HeaderText = "Danh mục";
-            this.col_loai.Name = "col_loai";
             // 
             // label1
             // 
@@ -211,6 +204,7 @@
             // 
             // panelControl
             // 
+            this.panelControl.BackColor = System.Drawing.Color.White;
             this.panelControl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.panelControl.BorderRadius = 16;
             this.panelControl.BorderThickness = 1;
@@ -233,6 +227,95 @@
             this.panelControl.Name = "panelControl";
             this.panelControl.Size = new System.Drawing.Size(1646, 267);
             this.panelControl.TabIndex = 22;
+            // 
+            // comboBoxType
+            // 
+            this.comboBoxType.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxType.BorderColor = System.Drawing.Color.Green;
+            this.comboBoxType.BorderRadius = 10;
+            this.comboBoxType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxType.Font = new System.Drawing.Font("Roboto", 12F);
+            this.comboBoxType.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxType.ItemHeight = 36;
+            this.comboBoxType.Location = new System.Drawing.Point(1235, 113);
+            this.comboBoxType.Name = "comboBoxType";
+            this.comboBoxType.Size = new System.Drawing.Size(380, 42);
+            this.comboBoxType.TabIndex = 37;
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.BorderColor = System.Drawing.Color.Green;
+            this.textBoxPrice.BorderRadius = 10;
+            this.textBoxPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxPrice.DefaultText = "";
+            this.textBoxPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxPrice.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPrice.ForeColor = System.Drawing.Color.Black;
+            this.textBoxPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxPrice.Location = new System.Drawing.Point(837, 113);
+            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.PasswordChar = '\0';
+            this.textBoxPrice.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBoxPrice.PlaceholderText = "Nhập mã món ...";
+            this.textBoxPrice.SelectedText = "";
+            this.textBoxPrice.Size = new System.Drawing.Size(373, 43);
+            this.textBoxPrice.TabIndex = 36;
+            // 
+            // textBoxName
+            // 
+            this.textBoxName.BorderColor = System.Drawing.Color.Green;
+            this.textBoxName.BorderRadius = 10;
+            this.textBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxName.DefaultText = "";
+            this.textBoxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxName.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxName.ForeColor = System.Drawing.Color.Black;
+            this.textBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxName.Location = new System.Drawing.Point(424, 113);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.PasswordChar = '\0';
+            this.textBoxName.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBoxName.PlaceholderText = "Nhập mã món ...";
+            this.textBoxName.SelectedText = "";
+            this.textBoxName.Size = new System.Drawing.Size(377, 43);
+            this.textBoxName.TabIndex = 35;
+            // 
+            // textBoxId
+            // 
+            this.textBoxId.BorderColor = System.Drawing.Color.Green;
+            this.textBoxId.BorderRadius = 10;
+            this.textBoxId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBoxId.DefaultText = "";
+            this.textBoxId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBoxId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBoxId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxId.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxId.ForeColor = System.Drawing.Color.Black;
+            this.textBoxId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBoxId.Location = new System.Drawing.Point(18, 113);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.PasswordChar = '\0';
+            this.textBoxId.PlaceholderForeColor = System.Drawing.Color.Gray;
+            this.textBoxId.PlaceholderText = "Nhập mã món ...";
+            this.textBoxId.SelectedText = "";
+            this.textBoxId.Size = new System.Drawing.Size(373, 43);
+            this.textBoxId.TabIndex = 34;
             // 
             // btnClear
             // 
@@ -311,95 +394,6 @@
             this.btnEdit.UseTransparentBackground = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // textBoxId
-            // 
-            this.textBoxId.BorderColor = System.Drawing.Color.Green;
-            this.textBoxId.BorderRadius = 10;
-            this.textBoxId.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxId.DefaultText = "";
-            this.textBoxId.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxId.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxId.ForeColor = System.Drawing.Color.Black;
-            this.textBoxId.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxId.Location = new System.Drawing.Point(18, 113);
-            this.textBoxId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.PasswordChar = '\0';
-            this.textBoxId.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.textBoxId.PlaceholderText = "Nhập mã món ...";
-            this.textBoxId.SelectedText = "";
-            this.textBoxId.Size = new System.Drawing.Size(373, 43);
-            this.textBoxId.TabIndex = 34;
-            // 
-            // textBoxName
-            // 
-            this.textBoxName.BorderColor = System.Drawing.Color.Green;
-            this.textBoxName.BorderRadius = 10;
-            this.textBoxName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxName.DefaultText = "";
-            this.textBoxName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxName.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxName.ForeColor = System.Drawing.Color.Black;
-            this.textBoxName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxName.Location = new System.Drawing.Point(424, 113);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.PasswordChar = '\0';
-            this.textBoxName.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.textBoxName.PlaceholderText = "Nhập mã món ...";
-            this.textBoxName.SelectedText = "";
-            this.textBoxName.Size = new System.Drawing.Size(377, 43);
-            this.textBoxName.TabIndex = 35;
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.BorderColor = System.Drawing.Color.Green;
-            this.textBoxPrice.BorderRadius = 10;
-            this.textBoxPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBoxPrice.DefaultText = "";
-            this.textBoxPrice.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBoxPrice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBoxPrice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxPrice.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBoxPrice.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxPrice.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPrice.ForeColor = System.Drawing.Color.Black;
-            this.textBoxPrice.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBoxPrice.Location = new System.Drawing.Point(837, 113);
-            this.textBoxPrice.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.PasswordChar = '\0';
-            this.textBoxPrice.PlaceholderForeColor = System.Drawing.Color.Gray;
-            this.textBoxPrice.PlaceholderText = "Nhập mã món ...";
-            this.textBoxPrice.SelectedText = "";
-            this.textBoxPrice.Size = new System.Drawing.Size(373, 43);
-            this.textBoxPrice.TabIndex = 36;
-            // 
-            // comboBoxType
-            // 
-            this.comboBoxType.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxType.BorderColor = System.Drawing.Color.Green;
-            this.comboBoxType.BorderRadius = 10;
-            this.comboBoxType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxType.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxType.Font = new System.Drawing.Font("Roboto", 12F);
-            this.comboBoxType.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxType.ItemHeight = 36;
-            this.comboBoxType.Location = new System.Drawing.Point(1235, 113);
-            this.comboBoxType.Name = "comboBoxType";
-            this.comboBoxType.Size = new System.Drawing.Size(380, 42);
-            this.comboBoxType.TabIndex = 37;
-            // 
             // comboBoxSortByType
             // 
             this.comboBoxSortByType.BackColor = System.Drawing.Color.Transparent;
@@ -418,11 +412,34 @@
             this.comboBoxSortByType.TabIndex = 38;
             this.comboBoxSortByType.SelectedIndexChanged += new System.EventHandler(this.comboBoxSortByType_SelectedIndexChanged);
             // 
+            // col_ma
+            // 
+            this.col_ma.HeaderText = "Mã Món";
+            this.col_ma.Name = "col_ma";
+            // 
+            // col_ten
+            // 
+            this.col_ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_ten.HeaderText = "Tên";
+            this.col_ten.Name = "col_ten";
+            // 
+            // col_gia
+            // 
+            this.col_gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_gia.HeaderText = "Đơn giá";
+            this.col_gia.Name = "col_gia";
+            // 
+            // col_loai
+            // 
+            this.col_loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_loai.HeaderText = "Danh mục";
+            this.col_loai.Name = "col_loai";
+            // 
             // UC_ADMIN_MENU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.Controls.Add(this.comboBoxSortByType);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panelControl);
@@ -447,10 +464,6 @@
 
         private System.Windows.Forms.DataGridView dg_menu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ma;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_gia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_loai;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -469,5 +482,9 @@
         private Guna.UI2.WinForms.Guna2TextBox textBoxPrice;
         private Guna.UI2.WinForms.Guna2TextBox textBoxName;
         private Guna.UI2.WinForms.Guna2ComboBox comboBoxSortByType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ma;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_gia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_loai;
     }
 }
