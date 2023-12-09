@@ -40,9 +40,9 @@ namespace BaoCaoCuoiKy.User_Control
 
             btn_save.Enabled = false;
             btn_cancelSave.Enabled = false;
-            btn_sua.Enabled = false;
-            btn_xoa.Enabled = false;
-            btn_clear.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnClear.Enabled = false;
 
             isEnableTextBox(false);
             resetDataTable();
@@ -62,8 +62,8 @@ namespace BaoCaoCuoiKy.User_Control
                 tb_gia.Text = donGia;
                 cb_danhmuc.Text = danhMuc;
 
-                btn_sua.Enabled = true;
-                btn_xoa.Enabled = true;
+                btnEdit.Enabled = true;
+                btnDelete.Enabled = true;
                 btn_save.Enabled = false;
                 btn_cancelSave.Enabled = false;
             }
@@ -93,48 +93,6 @@ namespace BaoCaoCuoiKy.User_Control
             combobox.DisplayMember = dtCategory.Columns[1].ColumnName;
             combobox.ValueMember = dtCategory.Columns[0].ColumnName;
             combobox.SelectedIndex = cb_loc_danhmuc.Items.Count - 1;
-        }
-
-        private void btn_xoa_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Bạn chắc chắn muốn xóa sản phẩm?", "Thông báo",
-                MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                if (menu.DeleteMenu(tb_ma.Text))
-                {
-                    tb_ma.Text = "";
-                    resetDataTable();
-                    global.notify("Xóa sản phẩm thành công");
-                }
-                else
-                    global.notify("Xóa sản phẩm không thành công");
-            }
-        }
-
-        private void btn_sua_Click(object sender, EventArgs e)
-        {
-            isEnableTextBox(true);
-            btn_save.Enabled = true;
-            btn_cancelSave.Enabled = true;
-            btn_xoa.Enabled = false;
-            btn_sua.Enabled = false;
-            btn_clear.Enabled = true;
-            functionSave = "update";
-        }
-
-        private void btn_them_Click(object sender, EventArgs e)
-        {
-            clearData();
-            string id = menu.getIdMenuLastRow();
-            tb_ma.Text = global.autoIncrementId(id);
-            isEnableTextBox(true);
-            btn_save.Enabled = true;
-            btn_cancelSave.Enabled = true;
-            btn_sua.Enabled = false;
-            btn_xoa.Enabled = false;
-            btn_clear.Enabled = true;
-            functionSave = "insert";
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -184,27 +142,6 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
-        private void btn_clear_Click(object sender, EventArgs e)
-        {
-            if (functionSave == "insert" || functionSave == "update")
-            {
-                var result = MessageBox.Show("Thông tin chưa được lưu!\nBạn chắc chắn muốn xóa chứ?", "Thông báo",
-                        MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    btn_cancelSave.Enabled = false;
-                    btn_save.Enabled = false;
-                    btn_sua.Enabled = false;
-                    btn_xoa.Enabled = false;
-                    btn_them.Enabled = true;
-                    btn_clear.Enabled = false;
-                    tb_ma.Text = "";
-                    functionSave = "";
-                    isEnableTextBox(false);
-                    clearData();
-                }
-            }
-        }
 
         public void addMenu()
         {
@@ -287,7 +224,19 @@ namespace BaoCaoCuoiKy.User_Control
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            var result = MessageBox.Show("Bạn chắc chắn muốn xóa sản phẩm?", "Thông báo",
+                MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (menu.DeleteMenu(tb_ma.Text))
+                {
+                    tb_ma.Text = "";
+                    resetDataTable();
+                    global.notify("Xóa sản phẩm thành công");
+                }
+                else
+                    global.notify("Xóa sản phẩm không thành công");
+            }
         }
 
         private void btn_xoa_Click_1(object sender, EventArgs e)
@@ -307,7 +256,7 @@ namespace BaoCaoCuoiKy.User_Control
             btn_cancelSave.Enabled = true;
             btnDelete.Enabled = false;
             btnEdit.Enabled = false;
-            btn_clear.Enabled = true;
+            btnEdit.Enabled = true;
             functionSave = "update";
         }
 
@@ -321,7 +270,7 @@ namespace BaoCaoCuoiKy.User_Control
             btn_cancelSave.Enabled = true;
             btnEdit.Enabled = false;
             btnDelete.Enabled = false;
-            btn_clear.Enabled = true;
+            btnClear.Enabled = true;
             functionSave = "insert";
         }
 

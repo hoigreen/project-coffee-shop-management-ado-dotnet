@@ -43,10 +43,6 @@
             this.tb_ma = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btn_them = new System.Windows.Forms.Button();
-            this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_sua = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_save = new Guna.UI2.WinForms.Guna2Button();
             this.btn_cancelSave = new Guna.UI2.WinForms.Guna2Button();
@@ -200,50 +196,6 @@
             this.label7.Text = "Thông tin chi tiết của món";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // btn_them
-            // 
-            this.btn_them.Location = new System.Drawing.Point(1209, 375);
-            this.btn_them.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(171, 47);
-            this.btn_them.TabIndex = 24;
-            this.btn_them.Text = "Thêm";
-            this.btn_them.UseVisualStyleBackColor = true;
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click_1);
-            // 
-            // btn_clear
-            // 
-            this.btn_clear.Location = new System.Drawing.Point(1109, 223);
-            this.btn_clear.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(207, 32);
-            this.btn_clear.TabIndex = 17;
-            this.btn_clear.Text = "Xóa thông tin";
-            this.btn_clear.UseVisualStyleBackColor = true;
-            this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
-            // 
-            // btn_xoa
-            // 
-            this.btn_xoa.Location = new System.Drawing.Point(1391, 376);
-            this.btn_xoa.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(126, 46);
-            this.btn_xoa.TabIndex = 25;
-            this.btn_xoa.Text = "Xóa";
-            this.btn_xoa.UseVisualStyleBackColor = true;
-            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click_1);
-            // 
-            // btn_sua
-            // 
-            this.btn_sua.Location = new System.Drawing.Point(1525, 376);
-            this.btn_sua.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(148, 46);
-            this.btn_sua.TabIndex = 26;
-            this.btn_sua.Text = "Sửa";
-            this.btn_sua.UseVisualStyleBackColor = true;
-            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click_1);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -316,7 +268,6 @@
             this.panelControl.Controls.Add(this.btn_cancelSave);
             this.panelControl.Controls.Add(this.btn_save);
             this.panelControl.Controls.Add(this.label5);
-            this.panelControl.Controls.Add(this.btn_clear);
             this.panelControl.Controls.Add(this.label7);
             this.panelControl.Controls.Add(this.label2);
             this.panelControl.Controls.Add(this.tb_ma);
@@ -416,9 +367,6 @@
             this.Controls.Add(this.cb_loc_danhmuc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dg_menu);
-            this.Controls.Add(this.btn_sua);
-            this.Controls.Add(this.btn_xoa);
-            this.Controls.Add(this.btn_them);
             this.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -451,10 +399,6 @@
         private System.Windows.Forms.TextBox tb_ma;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btn_them;
-        private System.Windows.Forms.Button btn_clear;
-        private System.Windows.Forms.Button btn_xoa;
-        private System.Windows.Forms.Button btn_sua;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2Button btn_save;
         private Guna.UI2.WinForms.Guna2Button btn_cancelSave;
