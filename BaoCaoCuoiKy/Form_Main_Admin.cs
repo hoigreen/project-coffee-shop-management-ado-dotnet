@@ -73,70 +73,10 @@ namespace BaoCaoCuoiKy
             userControl.BringToFront(); 
         }
 
-        private void btn_qly_menu_Click(object sender, EventArgs e)
-        {
-            UC_ADMIN_MENU uc = new UC_ADMIN_MENU();
-            addUserControl(uc);
-        }
-
-        private void btn_qly_nhanvien_Click(object sender, EventArgs e)
-        {
-            UC_ADMIN_STAFF uc = new UC_ADMIN_STAFF();
-            addUserControl(uc);
-        }
-
-        private void btn_qly_calam_Click(object sender, EventArgs e)
-        {
-            UC_ADMIN_WORKTIME uc = new UC_ADMIN_WORKTIME();
-            addUserControl(uc);
-        }
-
-        private void btn_qly_ngaycong_Click(object sender, EventArgs e)
-        {
-            UC_QuanLyNgayCong uc = new UC_QuanLyNgayCong();
-            addUserControl(uc);
-        }
-
-        private void btn_qly_hoadon_Click(object sender, EventArgs e)
-        {
-            UC_ADMIN_ORDER uc = new UC_ADMIN_ORDER();
-            addUserControl(uc);
-        }
-
-        private void btn_thongke_Click(object sender, EventArgs e)
-        {
-            UC_ADMIN_STATIS uc = new UC_ADMIN_STATIS();
-            addUserControl(uc);
-        }
 
         private void btnExitWindow_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void lb_name_admin_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2PictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_nav_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelHeader_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnExitWindow_Click_1(object sender, EventArgs e)
@@ -144,9 +84,41 @@ namespace BaoCaoCuoiKy
             this.Close();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnManageMenu_Click(object sender, EventArgs e)
         {
+            UC_ADMIN_MENU uc = new UC_ADMIN_MENU();
+            addUserControl(uc);
+        }
 
+        private void btnManageStaff_Click(object sender, EventArgs e)
+        {
+            UC_ADMIN_STAFF uc = new UC_ADMIN_STAFF();
+            addUserControl(uc);
+        }
+
+        private void btnManageWorkTime_Click(object sender, EventArgs e)
+        {
+            UC_ADMIN_WORKTIME uc = new UC_ADMIN_WORKTIME();
+            addUserControl(uc);
+        }
+
+        private void btnManageWorkDay_Click(object sender, EventArgs e)
+        {
+            UC_QuanLyNgayCong uc = new UC_QuanLyNgayCong();
+            addUserControl(uc);
+
+        }
+
+        private void btnManageInvoice_Click(object sender, EventArgs e)
+        {
+            UC_ADMIN_ORDER uc = new UC_ADMIN_ORDER();
+            addUserControl(uc);
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            UC_ADMIN_STATIS uc = new UC_ADMIN_STATIS();
+            addUserControl(uc);
         }
     }
 }

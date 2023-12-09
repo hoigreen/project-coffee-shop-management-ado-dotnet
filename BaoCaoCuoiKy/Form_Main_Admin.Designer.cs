@@ -33,6 +33,14 @@ namespace BaoCaoCuoiKy
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main_Admin));
             this.panel_container = new System.Windows.Forms.Panel();
             this.panelSidebar = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnReport = new Guna.UI2.WinForms.Guna2Button();
+            this.btnManageInvoice = new Guna.UI2.WinForms.Guna2Button();
+            this.btnManageWorkDay = new Guna.UI2.WinForms.Guna2Button();
+            this.btnManageStaff = new Guna.UI2.WinForms.Guna2Button();
+            this.lblInfoName = new System.Windows.Forms.Label();
+            this.lblInfoID = new System.Windows.Forms.Label();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblMethodSidebar = new System.Windows.Forms.Label();
             this.btnManageMenu = new Guna.UI2.WinForms.Guna2Button();
             this.btnManageWorkTime = new Guna.UI2.WinForms.Guna2Button();
             this.lblInfoSidebar = new System.Windows.Forms.Label();
@@ -51,21 +59,13 @@ namespace BaoCaoCuoiKy
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.lblMethodSidebar = new System.Windows.Forms.Label();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblInfoID = new System.Windows.Forms.Label();
-            this.lblInfoName = new System.Windows.Forms.Label();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.btnManageWorkDay = new Guna.UI2.WinForms.Guna2Button();
-            this.btnManageInvoice = new Guna.UI2.WinForms.Guna2Button();
-            this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_container
@@ -86,7 +86,7 @@ namespace BaoCaoCuoiKy
             this.panelSidebar.Controls.Add(this.btnReport);
             this.panelSidebar.Controls.Add(this.btnManageInvoice);
             this.panelSidebar.Controls.Add(this.btnManageWorkDay);
-            this.panelSidebar.Controls.Add(this.guna2Button1);
+            this.panelSidebar.Controls.Add(this.btnManageStaff);
             this.panelSidebar.Controls.Add(this.lblInfoName);
             this.panelSidebar.Controls.Add(this.lblInfoID);
             this.panelSidebar.Controls.Add(this.guna2PictureBox4);
@@ -99,6 +99,154 @@ namespace BaoCaoCuoiKy
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(240, 990);
             this.panelSidebar.TabIndex = 9;
+            // 
+            // btnReport
+            // 
+            this.btnReport.Animated = true;
+            this.btnReport.BorderColor = System.Drawing.Color.Transparent;
+            this.btnReport.BorderRadius = 10;
+            this.btnReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReport.FillColor = System.Drawing.Color.Transparent;
+            this.btnReport.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnReport.ForeColor = System.Drawing.Color.Black;
+            this.btnReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnReport.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
+            this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReport.Location = new System.Drawing.Point(-1, 771);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(234, 86);
+            this.btnReport.TabIndex = 18;
+            this.btnReport.Text = "Thống kê";
+            this.btnReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReport.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // btnManageInvoice
+            // 
+            this.btnManageInvoice.Animated = true;
+            this.btnManageInvoice.BorderColor = System.Drawing.Color.Transparent;
+            this.btnManageInvoice.BorderRadius = 10;
+            this.btnManageInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManageInvoice.FillColor = System.Drawing.Color.Transparent;
+            this.btnManageInvoice.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnManageInvoice.ForeColor = System.Drawing.Color.Black;
+            this.btnManageInvoice.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnManageInvoice.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.btnManageInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnManageInvoice.Image")));
+            this.btnManageInvoice.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageInvoice.Location = new System.Drawing.Point(-1, 679);
+            this.btnManageInvoice.Name = "btnManageInvoice";
+            this.btnManageInvoice.Size = new System.Drawing.Size(234, 86);
+            this.btnManageInvoice.TabIndex = 17;
+            this.btnManageInvoice.Text = "Quản lý hoá đơn";
+            this.btnManageInvoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageInvoice.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnManageInvoice.Click += new System.EventHandler(this.btnManageInvoice_Click);
+            // 
+            // btnManageWorkDay
+            // 
+            this.btnManageWorkDay.Animated = true;
+            this.btnManageWorkDay.BorderColor = System.Drawing.Color.Transparent;
+            this.btnManageWorkDay.BorderRadius = 10;
+            this.btnManageWorkDay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageWorkDay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageWorkDay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageWorkDay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManageWorkDay.FillColor = System.Drawing.Color.Transparent;
+            this.btnManageWorkDay.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnManageWorkDay.ForeColor = System.Drawing.Color.Black;
+            this.btnManageWorkDay.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnManageWorkDay.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.btnManageWorkDay.Image = ((System.Drawing.Image)(resources.GetObject("btnManageWorkDay.Image")));
+            this.btnManageWorkDay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageWorkDay.Location = new System.Drawing.Point(-1, 587);
+            this.btnManageWorkDay.Name = "btnManageWorkDay";
+            this.btnManageWorkDay.Size = new System.Drawing.Size(234, 86);
+            this.btnManageWorkDay.TabIndex = 16;
+            this.btnManageWorkDay.Text = "Quản lý ngày công";
+            this.btnManageWorkDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageWorkDay.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnManageWorkDay.Click += new System.EventHandler(this.btnManageWorkDay_Click);
+            // 
+            // btnManageStaff
+            // 
+            this.btnManageStaff.Animated = true;
+            this.btnManageStaff.BorderColor = System.Drawing.Color.Transparent;
+            this.btnManageStaff.BorderRadius = 10;
+            this.btnManageStaff.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageStaff.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnManageStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnManageStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnManageStaff.FillColor = System.Drawing.Color.Transparent;
+            this.btnManageStaff.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnManageStaff.ForeColor = System.Drawing.Color.Black;
+            this.btnManageStaff.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnManageStaff.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            this.btnManageStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStaff.Image")));
+            this.btnManageStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageStaff.Location = new System.Drawing.Point(-1, 403);
+            this.btnManageStaff.Name = "btnManageStaff";
+            this.btnManageStaff.Size = new System.Drawing.Size(234, 86);
+            this.btnManageStaff.TabIndex = 15;
+            this.btnManageStaff.Text = "Quản lý nhân viên";
+            this.btnManageStaff.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnManageStaff.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnManageStaff.Click += new System.EventHandler(this.btnManageStaff_Click);
+            // 
+            // lblInfoName
+            // 
+            this.lblInfoName.AutoSize = true;
+            this.lblInfoName.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblInfoName.ForeColor = System.Drawing.Color.Black;
+            this.lblInfoName.Location = new System.Drawing.Point(61, 217);
+            this.lblInfoName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInfoName.Name = "lblInfoName";
+            this.lblInfoName.Size = new System.Drawing.Size(88, 18);
+            this.lblInfoName.TabIndex = 14;
+            this.lblInfoName.Text = "nameAdmin";
+            this.lblInfoName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblInfoID
+            // 
+            this.lblInfoID.AutoSize = true;
+            this.lblInfoID.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblInfoID.ForeColor = System.Drawing.Color.Green;
+            this.lblInfoID.Location = new System.Drawing.Point(76, 187);
+            this.lblInfoID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInfoID.Name = "lblInfoID";
+            this.lblInfoID.Size = new System.Drawing.Size(79, 19);
+            this.lblInfoID.TabIndex = 13;
+            this.lblInfoID.Text = "maAdmin";
+            this.lblInfoID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(54, 62);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(113, 110);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox4.TabIndex = 12;
+            this.guna2PictureBox4.TabStop = false;
+            // 
+            // lblMethodSidebar
+            // 
+            this.lblMethodSidebar.AutoSize = true;
+            this.lblMethodSidebar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMethodSidebar.ForeColor = System.Drawing.Color.Black;
+            this.lblMethodSidebar.Location = new System.Drawing.Point(12, 273);
+            this.lblMethodSidebar.Name = "lblMethodSidebar";
+            this.lblMethodSidebar.Size = new System.Drawing.Size(103, 23);
+            this.lblMethodSidebar.TabIndex = 11;
+            this.lblMethodSidebar.Text = "Chức năng";
             // 
             // btnManageMenu
             // 
@@ -123,6 +271,7 @@ namespace BaoCaoCuoiKy
             this.btnManageMenu.Text = "Quản lý menu";
             this.btnManageMenu.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageMenu.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnManageMenu.Click += new System.EventHandler(this.btnManageMenu_Click);
             // 
             // btnManageWorkTime
             // 
@@ -147,6 +296,7 @@ namespace BaoCaoCuoiKy
             this.btnManageWorkTime.Text = "Quản lý ca làm việc";
             this.btnManageWorkTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnManageWorkTime.TextOffset = new System.Drawing.Point(10, 0);
+            this.btnManageWorkTime.Click += new System.EventHandler(this.btnManageWorkTime_Click);
             // 
             // lblInfoSidebar
             // 
@@ -174,7 +324,6 @@ namespace BaoCaoCuoiKy
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1920, 71);
             this.panelHeader.TabIndex = 8;
-            this.panelHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.panelHeader_Paint);
             // 
             // guna2PictureBox1
             // 
@@ -182,7 +331,7 @@ namespace BaoCaoCuoiKy
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Black;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1560, 17);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1530, 17);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(34, 36);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,7 +354,7 @@ namespace BaoCaoCuoiKy
             this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 20F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(1601, 21);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(1571, 21);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
             this.guna2PictureBox3.Size = new System.Drawing.Size(35, 28);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -232,7 +381,7 @@ namespace BaoCaoCuoiKy
             this.lb_name_admin.AutoSize = true;
             this.lb_name_admin.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lb_name_admin.ForeColor = System.Drawing.Color.Black;
-            this.lb_name_admin.Location = new System.Drawing.Point(1646, 26);
+            this.lb_name_admin.Location = new System.Drawing.Point(1616, 26);
             this.lb_name_admin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_name_admin.Name = "lb_name_admin";
             this.lb_name_admin.Size = new System.Drawing.Size(97, 19);
@@ -276,7 +425,6 @@ namespace BaoCaoCuoiKy
             this.label2.Size = new System.Drawing.Size(153, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Dành cho quản trị viên";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // guna2CirclePictureBox1
             // 
@@ -349,150 +497,6 @@ namespace BaoCaoCuoiKy
             this.button5.Text = "Quản lý nhân viên";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // lblMethodSidebar
-            // 
-            this.lblMethodSidebar.AutoSize = true;
-            this.lblMethodSidebar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMethodSidebar.ForeColor = System.Drawing.Color.Black;
-            this.lblMethodSidebar.Location = new System.Drawing.Point(12, 273);
-            this.lblMethodSidebar.Name = "lblMethodSidebar";
-            this.lblMethodSidebar.Size = new System.Drawing.Size(103, 23);
-            this.lblMethodSidebar.TabIndex = 11;
-            this.lblMethodSidebar.Text = "Chức năng";
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(54, 62);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(113, 110);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox4.TabIndex = 12;
-            this.guna2PictureBox4.TabStop = false;
-            // 
-            // lblInfoID
-            // 
-            this.lblInfoID.AutoSize = true;
-            this.lblInfoID.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblInfoID.ForeColor = System.Drawing.Color.Green;
-            this.lblInfoID.Location = new System.Drawing.Point(76, 187);
-            this.lblInfoID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfoID.Name = "lblInfoID";
-            this.lblInfoID.Size = new System.Drawing.Size(79, 19);
-            this.lblInfoID.TabIndex = 13;
-            this.lblInfoID.Text = "maAdmin";
-            this.lblInfoID.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblInfoName
-            // 
-            this.lblInfoName.AutoSize = true;
-            this.lblInfoName.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lblInfoName.ForeColor = System.Drawing.Color.Black;
-            this.lblInfoName.Location = new System.Drawing.Point(61, 217);
-            this.lblInfoName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblInfoName.Name = "lblInfoName";
-            this.lblInfoName.Size = new System.Drawing.Size(88, 18);
-            this.lblInfoName.TabIndex = 14;
-            this.lblInfoName.Text = "nameAdmin";
-            this.lblInfoName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // guna2Button1
-            // 
-            this.guna2Button1.Animated = true;
-            this.guna2Button1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.BorderRadius = 10;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Button1.Font = new System.Drawing.Font("Roboto", 12F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.guna2Button1.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            this.guna2Button1.Image = ((System.Drawing.Image)(resources.GetObject("guna2Button1.Image")));
-            this.guna2Button1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.Location = new System.Drawing.Point(-1, 403);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(234, 86);
-            this.guna2Button1.TabIndex = 15;
-            this.guna2Button1.Text = "Quản lý nhân viên";
-            this.guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.guna2Button1.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // btnManageWorkDay
-            // 
-            this.btnManageWorkDay.Animated = true;
-            this.btnManageWorkDay.BorderColor = System.Drawing.Color.Transparent;
-            this.btnManageWorkDay.BorderRadius = 10;
-            this.btnManageWorkDay.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageWorkDay.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageWorkDay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnManageWorkDay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnManageWorkDay.FillColor = System.Drawing.Color.Transparent;
-            this.btnManageWorkDay.Font = new System.Drawing.Font("Roboto", 12F);
-            this.btnManageWorkDay.ForeColor = System.Drawing.Color.Black;
-            this.btnManageWorkDay.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnManageWorkDay.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            this.btnManageWorkDay.Image = ((System.Drawing.Image)(resources.GetObject("btnManageWorkDay.Image")));
-            this.btnManageWorkDay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageWorkDay.Location = new System.Drawing.Point(-1, 587);
-            this.btnManageWorkDay.Name = "btnManageWorkDay";
-            this.btnManageWorkDay.Size = new System.Drawing.Size(234, 86);
-            this.btnManageWorkDay.TabIndex = 16;
-            this.btnManageWorkDay.Text = "Quản lý ngày công";
-            this.btnManageWorkDay.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageWorkDay.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // btnManageInvoice
-            // 
-            this.btnManageInvoice.Animated = true;
-            this.btnManageInvoice.BorderColor = System.Drawing.Color.Transparent;
-            this.btnManageInvoice.BorderRadius = 10;
-            this.btnManageInvoice.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageInvoice.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnManageInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnManageInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnManageInvoice.FillColor = System.Drawing.Color.Transparent;
-            this.btnManageInvoice.Font = new System.Drawing.Font("Roboto", 12F);
-            this.btnManageInvoice.ForeColor = System.Drawing.Color.Black;
-            this.btnManageInvoice.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnManageInvoice.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            this.btnManageInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnManageInvoice.Image")));
-            this.btnManageInvoice.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageInvoice.Location = new System.Drawing.Point(-1, 679);
-            this.btnManageInvoice.Name = "btnManageInvoice";
-            this.btnManageInvoice.Size = new System.Drawing.Size(234, 86);
-            this.btnManageInvoice.TabIndex = 17;
-            this.btnManageInvoice.Text = "Quản lý hoá đơn";
-            this.btnManageInvoice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageInvoice.TextOffset = new System.Drawing.Point(10, 0);
-            // 
-            // btnReport
-            // 
-            this.btnReport.Animated = true;
-            this.btnReport.BorderColor = System.Drawing.Color.Transparent;
-            this.btnReport.BorderRadius = 10;
-            this.btnReport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnReport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnReport.FillColor = System.Drawing.Color.Transparent;
-            this.btnReport.Font = new System.Drawing.Font("Roboto", 12F);
-            this.btnReport.ForeColor = System.Drawing.Color.Black;
-            this.btnReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnReport.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
-            this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReport.Location = new System.Drawing.Point(-1, 771);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(234, 86);
-            this.btnReport.TabIndex = 18;
-            this.btnReport.Text = "Thống kê";
-            this.btnReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReport.TextOffset = new System.Drawing.Point(10, 0);
-            // 
             // Form_Main_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -514,13 +518,13 @@ namespace BaoCaoCuoiKy
             this.Load += new System.EventHandler(this.Form_Main_Admin_Load);
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -550,7 +554,7 @@ namespace BaoCaoCuoiKy
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private System.Windows.Forms.Label lblInfoName;
         private System.Windows.Forms.Label lblInfoID;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnManageStaff;
         private Guna.UI2.WinForms.Guna2Button btnReport;
         private Guna.UI2.WinForms.Guna2Button btnManageInvoice;
         private Guna.UI2.WinForms.Guna2Button btnManageWorkDay;
