@@ -98,6 +98,7 @@
             this.btnExitWindow.FillColor = System.Drawing.Color.Red;
             this.btnExitWindow.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExitWindow.ForeColor = System.Drawing.Color.White;
+            this.btnExitWindow.Image = ((System.Drawing.Image)(resources.GetObject("btnExitWindow.Image")));
             this.btnExitWindow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnExitWindow.ImageSize = new System.Drawing.Size(40, 40);
             this.btnExitWindow.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
