@@ -56,8 +56,8 @@ namespace BaoCaoCuoiKy
         // button login
         private void button1_Click(object sender, EventArgs e)
         {
-            maAD = tb_loign_maNV.Text;
-            matKhau = tb_login_mk.Text;
+            maAD = textBoxUsername.Text;
+            matKhau = textBoxPassword.Text;
             // Tồn tại admin
             if (admin.AdminExists(maAD)){
                 if (checkMatKhau(maAD, matKhau))
@@ -71,7 +71,7 @@ namespace BaoCaoCuoiKy
                         // Gắn sự kiện cho form mới khi đóng
                         form_main_admin.FormClosed += Form_Main_Admin_FormClosed;
                         this.Hide();
-                        form_main_admin.ValueFromForm1 = tb_loign_maNV.Text;
+                        form_main_admin.ValueFromForm1 = textBoxUsername.Text;
                         form_main_admin.Show();
                     }
                 }
@@ -108,6 +108,80 @@ namespace BaoCaoCuoiKy
             // Nếu có kết quả trả về kết quả
             string hashedPasswordFromDatabase = result.ToString();
             return VerifyPassword(mk, hashedPasswordFromDatabase);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form_Login_Admin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            maAD = tb_loign_maNV.Text;
+            matKhau = tb_login_mk.Text;
+            // Tồn tại admin
+            if (admin.AdminExists(maAD))
+            {
+                if (checkMatKhau(maAD, matKhau))
+                {
+                    global.notify("Đăng nhập thành công");
+                    tb_login_mk.Text = "";
+                    // Kiểm tra nếu form mới chưa được khởi tạo hoặc đã bị giải phóng (đóng)
+                    if (form_main_admin == null || form_main_admin.IsDisposed)
+                    {
+                        form_main_admin = new Form_Main_Admin();
+                        // Gắn sự kiện cho form mới khi đóng
+                        form_main_admin.FormClosed += Form_Main_Admin_FormClosed;
+                        this.Hide();
+                        form_main_admin.ValueFromForm1 = tb_loign_maNV.Text;
+                        form_main_admin.Show();
+                    }
+                }
+                else
+                {
+                    global.notify("Mật khẩu không chính xác");
+                }
+            }
+            // Không tồn tại admin
+            else
+            {
+                global.notify("Không tồn tại admin");
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tb_loign_maNV_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_login_mk_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         // So sánh mật khẩu sau khi hash
