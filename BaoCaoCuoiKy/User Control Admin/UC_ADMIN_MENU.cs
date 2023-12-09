@@ -158,9 +158,9 @@ namespace BaoCaoCuoiKy.User_Control
             isEnableTextBox(false);
             btn_save.Enabled = false;
             btn_cancelSave.Enabled = false;
-            btn_sua.Enabled = false;
-            btn_xoa.Enabled = true;
-            btn_clear.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = true;
+            btnClear.Enabled = false;
             tb_ma.Text = "";
             functionSave = "";
         }
@@ -173,10 +173,10 @@ namespace BaoCaoCuoiKy.User_Control
             {
                 btn_cancelSave.Enabled = false;
                 btn_save.Enabled = false;
-                btn_sua.Enabled = false;
-                btn_xoa.Enabled = false;
-                btn_them.Enabled = true;
-                btn_clear.Enabled = false;
+                btnEdit.Enabled = false;
+                btnDelete.Enabled = false;
+                btnCreate.Enabled = true;
+                btnClear.Enabled = false;
                 tb_ma.Text = "";
                 functionSave = "";
                 isEnableTextBox(false);
@@ -263,6 +263,88 @@ namespace BaoCaoCuoiKy.User_Control
             tb_ten.Enabled = isEnable;
             tb_gia.Enabled = isEnable;
             cb_danhmuc.Enabled = isEnable;
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_gia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_them_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_xoa_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_sua_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
+            btn_clear.Enabled = true;
+            functionSave = "update";
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            clearData();
+            string id = menu.getIdMenuLastRow();
+            tb_ma.Text = global.autoIncrementId(id);
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btn_clear.Enabled = true;
+            functionSave = "insert";
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (functionSave == "insert" || functionSave == "update")
+            {
+                var result = MessageBox.Show("Thông tin chưa được lưu!\nBạn chắc chắn muốn xóa chứ?", "Thông báo",
+                        MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    btn_cancelSave.Enabled = false;
+                    btn_save.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnCreate.Enabled = true;
+                    btnClear.Enabled = false;
+                    tb_ma.Text = "";
+                    functionSave = "";
+                    isEnableTextBox(false);
+                    clearData();
+                }
+            }
         }
 
         private void resetDataTable()
