@@ -218,7 +218,7 @@
             // 
             // dt_ngay
             // 
-            this.dt_ngay.CustomFormat = "dd/MM/yyyy";
+            this.dt_ngay.CustomFormat = "dd/MM/yyyy - HH:mm:ss";
             this.dt_ngay.Enabled = false;
             this.dt_ngay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dt_ngay.Location = new System.Drawing.Point(31, 268);

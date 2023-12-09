@@ -174,7 +174,7 @@ namespace BaoCaoCuoiKy.User_Control
         private void updateWorkTime()
         {
             getData();
-            if (work_time.UpdateWorkTIme(MaCa, TenCa, ThoiGian, Luong))
+            if (work_time.UpdateWorkTime(MaCa, TenCa, ThoiGian, Luong))
             {
                 resetDataTable();
                 global.notify("Cập nhật ca làm thành công");
