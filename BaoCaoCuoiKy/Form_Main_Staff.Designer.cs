@@ -54,7 +54,6 @@
             this.panel_staff_container.Name = "panel_staff_container";
             this.panel_staff_container.Size = new System.Drawing.Size(1680, 1009);
             this.panel_staff_container.TabIndex = 0;
-            this.panel_staff_container.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_staff_container_Paint);
             // 
             // btnExitWindow
             // 

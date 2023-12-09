@@ -44,27 +44,11 @@ namespace BaoCaoCuoiKy
             userControl.BringToFront();
         }
 
-        private void btn_tao_hoadon_Click(object sender, EventArgs e)
-        {
-            UC_STAFF_CREATEORDER uc = new UC_STAFF_CREATEORDER();
-            addUserControl(uc);
-        }
-
-        private void btn_ban_Click(object sender, EventArgs e)
-        {
-            UC_STAFF_TABLE uc = new UC_STAFF_TABLE();
-            addUserControl(uc);
-        }
-
         private void btnExitWindow_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void panel_staff_container_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnList_Click(object sender, EventArgs e)
         {

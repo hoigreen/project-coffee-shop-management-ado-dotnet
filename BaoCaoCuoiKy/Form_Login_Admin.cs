@@ -26,9 +26,15 @@ namespace BaoCaoCuoiKy
         private SqlCommand command;
 
         private String maAD, matKhau;
-        string connectionString = @"Data Source=DangQuocHuy\SQLEXPRESS;Initial Catalog=QL_CAFE;Integrated Security=True";
         private XL_ADMIN admin = new XL_ADMIN();
         private Global global = new Global();
+        private string connectionString ;
+        
+
+        private void Form_Login_Admin_Load(object sender, EventArgs e)
+        {
+            connectionString = global.pathDatabase;
+        }
 
         // button thoát
         private void btn_huy_Click(object sender, EventArgs e)
@@ -115,11 +121,7 @@ namespace BaoCaoCuoiKy
 
         }
 
-        private void Form_Login_Admin_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
