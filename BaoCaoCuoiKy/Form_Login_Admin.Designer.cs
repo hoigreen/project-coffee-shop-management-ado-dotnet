@@ -32,9 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login_Admin));
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.tb_loign_maNV = new System.Windows.Forms.TextBox();
-            this.tb_login_mk = new System.Windows.Forms.TextBox();
-            this.btn_login = new System.Windows.Forms.Button();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.panel_presentation = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -75,37 +72,6 @@
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Mật khẩu";
             this.lblPassword.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // tb_loign_maNV
-            // 
-            this.tb_loign_maNV.Location = new System.Drawing.Point(1564, 319);
-            this.tb_loign_maNV.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_loign_maNV.Name = "tb_loign_maNV";
-            this.tb_loign_maNV.Size = new System.Drawing.Size(148, 27);
-            this.tb_loign_maNV.TabIndex = 2;
-            this.tb_loign_maNV.Text = "ADMIN01";
-            this.tb_loign_maNV.TextChanged += new System.EventHandler(this.tb_loign_maNV_TextChanged);
-            // 
-            // tb_login_mk
-            // 
-            this.tb_login_mk.Location = new System.Drawing.Point(1564, 450);
-            this.tb_login_mk.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_login_mk.Name = "tb_login_mk";
-            this.tb_login_mk.Size = new System.Drawing.Size(148, 27);
-            this.tb_login_mk.TabIndex = 3;
-            this.tb_login_mk.Text = "123456";
-            this.tb_login_mk.TextChanged += new System.EventHandler(this.tb_login_mk_TextChanged);
-            // 
-            // btn_login
-            // 
-            this.btn_login.Location = new System.Drawing.Point(1564, 526);
-            this.btn_login.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(112, 34);
-            this.btn_login.TabIndex = 5;
-            this.btn_login.Text = "Đăng nhập";
-            this.btn_login.UseVisualStyleBackColor = true;
-            this.btn_login.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel_presentation
             // 
@@ -262,12 +228,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1920, 1080);
+            this.ClientSize = new System.Drawing.Size(1920, 1061);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panel_presentation);
-            this.Controls.Add(this.btn_login);
-            this.Controls.Add(this.tb_loign_maNV);
-            this.Controls.Add(this.tb_login_mk);
             this.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -281,7 +244,6 @@
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -289,9 +251,6 @@
 
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox tb_loign_maNV;
-        private System.Windows.Forms.TextBox tb_login_mk;
-        private System.Windows.Forms.Button btn_login;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2ShadowPanel panel_presentation;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;

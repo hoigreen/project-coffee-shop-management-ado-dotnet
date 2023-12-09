@@ -62,35 +62,7 @@ namespace BaoCaoCuoiKy
         // button login
         private void button1_Click(object sender, EventArgs e)
         {
-            maAD = textBoxUsername.Text;
-            matKhau = textBoxPassword.Text;
-            // Tồn tại admin
-            if (admin.AdminExists(maAD)){
-                if (checkMatKhau(maAD, matKhau))
-                {
-                    global.notify("Đăng nhập thành công");
-                    tb_login_mk.Text = "";
-                    // Kiểm tra nếu form mới chưa được khởi tạo hoặc đã bị giải phóng (đóng)
-                    if (form_main_admin == null || form_main_admin.IsDisposed)
-                    {
-                        form_main_admin = new Form_Main_Admin();
-                        // Gắn sự kiện cho form mới khi đóng
-                        form_main_admin.FormClosed += Form_Main_Admin_FormClosed;
-                        this.Hide();
-                        form_main_admin.ValueFromForm1 = textBoxUsername.Text;
-                        form_main_admin.Show();
-                    }
-                }
-                else
-                {
-                    global.notify("Mật khẩu không chính xác");
-                }
-            }
-            // Không tồn tại admin
-            else
-            {
-                global.notify("Không tồn tại admin");
-            }
+            
         }
 
         // Kiểm tra mật khẩu người dùng đăng nhập
@@ -139,15 +111,15 @@ namespace BaoCaoCuoiKy
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            maAD = tb_loign_maNV.Text;
-            matKhau = tb_login_mk.Text;
+            maAD = textBoxUsername.Text;
+            matKhau = textBoxPassword.Text;
             // Tồn tại admin
             if (admin.AdminExists(maAD))
             {
                 if (checkMatKhau(maAD, matKhau))
                 {
                     global.notify("Đăng nhập thành công");
-                    tb_login_mk.Text = "";
+                    textBoxPassword.Text = "";
                     // Kiểm tra nếu form mới chưa được khởi tạo hoặc đã bị giải phóng (đóng)
                     if (form_main_admin == null || form_main_admin.IsDisposed)
                     {
@@ -155,7 +127,7 @@ namespace BaoCaoCuoiKy
                         // Gắn sự kiện cho form mới khi đóng
                         form_main_admin.FormClosed += Form_Main_Admin_FormClosed;
                         this.Hide();
-                        form_main_admin.ValueFromForm1 = tb_loign_maNV.Text;
+                        form_main_admin.ValueFromForm1 = textBoxUsername.Text;
                         form_main_admin.Show();
                     }
                 }
