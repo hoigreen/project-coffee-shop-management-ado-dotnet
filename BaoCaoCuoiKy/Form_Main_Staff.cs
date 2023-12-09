@@ -17,7 +17,7 @@ namespace BaoCaoCuoiKy
         public Form_Main_Staff()
         {
             InitializeComponent();
-            UC_STAFF_CREATEORDER uc = new UC_STAFF_CREATEORDER();
+            UC_STAFF_TABLE uc = new UC_STAFF_TABLE();
             addUserControl(uc);
         }
 
