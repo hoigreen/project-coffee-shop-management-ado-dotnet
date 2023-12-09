@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -10,7 +11,7 @@ namespace BaoCaoCuoiKy
 {
     internal class Global
     {
-        public string pathDatabase = @"your data string";
+        public string pathDatabase = @"Data Source=DangQuocHuy\SQLEXPRESS;Initial Catalog=QL_CAFE;Integrated Security=True";
         public void notify(string content)
         {
             MessageBox.Show(content, "Thông báo",
@@ -28,6 +29,23 @@ namespace BaoCaoCuoiKy
                 }
             }
         }
+        public string autoIncrementId(string id)
+        {
+            string text = "";
+            string number = "";
+            string numberIncrement = "";
+            Match match = Regex.Match(id, @"([a-zA-Z]+)([0-9]+)");
+
+            if (match.Success)
+            {
+                text = match.Groups[1].Value;
+                number = match.Groups[2].Value;
+
+                int numberInt = int.Parse(number) + 1;
+                numberIncrement = numberInt < 10 ? "0" + numberInt.ToString() : numberInt.ToString();
+            }
+            return text + numberIncrement;
+        }
     }
-    
+
 }
