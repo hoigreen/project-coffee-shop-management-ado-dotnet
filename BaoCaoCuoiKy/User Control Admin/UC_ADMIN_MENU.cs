@@ -35,8 +35,8 @@ namespace BaoCaoCuoiKy.User_Control
         private void UC_QuanLyMenu_Load(object sender, EventArgs e)
         {
             dg_menu.SelectionChanged += DgMenu_SelectionChanged;
-            setDropCombox_Category(cb_loc_danhmuc);
-            setDropCombox_Category(cb_danhmuc);
+            setDropCombox_Category(comboBoxSortByType);
+            setDropCombox_Category(comboBoxType);
 
             btn_save.Enabled = false;
             btn_cancelSave.Enabled = false;
@@ -57,10 +57,10 @@ namespace BaoCaoCuoiKy.User_Control
                 string tenMon = selectedRow.Cells["col_ten"].Value.ToString();
                 string donGia = selectedRow.Cells["col_gia"].Value.ToString();
                 string danhMuc = selectedRow.Cells["col_loai"].Value.ToString();
-                tb_ma.Text = maMon;
-                tb_ten.Text = tenMon;
-                tb_gia.Text = donGia;
-                cb_danhmuc.Text = danhMuc;
+                textBoxId.Text = maMon;
+                textBoxName.Text = tenMon;
+                textBoxPrice.Text = donGia;
+                comboBoxType.Text = danhMuc;
 
                 btnEdit.Enabled = true;
                 btnDelete.Enabled = true;
@@ -69,30 +69,19 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
-        private void cb_loc_danhmuc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView selectedRow = (DataRowView)cb_loc_danhmuc.SelectedItem;
-            int realValue = Convert.ToInt32(selectedRow.Row[0]);
-            if (realValue == 0)
-                dtMenu = menu.getListMenuAll();
-            else
-                dtMenu = menu.getListMenu_Category(realValue);
-            global.addDataGridView(dtMenu, dg_menu);
-        }
-
         private void setDropCombox_Category(ComboBox combobox)
         {
             DataTable dtCategory = new DataTable();
             dtCategory = category.getListNameCategory();
             DataRow allRow = dtCategory.NewRow();
             allRow["id"] = 0;
-            allRow["ten"] = "--";
+            allRow["ten"] = "Tất cả";
             dtCategory.Rows.Add(allRow);
 
             combobox.DataSource = dtCategory;
             combobox.DisplayMember = dtCategory.Columns[1].ColumnName;
             combobox.ValueMember = dtCategory.Columns[0].ColumnName;
-            combobox.SelectedIndex = cb_loc_danhmuc.Items.Count - 1;
+            combobox.SelectedIndex = comboBoxSortByType.Items.Count - 1;
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -119,7 +108,7 @@ namespace BaoCaoCuoiKy.User_Control
             btnEdit.Enabled = false;
             btnDelete.Enabled = true;
             btnClear.Enabled = false;
-            tb_ma.Text = "";
+            textBoxId.Text = "";
             functionSave = "";
         }
 
@@ -135,7 +124,7 @@ namespace BaoCaoCuoiKy.User_Control
                 btnDelete.Enabled = false;
                 btnCreate.Enabled = true;
                 btnClear.Enabled = false;
-                tb_ma.Text = "";
+                textBoxId.Text = "";
                 functionSave = "";
                 isEnableTextBox(false);
                 clearData();
@@ -169,25 +158,25 @@ namespace BaoCaoCuoiKy.User_Control
 
         private void getData()
         {
-            DataRowView selectedRow = (DataRowView)cb_danhmuc.SelectedItem;
+            DataRowView selectedRow = (DataRowView)comboBoxType.SelectedItem;
             int idCate = Convert.ToInt32(selectedRow.Row[0]);
-            MaMon = tb_ma.Text;
-            Ten = tb_ten.Text;
-            Gia = int.Parse(tb_gia.Text);
+            MaMon = textBoxId.Text;
+            Ten = textBoxName.Text;
+            Gia = int.Parse(textBoxPrice.Text);
             DanhMuc = idCate;
         }
 
         private void clearData()
         {
-            tb_ten.Text = "";
-            tb_gia.Text = "";
-            cb_danhmuc.SelectedIndex = cb_loc_danhmuc.Items.Count - 1;
+            textBoxName.Text = "";
+            textBoxPrice.Text = "";
+            comboBoxType.SelectedIndex = comboBoxSortByType.Items.Count - 1;
         }
 
         private bool isEmpty()
         {
             bool isEmpty = true;
-            if (tb_ten.Text == "" || tb_gia.Text == "" || cb_danhmuc.Text == "")
+            if (textBoxName.Text == "" || textBoxPrice.Text == "" || comboBoxType.Text == "")
                 isEmpty = true;
             else
                 isEmpty = false;
@@ -196,10 +185,10 @@ namespace BaoCaoCuoiKy.User_Control
 
         public void isEnableTextBox(bool isEnable)
         {
-            tb_ma.Enabled = false;
-            tb_ten.Enabled = isEnable;
-            tb_gia.Enabled = isEnable;
-            cb_danhmuc.Enabled = isEnable;
+            textBoxId.Enabled = false;
+            textBoxName.Enabled = isEnable;
+            textBoxPrice.Enabled = isEnable;
+            comboBoxType.Enabled = isEnable;
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -228,9 +217,9 @@ namespace BaoCaoCuoiKy.User_Control
                 MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                if (menu.DeleteMenu(tb_ma.Text))
+                if (menu.DeleteMenu(textBoxId.Text))
                 {
-                    tb_ma.Text = "";
+                    textBoxId.Text = "";
                     resetDataTable();
                     global.notify("Xóa sản phẩm thành công");
                 }
@@ -264,7 +253,7 @@ namespace BaoCaoCuoiKy.User_Control
         {
             clearData();
             string id = menu.getIdMenuLastRow();
-            tb_ma.Text = global.autoIncrementId(id);
+            textBoxId.Text = global.autoIncrementId(id);
             isEnableTextBox(true);
             btn_save.Enabled = true;
             btn_cancelSave.Enabled = true;
@@ -288,12 +277,33 @@ namespace BaoCaoCuoiKy.User_Control
                     btnDelete.Enabled = false;
                     btnCreate.Enabled = true;
                     btnClear.Enabled = false;
-                    tb_ma.Text = "";
+                    textBoxId.Text = "";
                     functionSave = "";
                     isEnableTextBox(false);
                     clearData();
                 }
             }
+        }
+
+        private void tb_ma_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_danhmuc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxSortByType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView selectedRow = (DataRowView)comboBoxSortByType.SelectedItem;
+            int realValue = Convert.ToInt32(selectedRow.Row[0]);
+            if (realValue == 0)
+                dtMenu = menu.getListMenuAll();
+            else
+                dtMenu = menu.getListMenu_Category(realValue);
+            global.addDataGridView(dtMenu, dg_menu);
         }
 
         private void resetDataTable()
