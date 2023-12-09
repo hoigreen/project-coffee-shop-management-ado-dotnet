@@ -126,7 +126,7 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Radius = 20;
             this.panelLogin.ShadowColor = System.Drawing.Color.Black;
-            this.panelLogin.Size = new System.Drawing.Size(449, 743);
+            this.panelLogin.Size = new System.Drawing.Size(454, 743);
             this.panelLogin.TabIndex = 8;
             // 
             // btnCancel
@@ -180,12 +180,13 @@
             this.textBoxPassword.Location = new System.Drawing.Point(26, 364);
             this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.PasswordChar = '\0';
+            this.textBoxPassword.PasswordChar = '•';
             this.textBoxPassword.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.textBoxPassword.PlaceholderText = "Nhập mật khẩu";
             this.textBoxPassword.SelectedText = "";
             this.textBoxPassword.Size = new System.Drawing.Size(398, 58);
             this.textBoxPassword.TabIndex = 7;
+            this.textBoxPassword.TextOffset = new System.Drawing.Point(5, 0);
             // 
             // textBoxUsername
             // 
@@ -210,6 +211,7 @@
             this.textBoxUsername.SelectedText = "";
             this.textBoxUsername.Size = new System.Drawing.Size(398, 58);
             this.textBoxUsername.TabIndex = 6;
+            this.textBoxUsername.TextOffset = new System.Drawing.Point(5, 0);
             this.textBoxUsername.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             // 
             // lblLogin

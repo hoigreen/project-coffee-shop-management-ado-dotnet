@@ -175,10 +175,12 @@ namespace BaoCaoCuoiKy
             this.Controls.Add(this.panel_header);
             this.Controls.Add(this.panel_nav);
             this.Controls.Add(this.panel_container);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Main_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_Main_Admin";
+            this.Text = "Quản lý quán coffee dành cho Quản trị viên";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form_Main_Admin_Load);
             this.panel_nav.ResumeLayout(false);
             this.panel_header.ResumeLayout(false);
