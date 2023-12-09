@@ -27,14 +27,14 @@ namespace CoffeeShopManagement.User_Control_Staff
         }
         private void loadTable()
         {
-            panel_ban.Controls.Clear();
+            panelListTable.Controls.Clear();
             dtTable = table.getListTable();
             foreach (DataRow row in dtTable.Rows)
             {
                 Button btn = new Button()
                 {
-                    Width = 100,
-                    Height = 100,
+                    Width = 260,
+                    Height = 200,
                     Margin = new Padding(10),
                     Location = new Point(x, y)
                 };
@@ -45,23 +45,45 @@ namespace CoffeeShopManagement.User_Control_Staff
                 switch ((string)row["TrangThai"])
                 {
                     case "Trống":
-                        btn.ForeColor = Color.Black;
-                        btn.BackColor = Color.Aqua;
+                        btn.ForeColor = Color.White;
+                        btn.BackColor = Color.ForestGreen;
+                        btn.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         break;
                     default:
                         btn.ForeColor = Color.White;
                         btn.BackColor = Color.Red;
                         break;
                 }
-                panel_ban.Controls.Add(btn);
-                x += 100;
-                if ((int)row["MaBan"] % 5 == 0)
+                panelListTable.Controls.Add(btn);
+                x += 260;
+                if ((int)row["MaBan"] % 6 == 0)
                 {
                     x = 0;
-                    y += 100;
+                    y += 200;
                 }
             }
         }
+
+        private void panel_ban_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbTitleEmpty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelListTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void Button_Table_Click(object sender, EventArgs e)
         {
             // Xử lý sự kiện khi Button được nhấn
