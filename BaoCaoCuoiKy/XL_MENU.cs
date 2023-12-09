@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,36 +30,72 @@ namespace BaoCaoCuoiKy
 
         public DataTable getListMenuAll()
         {
-            string query = "SELECT " +
-                "M.MaMon," +
-                "M.Ten," +
-                "M.Gia," +
-                "D.ten " +
-                "FROM MENU M " +
-                "JOIN  DANHMUC D ON M.DanhMuc = D.id;";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                string query = "SELECT " +
+                    "M.MaMon, " +
+                    "M.Ten, " +
+                    "M.Gia, " +
+                    "D.ten AS DanhMuc " +
+                    "FROM MENU M " +
+                    "JOIN DANHMUC D ON M.DanhMuc = D.id;";
+
+                connection.Open();
+
+                using (adapter = new SqlDataAdapter(query, connection))
+                {
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+                    return dataSet.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
         }
 
         public DataTable getListMenu_Category(int id)
         {
-            string query = "SELECT " +
-                "M.MaMon," +
-                "M.Ten," +
-                "M.Gia," +
-                "D.ten " +
-                "FROM MENU M " +
-                "JOIN  DANHMUC D ON M.DanhMuc = D.id " +
-                "WHERE   M.DanhMuc = '" + id + "'";
-            using (SqlCommand command = new SqlCommand(query, connection))
+            try
             {
-                adapter = new SqlDataAdapter(command);
-                dataSet = new DataSet();
-                adapter.Fill(dataSet);
+                string query = "SELECT " +
+                    "M.MaMon, " +
+                    "M.Ten, " +
+                    "M.Gia, " +
+                    "D.ten AS DanhMuc " +
+                    "FROM MENU M " +
+                    "JOIN DANHMUC D ON M.DanhMuc = D.id " +
+                    "WHERE M.DanhMuc = @id";
 
-                return dataSet.Tables[0];
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+
+                    adapter = new SqlDataAdapter(command);
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+
+                    return dataSet.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null; // hoặc trả về DataTable.Empty nếu bạn không muốn trả về null
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
         }
 
@@ -67,16 +104,50 @@ namespace BaoCaoCuoiKy
             try
             {
                 connection.Open();
-                string selectCommand = "SELECT * FROM MENU ORDER BY MaMon DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+                string selectCommand = "SELECT MaMon FROM MENU ORDER BY MaMon DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
 
-                command = new SqlCommand(selectCommand, connection);
-                string id = command.ExecuteScalar().ToString();
-                connection.Close();
-                return id;
+                using (command = new SqlCommand(selectCommand, connection))
+                {
+                    object result = command.ExecuteScalar();
+                    string id = (result != null) ? result.ToString() : "";
+                    return id;
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return "";
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
+        public int getPrice_Id(string maMon)
+        {
+            try
+            {
+                connection.Open();
+                string selectCommand = "SELECT Gia FROM MENU WHERE MaMon = @maMon;";
+
+                using (command = new SqlCommand(selectCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@maMon", maMon);
+                    int price = Convert.ToInt32(command.ExecuteScalar());
+                    return price;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return 0;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
         }
 
@@ -86,15 +157,22 @@ namespace BaoCaoCuoiKy
             {
                 connection.Open();
                 string selectCommand = "SELECT COUNT(*) FROM MENU";
-                    
-                command = new SqlCommand(selectCommand, connection);
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-                return count;
+
+                using (command = new SqlCommand(selectCommand, connection))
+                {
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count;
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return 0;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
         }
 
@@ -104,15 +182,23 @@ namespace BaoCaoCuoiKy
             {
                 connection.Open();
                 string selectCommand = "SELECT COUNT(*) FROM MENU WHERE MaMon = @MaMon";
-                command = new SqlCommand(selectCommand, connection);
-                command.Parameters.AddWithValue("@MaMon", MaMon);
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-                return count > 0;
+
+                using (command = new SqlCommand(selectCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@MaMon", MaMon);
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count > 0;
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
         }
 
@@ -121,19 +207,28 @@ namespace BaoCaoCuoiKy
             try
             {
                 connection.Open();
-                string insertCommand = "INSERT INTO MENU VALUES(N'" +
-                    MaMon + "', N'" +
-                    Ten + "', N'" +
-                    Gia + "', N'" +
-                    DanhMuc + "')";
-                command = new SqlCommand(insertCommand, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
-                return true;
+                string insertCommand = "INSERT INTO MENU VALUES(@MaMon, @Ten, @Gia, @DanhMuc)";
+
+                using (command = new SqlCommand(insertCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@MaMon", MaMon);
+                    command.Parameters.AddWithValue("@Ten", Ten);
+                    command.Parameters.AddWithValue("@Gia", Gia);
+                    command.Parameters.AddWithValue("@DanhMuc", DanhMuc);
+
+                    command.ExecuteNonQuery();
+                    return true;
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
         }
 
@@ -142,17 +237,24 @@ namespace BaoCaoCuoiKy
             try
             {
                 connection.Open();
-                string deleteCommand = "DELETE FROM MENU" +
-                    " WHERE MaMon = '" + MaMon + "'";
+                string deleteCommand = "DELETE FROM MENU WHERE MaMon = @MaMon";
 
-                command = new SqlCommand(deleteCommand, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
-                return true;
+                using (command = new SqlCommand(deleteCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@MaMon", MaMon);
+                    command.ExecuteNonQuery();
+                    return true;
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
             }
         }
 
@@ -168,24 +270,27 @@ namespace BaoCaoCuoiKy
                                            "Ten = @Ten, " +
                                            "Gia = @Gia, " +
                                            "DanhMuc = @DanhMuc " +
-                                           "Where MaMon = @MaMon";
+                                           "WHERE MaMon = @MaMon";
+
                     using (SqlCommand command = new SqlCommand(updateCommand, connection))
                     {
                         command.Parameters.AddWithValue("@Ten", Ten);
                         command.Parameters.AddWithValue("@Gia", Gia);
                         command.Parameters.AddWithValue("@DanhMuc", DanhMuc);
                         command.Parameters.AddWithValue("@MaMon", MaMon);
+
                         command.ExecuteNonQuery();
                     }
                 }
-                connection.Close();
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
             }
         }
+
 
 
     }

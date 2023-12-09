@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy
 {
@@ -23,34 +24,58 @@ namespace BaoCaoCuoiKy
             connection = new SqlConnection(connectionString);
         }
 
-        // Get data admin
         public DataTable getAdmin(string maAD)
         {
-            string selectCommand = "Select ad.MaAD, ad.HoTen , ad.SoDT From ADMIN ad";
-            adapter = new SqlDataAdapter(selectCommand, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                string selectCommand = "SELECT ad.MaAD, ad.HoTen, ad.SoDT FROM ADMIN ad WHERE ad.MaAD = @MaAD";
+
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    command.Parameters.AddWithValue("@MaAD", maAD);
+
+                    adapter = new SqlDataAdapter(command);
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+                    return dataSet.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
         }
 
-        // Kiểm tra tồn tại admin
         public bool AdminExists(string maAD)
         {
             try
             {
                 connection.Open();
                 string selectCommand = "SELECT COUNT(*) FROM ADMIN WHERE MaAD = @maAD";
+
                 command = new SqlCommand(selectCommand, connection);
                 command.Parameters.AddWithValue("@maAD", maAD);
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-                return count > 0;
+
+                return Convert.ToInt32(command.ExecuteScalar()) > 0;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
             }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
         }
-
     }
 }

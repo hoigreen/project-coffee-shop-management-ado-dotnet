@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CoffeeShopManagement
 {
@@ -25,11 +26,30 @@ namespace CoffeeShopManagement
         }
         public DataTable getListNameCategory()
         {
-            string query = "SELECT * From DANHMUC";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                string query = "SELECT * FROM DANHMUC";
+
+                connection.Open();
+
+                using (adapter = new SqlDataAdapter(query, connection))
+                {
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+                    return dataSet.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
         }
+
     }
 }

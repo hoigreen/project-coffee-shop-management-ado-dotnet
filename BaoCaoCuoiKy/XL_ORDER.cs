@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Globalization;
 
 namespace BaoCaoCuoiKy
 {
@@ -22,84 +24,204 @@ namespace BaoCaoCuoiKy
             connection = new SqlConnection(connectionString);
         }
 
+        public string getIdOrderLastRow()
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                string selectCommand = "SELECT MaHD FROM HOADON ORDER BY MaHD DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+                using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                    else
+                    {
+                        return "";
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return "";
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+        }
+
         public int getCountSumOrder()
         {
             try
             {
-                connection.Open();
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
                 string selectCommand = "SELECT COUNT(*) FROM HOADON";
-                command = new SqlCommand(selectCommand, connection);
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-                return count;
+                using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    int count = Convert.ToInt32(command.ExecuteScalar());
+                    return count;
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return 0;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
             }
         }
 
         public DataTable getStatis()
         {
-            string query = "SELECT " +
-                "MONTH(Ngay) AS Thang, " +
-                "YEAR(Ngay) AS Nam, " +
-                "COUNT(MaHD) AS TongSoHoaDon, " +
-                "SUM(TongTien) AS TongDanhThu " +
-                "FROM HOADON " +
-                "GROUP BY MONTH(Ngay), YEAR(Ngay);";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                string query = "SELECT " +
+                    "MONTH(Ngay) AS Thang, " +
+                    "YEAR(Ngay) AS Nam, " +
+                    "COUNT(MaHD) AS TongSoHoaDon, " +
+                    "SUM(TongTien) AS TongDanhThu " +
+                    "FROM HOADON " +
+                    "GROUP BY MONTH(Ngay), YEAR(Ngay);";
+
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                adapter = new SqlDataAdapter(query, connection);
+                dataSet = new DataSet();
+                adapter.Fill(dataSet);
+
+                return dataSet.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null; 
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
 
         public DataTable getListOrder()
         {
-            string query = "SELECT " +
-                "HOADON.MaHD, " +
-                "NHANVIEN.HoTenNV, " +
-                "NHANVIEN.MaNV, " +
-                "HOADON.Ngay, " +
-                "HOADON.TongTien " +
-                "FROM HOADON " +
-                "JOIN NHANVIEN ON HOADON.MaNV = NHANVIEN.MaNV;";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                string query = "SELECT " +
+                    "HOADON.MaHD, " +
+                    "NHANVIEN.HoTenNV, " +
+                    "NHANVIEN.MaNV, " +
+                    "HOADON.Ngay, " +
+                    "HOADON.TongTien " +
+                    "FROM HOADON " +
+                    "JOIN NHANVIEN ON HOADON.MaNV = NHANVIEN.MaNV;";
+
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                adapter = new SqlDataAdapter(query, connection);
+                dataSet = new DataSet();
+                adapter.Fill(dataSet);
+
+                return dataSet.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null; 
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
         }
+
         public DataTable getListOrder_Month(string thang)
         {
-            string query = "SELECT " +
-                "HOADON.MaHD, " +
-                "NHANVIEN.HoTenNV, " +
-                "NHANVIEN.MaNV, " +
-                "HOADON.Ngay, " +
-                "HOADON.TongTien " +
-                "FROM HOADON " +
-                "JOIN NHANVIEN ON HOADON.MaNV = NHANVIEN.MaNV " +
-                "WHERE MONTH(Ngay) = " + thang;
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                int thangValue = int.Parse(thang); 
+
+                string query = "SELECT " +
+                    "HOADON.MaHD, " +
+                    "NHANVIEN.HoTenNV, " +
+                    "NHANVIEN.MaNV, " +
+                    "HOADON.Ngay, " +
+                    "HOADON.TongTien " +
+                    "FROM HOADON " +
+                    "JOIN NHANVIEN ON HOADON.MaNV = NHANVIEN.MaNV " +
+                    "WHERE MONTH(CONVERT(DATETIME, Ngay, 103)) = @Thang";
+
+                adapter = new SqlDataAdapter(query, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@Thang", thangValue);
+
+                dataSet = new DataSet();
+                adapter.Fill(dataSet);
+
+                return dataSet.Tables[0];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null; 
+            }
         }
-        public DataTable getListOrder_Day(string ngay)
+
+        public bool addOrder(string MaHD, string MaNV, string Ngay, int TongTien)
         {
-            string query = "SELECT " +
-                "HOADON.MaHD, " +
-                "NHANVIEN.HoTenNV, " +
-                "NHANVIEN.MaNV, " +
-                "HOADON.Ngay, " +
-                "HOADON.TongTien " +
-                "FROM HOADON " +
-                "JOIN NHANVIEN ON HOADON.MaNV = NHANVIEN.MaNV " +
-                "WHERE Ngay = " + ngay;
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                connection.Open();
+                string insertCommand = "INSERT INTO HOADON (MaHD, MaNV, Ngay, TongTien) VALUES (@MaHD, @MaNV, @Ngay, @TongTien)";
+                command = new SqlCommand(insertCommand, connection);
+                command.Parameters.AddWithValue("@MaHD", MaHD);
+                command.Parameters.AddWithValue("@MaNV", MaNV);
+                command.Parameters.AddWithValue("@Ngay", Ngay);
+                command.Parameters.AddWithValue("@TongTien", TongTien);
+
+                command.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
         }
     }
 }

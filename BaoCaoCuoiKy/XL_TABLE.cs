@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CoffeeShopManagement
 {
@@ -25,11 +26,53 @@ namespace CoffeeShopManagement
         }
         public DataTable getListTable()
         {
-            string query = "SELECT * FROM BAN";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT * FROM BAN";
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                    {
+                        DataSet dataSet = new DataSet();
+                        adapter.Fill(dataSet);
+                        return dataSet.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
         }
+
+        public DataTable getListIdTable()
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT MaBan, TenBan FROM BAN";
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                    {
+                        DataSet dataSet = new DataSet();
+                        adapter.Fill(dataSet);
+                        return dataSet.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+        }
+
     }
 }

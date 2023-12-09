@@ -26,36 +26,82 @@ namespace BaoCaoCuoiKy
 
         public DataTable getListIdWorkTime()
         {
-            string query = "SELECT MaCa FROM CALAM";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT MaCa FROM CALAM";
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                    {
+                        DataSet dataSet = new DataSet();
+                        adapter.Fill(dataSet);
+                        return dataSet.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
         }
 
         public DataTable getListWorkTime()
         {
-            string query = "SELECT * FROM CALAM";
-            adapter = new SqlDataAdapter(query, connection);
-            dataSet = new DataSet();
-            adapter.Fill(dataSet);
-            return dataSet.Tables[0];
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT * FROM CALAM";
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                    {
+                        DataSet dataSet = new DataSet();
+                        adapter.Fill(dataSet);
+                        return dataSet.Tables[0];
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
         }
 
         public string getIdWorkTimeLastRow()
         {
             try
             {
-                connection.Open();
-                string selectCommand = "SELECT * FROM CALAM ORDER BY MaCa DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
-                command = new SqlCommand(selectCommand, connection);
-                string id = command.ExecuteScalar().ToString();
-                connection.Close();
-                return id;
+                    string selectCommand = "SELECT MaCa FROM CALAM ORDER BY MaCa DESC OFFSET 0 ROWS FETCH FIRST 1 ROW ONLY;";
+
+                    using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                    {
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            return result.ToString();
+                        }
+                        else
+                        {
+                            return "";
+                        }
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return "";
             }
         }
@@ -64,16 +110,33 @@ namespace BaoCaoCuoiKy
         {
             try
             {
-                connection.Open();
-                string selectCommand = "SELECT COUNT(*) FROM CALAM WHERE MaCa = @MaCa";
-                command = new SqlCommand(selectCommand, connection);
-                command.Parameters.AddWithValue("@MaCa", MaCa);
-                int count = Convert.ToInt32(command.ExecuteScalar());
-                connection.Close();
-                return count > 0;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string selectCommand = "SELECT COUNT(*) FROM CALAM WHERE MaCa = @MaCa";
+
+                    using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaCa", MaCa);
+
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            int count = Convert.ToInt32(result);
+                            return count > 0;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
             }
         }
@@ -82,19 +145,28 @@ namespace BaoCaoCuoiKy
         {
             try
             {
-                connection.Open();
-                string insertCommand = "INSERT INTO CALAM VALUES(" +
-                    "N'" + MaCa + "', " +
-                    "N'" + TenCa + "', " +
-                    "N'" + ThoiGian + "', " +
-                    "N'" + Luong + "')";
-                command = new SqlCommand(insertCommand, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string insertCommand = "INSERT INTO CALAM VALUES(@MaCa, @TenCa, @ThoiGian, @Luong)";
+
+                    using (SqlCommand command = new SqlCommand(insertCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaCa", MaCa);
+                        command.Parameters.AddWithValue("@TenCa", TenCa);
+                        command.Parameters.AddWithValue("@ThoiGian", ThoiGian);
+                        command.Parameters.AddWithValue("@Luong", Luong);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
             }
         }
@@ -103,32 +175,42 @@ namespace BaoCaoCuoiKy
         {
             try
             {
-                connection.Open();
-                string deleteCommand = "DELETE FROM CALAM " +
-                    "WHERE MaCa = '" + MaCa + "'";
-                command = new SqlCommand(deleteCommand, connection);
-                command.ExecuteNonQuery();
-                connection.Close();
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string deleteCommand = "DELETE FROM CALAM WHERE MaCa = @MaCa";
+
+                    using (SqlCommand command = new SqlCommand(deleteCommand, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaCa", MaCa);
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
             }
         }
 
-        public bool UpdateWorkTIme(string MaCa, string TenCa, string ThoiGian, int Luong)
+        public bool UpdateWorkTime(string MaCa, string TenCa, string ThoiGian, int Luong)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+
                     string updateCommand = "UPDATE CALAM SET " +
                                            "TenCa = @TenCa, " +
                                            "ThoiGian = @ThoiGian, " +
                                            "Luong = @Luong " +
-                                           "Where MaCa = @MaCa";
+                                           "WHERE MaCa = @MaCa";
 
                     using (SqlCommand command = new SqlCommand(updateCommand, connection))
                     {
@@ -136,16 +218,19 @@ namespace BaoCaoCuoiKy
                         command.Parameters.AddWithValue("@ThoiGian", ThoiGian);
                         command.Parameters.AddWithValue("@Luong", Luong);
                         command.Parameters.AddWithValue("@MaCa", MaCa);
+
                         command.ExecuteNonQuery();
                     }
                 }
-                connection.Close();
+
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                MessageBox.Show("Error: " + ex.Message);
                 return false;
             }
         }
+
     }
 }
