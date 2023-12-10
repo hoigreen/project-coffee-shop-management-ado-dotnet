@@ -31,9 +31,9 @@ namespace BaoCaoCuoiKy.User_Control
             dg_calam.SelectionChanged += DgCaLam_SelectionChanged;
             btn_save.Enabled = false;
             btn_cancelSave.Enabled = false;
-            btn_xoa.Enabled = false;
-            btn_sua.Enabled = false;
-            btn_clear.Enabled = false;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
+            btnClear.Enabled = false;
             isEnableTextBox(false);
             resetDataTable();
         }
@@ -48,80 +48,16 @@ namespace BaoCaoCuoiKy.User_Control
                 string thoiGian = selectedRow.Cells["col_thoigian"].Value.ToString();
                 string luong = selectedRow.Cells["col_luong"].Value.ToString();
 
-                tb_ma.Text = maCa;
-                tb_ten.Text = tenCa;
-                tb_thoigian.Text = thoiGian;
-                tb_luong.Text = luong;
+                textBoxId.Text = maCa;
+                textBoxName.Text = tenCa;
+                textBoxTime.Text = thoiGian;
+                textBoxSalary.Text = luong;
 
-                btn_xoa.Enabled = true;
-                btn_sua.Enabled = true;
+                btnDelete.Enabled = true;
+                btnEdit.Enabled = true;
                 btn_save.Enabled = false;
                 btn_cancelSave.Enabled = false;
             }
-        }
-        
-        private void btn_clear_Click(object sender, EventArgs e)
-        {
-            if (functionSave == "insert" || functionSave == "update")
-            {
-                var result = MessageBox.Show("Thông tin chưa được lưu!\nBạn chắc chắn muốn xóa chứ?", "Thông báo",
-                        MessageBoxButtons.YesNo);
-                if (result == DialogResult.Yes)
-                {
-                    btn_cancelSave.Enabled = false;
-                    btn_save.Enabled = false;
-                    btn_sua.Enabled = false;
-                    btn_xoa.Enabled = false;
-                    btn_them.Enabled = true;
-                    btn_clear.Enabled = false;
-                    tb_ma.Text = "";
-                    functionSave = "";
-                    isEnableTextBox(false);
-                    clearData();
-                }
-            }
-        }
-
-        private void btn_them_Click(object sender, EventArgs e)
-        {
-            clearData();
-            string id = work_time.getIdWorkTimeLastRow();
-            tb_ma.Text = global.autoIncrementId(id);
-            isEnableTextBox(true);
-            btn_save.Enabled = true;
-            btn_cancelSave.Enabled = true;
-            btn_xoa.Enabled = false;
-            btn_sua.Enabled = false;
-            btn_clear.Enabled = true;
-            functionSave = "insert";
-        }
-
-        private void btn_xoa_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Bạn chắc chắn muốn xóa nhân viên?", "Thông báo",
-               MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                if (work_time.DeleteWorkTime(tb_ma.Text))
-                {
-                    tb_ma.Text = "";
-                    resetDataTable();
-                    global.notify("Xóa ca làm thành công");
-                }
-                else
-                    global.notify("Xóa ca làm không thành công");
-            }
-        }
-
-        private void btn_sua_Click(object sender, EventArgs e)
-        {
-            isEnableTextBox(true);
-            btn_save.Enabled = true;
-            btn_cancelSave.Enabled = true;
-            btn_xoa.Enabled = false;
-            btn_them.Enabled = false;
-            btn_clear.Enabled = true;
-            functionSave = "update";
         }
 
         private void btn_save_Click(object sender, EventArgs e)
@@ -145,10 +81,10 @@ namespace BaoCaoCuoiKy.User_Control
             isEnableTextBox(false);
             btn_save.Enabled = false;
             btn_cancelSave.Enabled = false;
-            btn_sua.Enabled = false;
-            btn_them.Enabled = true;
-            btn_clear.Enabled = false;
-            tb_ma.Text = "";
+            btnEdit.Enabled = false;
+            btnCreate.Enabled = true;
+            btnClear.Enabled = false;
+            textBoxId.Text = "";
             functionSave = "";
         }
 
@@ -160,11 +96,11 @@ namespace BaoCaoCuoiKy.User_Control
             {
                 btn_cancelSave.Enabled = false;
                 btn_save.Enabled = false;
-                btn_them.Enabled = false;
-                btn_xoa.Enabled = false;
-                btn_sua.Enabled = true;
-                btn_clear.Enabled = false;
-                tb_ma.Text = "";
+                btnCreate.Enabled = true;
+                btnDelete.Enabled = false;
+                btnEdit.Enabled = false;
+                btnClear.Enabled = false;
+                textBoxId.Text = "";
                 functionSave = "";
                 isEnableTextBox(false);
                 clearData();
@@ -197,9 +133,9 @@ namespace BaoCaoCuoiKy.User_Control
         
         private void clearData()
         {
-            tb_ten.Text = "";
-            tb_thoigian.Text = "";
-            tb_luong.Text = "";
+            textBoxName.Text = "";
+            textBoxTime.Text = "";
+            textBoxSalary.Text = "";
         }
 
         private void resetDataTable()
@@ -212,24 +148,93 @@ namespace BaoCaoCuoiKy.User_Control
 
         public void isEnableTextBox(bool isEnable)
         {
-            tb_ma.Enabled = false;
-            tb_ten.Enabled = isEnable;
-            tb_thoigian.Enabled = isEnable;
-            tb_luong.Enabled = isEnable;
+            textBoxId.Enabled = false;
+            textBoxName.Enabled = isEnable;
+            textBoxTime.Enabled = isEnable;
+            textBoxSalary.Enabled = isEnable;
+        }
+
+        private void panelControl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            clearData();
+            string id = work_time.getIdWorkTimeLastRow();
+            textBoxId.Text = global.autoIncrementId(id);
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
+            btnClear.Enabled = true;
+            functionSave = "insert";
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn chắc chắn muốn xóa nhân viên?", "Thông báo",
+               MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                if (work_time.DeleteWorkTime(textBoxId.Text))
+                {
+                    textBoxId.Text = "";
+                    resetDataTable();
+                    global.notify("Xóa ca làm thành công");
+                }
+                else
+                    global.notify("Xóa ca làm không thành công");
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            isEnableTextBox(true);
+            btn_save.Enabled = true;
+            btn_cancelSave.Enabled = true;
+            btnDelete.Enabled = false;
+            btnCreate.Enabled = false;
+            btnClear.Enabled = true;
+            functionSave = "update";
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            if (functionSave == "insert" || functionSave == "update")
+            {
+                var result = MessageBox.Show("Thông tin chưa được lưu!\nBạn chắc chắn muốn xóa chứ?", "Thông báo",
+                        MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    btn_cancelSave.Enabled = false;
+                    btn_save.Enabled = false;
+                    btnEdit.Enabled = false;
+                    btnDelete.Enabled = false;
+                    btnCreate.Enabled = true;
+                    btnClear.Enabled = false;
+                    textBoxId.Text = "";
+                    functionSave = "";
+                    isEnableTextBox(false);
+                    clearData();
+                }
+            }
         }
 
         private void getData()
         {
-            MaCa = tb_ma.Text;
-            TenCa = tb_ten.Text;
-            ThoiGian = tb_thoigian.Text;
-            Luong = int.Parse(tb_luong.Text);
+            MaCa = textBoxId.Text;
+            TenCa = textBoxName.Text;
+            ThoiGian = textBoxTime.Text;
+            Luong = int.Parse(textBoxSalary.Text);
         }
 
         private bool isEmpty()
         {
             bool isEmpty = true;
-            if (tb_ten.Text == "" || tb_luong.Text == "" || tb_thoigian.Text == "")
+            if (textBoxName.Text == "" || textBoxSalary.Text == "" || textBoxTime.Text == "")
                 isEmpty = true;
             else
                 isEmpty = false;
