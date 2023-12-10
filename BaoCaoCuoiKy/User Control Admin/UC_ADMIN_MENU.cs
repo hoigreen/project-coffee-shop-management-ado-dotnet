@@ -191,25 +191,6 @@ namespace BaoCaoCuoiKy.User_Control
             comboBoxType.Enabled = isEnable;
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tb_gia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_them_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -228,15 +209,6 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
-        private void btn_xoa_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_sua_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
@@ -283,16 +255,6 @@ namespace BaoCaoCuoiKy.User_Control
                     clearData();
                 }
             }
-        }
-
-        private void tb_ma_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cb_danhmuc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBoxSortByType_SelectedIndexChanged(object sender, EventArgs e)

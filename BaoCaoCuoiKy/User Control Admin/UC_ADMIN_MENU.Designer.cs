@@ -141,7 +141,6 @@
             this.label4.Size = new System.Drawing.Size(59, 18);
             this.label4.TabIndex = 8;
             this.label4.Text = "Đơn giá";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -174,7 +173,6 @@
             this.label7.Size = new System.Drawing.Size(235, 23);
             this.label7.TabIndex = 23;
             this.label7.Text = "Thông tin chi tiết của món";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label5
             // 
@@ -433,7 +431,6 @@
             this.comboBoxSortByType.Name = "comboBoxSortByType";
             this.comboBoxSortByType.Size = new System.Drawing.Size(380, 36);
             this.comboBoxSortByType.TabIndex = 38;
-            this.comboBoxSortByType.SelectedIndexChanged += new System.EventHandler(this.comboBoxSortByType_SelectedIndexChanged);
             // 
             // UC_ADMIN_MENU
             // 
