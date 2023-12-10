@@ -27,6 +27,34 @@ namespace BaoCaoCuoiKy
             connection = new SqlConnection(connectionString);
         }
 
+        public string getNameStaff(string maNV)
+        {
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT HoTenNV FROM NHANVIEN WHERE MaNV = @MaNV";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaNV", maNV);
+
+                        string result = command.ExecuteScalar().ToString();
+
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+                return "";
+            }
+        }
+
         public DataTable getListStaff()
         {
             try

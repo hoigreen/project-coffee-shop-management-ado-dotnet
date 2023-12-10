@@ -42,16 +42,18 @@ namespace CoffeeShopManagement.User_Control_Staff
                 btn.Click += Button_Table_Click;
                 btn.Tag = (int)row["MaBan"];
                 
-                switch ((string)row["TrangThai"])
+                switch ((bool)row["TrangThai"])
                 {
-                    case "Trống":
+                    case false:
                         btn.ForeColor = Color.White;
                         btn.BackColor = Color.ForestGreen;
                         btn.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                         break;
-                    default:
+                    case true:
                         btn.ForeColor = Color.White;
                         btn.BackColor = Color.Red;
+                        break;
+                    default:
                         break;
                 }
                 panelListTable.Controls.Add(btn);

@@ -74,5 +74,85 @@ namespace CoffeeShopManagement
             }
         }
 
+        public bool getStatusTable(int maBan)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT TrangThai FROM BAN WHERE MaBan = @MaBan";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaBan", maBan);
+
+                        bool result = (bool)command.ExecuteScalar();
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+                return false;
+            }
+
+        }
+
+        public bool combineTable(int maBan, string newMaHD)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "UPDATE BAN SET MaHD = MaHD + ',' + @NewMaHD WHERE MaBan = @MaBan";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@NewMaHD", newMaHD);
+                        command.Parameters.AddWithValue("@MaBan", maBan);
+
+                        command.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+                return false;
+            }
+        }
+        public bool setStatusTable(int maBan, bool trangThai, string maHD)
+        {
+            try 
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "UPDATE BAN SET TrangThai = @TrangThai, MaHD = @MaHD WHERE MaBan = @MaBan";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaBan", maBan);
+                        command.Parameters.AddWithValue("@TrangThai", trangThai);
+                        command.Parameters.AddWithValue("@MaHD", maHD);
+
+                        command.ExecuteNonQuery();
+
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+                return false;
+            }
+        }
     }
 }
