@@ -25,28 +25,48 @@ namespace BaoCaoCuoiKy.User_Control
 
         private string MaHD, TenNV, MaNV, Ngay, Tong;
 
-        private void cb_locThang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            resetDataTable();
-        }
-
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            tb_maHD.Text = "";
-            tb_tenNV.Text = "";
-            tb_maNV.Text = "";
-            dt_ngay.Text = "01/01/2023";
-            tb_tong.Text = "";
+            textBoxOrderId.Text = "";
+            textBoxStaffName.Text = "";
+            textBoxStaffId.Text = "";
+            dateTimePickerPayment.Text = "01/01/2023";
+            textBoxTotalPayment.Text = "";
         }
 
         private void btn_all_Click(object sender, EventArgs e)
         {
-            cb_locThang.Text = "--";
+            comboBoxMonth.Text = "--";
+        }
+
+        private void dg_hoadon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            resetDataTable();
+        }
+
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            comboBoxMonth.Text = "--";
         }
 
         private void UC_QuanLyHoaDon_Load(object sender, EventArgs e)
         {
-            cb_locThang.SelectedIndex = 0;
+            comboBoxMonth.Items.Add("--");
+            for (int i = 1; i <= 12; i++)
+            {
+                comboBoxMonth.Items.Add(i);
+            }
+            comboBoxMonth.SelectedIndex = 0;
             resetDataTable();
             dg_hoadon.Columns["col_ngay"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dg_hoadon.SelectionChanged += DgHoaDon_SelectionChanged;
@@ -62,11 +82,11 @@ namespace BaoCaoCuoiKy.User_Control
                 string Ngay = selectedRow.Cells["col_ngay"].Value.ToString();
                 string Tong = selectedRow.Cells["col_tong"].Value.ToString();
 
-                tb_maHD.Text = MaHD;
-                tb_tenNV.Text = TenNV;
-                tb_maNV.Text = MaNV;
-                dt_ngay.Text = Ngay;
-                tb_tong.Text = Tong;
+                textBoxOrderId.Text = MaHD;
+                textBoxStaffName.Text = TenNV;
+                textBoxStaffId.Text = MaNV;
+                dateTimePickerPayment.Text = Ngay;
+                textBoxTotalPayment.Text = Tong;
 
                 dtdetail_order = detail_order.getListDetailOrder(MaHD);
                 global.addDataGridView(dtdetail_order, dg_chitiethoadon);
@@ -74,22 +94,22 @@ namespace BaoCaoCuoiKy.User_Control
         }
         private void clearData()
         {
-            tb_maHD.Text = "";
-            tb_tenNV.Text = "";
-            tb_maNV.Text = "";
-            dt_ngay.Text = "";
-            tb_tong.Text = "";
+            textBoxOrderId.Text = "";
+            textBoxStaffName.Text = "";
+            textBoxStaffId.Text = "";
+            dateTimePickerPayment.Text = "";
+            textBoxTotalPayment.Text = "";
         }
         private void resetDataTable()
         {
             clearData();
-            if (cb_locThang.Text == "--")
+            if (comboBoxMonth.Text == "--")
             {
                 dtHoaDon = order.getListOrder();
             }
             else
             {
-                dtHoaDon = order.getListOrder_Month(cb_locThang.Text);
+                dtHoaDon = order.getListOrder_Month(comboBoxMonth.Text);
             }
             global.addDataGridView(dtHoaDon, dg_hoadon);
         }

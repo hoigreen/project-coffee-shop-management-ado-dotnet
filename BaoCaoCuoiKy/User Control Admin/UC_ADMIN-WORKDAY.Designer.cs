@@ -51,14 +51,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnClearFilter = new Guna.UI2.WinForms.Guna2Button();
+            this.comboBoxShift = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBoxMonth = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.comboBoxMonth = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.comboBoxShift = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnClearFilter = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_ngayCong)).BeginInit();
             this.panelControl.SuspendLayout();
             this.guna2Panel1.SuspendLayout();
@@ -196,7 +196,7 @@
             // 
             // dateTimePickerWorkDate
             // 
-            this.dateTimePickerWorkDate.BackColor = System.Drawing.Color.White;
+            this.dateTimePickerWorkDate.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dateTimePickerWorkDate.BorderColor = System.Drawing.Color.Green;
             this.dateTimePickerWorkDate.BorderRadius = 12;
             this.dateTimePickerWorkDate.BorderThickness = 1;
@@ -222,6 +222,7 @@
             this.textBoxStaffName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxStaffName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxStaffName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxStaffName.FillColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxStaffName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxStaffName.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxStaffName.ForeColor = System.Drawing.Color.Black;
@@ -247,6 +248,7 @@
             this.textBoxStaffId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxStaffId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxStaffId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxStaffId.FillColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxStaffId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxStaffId.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxStaffId.ForeColor = System.Drawing.Color.Black;
@@ -272,6 +274,7 @@
             this.textBoxShiftName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxShiftName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxShiftName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxShiftName.FillColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxShiftName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxShiftName.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxShiftName.ForeColor = System.Drawing.Color.Black;
@@ -297,6 +300,7 @@
             this.textBoxShiftId.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.textBoxShiftId.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBoxShiftId.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBoxShiftId.FillColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxShiftId.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBoxShiftId.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxShiftId.ForeColor = System.Drawing.Color.Black;
@@ -373,6 +377,81 @@
             this.guna2Panel1.Size = new System.Drawing.Size(1636, 616);
             this.guna2Panel1.TabIndex = 43;
             // 
+            // btnClearFilter
+            // 
+            this.btnClearFilter.BorderRadius = 12;
+            this.btnClearFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnClearFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnClearFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnClearFilter.FillColor = System.Drawing.Color.Red;
+            this.btnClearFilter.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnClearFilter.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClearFilter.Location = new System.Drawing.Point(801, 99);
+            this.btnClearFilter.Name = "btnClearFilter";
+            this.btnClearFilter.Size = new System.Drawing.Size(180, 42);
+            this.btnClearFilter.TabIndex = 48;
+            this.btnClearFilter.Text = "Xoá bộ lọc";
+            this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
+            // 
+            // comboBoxShift
+            // 
+            this.comboBoxShift.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxShift.BorderColor = System.Drawing.Color.Green;
+            this.comboBoxShift.BorderRadius = 10;
+            this.comboBoxShift.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxShift.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.comboBoxShift.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxShift.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxShift.Font = new System.Drawing.Font("Roboto", 12F);
+            this.comboBoxShift.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxShift.ItemHeight = 36;
+            this.comboBoxShift.Location = new System.Drawing.Point(508, 99);
+            this.comboBoxShift.Name = "comboBoxShift";
+            this.comboBoxShift.Size = new System.Drawing.Size(248, 42);
+            this.comboBoxShift.TabIndex = 47;
+            this.comboBoxShift.SelectedIndexChanged += new System.EventHandler(this.comboBoxShift_SelectedIndexChanged);
+            // 
+            // comboBoxMonth
+            // 
+            this.comboBoxMonth.BackColor = System.Drawing.Color.Transparent;
+            this.comboBoxMonth.BorderColor = System.Drawing.Color.Green;
+            this.comboBoxMonth.BorderRadius = 10;
+            this.comboBoxMonth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBoxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxMonth.FillColor = System.Drawing.Color.WhiteSmoke;
+            this.comboBoxMonth.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxMonth.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBoxMonth.Font = new System.Drawing.Font("Roboto", 12F);
+            this.comboBoxMonth.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxMonth.ItemHeight = 36;
+            this.comboBoxMonth.Location = new System.Drawing.Point(110, 99);
+            this.comboBoxMonth.Name = "comboBoxMonth";
+            this.comboBoxMonth.Size = new System.Drawing.Size(248, 42);
+            this.comboBoxMonth.TabIndex = 46;
+            this.comboBoxMonth.SelectedIndexChanged += new System.EventHandler(this.comboBoxMonth_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(374, 110);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(127, 18);
+            this.label14.TabIndex = 45;
+            this.label14.Text = "Chọn ca làm việc:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 110);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(88, 18);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Chọn tháng:";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -405,84 +484,11 @@
             this.label2.Size = new System.Drawing.Size(0, 18);
             this.label2.TabIndex = 6;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 110);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(88, 18);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Chọn tháng:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(374, 110);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(127, 18);
-            this.label14.TabIndex = 45;
-            this.label14.Text = "Chọn ca làm việc:";
-            // 
-            // comboBoxMonth
-            // 
-            this.comboBoxMonth.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxMonth.BorderColor = System.Drawing.Color.Green;
-            this.comboBoxMonth.BorderRadius = 10;
-            this.comboBoxMonth.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxMonth.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxMonth.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxMonth.Font = new System.Drawing.Font("Roboto", 12F);
-            this.comboBoxMonth.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxMonth.ItemHeight = 36;
-            this.comboBoxMonth.Location = new System.Drawing.Point(110, 99);
-            this.comboBoxMonth.Name = "comboBoxMonth";
-            this.comboBoxMonth.Size = new System.Drawing.Size(248, 42);
-            this.comboBoxMonth.TabIndex = 46;
-            this.comboBoxMonth.SelectedIndexChanged += new System.EventHandler(this.comboBoxMonth_SelectedIndexChanged);
-            // 
-            // comboBoxShift
-            // 
-            this.comboBoxShift.BackColor = System.Drawing.Color.Transparent;
-            this.comboBoxShift.BorderColor = System.Drawing.Color.Green;
-            this.comboBoxShift.BorderRadius = 10;
-            this.comboBoxShift.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxShift.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxShift.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBoxShift.Font = new System.Drawing.Font("Roboto", 12F);
-            this.comboBoxShift.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxShift.ItemHeight = 36;
-            this.comboBoxShift.Location = new System.Drawing.Point(508, 99);
-            this.comboBoxShift.Name = "comboBoxShift";
-            this.comboBoxShift.Size = new System.Drawing.Size(248, 42);
-            this.comboBoxShift.TabIndex = 47;
-            this.comboBoxShift.SelectedIndexChanged += new System.EventHandler(this.comboBoxShift_SelectedIndexChanged);
-            // 
-            // btnClearFilter
-            // 
-            this.btnClearFilter.BorderRadius = 12;
-            this.btnClearFilter.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnClearFilter.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnClearFilter.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnClearFilter.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnClearFilter.FillColor = System.Drawing.Color.Red;
-            this.btnClearFilter.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnClearFilter.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnClearFilter.Location = new System.Drawing.Point(801, 99);
-            this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(180, 42);
-            this.btnClearFilter.TabIndex = 48;
-            this.btnClearFilter.Text = "Xoá bộ lọc";
-            this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
-            // 
             // UC_QuanLyNgayCong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.panelControl);
             this.Controls.Add(this.lblHeader);

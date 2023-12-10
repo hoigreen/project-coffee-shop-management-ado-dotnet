@@ -188,6 +188,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Admin\UC_ADMIN_ORDER.resx">
       <DependentUpon>UC_ADMIN_ORDER.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="User Control Admin\UC_ADMIN_MENU.resx">
       <DependentUpon>UC_ADMIN_MENU.cs</DependentUpon>
