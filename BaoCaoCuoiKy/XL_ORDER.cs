@@ -128,6 +128,56 @@ namespace BaoCaoCuoiKy
             }
         }
 
+        public int getTotalPay(string maHD)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT TongTien FROM HOADON WHERE MaHD = @MaHD";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaHD", maHD);
+                        int result = Convert.ToInt32(command.ExecuteScalar());
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+                return 0;
+            }
+        }
+        public string getDateTime(string maHD)
+        {
+            if (maHD == "") return "";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT Ngay FROM HOADON WHERE MaHD = @MaHD";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaHD", maHD);
+                        string result = command.ExecuteScalar().ToString();
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+                return "";
+            }
+        }
+
         public DataTable getListOrder()
         {
             try

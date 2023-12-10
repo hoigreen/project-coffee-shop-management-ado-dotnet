@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using System.Windows.Forms;
 
 namespace BaoCaoCuoiKy
@@ -17,14 +18,14 @@ namespace BaoCaoCuoiKy
         public Form_Main_Staff()
         {
             InitializeComponent();
-            UC_STAFF_TABLE uc = new UC_STAFF_TABLE();
-            addUserControl(uc);
         }
 
         private void Form_Main_Staff_Load(object sender, EventArgs e)
         {
-
+            UC_STAFF_TABLE uc = new UC_STAFF_TABLE();
+            addUserControl(uc);
         }
+
         // Xử lý khi Form mới đóng -> form cũ hiển thị lại
         private void Form_Main_Staff_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -36,7 +37,7 @@ namespace BaoCaoCuoiKy
             }
         }
 
-        private void addUserControl(UserControl userControl)
+        private void addUserControl(System.Windows.Forms.UserControl userControl)
         {
             userControl.Dock = DockStyle.Fill;
             panel_staff_container.Controls.Clear();
@@ -48,7 +49,6 @@ namespace BaoCaoCuoiKy
         {
             this.Close();
         }
-
 
         private void btnList_Click(object sender, EventArgs e)
         {

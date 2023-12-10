@@ -98,7 +98,32 @@ namespace CoffeeShopManagement
                 MessageBox.Show($"Lỗi: {ex.Message}");
                 return false;
             }
+        }
 
+        public string getIdOrderTable(int maBan)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT MaHD FROM BAN WHERE MaBan = @MaBan";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@MaBan", maBan);
+
+                        string result = command.ExecuteScalar().ToString();
+                        return result;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}");
+                return "";
+            }
         }
 
         public bool combineTable(int maBan, string newMaHD)
@@ -129,7 +154,9 @@ namespace CoffeeShopManagement
         }
         public bool setStatusTable(int maBan, bool trangThai, string maHD)
         {
-            try 
+            string MaHD = (string)((maHD == null) ? (object)DBNull.Value : maHD);
+
+            try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -140,7 +167,7 @@ namespace CoffeeShopManagement
                     {
                         command.Parameters.AddWithValue("@MaBan", maBan);
                         command.Parameters.AddWithValue("@TrangThai", trangThai);
-                        command.Parameters.AddWithValue("@MaHD", maHD);
+                        command.Parameters.AddWithValue("@MaHD", MaHD);
 
                         command.ExecuteNonQuery();
 

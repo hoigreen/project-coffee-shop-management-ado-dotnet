@@ -1,20 +1,33 @@
-﻿using System;
+﻿using BaoCaoCuoiKy;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CoffeeShopManagement.User_Control_Staff
 {
+
+    
     public partial class UC_STAFF_TABLE : UserControl
     {
         private XL_TABLE table = new XL_TABLE();
+        private XL_ORDER order = new XL_ORDER();   
+        private XL_DETAIL_ORDER detailOrder = new XL_DETAIL_ORDER();
+        private DataTable dtDetailOrder = new DataTable();
         private DataTable dtTable = new DataTable();
-        private int x = 0, y = 0;
+        private Global global = new Global();
+        private int x , y , totalPay, numerOrder = 1, idTable;
+        private bool statusTable;
+        private string nameTable, idOrder, dateOpenTable;
+       
 
         public UC_STAFF_TABLE()
         {
@@ -27,14 +40,17 @@ namespace CoffeeShopManagement.User_Control_Staff
         }
         private void loadTable()
         {
+            panel_infoTable.Visible = false;
+            x = 10;
+            y = 10;
             panelListTable.Controls.Clear();
             dtTable = table.getListTable();
             foreach (DataRow row in dtTable.Rows)
             {
-                Button btn = new Button()
+                System.Windows.Forms.Button btn = new System.Windows.Forms.Button()
                 {
-                    Width = 260,
-                    Height = 200,
+                    Width = 225,
+                    Height = 160,
                     Margin = new Padding(10),
                     Location = new Point(x, y)
                 };
@@ -57,44 +73,73 @@ namespace CoffeeShopManagement.User_Control_Staff
                         break;
                 }
                 panelListTable.Controls.Add(btn);
-                x += 260;
-                if ((int)row["MaBan"] % 6 == 0)
+                x += 225;
+                if ((int)row["MaBan"] % 4 == 0)
                 {
-                    x = 0;
-                    y += 200;
+                    x = 10;
+                    y += 160;
                 }
             }
         }
-
-        private void panel_ban_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbTitleEmpty_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelListTable_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+     
 
         private void Button_Table_Click(object sender, EventArgs e)
         {
-            // Xử lý sự kiện khi Button được nhấn
-            Button clickedButton = (Button)sender;
-            int maBan = (int)clickedButton.Tag;
-            string tenBan = (string)clickedButton.Text;
+            System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
 
-            // Hiển thị thông báo MaBan
-            MessageBox.Show($"Đã nhấn vào {tenBan} với mã là {maBan}");
+            idTable = (int)clickedButton.Tag;
+            statusTable = table.getStatusTable(idTable);
+            nameTable = (string)clickedButton.Text;
+            idOrder = table.getIdOrderTable(idTable);
+            string[] arrayIdOrder = idOrder.Split(',');
+            totalPay = calculateTotalPay(arrayIdOrder);
+            dateOpenTable = order.getDateTime(arrayIdOrder[arrayIdOrder.Length - 1]);
+            setDataTableDetailOrder(arrayIdOrder);
+            setValuePanelInfoTable();
+
+            btn_closeTable.Visible = statusTable;
+            panel_infoTable.Visible = true;
+        }
+
+
+        private void btn_closeTable_Click(object sender, EventArgs e)
+        {
+            table.setStatusTable(idTable, false, "");
+            global.notify("Đóng bàn thành công");
+            loadTable();
+        }
+
+        private void setDataTableDetailOrder(Array arrIdOrder)
+        {
+            dtDetailOrder.Rows.Clear();
+            foreach (string item in arrIdOrder)
+            {
+                DataTable dataTable = new DataTable();
+                dataTable = detailOrder.getListDetailOrder(item);
+                dtDetailOrder.Merge(dataTable, false, MissingSchemaAction.Add);
+            }
+        }
+
+
+        private int calculateTotalPay(Array arrIdOrder)
+        {
+            int tongTien = 0;
+            
+            foreach (string item in arrIdOrder)
+            {
+                tongTien += order.getTotalPay(item);
+            }
+            return tongTien;
+        }
+
+        private void setValuePanelInfoTable()
+        {
+            lb_nameTable.Text = nameTable;
+            lb_status.Text = statusTable ? "Có người" : "Trống";
+            lb_timeTable.Text = string.IsNullOrEmpty(dateOpenTable) ? "..." : dateOpenTable;
+            lb_idOrder.Text = string.IsNullOrEmpty(idOrder) ? "..." : idOrder;
+            lb_totalPay.Text = totalPay == 0 ? "...":global.FormatPrice(totalPay);
+            global.addDataGridView(dtDetailOrder, dg_tableDetailOrder);
         }
     }
 }

@@ -61,6 +61,8 @@ namespace BaoCaoCuoiKy
             }
         }
 
+
+
         public bool addDetailOrder(string MaHD, string MaMon, int SoLuong, int DonGia)
         {
             try
