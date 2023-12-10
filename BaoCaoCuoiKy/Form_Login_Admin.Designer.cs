@@ -79,10 +79,12 @@
             this.panel_presentation.Controls.Add(this.lblTitle);
             this.panel_presentation.Controls.Add(this.guna2PictureBox1);
             this.panel_presentation.FillColor = System.Drawing.Color.White;
-            this.panel_presentation.Location = new System.Drawing.Point(447, 241);
+            this.panel_presentation.Location = new System.Drawing.Point(464, 218);
             this.panel_presentation.Name = "panel_presentation";
+            this.panel_presentation.Radius = 12;
             this.panel_presentation.ShadowColor = System.Drawing.Color.Black;
-            this.panel_presentation.Size = new System.Drawing.Size(589, 582);
+            this.panel_presentation.ShadowShift = 10;
+            this.panel_presentation.Size = new System.Drawing.Size(589, 617);
             this.panel_presentation.TabIndex = 7;
             // 
             // lblTitle
@@ -90,7 +92,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Lucida Calligraphy", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblTitle.Location = new System.Drawing.Point(73, 33);
+            this.lblTitle.Location = new System.Drawing.Point(63, 33);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(442, 48);
             this.lblTitle.TabIndex = 1;
@@ -103,7 +105,7 @@
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 115);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(3, 125);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(583, 450);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -121,7 +123,7 @@
             this.panelLogin.Controls.Add(this.lblLogin);
             this.panelLogin.Controls.Add(this.lblUsername);
             this.panelLogin.Controls.Add(this.lblPassword);
-            this.panelLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panelLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(77)))), ((int)(((byte)(55)))));
             this.panelLogin.Location = new System.Drawing.Point(1031, 152);
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Radius = 20;
@@ -141,7 +143,7 @@
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.Location = new System.Drawing.Point(28, 576);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(396, 69);
+            this.btnCancel.Size = new System.Drawing.Size(396, 60);
             this.btnCancel.TabIndex = 9;
             this.btnCancel.Text = "Trở lại";
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -153,12 +155,12 @@
             this.btnLogin.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLogin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnLogin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLogin.FillColor = System.Drawing.Color.MediumBlue;
+            this.btnLogin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(110)))));
             this.btnLogin.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(28, 492);
+            this.btnLogin.Location = new System.Drawing.Point(28, 494);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(396, 69);
+            this.btnLogin.Size = new System.Drawing.Size(396, 60);
             this.btnLogin.TabIndex = 8;
             this.btnLogin.Text = "Đăng nhập tài khoản";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -209,7 +211,7 @@
             this.textBoxUsername.PlaceholderForeColor = System.Drawing.Color.Gray;
             this.textBoxUsername.PlaceholderText = "Nhập vào mã quản lý của bạn";
             this.textBoxUsername.SelectedText = "";
-            this.textBoxUsername.Size = new System.Drawing.Size(398, 58);
+            this.textBoxUsername.Size = new System.Drawing.Size(398, 52);
             this.textBoxUsername.TabIndex = 6;
             this.textBoxUsername.TextOffset = new System.Drawing.Point(5, 0);
             this.textBoxUsername.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
@@ -230,6 +232,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1920, 1061);
             this.Controls.Add(this.panelLogin);
             this.Controls.Add(this.panel_presentation);

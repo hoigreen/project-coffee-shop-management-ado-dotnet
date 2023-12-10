@@ -71,7 +71,7 @@ namespace BaoCaoCuoiKy
             // 
             // panel_container
             // 
-            this.panel_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.panel_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_container.Location = new System.Drawing.Point(240, 71);
             this.panel_container.Margin = new System.Windows.Forms.Padding(4);

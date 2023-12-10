@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_menu = new System.Windows.Forms.DataGridView();
             this.col_ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,15 +62,15 @@
             // 
             this.dg_menu.AllowUserToAddRows = false;
             this.dg_menu.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_menu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(3);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_menu.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_menu.ColumnHeadersHeight = 40;
             this.dg_menu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_ma,
@@ -81,11 +81,11 @@
             this.dg_menu.Location = new System.Drawing.Point(28, 498);
             this.dg_menu.Margin = new System.Windows.Forms.Padding(4);
             this.dg_menu.Name = "dg_menu";
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Yellow;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.dg_menu.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dg_menu.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dg_menu.RowTemplate.Height = 32;
-            this.dg_menu.Size = new System.Drawing.Size(1646, 474);
+            this.dg_menu.Size = new System.Drawing.Size(1626, 474);
             this.dg_menu.TabIndex = 0;
             // 
             // col_ma
@@ -248,7 +248,7 @@
             this.panelControl.Controls.Add(this.label4);
             this.panelControl.Location = new System.Drawing.Point(28, 149);
             this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(1646, 267);
+            this.panelControl.Size = new System.Drawing.Size(1626, 267);
             this.panelControl.TabIndex = 22;
             // 
             // comboBoxType
@@ -371,7 +371,7 @@
             this.btnCreate.FillColor = System.Drawing.Color.LimeGreen;
             this.btnCreate.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(1050, 18);
+            this.btnCreate.Location = new System.Drawing.Point(1039, 16);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(180, 45);
             this.btnCreate.TabIndex = 32;
@@ -390,7 +390,7 @@
             this.btnDelete.FillColor = System.Drawing.Color.Red;
             this.btnDelete.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(1249, 18);
+            this.btnDelete.Location = new System.Drawing.Point(1238, 16);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(180, 45);
             this.btnDelete.TabIndex = 31;
@@ -409,7 +409,7 @@
             this.btnEdit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.btnEdit.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(1446, 18);
+            this.btnEdit.Location = new System.Drawing.Point(1435, 16);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(180, 45);
             this.btnEdit.TabIndex = 30;
@@ -439,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.Controls.Add(this.comboBoxSortByType);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panelControl);

@@ -54,6 +54,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.picLogo);
             this.panel1.Controls.Add(this.lblTitle);
             this.panel1.Location = new System.Drawing.Point(0, 1);
@@ -87,7 +88,7 @@
             // btnExitWindow
             // 
             this.btnExitWindow.Animated = true;
-            this.btnExitWindow.BackColor = System.Drawing.Color.IndianRed;
+            this.btnExitWindow.BackColor = System.Drawing.Color.Transparent;
             this.btnExitWindow.BorderColor = System.Drawing.Color.IndianRed;
             this.btnExitWindow.BorderRadius = 20;
             this.btnExitWindow.BorderThickness = 2;
@@ -102,10 +103,10 @@
             this.btnExitWindow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnExitWindow.ImageSize = new System.Drawing.Size(40, 40);
             this.btnExitWindow.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.btnExitWindow.Location = new System.Drawing.Point(1624, 994);
+            this.btnExitWindow.Location = new System.Drawing.Point(1647, 999);
             this.btnExitWindow.Name = "btnExitWindow";
-            this.btnExitWindow.Size = new System.Drawing.Size(284, 74);
-            this.btnExitWindow.TabIndex = 5;
+            this.btnExitWindow.Size = new System.Drawing.Size(261, 69);
+            this.btnExitWindow.TabIndex = 10;
             this.btnExitWindow.Text = "Thoát hệ thống";
             this.btnExitWindow.Click += new System.EventHandler(this.btnExitWindow_Click);
             // 
@@ -118,10 +119,10 @@
             this.btnViewStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnViewStaff.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnViewStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewStaff.FillColor = System.Drawing.Color.Wheat;
-            this.btnViewStaff.FillColor2 = System.Drawing.Color.PaleTurquoise;
+            this.btnViewStaff.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(131)))), ((int)(((byte)(248)))));
+            this.btnViewStaff.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(131)))), ((int)(((byte)(248)))));
             this.btnViewStaff.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewStaff.ForeColor = System.Drawing.Color.Black;
+            this.btnViewStaff.ForeColor = System.Drawing.Color.White;
             this.btnViewStaff.Location = new System.Drawing.Point(508, 389);
             this.btnViewStaff.Name = "btnViewStaff";
             this.btnViewStaff.Size = new System.Drawing.Size(423, 343);
@@ -138,8 +139,8 @@
             this.btnViewAdmin.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnViewAdmin.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnViewAdmin.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewAdmin.FillColor = System.Drawing.Color.MediumPurple;
-            this.btnViewAdmin.FillColor2 = System.Drawing.Color.Magenta;
+            this.btnViewAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(110)))));
+            this.btnViewAdmin.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(110)))));
             this.btnViewAdmin.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewAdmin.ForeColor = System.Drawing.Color.White;
             this.btnViewAdmin.Location = new System.Drawing.Point(1061, 389);
@@ -152,7 +153,7 @@
             // Form_Begin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(1920, 1061);
             this.Controls.Add(this.btnViewAdmin);
             this.Controls.Add(this.btnViewStaff);
