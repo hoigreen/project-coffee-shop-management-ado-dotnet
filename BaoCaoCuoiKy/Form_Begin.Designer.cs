@@ -87,7 +87,7 @@
             // btnExitWindow
             // 
             this.btnExitWindow.Animated = true;
-            this.btnExitWindow.BackColor = System.Drawing.Color.Transparent;
+            this.btnExitWindow.BackColor = System.Drawing.Color.IndianRed;
             this.btnExitWindow.BorderColor = System.Drawing.Color.IndianRed;
             this.btnExitWindow.BorderRadius = 20;
             this.btnExitWindow.BorderThickness = 2;
@@ -107,7 +107,6 @@
             this.btnExitWindow.Size = new System.Drawing.Size(284, 74);
             this.btnExitWindow.TabIndex = 5;
             this.btnExitWindow.Text = "Thoát hệ thống";
-            this.btnExitWindow.UseTransparentBackground = true;
             this.btnExitWindow.Click += new System.EventHandler(this.btnExitWindow_Click);
             // 
             // btnViewStaff

@@ -31,6 +31,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_menu = new System.Windows.Forms.DataGridView();
+            this.col_ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,10 +54,6 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.comboBoxSortByType = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.col_ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_menu)).BeginInit();
             this.panelControl.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +64,7 @@
             this.dg_menu.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumAquamarine;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(3);
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGoldenrodYellow;
@@ -87,6 +87,29 @@
             this.dg_menu.RowTemplate.Height = 32;
             this.dg_menu.Size = new System.Drawing.Size(1646, 474);
             this.dg_menu.TabIndex = 0;
+            // 
+            // col_ma
+            // 
+            this.col_ma.HeaderText = "Mã Món";
+            this.col_ma.Name = "col_ma";
+            // 
+            // col_ten
+            // 
+            this.col_ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_ten.HeaderText = "Tên";
+            this.col_ten.Name = "col_ten";
+            // 
+            // col_gia
+            // 
+            this.col_gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_gia.HeaderText = "Đơn giá";
+            this.col_gia.Name = "col_gia";
+            // 
+            // col_loai
+            // 
+            this.col_loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_loai.HeaderText = "Danh mục";
+            this.col_loai.Name = "col_loai";
             // 
             // label1
             // 
@@ -411,29 +434,6 @@
             this.comboBoxSortByType.Size = new System.Drawing.Size(380, 36);
             this.comboBoxSortByType.TabIndex = 38;
             this.comboBoxSortByType.SelectedIndexChanged += new System.EventHandler(this.comboBoxSortByType_SelectedIndexChanged);
-            // 
-            // col_ma
-            // 
-            this.col_ma.HeaderText = "Mã Món";
-            this.col_ma.Name = "col_ma";
-            // 
-            // col_ten
-            // 
-            this.col_ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_ten.HeaderText = "Tên";
-            this.col_ten.Name = "col_ten";
-            // 
-            // col_gia
-            // 
-            this.col_gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_gia.HeaderText = "Đơn giá";
-            this.col_gia.Name = "col_gia";
-            // 
-            // col_loai
-            // 
-            this.col_loai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_loai.HeaderText = "Danh mục";
-            this.col_loai.Name = "col_loai";
             // 
             // UC_ADMIN_MENU
             // 
