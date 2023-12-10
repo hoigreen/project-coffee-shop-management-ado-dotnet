@@ -52,7 +52,6 @@ namespace BaoCaoCuoiKy
             this.lb_name_admin = new System.Windows.Forms.Label();
             this.btnExitWindow = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -66,7 +65,6 @@ namespace BaoCaoCuoiKy
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_container
@@ -409,10 +407,10 @@ namespace BaoCaoCuoiKy
             this.btnExitWindow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnExitWindow.ImageSize = new System.Drawing.Size(40, 40);
             this.btnExitWindow.ImeMode = System.Windows.Forms.ImeMode.HangulFull;
-            this.btnExitWindow.Location = new System.Drawing.Point(1772, 8);
+            this.btnExitWindow.Location = new System.Drawing.Point(1766, 14);
             this.btnExitWindow.Margin = new System.Windows.Forms.Padding(4);
             this.btnExitWindow.Name = "btnExitWindow";
-            this.btnExitWindow.Size = new System.Drawing.Size(139, 50);
+            this.btnExitWindow.Size = new System.Drawing.Size(139, 41);
             this.btnExitWindow.TabIndex = 10;
             this.btnExitWindow.Text = "Đăng xuất";
             this.btnExitWindow.UseTransparentBackground = true;
@@ -428,16 +426,6 @@ namespace BaoCaoCuoiKy
             this.label2.Size = new System.Drawing.Size(153, 18);
             this.label2.TabIndex = 9;
             this.label2.Text = "Dành cho quản trị viên";
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1802, 133);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(64, 64);
-            this.guna2CirclePictureBox1.TabIndex = 9;
-            this.guna2CirclePictureBox1.TabStop = false;
             // 
             // button1
             // 
@@ -517,7 +505,6 @@ namespace BaoCaoCuoiKy
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1920, 1061);
-            this.Controls.Add(this.guna2CirclePictureBox1);
             this.Controls.Add(this.panel_container);
             this.Controls.Add(this.panelSidebar);
             this.Controls.Add(this.panelHeader);
@@ -538,14 +525,12 @@ namespace BaoCaoCuoiKy
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel_container;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
