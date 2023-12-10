@@ -29,20 +29,20 @@ namespace BaoCaoCuoiKy.User_Control
         {
             dtCaLam = calam.getListIdWorkTime();
             dtCaLam.Rows.Add("--");
-            cb_ca.DataSource = dtCaLam;
-            cb_ca.DisplayMember = dtCaLam.Columns[0].ColumnName;
-            cb_ca.ValueMember = dtCaLam.Columns[0].ColumnName;
-            cb_thang.Items.Add("--");
+            comboBoxShift.DataSource = dtCaLam;
+            comboBoxShift.DisplayMember = dtCaLam.Columns[0].ColumnName;
+            comboBoxShift.ValueMember = dtCaLam.Columns[0].ColumnName;
+            comboBoxMonth.Items.Add("--");
             for (int i = 1; i <= 12; i++)
             {
-                cb_thang.Items.Add(i);
+                comboBoxMonth.Items.Add(i);
             }
-            cb_thang.SelectedIndex = 0;
-            cb_ca.SelectedIndex = cb_ca.Items.Count - 1;
+            comboBoxMonth.SelectedIndex = 0;
+            comboBoxShift.SelectedIndex = comboBoxShift.Items.Count - 1;
             resetDataTable();
             dg_ngayCong.Columns["col_ngay"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dg_ngayCong.SelectionChanged += DgNgayCong_SelectionChanged;
-            cb_ca.SelectedIndexChanged += cb_ca_SelectedIndexChanged;
+            comboBoxShift.SelectedIndexChanged += comboBoxShift_SelectedIndexChanged;
         }
         private void DgNgayCong_SelectionChanged(object sender, EventArgs e)
         {
@@ -55,11 +55,11 @@ namespace BaoCaoCuoiKy.User_Control
                 string tenNV = selectedRow.Cells["col_tenNV"].Value.ToString();
                 string ngayLam = selectedRow.Cells["col_ngay"].Value.ToString();
 
-                tb_maCa.Text = maCa;
-                tb_tenCa.Text = tenCa;
-                tb_maNV.Text = maNV;
-                tb_tenNV.Text = tenNV;
-                dt_ngayLam.Text = ngayLam;
+                textBoxShiftId.Text = maCa;
+                textBoxShiftName.Text = tenCa;
+                textBoxStaffId.Text = maNV;
+                textBoxStaffName.Text = tenNV;
+                dateTimePickerWorkDate.Text = ngayLam;
             }
         }
         private void cb_ca_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,36 +70,41 @@ namespace BaoCaoCuoiKy.User_Control
         public void resetDataTable()
         {
             clearData();
-            if(cb_thang.Text == "--" && cb_ca.Text == "--")
+            if(comboBoxMonth.Text == "--" && comboBoxShift.Text == "--")
                 dtNgayCong = work_day.getListWorkDay();
             else
-               dtNgayCong = work_day.getListWorkDay_Month_Time(cb_thang.Text, cb_ca.Text);
+               dtNgayCong = work_day.getListWorkDay_Month_Time(comboBoxMonth.Text, comboBoxShift.Text);
             global.addDataGridView(dtNgayCong, dg_ngayCong);
         }
 
         private void clearData()
         {
-            tb_maCa.Text = "";
-            tb_tenCa.Text = ""; 
-            tb_maNV.Text = "";
-            tb_tenNV.Text = "";
-            dt_ngayLam.Text = "01/01/2023";
+            textBoxShiftId.Text = "";
+            textBoxShiftName.Text = ""; 
+            textBoxStaffId.Text = "";
+            textBoxStaffName.Text = "";
+            dateTimePickerWorkDate.Text = "01/01/2023";
         }
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
             clearData();
-        }
+        }       
 
-        private void cb_thang_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void comboBoxShift_SelectedIndexChanged(object sender, EventArgs e)
         {
             resetDataTable();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void comboBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cb_ca.Text = "--";
-            cb_thang.Text = "--";
+            resetDataTable();
+        }
+
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            comboBoxShift.Text = "--";
+            comboBoxMonth.Text = "--";
         }
     }
 }
