@@ -59,6 +59,7 @@ namespace BaoCaoCuoiKy
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -83,6 +84,7 @@ namespace BaoCaoCuoiKy
             this.panelSidebar.BorderRadius = 10;
             this.panelSidebar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.panelSidebar.BorderThickness = 1;
+            this.panelSidebar.Controls.Add(this.label3);
             this.panelSidebar.Controls.Add(this.btnReport);
             this.panelSidebar.Controls.Add(this.btnManageInvoice);
             this.panelSidebar.Controls.Add(this.btnManageWorkDay);
@@ -116,11 +118,11 @@ namespace BaoCaoCuoiKy
             this.btnReport.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnReport.Location = new System.Drawing.Point(-1, 771);
+            this.btnReport.Location = new System.Drawing.Point(-1, 310);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(234, 86);
             this.btnReport.TabIndex = 18;
-            this.btnReport.Text = "Thống kê";
+            this.btnReport.Text = "Dashboard";
             this.btnReport.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnReport.TextOffset = new System.Drawing.Point(10, 0);
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
@@ -141,7 +143,7 @@ namespace BaoCaoCuoiKy
             this.btnManageInvoice.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnManageInvoice.Image = ((System.Drawing.Image)(resources.GetObject("btnManageInvoice.Image")));
             this.btnManageInvoice.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageInvoice.Location = new System.Drawing.Point(-1, 679);
+            this.btnManageInvoice.Location = new System.Drawing.Point(-1, 842);
             this.btnManageInvoice.Name = "btnManageInvoice";
             this.btnManageInvoice.Size = new System.Drawing.Size(234, 86);
             this.btnManageInvoice.TabIndex = 17;
@@ -166,7 +168,7 @@ namespace BaoCaoCuoiKy
             this.btnManageWorkDay.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.btnManageWorkDay.Image = ((System.Drawing.Image)(resources.GetObject("btnManageWorkDay.Image")));
             this.btnManageWorkDay.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageWorkDay.Location = new System.Drawing.Point(-1, 587);
+            this.btnManageWorkDay.Location = new System.Drawing.Point(-1, 750);
             this.btnManageWorkDay.Name = "btnManageWorkDay";
             this.btnManageWorkDay.Size = new System.Drawing.Size(234, 86);
             this.btnManageWorkDay.TabIndex = 16;
@@ -191,7 +193,7 @@ namespace BaoCaoCuoiKy
             this.btnManageStaff.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
             this.btnManageStaff.Image = ((System.Drawing.Image)(resources.GetObject("btnManageStaff.Image")));
             this.btnManageStaff.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageStaff.Location = new System.Drawing.Point(-1, 403);
+            this.btnManageStaff.Location = new System.Drawing.Point(-1, 566);
             this.btnManageStaff.Name = "btnManageStaff";
             this.btnManageStaff.Size = new System.Drawing.Size(234, 86);
             this.btnManageStaff.TabIndex = 15;
@@ -242,7 +244,7 @@ namespace BaoCaoCuoiKy
             this.lblMethodSidebar.AutoSize = true;
             this.lblMethodSidebar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMethodSidebar.ForeColor = System.Drawing.Color.Black;
-            this.lblMethodSidebar.Location = new System.Drawing.Point(12, 273);
+            this.lblMethodSidebar.Location = new System.Drawing.Point(12, 439);
             this.lblMethodSidebar.Name = "lblMethodSidebar";
             this.lblMethodSidebar.Size = new System.Drawing.Size(103, 23);
             this.lblMethodSidebar.TabIndex = 11;
@@ -264,7 +266,7 @@ namespace BaoCaoCuoiKy
             this.btnManageMenu.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
             this.btnManageMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnManageMenu.Image")));
             this.btnManageMenu.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageMenu.Location = new System.Drawing.Point(0, 311);
+            this.btnManageMenu.Location = new System.Drawing.Point(0, 474);
             this.btnManageMenu.Name = "btnManageMenu";
             this.btnManageMenu.Size = new System.Drawing.Size(234, 86);
             this.btnManageMenu.TabIndex = 10;
@@ -289,7 +291,7 @@ namespace BaoCaoCuoiKy
             this.btnManageWorkTime.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
             this.btnManageWorkTime.Image = ((System.Drawing.Image)(resources.GetObject("btnManageWorkTime.Image")));
             this.btnManageWorkTime.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnManageWorkTime.Location = new System.Drawing.Point(0, 495);
+            this.btnManageWorkTime.Location = new System.Drawing.Point(0, 658);
             this.btnManageWorkTime.Name = "btnManageWorkTime";
             this.btnManageWorkTime.Size = new System.Drawing.Size(234, 86);
             this.btnManageWorkTime.TabIndex = 9;
@@ -497,6 +499,17 @@ namespace BaoCaoCuoiKy
             this.button5.Text = "Quản lý nhân viên";
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(12, 284);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 23);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Trang chủ";
+            // 
             // Form_Main_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -558,5 +571,6 @@ namespace BaoCaoCuoiKy
         private Guna.UI2.WinForms.Guna2Button btnReport;
         private Guna.UI2.WinForms.Guna2Button btnManageInvoice;
         private Guna.UI2.WinForms.Guna2Button btnManageWorkDay;
+        private System.Windows.Forms.Label label3;
     }
 }

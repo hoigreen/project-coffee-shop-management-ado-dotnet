@@ -27,7 +27,7 @@ namespace BaoCaoCuoiKy
         {
             InitializeComponent();
             connectionString = global.pathDatabase;
-            UC_ADMIN_MENU uc = new UC_ADMIN_MENU();
+            UC_ADMIN_STATIS uc = new UC_ADMIN_STATIS();
             addUserControl(uc);
         }
 
