@@ -71,6 +71,7 @@ namespace BaoCaoCuoiKy
             // 
             // panel_container
             // 
+            this.panel_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
             this.panel_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_container.Location = new System.Drawing.Point(240, 71);
             this.panel_container.Margin = new System.Windows.Forms.Padding(4);
@@ -112,7 +113,7 @@ namespace BaoCaoCuoiKy
             this.btnReport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnReport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReport.FillColor = System.Drawing.Color.Transparent;
-            this.btnReport.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnReport.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReport.ForeColor = System.Drawing.Color.DimGray;
             this.btnReport.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnReport.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
@@ -137,7 +138,7 @@ namespace BaoCaoCuoiKy
             this.btnManageInvoice.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnManageInvoice.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnManageInvoice.FillColor = System.Drawing.Color.Transparent;
-            this.btnManageInvoice.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnManageInvoice.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageInvoice.ForeColor = System.Drawing.Color.DimGray;
             this.btnManageInvoice.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageInvoice.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
@@ -162,7 +163,7 @@ namespace BaoCaoCuoiKy
             this.btnManageWorkDay.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnManageWorkDay.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnManageWorkDay.FillColor = System.Drawing.Color.Transparent;
-            this.btnManageWorkDay.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnManageWorkDay.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageWorkDay.ForeColor = System.Drawing.Color.DimGray;
             this.btnManageWorkDay.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageWorkDay.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
@@ -187,7 +188,7 @@ namespace BaoCaoCuoiKy
             this.btnManageStaff.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnManageStaff.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnManageStaff.FillColor = System.Drawing.Color.Transparent;
-            this.btnManageStaff.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnManageStaff.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageStaff.ForeColor = System.Drawing.Color.DimGray;
             this.btnManageStaff.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageStaff.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
@@ -260,7 +261,7 @@ namespace BaoCaoCuoiKy
             this.btnManageMenu.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnManageMenu.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnManageMenu.FillColor = System.Drawing.Color.Transparent;
-            this.btnManageMenu.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnManageMenu.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageMenu.ForeColor = System.Drawing.Color.DimGray;
             this.btnManageMenu.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageMenu.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
@@ -285,7 +286,7 @@ namespace BaoCaoCuoiKy
             this.btnManageWorkTime.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnManageWorkTime.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnManageWorkTime.FillColor = System.Drawing.Color.Transparent;
-            this.btnManageWorkTime.Font = new System.Drawing.Font("Roboto", 12F);
+            this.btnManageWorkTime.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnManageWorkTime.ForeColor = System.Drawing.Color.DimGray;
             this.btnManageWorkTime.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnManageWorkTime.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
@@ -383,7 +384,7 @@ namespace BaoCaoCuoiKy
             this.lb_name_admin.AutoSize = true;
             this.lb_name_admin.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lb_name_admin.ForeColor = System.Drawing.Color.Green;
-            this.lb_name_admin.Location = new System.Drawing.Point(1616, 26);
+            this.lb_name_admin.Location = new System.Drawing.Point(1624, 25);
             this.lb_name_admin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_name_admin.Name = "lb_name_admin";
             this.lb_name_admin.Size = new System.Drawing.Size(97, 19);
