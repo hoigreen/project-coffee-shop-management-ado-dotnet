@@ -38,14 +38,19 @@
             this.panelSidebar = new Guna.UI2.WinForms.Guna2Panel();
             this.btnList = new Guna.UI2.WinForms.Guna2Button();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
-            this.lblTitleSidebar = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblMethodSidebar = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panelSidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_staff_container
             // 
+            this.panel_staff_container.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.panel_staff_container.CausesValidation = false;
             this.panel_staff_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_staff_container.Location = new System.Drawing.Point(240, 71);
@@ -70,9 +75,9 @@
             this.btnExitWindow.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnExitWindow.ImageSize = new System.Drawing.Size(40, 40);
             this.btnExitWindow.ImeMode = System.Windows.Forms.ImeMode.AlphaFull;
-            this.btnExitWindow.Location = new System.Drawing.Point(1783, 9);
+            this.btnExitWindow.Location = new System.Drawing.Point(1781, 14);
             this.btnExitWindow.Name = "btnExitWindow";
-            this.btnExitWindow.Size = new System.Drawing.Size(123, 50);
+            this.btnExitWindow.Size = new System.Drawing.Size(125, 42);
             this.btnExitWindow.TabIndex = 6;
             this.btnExitWindow.Text = "Trở lại";
             this.btnExitWindow.UseTransparentBackground = true;
@@ -81,6 +86,8 @@
             // panelHeader
             // 
             this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelHeader.Controls.Add(this.guna2PictureBox1);
+            this.panelHeader.Controls.Add(this.guna2PictureBox3);
             this.panelHeader.Controls.Add(this.lblLogoDescription);
             this.panelHeader.Controls.Add(this.lblLogo);
             this.panelHeader.Controls.Add(this.guna2PictureBox2);
@@ -132,9 +139,9 @@
             this.panelSidebar.BorderRadius = 10;
             this.panelSidebar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             this.panelSidebar.BorderThickness = 1;
+            this.panelSidebar.Controls.Add(this.lblMethodSidebar);
             this.panelSidebar.Controls.Add(this.btnList);
             this.panelSidebar.Controls.Add(this.btnCreate);
-            this.panelSidebar.Controls.Add(this.lblTitleSidebar);
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSidebar.Location = new System.Drawing.Point(0, 71);
             this.panelSidebar.Name = "panelSidebar";
@@ -151,15 +158,15 @@
             this.btnList.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnList.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnList.FillColor = System.Drawing.Color.Transparent;
-            this.btnList.Font = new System.Drawing.Font("Roboto", 12F);
-            this.btnList.ForeColor = System.Drawing.Color.Black;
+            this.btnList.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnList.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnList.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.btnList.Image = ((System.Drawing.Image)(resources.GetObject("btnList.Image")));
             this.btnList.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnList.Location = new System.Drawing.Point(0, 241);
+            this.btnList.Location = new System.Drawing.Point(-3, 69);
             this.btnList.Name = "btnList";
-            this.btnList.Size = new System.Drawing.Size(237, 86);
+            this.btnList.Size = new System.Drawing.Size(237, 73);
             this.btnList.TabIndex = 10;
             this.btnList.Text = "Danh sách bàn";
             this.btnList.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -176,31 +183,57 @@
             this.btnCreate.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnCreate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnCreate.FillColor = System.Drawing.Color.Transparent;
-            this.btnCreate.Font = new System.Drawing.Font("Roboto", 12F);
-            this.btnCreate.ForeColor = System.Drawing.Color.Black;
+            this.btnCreate.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnCreate.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnCreate.HoverState.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.btnCreate.Image = ((System.Drawing.Image)(resources.GetObject("btnCreate.Image")));
             this.btnCreate.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCreate.Location = new System.Drawing.Point(0, 119);
+            this.btnCreate.Location = new System.Drawing.Point(-3, 148);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(237, 86);
+            this.btnCreate.Size = new System.Drawing.Size(237, 69);
             this.btnCreate.TabIndex = 9;
             this.btnCreate.Text = "Tạo hoá đơn";
             this.btnCreate.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCreate.TextOffset = new System.Drawing.Point(10, 0);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // lblTitleSidebar
+            // guna2PictureBox1
             // 
-            this.lblTitleSidebar.AutoSize = true;
-            this.lblTitleSidebar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitleSidebar.ForeColor = System.Drawing.Color.Black;
-            this.lblTitleSidebar.Location = new System.Drawing.Point(9, 47);
-            this.lblTitleSidebar.Name = "lblTitleSidebar";
-            this.lblTitleSidebar.Size = new System.Drawing.Size(103, 23);
-            this.lblTitleSidebar.TabIndex = 9;
-            this.lblTitleSidebar.Text = "Chức năng";
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.FillColor = System.Drawing.Color.Black;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1706, 23);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 24);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 14;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.ImageRotate = 20F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(1737, 25);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(23, 20);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 13;
+            this.guna2PictureBox3.TabStop = false;
+            this.guna2PictureBox3.UseTransparentBackground = true;
+            // 
+            // lblMethodSidebar
+            // 
+            this.lblMethodSidebar.AutoSize = true;
+            this.lblMethodSidebar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMethodSidebar.ForeColor = System.Drawing.Color.Blue;
+            this.lblMethodSidebar.Location = new System.Drawing.Point(12, 30);
+            this.lblMethodSidebar.Name = "lblMethodSidebar";
+            this.lblMethodSidebar.Size = new System.Drawing.Size(103, 23);
+            this.lblMethodSidebar.TabIndex = 12;
+            this.lblMethodSidebar.Text = "Chức năng";
             // 
             // Form_Main_Staff
             // 
@@ -222,6 +255,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,7 +271,9 @@
         private System.Windows.Forms.Label lblLogoDescription;
         private System.Windows.Forms.Label lblLogo;
         private Guna.UI2.WinForms.Guna2Button btnCreate;
-        private System.Windows.Forms.Label lblTitleSidebar;
         private Guna.UI2.WinForms.Guna2Button btnList;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
+        private System.Windows.Forms.Label lblMethodSidebar;
     }
 }

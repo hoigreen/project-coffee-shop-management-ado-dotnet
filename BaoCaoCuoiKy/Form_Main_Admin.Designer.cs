@@ -33,6 +33,7 @@ namespace BaoCaoCuoiKy
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main_Admin));
             this.panel_container = new System.Windows.Forms.Panel();
             this.panelSidebar = new Guna.UI2.WinForms.Guna2Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnReport = new Guna.UI2.WinForms.Guna2Button();
             this.btnManageInvoice = new Guna.UI2.WinForms.Guna2Button();
             this.btnManageWorkDay = new Guna.UI2.WinForms.Guna2Button();
@@ -58,7 +59,6 @@ namespace BaoCaoCuoiKy
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelHeader.SuspendLayout();
@@ -100,6 +100,17 @@ namespace BaoCaoCuoiKy
             this.panelSidebar.Name = "panelSidebar";
             this.panelSidebar.Size = new System.Drawing.Size(240, 990);
             this.panelSidebar.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Blue;
+            this.label3.Location = new System.Drawing.Point(12, 284);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 23);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Trang chủ";
             // 
             // btnReport
             // 
@@ -332,9 +343,9 @@ namespace BaoCaoCuoiKy
             this.guna2PictureBox1.FillColor = System.Drawing.Color.Black;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1530, 17);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(1544, 19);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(34, 36);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(27, 28);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 12;
             this.guna2PictureBox1.TabStop = false;
@@ -355,9 +366,9 @@ namespace BaoCaoCuoiKy
             this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 20F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(1571, 21);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(1579, 21);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(35, 28);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(27, 24);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 11;
             this.guna2PictureBox3.TabStop = false;
@@ -487,17 +498,6 @@ namespace BaoCaoCuoiKy
             this.button5.TabIndex = 8;
             this.button5.Text = "Quản lý nhân viên";
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(12, 284);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 23);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Trang chủ";
             // 
             // Form_Main_Admin
             // 
