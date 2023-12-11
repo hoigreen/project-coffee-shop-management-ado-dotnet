@@ -36,34 +36,36 @@
             this.col_tongthu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblAmountItems = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblAmountOrder = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblAmountRenevue = new System.Windows.Forms.Label();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.lblRevenue = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblAmountStaff = new System.Windows.Forms.Label();
-            this.lblAmountItems = new System.Windows.Forms.Label();
-            this.lblAmountOrder = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox4 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblAmountStaff = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.lblRevenue = new System.Windows.Forms.Label();
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label6 = new System.Windows.Forms.Label();
             this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.label8 = new System.Windows.Forms.Label();
+            this.chartReportRenevue = new LiveCharts.WinForms.CartesianChart();
+            this.pieChartBestItems = new LiveCharts.WinForms.PieChart();
             ((System.ComponentModel.ISupportInitialize)(this.dg_thongke)).BeginInit();
             this.guna2GradientPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2GradientPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel6.SuspendLayout();
             this.SuspendLayout();
@@ -77,10 +79,10 @@
             this.col_nam,
             this.col_tongDon,
             this.col_tongthu});
-            this.dg_thongke.Location = new System.Drawing.Point(20, 79);
+            this.dg_thongke.Location = new System.Drawing.Point(493, 13);
             this.dg_thongke.Margin = new System.Windows.Forms.Padding(4);
             this.dg_thongke.Name = "dg_thongke";
-            this.dg_thongke.Size = new System.Drawing.Size(761, 517);
+            this.dg_thongke.Size = new System.Drawing.Size(271, 63);
             this.dg_thongke.TabIndex = 2;
             // 
             // col_thang
@@ -128,6 +130,42 @@
             this.guna2GradientPanel3.Size = new System.Drawing.Size(381, 203);
             this.guna2GradientPanel3.TabIndex = 9;
             // 
+            // guna2PictureBox3
+            // 
+            this.guna2PictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.ErrorImage")));
+            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
+            this.guna2PictureBox3.ImageRotate = 0F;
+            this.guna2PictureBox3.Location = new System.Drawing.Point(161, 26);
+            this.guna2PictureBox3.Name = "guna2PictureBox3";
+            this.guna2PictureBox3.Size = new System.Drawing.Size(52, 45);
+            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox3.TabIndex = 3;
+            this.guna2PictureBox3.TabStop = false;
+            this.guna2PictureBox3.UseTransparentBackground = true;
+            // 
+            // lblAmountItems
+            // 
+            this.lblAmountItems.AutoSize = true;
+            this.lblAmountItems.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmountItems.ForeColor = System.Drawing.Color.White;
+            this.lblAmountItems.Location = new System.Drawing.Point(177, 134);
+            this.lblAmountItems.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAmountItems.Name = "lblAmountItems";
+            this.lblAmountItems.Size = new System.Drawing.Size(138, 19);
+            this.lblAmountItems.TabIndex = 2;
+            this.lblAmountItems.Text = "lblAmountItems";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(97, 88);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(172, 25);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Số lượng món ăn";
+            // 
             // guna2GradientPanel4
             // 
             this.guna2GradientPanel4.BackColor = System.Drawing.Color.Transparent;
@@ -141,6 +179,43 @@
             this.guna2GradientPanel4.Name = "guna2GradientPanel4";
             this.guna2GradientPanel4.Size = new System.Drawing.Size(370, 203);
             this.guna2GradientPanel4.TabIndex = 10;
+            // 
+            // guna2PictureBox4
+            // 
+            this.guna2PictureBox4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.ErrorImage")));
+            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
+            this.guna2PictureBox4.ImageRotate = 0F;
+            this.guna2PictureBox4.Location = new System.Drawing.Point(167, 26);
+            this.guna2PictureBox4.Name = "guna2PictureBox4";
+            this.guna2PictureBox4.Size = new System.Drawing.Size(52, 45);
+            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox4.TabIndex = 4;
+            this.guna2PictureBox4.TabStop = false;
+            this.guna2PictureBox4.UseTransparentBackground = true;
+            // 
+            // lblAmountOrder
+            // 
+            this.lblAmountOrder.AutoSize = true;
+            this.lblAmountOrder.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmountOrder.ForeColor = System.Drawing.Color.White;
+            this.lblAmountOrder.Location = new System.Drawing.Point(178, 134);
+            this.lblAmountOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAmountOrder.Name = "lblAmountOrder";
+            this.lblAmountOrder.Size = new System.Drawing.Size(138, 19);
+            this.lblAmountOrder.TabIndex = 3;
+            this.lblAmountOrder.Text = "lblAmountOrder";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(108, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(169, 25);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Tổng số hoá đơn";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblAmountRenevue
             // 
@@ -168,6 +243,43 @@
             this.guna2GradientPanel2.Size = new System.Drawing.Size(381, 203);
             this.guna2GradientPanel2.TabIndex = 8;
             // 
+            // guna2PictureBox2
+            // 
+            this.guna2PictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.ErrorImage")));
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(160, 26);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(52, 45);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox2.TabIndex = 2;
+            this.guna2PictureBox2.TabStop = false;
+            this.guna2PictureBox2.UseTransparentBackground = true;
+            // 
+            // lblAmountStaff
+            // 
+            this.lblAmountStaff.AutoSize = true;
+            this.lblAmountStaff.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAmountStaff.ForeColor = System.Drawing.Color.White;
+            this.lblAmountStaff.Location = new System.Drawing.Point(172, 134);
+            this.lblAmountStaff.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAmountStaff.Name = "lblAmountStaff";
+            this.lblAmountStaff.Size = new System.Drawing.Size(133, 19);
+            this.lblAmountStaff.TabIndex = 1;
+            this.lblAmountStaff.Text = "lblAmountStaff";
+            this.lblAmountStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(90, 88);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(194, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Số lượng nhân viên";
+            // 
             // guna2GradientPanel1
             // 
             this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -183,88 +295,6 @@
             this.guna2GradientPanel1.Size = new System.Drawing.Size(380, 203);
             this.guna2GradientPanel1.TabIndex = 7;
             // 
-            // lblRevenue
-            // 
-            this.lblRevenue.AutoSize = true;
-            this.lblRevenue.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRevenue.ForeColor = System.Drawing.Color.White;
-            this.lblRevenue.Location = new System.Drawing.Point(70, 88);
-            this.lblRevenue.Name = "lblRevenue";
-            this.lblRevenue.Size = new System.Drawing.Size(227, 25);
-            this.lblRevenue.TabIndex = 0;
-            this.lblRevenue.Text = "Doanh thu mọi thời đại";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(90, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(194, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Số lượng nhân viên";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(97, 88);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(172, 25);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Số lượng món ăn";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(108, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(169, 25);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Tổng số hoá đơn";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // lblAmountStaff
-            // 
-            this.lblAmountStaff.AutoSize = true;
-            this.lblAmountStaff.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmountStaff.ForeColor = System.Drawing.Color.White;
-            this.lblAmountStaff.Location = new System.Drawing.Point(172, 134);
-            this.lblAmountStaff.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAmountStaff.Name = "lblAmountStaff";
-            this.lblAmountStaff.Size = new System.Drawing.Size(133, 19);
-            this.lblAmountStaff.TabIndex = 1;
-            this.lblAmountStaff.Text = "lblAmountStaff";
-            this.lblAmountStaff.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblAmountItems
-            // 
-            this.lblAmountItems.AutoSize = true;
-            this.lblAmountItems.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmountItems.ForeColor = System.Drawing.Color.White;
-            this.lblAmountItems.Location = new System.Drawing.Point(177, 134);
-            this.lblAmountItems.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAmountItems.Name = "lblAmountItems";
-            this.lblAmountItems.Size = new System.Drawing.Size(138, 19);
-            this.lblAmountItems.TabIndex = 2;
-            this.lblAmountItems.Text = "lblAmountItems";
-            // 
-            // lblAmountOrder
-            // 
-            this.lblAmountOrder.AutoSize = true;
-            this.lblAmountOrder.Font = new System.Drawing.Font("Roboto Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAmountOrder.ForeColor = System.Drawing.Color.White;
-            this.lblAmountOrder.Location = new System.Drawing.Point(178, 134);
-            this.lblAmountOrder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAmountOrder.Name = "lblAmountOrder";
-            this.lblAmountOrder.Size = new System.Drawing.Size(138, 19);
-            this.lblAmountOrder.TabIndex = 3;
-            this.lblAmountOrder.Text = "lblAmountOrder";
-            // 
             // guna2PictureBox1
             // 
             this.guna2PictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.ErrorImage")));
@@ -278,44 +308,16 @@
             this.guna2PictureBox1.TabStop = false;
             this.guna2PictureBox1.UseTransparentBackground = true;
             // 
-            // guna2PictureBox2
+            // lblRevenue
             // 
-            this.guna2PictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.ErrorImage")));
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(160, 26);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(52, 45);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox2.TabIndex = 2;
-            this.guna2PictureBox2.TabStop = false;
-            this.guna2PictureBox2.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.ErrorImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.ErrorImage")));
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(161, 26);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(52, 45);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 3;
-            this.guna2PictureBox3.TabStop = false;
-            this.guna2PictureBox3.UseTransparentBackground = true;
-            // 
-            // guna2PictureBox4
-            // 
-            this.guna2PictureBox4.ErrorImage = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.ErrorImage")));
-            this.guna2PictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox4.Image")));
-            this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(167, 26);
-            this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(52, 45);
-            this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox4.TabIndex = 4;
-            this.guna2PictureBox4.TabStop = false;
-            this.guna2PictureBox4.UseTransparentBackground = true;
+            this.lblRevenue.AutoSize = true;
+            this.lblRevenue.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRevenue.ForeColor = System.Drawing.Color.White;
+            this.lblRevenue.Location = new System.Drawing.Point(70, 88);
+            this.lblRevenue.Name = "lblRevenue";
+            this.lblRevenue.Size = new System.Drawing.Size(227, 25);
+            this.lblRevenue.TabIndex = 0;
+            this.lblRevenue.Text = "Doanh thu mọi thời đại";
             // 
             // guna2GradientPanel5
             // 
@@ -323,6 +325,7 @@
             this.guna2GradientPanel5.BorderColor = System.Drawing.Color.Gray;
             this.guna2GradientPanel5.BorderRadius = 20;
             this.guna2GradientPanel5.BorderThickness = 1;
+            this.guna2GradientPanel5.Controls.Add(this.chartReportRenevue);
             this.guna2GradientPanel5.Controls.Add(this.label6);
             this.guna2GradientPanel5.Controls.Add(this.dg_thongke);
             this.guna2GradientPanel5.FillColor = System.Drawing.Color.White;
@@ -348,6 +351,7 @@
             this.guna2GradientPanel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2GradientPanel6.BorderRadius = 20;
             this.guna2GradientPanel6.BorderThickness = 1;
+            this.guna2GradientPanel6.Controls.Add(this.pieChartBestItems);
             this.guna2GradientPanel6.Controls.Add(this.label8);
             this.guna2GradientPanel6.FillColor = System.Drawing.Color.White;
             this.guna2GradientPanel6.FillColor2 = System.Drawing.Color.White;
@@ -366,6 +370,22 @@
             this.label8.Size = new System.Drawing.Size(229, 25);
             this.label8.TabIndex = 0;
             this.label8.Text = "Top 5 món ăn bán chạy";
+            // 
+            // chartReportRenevue
+            // 
+            this.chartReportRenevue.Location = new System.Drawing.Point(20, 83);
+            this.chartReportRenevue.Name = "chartReportRenevue";
+            this.chartReportRenevue.Size = new System.Drawing.Size(760, 504);
+            this.chartReportRenevue.TabIndex = 3;
+            this.chartReportRenevue.Text = "cartesianChart1";
+            // 
+            // pieChartBestItems
+            // 
+            this.pieChartBestItems.Location = new System.Drawing.Point(22, 83);
+            this.pieChartBestItems.Name = "pieChartBestItems";
+            this.pieChartBestItems.Size = new System.Drawing.Size(738, 504);
+            this.pieChartBestItems.TabIndex = 1;
+            this.pieChartBestItems.Text = "pieChart1";
             // 
             // UC_ADMIN_STATIS
             // 
@@ -387,16 +407,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_thongke)).EndInit();
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.guna2GradientPanel4.ResumeLayout(false);
             this.guna2GradientPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.guna2GradientPanel5.ResumeLayout(false);
             this.guna2GradientPanel5.PerformLayout();
             this.guna2GradientPanel6.ResumeLayout(false);
@@ -433,5 +453,7 @@
         private System.Windows.Forms.Label label6;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
         private System.Windows.Forms.Label label8;
+        private LiveCharts.WinForms.CartesianChart chartReportRenevue;
+        private LiveCharts.WinForms.PieChart pieChartBestItems;
     }
 }
