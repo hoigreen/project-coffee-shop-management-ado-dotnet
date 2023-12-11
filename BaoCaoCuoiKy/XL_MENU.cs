@@ -28,6 +28,36 @@ namespace BaoCaoCuoiKy
             connection = new SqlConnection(connectionString);
         }
 
+        public DataTable getTopBestSaler()
+        {
+            try
+            {
+                string query = "SELECT TOP 5 M.Ten, SUM(CHD.SoLuong) AS SoLuongBan " +
+                               "FROM MENU AS M " +
+                               "JOIN CHITIETHOADON AS CHD ON M.MaMon = CHD.MaMon " +
+                               "GROUP BY M.MaMon, M.Ten " +
+                               "ORDER BY SoLuongBan DESC;";
+                connection.Open();
+
+                using (adapter = new SqlDataAdapter(query, connection))
+                {
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+                    return dataSet.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Close();
+            }
+        }
+
         public DataTable getListMenuAll()
         {
             try

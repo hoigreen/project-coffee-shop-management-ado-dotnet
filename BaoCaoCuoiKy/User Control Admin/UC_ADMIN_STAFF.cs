@@ -65,7 +65,7 @@ namespace BaoCaoCuoiKy.User_Control
                 textboxPhone.Text = dt;
                 comboBoxGender.Text = gt;
                 dateTimePickerDob.Text = ngaySinh;
-                textboxPhone.Text = chucVu;
+                textBoxPosition.Text = chucVu;
                 textBoxAddress.Text = diaChi;
                 dateTimePickerStartDate.Text = ngayVaoLam;
 

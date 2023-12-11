@@ -273,5 +273,71 @@ namespace BaoCaoCuoiKy
                     connection.Close();
             }
         }
+
+        public int getTotalRevenue()
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                string selectCommand = "SELECT SUM(TongTien) AS TongDoanhThu FROM HOADON";
+                using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    int result = Convert.ToInt32(command.ExecuteScalar());
+                    return result;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return 0;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+        }
+        public DataTable getTotalRevenue_Month()
+        {
+            try
+            {
+                if (connection.State != ConnectionState.Open)
+                {
+                    connection.Open();
+                }
+
+                string selectCommand = "SELECT " +
+                                        "MONTH(CONVERT(DATETIME, Ngay, 103)) AS Thang, " +
+                                        "SUM(TongTien) AS TongDoanhThu " +
+                                        "FROM HOADON " +
+                                        "GROUP BY MONTH(CONVERT(DATETIME, Ngay, 103));";
+                using (SqlCommand command = new SqlCommand(selectCommand, connection))
+                {
+                    adapter = new SqlDataAdapter(selectCommand, connection);
+                    dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+
+                    return dataSet.Tables[0];
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return null;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+            }
+        }
     }
 }
