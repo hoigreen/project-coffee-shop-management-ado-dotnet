@@ -25,11 +25,16 @@ namespace BaoCaoCuoiKy.User_Control_Admin
 
         private void UC_QuanLyThongKe_Load(object sender, EventArgs e)
         {
-            lb_nhanvien.Text = nhanvien.getCountSumStaff().ToString();
-            lb_hoadon.Text = hoadon.getCountSumOrder().ToString();
-            lb_menu.Text = menu.getCountSumMenu().ToString();
+            lblAmountStaff.Text = nhanvien.getCountSumStaff().ToString();
+            lblAmountOrder.Text = hoadon.getCountSumOrder().ToString();
+            lblAmountItems.Text = menu.getCountSumMenu().ToString();
             dtThongKe = hoadon.getStatis();
             global.addDataGridView(dtThongKe, dg_thongke);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
