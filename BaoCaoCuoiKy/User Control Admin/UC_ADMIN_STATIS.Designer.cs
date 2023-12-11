@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_ADMIN_STATIS));
-            this.dg_thongke = new System.Windows.Forms.DataGridView();
-            this.col_thang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nam = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tongDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tongthu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -51,13 +46,22 @@
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblRevenue = new System.Windows.Forms.Label();
-            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.label8 = new System.Windows.Forms.Label();
+            this.panelChartLine = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.chartReportRenevue = new LiveCharts.WinForms.CartesianChart();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel_Piechart = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pieChartBestItems = new LiveCharts.WinForms.PieChart();
-            ((System.ComponentModel.ISupportInitialize)(this.dg_thongke)).BeginInit();
+            this.label8 = new System.Windows.Forms.Label();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.lb_topSaler1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_topSaler2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_topSaler3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_topSaler4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_topSaler5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2GradientPanel4.SuspendLayout();
@@ -66,44 +70,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.guna2GradientPanel5.SuspendLayout();
-            this.guna2GradientPanel6.SuspendLayout();
+            this.panelChartLine.SuspendLayout();
+            this.panel_Piechart.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dg_thongke
-            // 
-            this.dg_thongke.AllowUserToAddRows = false;
-            this.dg_thongke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dg_thongke.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_thang,
-            this.col_nam,
-            this.col_tongDon,
-            this.col_tongthu});
-            this.dg_thongke.Location = new System.Drawing.Point(493, 13);
-            this.dg_thongke.Margin = new System.Windows.Forms.Padding(4);
-            this.dg_thongke.Name = "dg_thongke";
-            this.dg_thongke.Size = new System.Drawing.Size(271, 63);
-            this.dg_thongke.TabIndex = 2;
-            // 
-            // col_thang
-            // 
-            this.col_thang.HeaderText = "Tháng";
-            this.col_thang.Name = "col_thang";
-            // 
-            // col_nam
-            // 
-            this.col_nam.HeaderText = "Năm";
-            this.col_nam.Name = "col_nam";
-            // 
-            // col_tongDon
-            // 
-            this.col_tongDon.HeaderText = "Tổng hóa đơn";
-            this.col_tongDon.Name = "col_tongDon";
-            // 
-            // col_tongthu
-            // 
-            this.col_tongthu.HeaderText = "Doanh thu";
-            this.col_tongthu.Name = "col_tongthu";
             // 
             // label1
             // 
@@ -215,7 +184,6 @@
             this.label5.Size = new System.Drawing.Size(169, 25);
             this.label5.TabIndex = 3;
             this.label5.Text = "Tổng số hoá đơn";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblAmountRenevue
             // 
@@ -319,21 +287,28 @@
             this.lblRevenue.TabIndex = 0;
             this.lblRevenue.Text = "Doanh thu mọi thời đại";
             // 
-            // guna2GradientPanel5
+            // panelChartLine
             // 
-            this.guna2GradientPanel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel5.BorderColor = System.Drawing.Color.Gray;
-            this.guna2GradientPanel5.BorderRadius = 20;
-            this.guna2GradientPanel5.BorderThickness = 1;
-            this.guna2GradientPanel5.Controls.Add(this.chartReportRenevue);
-            this.guna2GradientPanel5.Controls.Add(this.label6);
-            this.guna2GradientPanel5.Controls.Add(this.dg_thongke);
-            this.guna2GradientPanel5.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientPanel5.Location = new System.Drawing.Point(22, 368);
-            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
-            this.guna2GradientPanel5.Size = new System.Drawing.Size(803, 610);
-            this.guna2GradientPanel5.TabIndex = 8;
+            this.panelChartLine.BackColor = System.Drawing.Color.Transparent;
+            this.panelChartLine.BorderColor = System.Drawing.Color.Gray;
+            this.panelChartLine.BorderRadius = 20;
+            this.panelChartLine.BorderThickness = 1;
+            this.panelChartLine.Controls.Add(this.chartReportRenevue);
+            this.panelChartLine.Controls.Add(this.label6);
+            this.panelChartLine.FillColor = System.Drawing.Color.White;
+            this.panelChartLine.FillColor2 = System.Drawing.Color.White;
+            this.panelChartLine.Location = new System.Drawing.Point(22, 368);
+            this.panelChartLine.Name = "panelChartLine";
+            this.panelChartLine.Size = new System.Drawing.Size(803, 610);
+            this.panelChartLine.TabIndex = 8;
+            // 
+            // chartReportRenevue
+            // 
+            this.chartReportRenevue.Location = new System.Drawing.Point(20, 83);
+            this.chartReportRenevue.Name = "chartReportRenevue";
+            this.chartReportRenevue.Size = new System.Drawing.Size(760, 504);
+            this.chartReportRenevue.TabIndex = 4;
+            this.chartReportRenevue.Text = "cartesianChart1";
             // 
             // label6
             // 
@@ -342,23 +317,42 @@
             this.label6.ForeColor = System.Drawing.Color.DimGray;
             this.label6.Location = new System.Drawing.Point(15, 28);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(200, 25);
+            this.label6.Size = new System.Drawing.Size(373, 25);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Thống kê doanh thu";
+            this.label6.Text = "Thống kê doanh thu theo tháng (2023)";
             // 
-            // guna2GradientPanel6
+            // panel_Piechart
             // 
-            this.guna2GradientPanel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel6.BorderRadius = 20;
-            this.guna2GradientPanel6.BorderThickness = 1;
-            this.guna2GradientPanel6.Controls.Add(this.pieChartBestItems);
-            this.guna2GradientPanel6.Controls.Add(this.label8);
-            this.guna2GradientPanel6.FillColor = System.Drawing.Color.White;
-            this.guna2GradientPanel6.FillColor2 = System.Drawing.Color.White;
-            this.guna2GradientPanel6.Location = new System.Drawing.Point(870, 368);
-            this.guna2GradientPanel6.Name = "guna2GradientPanel6";
-            this.guna2GradientPanel6.Size = new System.Drawing.Size(787, 610);
-            this.guna2GradientPanel6.TabIndex = 9;
+            this.panel_Piechart.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Piechart.BorderRadius = 20;
+            this.panel_Piechart.BorderThickness = 1;
+            this.panel_Piechart.Controls.Add(this.lb_topSaler5);
+            this.panel_Piechart.Controls.Add(this.lb_topSaler4);
+            this.panel_Piechart.Controls.Add(this.lb_topSaler3);
+            this.panel_Piechart.Controls.Add(this.lb_topSaler2);
+            this.panel_Piechart.Controls.Add(this.lb_topSaler1);
+            this.panel_Piechart.Controls.Add(this.guna2Panel5);
+            this.panel_Piechart.Controls.Add(this.guna2Panel4);
+            this.panel_Piechart.Controls.Add(this.guna2Panel3);
+            this.panel_Piechart.Controls.Add(this.guna2Panel2);
+            this.panel_Piechart.Controls.Add(this.guna2Panel1);
+            this.panel_Piechart.Controls.Add(this.pieChartBestItems);
+            this.panel_Piechart.Controls.Add(this.label8);
+            this.panel_Piechart.FillColor = System.Drawing.Color.White;
+            this.panel_Piechart.FillColor2 = System.Drawing.Color.White;
+            this.panel_Piechart.Location = new System.Drawing.Point(870, 368);
+            this.panel_Piechart.Name = "panel_Piechart";
+            this.panel_Piechart.Size = new System.Drawing.Size(787, 610);
+            this.panel_Piechart.TabIndex = 9;
+            // 
+            // pieChartBestItems
+            // 
+            this.pieChartBestItems.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pieChartBestItems.Location = new System.Drawing.Point(3, 71);
+            this.pieChartBestItems.Name = "pieChartBestItems";
+            this.pieChartBestItems.Size = new System.Drawing.Size(566, 473);
+            this.pieChartBestItems.TabIndex = 1;
+            this.pieChartBestItems.Text = "pieChart1";
             // 
             // label8
             // 
@@ -371,29 +365,105 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Top 5 món ăn bán chạy";
             // 
-            // chartReportRenevue
+            // guna2Panel2
             // 
-            this.chartReportRenevue.Location = new System.Drawing.Point(20, 83);
-            this.chartReportRenevue.Name = "chartReportRenevue";
-            this.chartReportRenevue.Size = new System.Drawing.Size(760, 504);
-            this.chartReportRenevue.TabIndex = 3;
-            this.chartReportRenevue.Text = "cartesianChart1";
+            this.guna2Panel2.BackColor = System.Drawing.Color.Blue;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.White;
+            this.guna2Panel2.Location = new System.Drawing.Point(559, 188);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel2.TabIndex = 3;
             // 
-            // pieChartBestItems
+            // guna2Panel3
             // 
-            this.pieChartBestItems.Location = new System.Drawing.Point(22, 83);
-            this.pieChartBestItems.Name = "pieChartBestItems";
-            this.pieChartBestItems.Size = new System.Drawing.Size(738, 504);
-            this.pieChartBestItems.TabIndex = 1;
-            this.pieChartBestItems.Text = "pieChart1";
+            this.guna2Panel3.BackColor = System.Drawing.Color.Green;
+            this.guna2Panel3.Location = new System.Drawing.Point(559, 282);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel3.TabIndex = 4;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.Yellow;
+            this.guna2Panel4.Location = new System.Drawing.Point(559, 376);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel4.TabIndex = 5;
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2Panel5.Location = new System.Drawing.Point(559, 470);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel5.TabIndex = 6;
+            // 
+            // lb_topSaler1
+            // 
+            this.lb_topSaler1.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_topSaler1.Location = new System.Drawing.Point(559, 128);
+            this.lb_topSaler1.Name = "lb_topSaler1";
+            this.lb_topSaler1.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler1.TabIndex = 7;
+            this.lb_topSaler1.Text = "Top 1";
+            // 
+            // lb_topSaler2
+            // 
+            this.lb_topSaler2.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lb_topSaler2.Location = new System.Drawing.Point(559, 222);
+            this.lb_topSaler2.Name = "lb_topSaler2";
+            this.lb_topSaler2.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler2.TabIndex = 8;
+            this.lb_topSaler2.Text = "Top 2";
+            // 
+            // lb_topSaler3
+            // 
+            this.lb_topSaler3.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lb_topSaler3.Location = new System.Drawing.Point(559, 316);
+            this.lb_topSaler3.Name = "lb_topSaler3";
+            this.lb_topSaler3.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler3.TabIndex = 9;
+            this.lb_topSaler3.Text = "Top 3";
+            // 
+            // lb_topSaler4
+            // 
+            this.lb_topSaler4.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler4.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lb_topSaler4.Location = new System.Drawing.Point(559, 410);
+            this.lb_topSaler4.Name = "lb_topSaler4";
+            this.lb_topSaler4.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler4.TabIndex = 10;
+            this.lb_topSaler4.Text = "Top 4";
+            // 
+            // lb_topSaler5
+            // 
+            this.lb_topSaler5.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lb_topSaler5.Location = new System.Drawing.Point(559, 504);
+            this.lb_topSaler5.Name = "lb_topSaler5";
+            this.lb_topSaler5.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler5.TabIndex = 11;
+            this.lb_topSaler5.Text = "Top 5";
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Red;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.White;
+            this.guna2Panel1.Location = new System.Drawing.Point(559, 94);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel1.TabIndex = 2;
             // 
             // UC_ADMIN_STATIS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.guna2GradientPanel6);
-            this.Controls.Add(this.guna2GradientPanel5);
+            this.Controls.Add(this.panel_Piechart);
+            this.Controls.Add(this.panelChartLine);
             this.Controls.Add(this.guna2GradientPanel4);
             this.Controls.Add(this.guna2GradientPanel3);
             this.Controls.Add(this.guna2GradientPanel2);
@@ -404,7 +474,6 @@
             this.Name = "UC_ADMIN_STATIS";
             this.Size = new System.Drawing.Size(1920, 1080);
             this.Load += new System.EventHandler(this.UC_QuanLyThongKe_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dg_thongke)).EndInit();
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
@@ -417,21 +486,16 @@
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.guna2GradientPanel5.ResumeLayout(false);
-            this.guna2GradientPanel5.PerformLayout();
-            this.guna2GradientPanel6.ResumeLayout(false);
-            this.guna2GradientPanel6.PerformLayout();
+            this.panelChartLine.ResumeLayout(false);
+            this.panelChartLine.PerformLayout();
+            this.panel_Piechart.ResumeLayout(false);
+            this.panel_Piechart.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView dg_thongke;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_thang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_nam;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_tongDon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn col_tongthu;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
@@ -449,11 +513,21 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox4;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
+        private Guna.UI2.WinForms.Guna2GradientPanel panelChartLine;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
+        private Guna.UI2.WinForms.Guna2GradientPanel panel_Piechart;
         private System.Windows.Forms.Label label8;
-        private LiveCharts.WinForms.CartesianChart chartReportRenevue;
         private LiveCharts.WinForms.PieChart pieChartBestItems;
+        private LiveCharts.WinForms.CartesianChart chartReportRenevue;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_topSaler5;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_topSaler4;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_topSaler3;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_topSaler2;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lb_topSaler1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
     }
 }
