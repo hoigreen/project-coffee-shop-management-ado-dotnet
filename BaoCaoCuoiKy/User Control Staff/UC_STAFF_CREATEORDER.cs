@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -100,12 +101,40 @@ namespace CoffeeShopManagement.User_Control_Staff
         }
         private void btn_printOrder_Click(object sender, EventArgs e)
         {
+
+            Print(this.panel_infoPayment);
+
             global.notify("Xuất hóa đơn thành công");
             panel_createOrder.Enabled = true;
             showInfoPayment(false);
             resetFromCreate();
             setAutoIdOrder();
         }
+        private void Print(Panel pnl)
+        {
+            PrinterSettings ps = new PrinterSettings();
+            panel_infoPayment = (Guna.UI2.WinForms.Guna2Panel)pnl;
+            getprintarea(pnl);
+            printPreviewDialog1.Document = printDocument1;
+            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            printPreviewDialog1.ShowDialog();
+        }
+        private Bitmap memoryimg;
+        private void getprintarea(Panel pnl)
+        {
+            pnl.Size = new Size(printDocument1.DefaultPageSettings.PaperSize.Width, printDocument1.DefaultPageSettings.PaperSize.Height);
+            memoryimg = new Bitmap(pnl.Width, pnl.Height);
+            pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height)); ;
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Rectangle pagearea = e.PageBounds;
+            e.Graphics.DrawImage(memoryimg, 0, 0);
+        }
+
+       
+
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             resetFromCreate();
