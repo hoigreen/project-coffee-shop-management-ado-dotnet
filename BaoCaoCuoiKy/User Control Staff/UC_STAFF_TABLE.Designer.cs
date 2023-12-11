@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitleEmpty = new System.Windows.Forms.Label();
             this.lblTitleFull = new System.Windows.Forms.Label();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -45,28 +45,6 @@
             this.guna2CircleProgressBar2 = new Guna.UI2.WinForms.Guna2CircleProgressBar();
             this.panelListTable = new Guna.UI2.WinForms.Guna2Panel();
             this.panel_infoTable = new Guna.UI2.WinForms.Guna2Panel();
-            this.lb_nameTable = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.a = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.col_stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_idDish = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_nameDish = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_intoMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_timeTable = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_idOrder = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_totalPay = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_status = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.btn_closeTable = new Guna.UI2.WinForms.Guna2Button();
             this.labelEmpty = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.panelInfoTableNotEmpty = new System.Windows.Forms.Panel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -86,6 +64,14 @@
             this.guna2HtmlLabel16 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.a = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.col_stt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_idDish = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_nameDish = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_unitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_intoMoney = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.guna2DataGridView2 = new Guna.UI2.WinForms.Guna2DataGridView();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,11 +90,27 @@
             this.guna2HtmlLabel25 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel26 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_timeTable = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_idOrder = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_totalPay = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_status = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btn_closeTable = new Guna.UI2.WinForms.Guna2Button();
+            this.lb_nameTable = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btn_openTable = new Guna.UI2.WinForms.Guna2Button();
+            this.cb_listTable = new Guna.UI2.WinForms.Guna2ComboBox();
             this.panel_infoTable.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.a)).BeginInit();
             this.panelInfoTableNotEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.a)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -211,250 +213,6 @@
             this.panel_infoTable.TabIndex = 1;
             this.panel_infoTable.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_infoTable_Paint);
             // 
-            // lb_nameTable
-            // 
-            this.lb_nameTable.BackColor = System.Drawing.Color.Transparent;
-            this.lb_nameTable.Font = new System.Drawing.Font("Roboto Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_nameTable.Location = new System.Drawing.Point(273, 28);
-            this.lb_nameTable.Name = "lb_nameTable";
-            this.lb_nameTable.Size = new System.Drawing.Size(122, 27);
-            this.lb_nameTable.TabIndex = 6;
-            this.lb_nameTable.Text = "name Table";
-            // 
-            // guna2HtmlLabel6
-            // 
-            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel6.Location = new System.Drawing.Point(27, 21);
-            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            this.guna2HtmlLabel6.Size = new System.Drawing.Size(318, 37);
-            this.guna2HtmlLabel6.TabIndex = 6;
-            this.guna2HtmlLabel6.Text = "QUẢN LÝ BÀN PHỤC VỤ";
-            // 
-            // guna2HtmlLabel8
-            // 
-            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel8.Location = new System.Drawing.Point(1200, 144);
-            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
-            this.guna2HtmlLabel8.Size = new System.Drawing.Size(186, 25);
-            this.guna2HtmlLabel8.TabIndex = 8;
-            this.guna2HtmlLabel8.Text = "Thông tin chi tiết bàn";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.a);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.guna2HtmlLabel1);
-            this.panel1.Controls.Add(this.lb_timeTable);
-            this.panel1.Controls.Add(this.guna2HtmlLabel2);
-            this.panel1.Controls.Add(this.lb_idOrder);
-            this.panel1.Controls.Add(this.guna2HtmlLabel3);
-            this.panel1.Controls.Add(this.lb_totalPay);
-            this.panel1.Controls.Add(this.guna2HtmlLabel4);
-            this.panel1.Controls.Add(this.guna2HtmlLabel5);
-            this.panel1.Controls.Add(this.lb_status);
-            this.panel1.Controls.Add(this.btn_closeTable);
-            this.panel1.Location = new System.Drawing.Point(13, 105);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(621, 431);
-            this.panel1.TabIndex = 20;
-            // 
-            // a
-            // 
-            this.a.AllowUserToAddRows = false;
-            this.a.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.a.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.a.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.a.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.a.ColumnHeadersHeight = 15;
-            this.a.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.a.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_stt,
-            this.col_idDish,
-            this.col_nameDish,
-            this.col_quantity,
-            this.col_unitPrice,
-            this.col_intoMoney});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.a.DefaultCellStyle = dataGridViewCellStyle6;
-            this.a.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.a.Location = new System.Drawing.Point(102, 32);
-            this.a.Name = "a";
-            this.a.RowHeadersVisible = false;
-            this.a.Size = new System.Drawing.Size(280, 42);
-            this.a.TabIndex = 25;
-            this.a.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.a.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.a.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.a.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.a.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.a.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.a.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.a.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.a.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.a.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.a.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.a.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.a.ThemeStyle.HeaderStyle.Height = 15;
-            this.a.ThemeStyle.ReadOnly = false;
-            this.a.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.a.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.a.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.a.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.a.ThemeStyle.RowsStyle.Height = 22;
-            this.a.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.a.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // col_stt
-            // 
-            this.col_stt.HeaderText = "STT";
-            this.col_stt.Name = "col_stt";
-            // 
-            // col_idDish
-            // 
-            this.col_idDish.HeaderText = "Mã món";
-            this.col_idDish.Name = "col_idDish";
-            this.col_idDish.Visible = false;
-            // 
-            // col_nameDish
-            // 
-            this.col_nameDish.HeaderText = "Tên món";
-            this.col_nameDish.Name = "col_nameDish";
-            // 
-            // col_quantity
-            // 
-            this.col_quantity.HeaderText = "Số lượng";
-            this.col_quantity.Name = "col_quantity";
-            // 
-            // col_unitPrice
-            // 
-            this.col_unitPrice.HeaderText = "Đơn giá";
-            this.col_unitPrice.Name = "col_unitPrice";
-            // 
-            // col_intoMoney
-            // 
-            this.col_intoMoney.HeaderText = "Thành tiền";
-            this.col_intoMoney.Name = "col_intoMoney";
-            // 
-            // guna2HtmlLabel1
-            // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(-182, 80);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(125, 20);
-            this.guna2HtmlLabel1.TabIndex = 18;
-            this.guna2HtmlLabel1.Text = "Thời gian vào bàn:";
-            // 
-            // lb_timeTable
-            // 
-            this.lb_timeTable.BackColor = System.Drawing.Color.Transparent;
-            this.lb_timeTable.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_timeTable.Location = new System.Drawing.Point(-51, 80);
-            this.lb_timeTable.Name = "lb_timeTable";
-            this.lb_timeTable.Size = new System.Drawing.Size(76, 20);
-            this.lb_timeTable.TabIndex = 19;
-            this.lb_timeTable.Text = "value Time";
-            // 
-            // guna2HtmlLabel2
-            // 
-            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel2.Location = new System.Drawing.Point(31, 80);
-            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            this.guna2HtmlLabel2.Size = new System.Drawing.Size(87, 20);
-            this.guna2HtmlLabel2.TabIndex = 20;
-            this.guna2HtmlLabel2.Text = "Mã hóa đơn:";
-            // 
-            // lb_idOrder
-            // 
-            this.lb_idOrder.BackColor = System.Drawing.Color.Transparent;
-            this.lb_idOrder.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_idOrder.Location = new System.Drawing.Point(124, 80);
-            this.lb_idOrder.Name = "lb_idOrder";
-            this.lb_idOrder.Size = new System.Drawing.Size(94, 20);
-            this.lb_idOrder.TabIndex = 21;
-            this.lb_idOrder.Text = "value id Order";
-            // 
-            // guna2HtmlLabel3
-            // 
-            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel3.Location = new System.Drawing.Point(-182, 106);
-            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            this.guna2HtmlLabel3.Size = new System.Drawing.Size(116, 20);
-            this.guna2HtmlLabel3.TabIndex = 22;
-            this.guna2HtmlLabel3.Text = "Tổng thanh toán:";
-            // 
-            // lb_totalPay
-            // 
-            this.lb_totalPay.BackColor = System.Drawing.Color.Transparent;
-            this.lb_totalPay.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_totalPay.Location = new System.Drawing.Point(-60, 106);
-            this.lb_totalPay.Name = "lb_totalPay";
-            this.lb_totalPay.Size = new System.Drawing.Size(100, 20);
-            this.lb_totalPay.TabIndex = 23;
-            this.lb_totalPay.Text = "value total pay";
-            // 
-            // guna2HtmlLabel4
-            // 
-            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel4.Location = new System.Drawing.Point(46, 106);
-            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            this.guna2HtmlLabel4.Size = new System.Drawing.Size(114, 20);
-            this.guna2HtmlLabel4.TabIndex = 24;
-            this.guna2HtmlLabel4.Text = "Chi tiết hóa đơn:";
-            // 
-            // guna2HtmlLabel5
-            // 
-            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel5.Location = new System.Drawing.Point(166, 106);
-            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            this.guna2HtmlLabel5.Size = new System.Drawing.Size(74, 20);
-            this.guna2HtmlLabel5.TabIndex = 27;
-            this.guna2HtmlLabel5.Text = "Trạng thái:";
-            // 
-            // lb_status
-            // 
-            this.lb_status.BackColor = System.Drawing.Color.Transparent;
-            this.lb_status.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_status.Location = new System.Drawing.Point(-182, 132);
-            this.lb_status.Name = "lb_status";
-            this.lb_status.Size = new System.Drawing.Size(84, 20);
-            this.lb_status.TabIndex = 28;
-            this.lb_status.Text = "value status";
-            // 
-            // btn_closeTable
-            // 
-            this.btn_closeTable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_closeTable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_closeTable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_closeTable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_closeTable.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_closeTable.ForeColor = System.Drawing.Color.White;
-            this.btn_closeTable.Location = new System.Drawing.Point(-92, 132);
-            this.btn_closeTable.Name = "btn_closeTable";
-            this.btn_closeTable.Size = new System.Drawing.Size(180, 45);
-            this.btn_closeTable.TabIndex = 26;
-            this.btn_closeTable.Text = "Đóng bàn";
-            // 
             // labelEmpty
             // 
             this.labelEmpty.BackColor = System.Drawing.Color.Transparent;
@@ -467,6 +225,8 @@
             // 
             // panelInfoTableNotEmpty
             // 
+            this.panelInfoTableNotEmpty.Controls.Add(this.cb_listTable);
+            this.panelInfoTableNotEmpty.Controls.Add(this.btn_openTable);
             this.panelInfoTableNotEmpty.Controls.Add(this.guna2DataGridView1);
             this.panelInfoTableNotEmpty.Controls.Add(this.guna2HtmlLabel9);
             this.panelInfoTableNotEmpty.Controls.Add(this.guna2HtmlLabel10);
@@ -487,17 +247,17 @@
             // 
             this.guna2DataGridView1.AllowUserToAddRows = false;
             this.guna2DataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
             this.guna2DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.guna2DataGridView1.ColumnHeadersHeight = 15;
             this.guna2DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -507,14 +267,14 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle21;
             this.guna2DataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView1.Location = new System.Drawing.Point(311, 84);
             this.guna2DataGridView1.Name = "guna2DataGridView1";
@@ -672,11 +432,122 @@
             this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(117, 184);
+            this.guna2Button1.Location = new System.Drawing.Point(402, 342);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
             this.guna2Button1.TabIndex = 26;
             this.guna2Button1.Text = "Đóng bàn";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.a);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.guna2HtmlLabel1);
+            this.panel1.Controls.Add(this.lb_timeTable);
+            this.panel1.Controls.Add(this.guna2HtmlLabel2);
+            this.panel1.Controls.Add(this.lb_idOrder);
+            this.panel1.Controls.Add(this.guna2HtmlLabel3);
+            this.panel1.Controls.Add(this.lb_totalPay);
+            this.panel1.Controls.Add(this.guna2HtmlLabel4);
+            this.panel1.Controls.Add(this.guna2HtmlLabel5);
+            this.panel1.Controls.Add(this.lb_status);
+            this.panel1.Controls.Add(this.btn_closeTable);
+            this.panel1.Location = new System.Drawing.Point(13, 105);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(621, 431);
+            this.panel1.TabIndex = 20;
+            // 
+            // a
+            // 
+            this.a.AllowUserToAddRows = false;
+            this.a.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            this.a.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.a.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.a.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.a.ColumnHeadersHeight = 15;
+            this.a.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.a.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_stt,
+            this.col_idDish,
+            this.col_nameDish,
+            this.col_quantity,
+            this.col_unitPrice,
+            this.col_intoMoney});
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.a.DefaultCellStyle = dataGridViewCellStyle24;
+            this.a.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.a.Location = new System.Drawing.Point(102, 32);
+            this.a.Name = "a";
+            this.a.RowHeadersVisible = false;
+            this.a.Size = new System.Drawing.Size(280, 42);
+            this.a.TabIndex = 25;
+            this.a.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.a.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.a.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.a.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.a.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.a.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.a.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.a.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.a.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.a.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.a.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.a.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.a.ThemeStyle.HeaderStyle.Height = 15;
+            this.a.ThemeStyle.ReadOnly = false;
+            this.a.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.a.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.a.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.a.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.a.ThemeStyle.RowsStyle.Height = 22;
+            this.a.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.a.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // col_stt
+            // 
+            this.col_stt.HeaderText = "STT";
+            this.col_stt.Name = "col_stt";
+            // 
+            // col_idDish
+            // 
+            this.col_idDish.HeaderText = "Mã món";
+            this.col_idDish.Name = "col_idDish";
+            this.col_idDish.Visible = false;
+            // 
+            // col_nameDish
+            // 
+            this.col_nameDish.HeaderText = "Tên món";
+            this.col_nameDish.Name = "col_nameDish";
+            // 
+            // col_quantity
+            // 
+            this.col_quantity.HeaderText = "Số lượng";
+            this.col_quantity.Name = "col_quantity";
+            // 
+            // col_unitPrice
+            // 
+            this.col_unitPrice.HeaderText = "Đơn giá";
+            this.col_unitPrice.Name = "col_unitPrice";
+            // 
+            // col_intoMoney
+            // 
+            this.col_intoMoney.HeaderText = "Thành tiền";
+            this.col_intoMoney.Name = "col_intoMoney";
             // 
             // panel3
             // 
@@ -700,17 +571,17 @@
             // 
             this.guna2DataGridView2.AllowUserToAddRows = false;
             this.guna2DataGridView2.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.White;
+            this.guna2DataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
             this.guna2DataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.guna2DataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.guna2DataGridView2.ColumnHeadersHeight = 15;
             this.guna2DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.guna2DataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -720,14 +591,14 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle27.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.guna2DataGridView2.DefaultCellStyle = dataGridViewCellStyle27;
             this.guna2DataGridView2.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.guna2DataGridView2.Location = new System.Drawing.Point(102, 32);
             this.guna2DataGridView2.Name = "guna2DataGridView2";
@@ -891,6 +762,170 @@
             this.guna2Button2.TabIndex = 26;
             this.guna2Button2.Text = "Đóng bàn";
             // 
+            // guna2HtmlLabel1
+            // 
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(-182, 80);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(125, 20);
+            this.guna2HtmlLabel1.TabIndex = 18;
+            this.guna2HtmlLabel1.Text = "Thời gian vào bàn:";
+            // 
+            // lb_timeTable
+            // 
+            this.lb_timeTable.BackColor = System.Drawing.Color.Transparent;
+            this.lb_timeTable.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_timeTable.Location = new System.Drawing.Point(-51, 80);
+            this.lb_timeTable.Name = "lb_timeTable";
+            this.lb_timeTable.Size = new System.Drawing.Size(76, 20);
+            this.lb_timeTable.TabIndex = 19;
+            this.lb_timeTable.Text = "value Time";
+            // 
+            // guna2HtmlLabel2
+            // 
+            this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel2.Location = new System.Drawing.Point(31, 80);
+            this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
+            this.guna2HtmlLabel2.Size = new System.Drawing.Size(87, 20);
+            this.guna2HtmlLabel2.TabIndex = 20;
+            this.guna2HtmlLabel2.Text = "Mã hóa đơn:";
+            // 
+            // lb_idOrder
+            // 
+            this.lb_idOrder.BackColor = System.Drawing.Color.Transparent;
+            this.lb_idOrder.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_idOrder.Location = new System.Drawing.Point(124, 80);
+            this.lb_idOrder.Name = "lb_idOrder";
+            this.lb_idOrder.Size = new System.Drawing.Size(94, 20);
+            this.lb_idOrder.TabIndex = 21;
+            this.lb_idOrder.Text = "value id Order";
+            // 
+            // guna2HtmlLabel3
+            // 
+            this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel3.Location = new System.Drawing.Point(-182, 106);
+            this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
+            this.guna2HtmlLabel3.Size = new System.Drawing.Size(116, 20);
+            this.guna2HtmlLabel3.TabIndex = 22;
+            this.guna2HtmlLabel3.Text = "Tổng thanh toán:";
+            // 
+            // lb_totalPay
+            // 
+            this.lb_totalPay.BackColor = System.Drawing.Color.Transparent;
+            this.lb_totalPay.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_totalPay.Location = new System.Drawing.Point(-60, 106);
+            this.lb_totalPay.Name = "lb_totalPay";
+            this.lb_totalPay.Size = new System.Drawing.Size(100, 20);
+            this.lb_totalPay.TabIndex = 23;
+            this.lb_totalPay.Text = "value total pay";
+            // 
+            // guna2HtmlLabel4
+            // 
+            this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel4.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel4.Location = new System.Drawing.Point(46, 106);
+            this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            this.guna2HtmlLabel4.Size = new System.Drawing.Size(114, 20);
+            this.guna2HtmlLabel4.TabIndex = 24;
+            this.guna2HtmlLabel4.Text = "Chi tiết hóa đơn:";
+            // 
+            // guna2HtmlLabel5
+            // 
+            this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel5.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel5.Location = new System.Drawing.Point(166, 106);
+            this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
+            this.guna2HtmlLabel5.Size = new System.Drawing.Size(74, 20);
+            this.guna2HtmlLabel5.TabIndex = 27;
+            this.guna2HtmlLabel5.Text = "Trạng thái:";
+            // 
+            // lb_status
+            // 
+            this.lb_status.BackColor = System.Drawing.Color.Transparent;
+            this.lb_status.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_status.Location = new System.Drawing.Point(-182, 132);
+            this.lb_status.Name = "lb_status";
+            this.lb_status.Size = new System.Drawing.Size(84, 20);
+            this.lb_status.TabIndex = 28;
+            this.lb_status.Text = "value status";
+            // 
+            // btn_closeTable
+            // 
+            this.btn_closeTable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_closeTable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_closeTable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_closeTable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_closeTable.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_closeTable.ForeColor = System.Drawing.Color.White;
+            this.btn_closeTable.Location = new System.Drawing.Point(-92, 132);
+            this.btn_closeTable.Name = "btn_closeTable";
+            this.btn_closeTable.Size = new System.Drawing.Size(180, 45);
+            this.btn_closeTable.TabIndex = 26;
+            this.btn_closeTable.Text = "Đóng bàn";
+            // 
+            // lb_nameTable
+            // 
+            this.lb_nameTable.BackColor = System.Drawing.Color.Transparent;
+            this.lb_nameTable.Font = new System.Drawing.Font("Roboto Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_nameTable.Location = new System.Drawing.Point(273, 28);
+            this.lb_nameTable.Name = "lb_nameTable";
+            this.lb_nameTable.Size = new System.Drawing.Size(122, 27);
+            this.lb_nameTable.TabIndex = 6;
+            this.lb_nameTable.Text = "name Table";
+            // 
+            // guna2HtmlLabel6
+            // 
+            this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel6.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel6.Location = new System.Drawing.Point(27, 21);
+            this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
+            this.guna2HtmlLabel6.Size = new System.Drawing.Size(318, 37);
+            this.guna2HtmlLabel6.TabIndex = 6;
+            this.guna2HtmlLabel6.Text = "QUẢN LÝ BÀN PHỤC VỤ";
+            // 
+            // guna2HtmlLabel8
+            // 
+            this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel8.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel8.Location = new System.Drawing.Point(1200, 144);
+            this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
+            this.guna2HtmlLabel8.Size = new System.Drawing.Size(186, 25);
+            this.guna2HtmlLabel8.TabIndex = 8;
+            this.guna2HtmlLabel8.Text = "Thông tin chi tiết bàn";
+            // 
+            // btn_openTable
+            // 
+            this.btn_openTable.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_openTable.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_openTable.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_openTable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_openTable.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_openTable.ForeColor = System.Drawing.Color.White;
+            this.btn_openTable.Location = new System.Drawing.Point(54, 363);
+            this.btn_openTable.Name = "btn_openTable";
+            this.btn_openTable.Size = new System.Drawing.Size(180, 45);
+            this.btn_openTable.TabIndex = 29;
+            this.btn_openTable.Text = "Nối bàn";
+            this.btn_openTable.Click += new System.EventHandler(this.btn_openTable_Click);
+            // 
+            // cb_listTable
+            // 
+            this.cb_listTable.BackColor = System.Drawing.Color.Transparent;
+            this.cb_listTable.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cb_listTable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_listTable.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_listTable.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cb_listTable.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cb_listTable.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cb_listTable.ItemHeight = 30;
+            this.cb_listTable.Location = new System.Drawing.Point(54, 314);
+            this.cb_listTable.Name = "cb_listTable";
+            this.cb_listTable.Size = new System.Drawing.Size(140, 36);
+            this.cb_listTable.TabIndex = 30;
+            // 
             // UC_STAFF_TABLE
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -910,12 +945,12 @@
             this.Load += new System.EventHandler(this.UC_STAFF_TABLE_Load);
             this.panel_infoTable.ResumeLayout(false);
             this.panel_infoTable.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.a)).EndInit();
             this.panelInfoTableNotEmpty.ResumeLayout(false);
             this.panelInfoTableNotEmpty.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.a)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2DataGridView2)).EndInit();
@@ -991,5 +1026,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel25;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel26;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2ComboBox cb_listTable;
+        private Guna.UI2.WinForms.Guna2Button btn_openTable;
     }
 }

@@ -36,7 +36,9 @@ namespace CoffeeShopManagement.User_Control_Staff
 
         private void UC_STAFF_TABLE_Load(object sender, EventArgs e)
         {
+            
             loadTable();
+            setListCombobox(cb_listTable, dtTable);
         }
 
         private void panelListTable_Paint(object sender, PaintEventArgs e)
@@ -54,14 +56,50 @@ namespace CoffeeShopManagement.User_Control_Staff
 
         }
 
+        private void setListCombobox(ComboBox combobox, DataTable dataTable)
+        {
+            combobox.DataSource = dataTable;
+            combobox.DisplayMember = dataTable.Columns[1].ColumnName;
+            combobox.ValueMember = dataTable.Columns[0].ColumnName;
+        }
+
+        private void btn_openTable_Click(object sender, EventArgs e)
+        {
+            DataRowView selectedRow = (DataRowView)cb_listTable.SelectedItem;
+            int maBan = Convert.ToInt32(selectedRow.Row[0]);
+            if (maBan == idTable)
+                MessageBox.Show("Không thể gộp bàn");
+            else if (table.getStatusTable(maBan))
+            {
+                MessageBox.Show("Bàn đã có người");
+            }
+            else
+            {
+                MessageBox.Show("" + idOrder);
+                if (table.setStatusTable(maBan, true, idOrder))
+                {
+                    MessageBox.Show("Nối bàn thành công");
+                    loadTable();
+                }
+            }    
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            table.setStatusTable(idTable, false, "");
+            global.notify("Đóng bàn thành công");
+            loadTable();
+        }
+
         private void loadTable()
         {
+            dtTable = table.getListTable();
             panel_infoTable.Visible = true;
             panel1.Visible = false;
             x = 10;
             y = 10;
             panelListTable.Controls.Clear();
-            dtTable = table.getListTable();
+           
             foreach (DataRow row in dtTable.Rows)
             {
                 Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button()
