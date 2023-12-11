@@ -38,16 +38,33 @@ namespace CoffeeShopManagement.User_Control_Staff
         {
             loadTable();
         }
+
+        private void panelListTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CircleProgressBar1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_infoTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void loadTable()
         {
-            panel_infoTable.Visible = false;
+            panel_infoTable.Visible = true;
+            panel1.Visible = false;
             x = 10;
             y = 10;
             panelListTable.Controls.Clear();
             dtTable = table.getListTable();
             foreach (DataRow row in dtTable.Rows)
             {
-                System.Windows.Forms.Button btn = new System.Windows.Forms.Button()
+                Guna.UI2.WinForms.Guna2Button btn = new Guna.UI2.WinForms.Guna2Button()
                 {
                     Width = 225,
                     Height = 160,
@@ -62,12 +79,23 @@ namespace CoffeeShopManagement.User_Control_Staff
                 {
                     case false:
                         btn.ForeColor = Color.White;
-                        btn.BackColor = Color.ForestGreen;
-                        btn.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                        btn.BackColor = System.Drawing.Color.Transparent;
+                        btn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(110)))));
+                        btn.BorderRadius = 12;
+                        btn.Font = new System.Drawing.Font("Roboto", 14.25F);
+                        btn.UseTransparentBackground = true;
+                        btn.BorderColor = Color.DimGray;
+                        btn.BorderThickness = 1;
                         break;
                     case true:
                         btn.ForeColor = Color.White;
-                        btn.BackColor = Color.Red;
+                        btn.BackColor = System.Drawing.Color.Transparent;
+                        btn.FillColor = System.Drawing.Color.Red;
+                        btn.BorderRadius = 12;
+                        btn.Font = new System.Drawing.Font("Roboto", 14.25F);
+                        btn.UseTransparentBackground = true;
+                        btn.BorderColor = Color.DimGray;
+                        btn.BorderThickness = 1;
                         break;
                     default:
                         break;
@@ -82,10 +110,9 @@ namespace CoffeeShopManagement.User_Control_Staff
             }
         }
      
-
         private void Button_Table_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.Button clickedButton = (System.Windows.Forms.Button)sender;
+            Guna.UI2.WinForms.Guna2Button clickedButton = (Guna.UI2.WinForms.Guna2Button)sender;
 
             idTable = (int)clickedButton.Tag;
             statusTable = table.getStatusTable(idTable);
@@ -98,7 +125,8 @@ namespace CoffeeShopManagement.User_Control_Staff
             setValuePanelInfoTable();
 
             btn_closeTable.Visible = statusTable;
-            panel_infoTable.Visible = true;
+            panelInfoTableNotEmpty.Visible = statusTable;
+            labelEmpty.Visible = !statusTable;
         }
 
 
@@ -139,7 +167,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             lb_timeTable.Text = string.IsNullOrEmpty(dateOpenTable) ? "..." : dateOpenTable;
             lb_idOrder.Text = string.IsNullOrEmpty(idOrder) ? "..." : idOrder;
             lb_totalPay.Text = totalPay == 0 ? "...":global.FormatPrice(totalPay);
-            global.addDataGridView(dtDetailOrder, dg_tableDetailOrder);
+            global.addDataGridView(dtDetailOrder, a);
         }
     }
 }
