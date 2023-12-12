@@ -106,7 +106,7 @@ namespace BaoCaoCuoiKy.User_Control
             btn_save.Enabled = false;
             btn_cancelSave.Enabled = false;
             btnEdit.Enabled = false;
-            btnDelete.Enabled = true;
+            btnDelete.Enabled = false;
             btnClear.Enabled = false;
             textBoxId.Text = "";
             functionSave = "";
