@@ -1,4 +1,5 @@
 ﻿using BaoCaoCuoiKy;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -33,6 +34,8 @@ namespace CoffeeShopManagement.User_Control_Staff
 
         private int sttDetailOrder = 1, SoLuong, DonGia, TongTien, MaBan;
         private string MaHD, MaNV, MaMon, Ngay;
+
+        private Bitmap memoryimg;
         public UC_STAFF_CREATEORDER()
         {
             InitializeComponent();
@@ -101,36 +104,41 @@ namespace CoffeeShopManagement.User_Control_Staff
         }
         private void btn_printOrder_Click(object sender, EventArgs e)
         {
-
-            Print(this.panel_infoPayment);
-
+            Print(panel_infoPayment);
             global.notify("Xuất hóa đơn thành công");
             panel_createOrder.Enabled = true;
+            dtDetailOrder.Clear();
             showInfoPayment(false);
-            resetFromCreate();
             setAutoIdOrder();
         }
+
         private void Print(Panel pnl)
         {
             PrinterSettings ps = new PrinterSettings();
-            panel_infoPayment = (Guna.UI2.WinForms.Guna2Panel)pnl;
-            getprintarea(pnl);
+
+            memoryimg = new Bitmap(pnl.Width, pnl.Height);
+
+            pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height));
+
             printPreviewDialog1.Document = printDocument1;
             printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
             printPreviewDialog1.ShowDialog();
         }
-        private Bitmap memoryimg;
-        private void getprintarea(Panel pnl)
-        {
-            pnl.Size = new Size(printDocument1.DefaultPageSettings.PaperSize.Width, printDocument1.DefaultPageSettings.PaperSize.Height);
-            memoryimg = new Bitmap(pnl.Width, pnl.Height);
-            pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height)); ;
-        }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
+            PrinterSettings ps = new PrinterSettings();
+            int widthInInches = ps.DefaultPageSettings.PaperSize.Width ;
+            int heightInInches = ps.DefaultPageSettings.PaperSize.Height ;
+
+            int memoryimgWidth = memoryimg.Width;
+            int memoryimgHeight = memoryimg.Height;
+
+            int location_X = (widthInInches - memoryimgWidth) / 2;
+            int location_y = (heightInInches - memoryimgHeight) / 2;
+
             Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(memoryimg, 0, 0);
+            e.Graphics.DrawImage(memoryimg, location_X, location_y);
         }
 
        
@@ -197,7 +205,6 @@ namespace CoffeeShopManagement.User_Control_Staff
             string id = order.getIdOrderLastRow();
             tb_idOrder.Text = global.autoIncrementId(id);
         }
-
         private void HandleNoOpenTable()
         {
             createOrder();
@@ -259,8 +266,8 @@ namespace CoffeeShopManagement.User_Control_Staff
             tb_quantity.Text = "1";
             dg_infoOrder.Rows.Clear();
             lb_totalMoney.Text = "0đ";
-            dtDetailOrder.Clear();
             sttDetailOrder = 1;
+            dg_infoOrder.Rows.Clear();
         }
         public void showInfoPayment(bool isShow)
         {

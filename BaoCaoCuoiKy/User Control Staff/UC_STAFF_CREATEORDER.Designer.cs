@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_STAFF_CREATEORDER));
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -62,7 +62,11 @@
             this.dt_datePay = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.btn_createOrder = new Guna.UI2.WinForms.Guna2Button();
             this.panel_infoPayment = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.btn_printOrder = new Guna.UI2.WinForms.Guna2Button();
             this.lb_nameStaff = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel14 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel15 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -84,24 +88,20 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_createOrder = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2HtmlLabel20 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btn_cancel = new Guna.UI2.WinForms.Guna2Button();
             this.guna2HtmlLabel8 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.cb_table = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btn_printOrder = new Guna.UI2.WinForms.Guna2Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.lblTitle = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2HtmlLabel19 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel20 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2HtmlLabel21 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dg_infoOrder)).BeginInit();
             this.panel_infoPayment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_infoPayment)).BeginInit();
             this.panel_createOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2HtmlLabel1
@@ -109,7 +109,7 @@
             this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel1.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel1.Location = new System.Drawing.Point(21, 192);
-            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             this.guna2HtmlLabel1.Size = new System.Drawing.Size(70, 20);
             this.guna2HtmlLabel1.TabIndex = 0;
@@ -120,7 +120,7 @@
             this.guna2HtmlLabel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel2.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel2.Location = new System.Drawing.Point(359, 191);
-            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel2.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             this.guna2HtmlLabel2.Size = new System.Drawing.Size(33, 20);
             this.guna2HtmlLabel2.TabIndex = 1;
@@ -140,7 +140,7 @@
             this.cb_category.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cb_category.ItemHeight = 38;
             this.cb_category.Location = new System.Drawing.Point(21, 219);
-            this.cb_category.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_category.Margin = new System.Windows.Forms.Padding(4);
             this.cb_category.Name = "cb_category";
             this.cb_category.Size = new System.Drawing.Size(304, 44);
             this.cb_category.TabIndex = 2;
@@ -160,7 +160,7 @@
             this.cb_product.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cb_product.ItemHeight = 38;
             this.cb_product.Location = new System.Drawing.Point(358, 219);
-            this.cb_product.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_product.Margin = new System.Windows.Forms.Padding(4);
             this.cb_product.Name = "cb_product";
             this.cb_product.Size = new System.Drawing.Size(305, 44);
             this.cb_product.TabIndex = 3;
@@ -176,7 +176,7 @@
             this.btn_add.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btn_add.ForeColor = System.Drawing.Color.White;
             this.btn_add.Location = new System.Drawing.Point(422, 291);
-            this.btn_add.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_add.Margin = new System.Windows.Forms.Padding(4);
             this.btn_add.Name = "btn_add";
             this.btn_add.Size = new System.Drawing.Size(183, 44);
             this.btn_add.TabIndex = 4;
@@ -188,7 +188,7 @@
             this.guna2HtmlLabel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel3.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel3.Location = new System.Drawing.Point(689, 192);
-            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel3.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             this.guna2HtmlLabel3.Size = new System.Drawing.Size(63, 20);
             this.guna2HtmlLabel3.TabIndex = 5;
@@ -209,7 +209,7 @@
             this.tb_quantity.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_quantity.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_quantity.Location = new System.Drawing.Point(748, 219);
-            this.tb_quantity.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tb_quantity.Margin = new System.Windows.Forms.Padding(5);
             this.tb_quantity.Name = "tb_quantity";
             this.tb_quantity.PasswordChar = '\0';
             this.tb_quantity.PlaceholderText = "";
@@ -231,7 +231,7 @@
             this.btn_increase.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_increase.ForeColor = System.Drawing.Color.Black;
             this.btn_increase.Location = new System.Drawing.Point(938, 219);
-            this.btn_increase.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_increase.Margin = new System.Windows.Forms.Padding(4);
             this.btn_increase.Name = "btn_increase";
             this.btn_increase.Size = new System.Drawing.Size(45, 44);
             this.btn_increase.TabIndex = 7;
@@ -250,7 +250,7 @@
             this.btn_reduce.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reduce.ForeColor = System.Drawing.Color.Black;
             this.btn_reduce.Location = new System.Drawing.Point(694, 219);
-            this.btn_reduce.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_reduce.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reduce.Name = "btn_reduce";
             this.btn_reduce.Size = new System.Drawing.Size(45, 44);
             this.btn_reduce.TabIndex = 8;
@@ -260,18 +260,18 @@
             // dg_infoOrder
             // 
             this.dg_infoOrder.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.dg_infoOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle67.BackColor = System.Drawing.Color.White;
+            this.dg_infoOrder.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle67;
             this.dg_infoOrder.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dg_infoOrder.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_infoOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle68.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle68.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle68.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle68.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle68.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle68.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_infoOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle68;
             this.dg_infoOrder.ColumnHeadersHeight = 32;
             this.dg_infoOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dg_infoOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -281,18 +281,19 @@
             this.col_unitPrice,
             this.col_quantity,
             this.col_intoMoney});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_infoOrder.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle69.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle69.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle69.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle69.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle69.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle69.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_infoOrder.DefaultCellStyle = dataGridViewCellStyle69;
             this.dg_infoOrder.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dg_infoOrder.Location = new System.Drawing.Point(20, 359);
-            this.dg_infoOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dg_infoOrder.Margin = new System.Windows.Forms.Padding(4);
             this.dg_infoOrder.Name = "dg_infoOrder";
+            this.dg_infoOrder.RowHeadersVisible = false;
             this.dg_infoOrder.Size = new System.Drawing.Size(963, 337);
             this.dg_infoOrder.TabIndex = 9;
             this.dg_infoOrder.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
@@ -354,7 +355,7 @@
             this.guna2HtmlLabel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel4.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel4.Location = new System.Drawing.Point(821, 722);
-            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel4.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             this.guna2HtmlLabel4.Size = new System.Drawing.Size(70, 20);
             this.guna2HtmlLabel4.TabIndex = 10;
@@ -366,7 +367,7 @@
             this.lb_totalMoney.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_totalMoney.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(110)))));
             this.lb_totalMoney.Location = new System.Drawing.Point(899, 722);
-            this.lb_totalMoney.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lb_totalMoney.Margin = new System.Windows.Forms.Padding(4);
             this.lb_totalMoney.Name = "lb_totalMoney";
             this.lb_totalMoney.Size = new System.Drawing.Size(21, 20);
             this.lb_totalMoney.TabIndex = 11;
@@ -394,7 +395,7 @@
             this.tb_idOrder.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_idOrder.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tb_idOrder.Location = new System.Drawing.Point(358, 126);
-            this.tb_idOrder.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tb_idOrder.Margin = new System.Windows.Forms.Padding(5);
             this.tb_idOrder.Name = "tb_idOrder";
             this.tb_idOrder.PasswordChar = '\0';
             this.tb_idOrder.PlaceholderText = "";
@@ -407,7 +408,7 @@
             this.guna2HtmlLabel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel5.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel5.Location = new System.Drawing.Point(358, 101);
-            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel5.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel5.Name = "guna2HtmlLabel5";
             this.guna2HtmlLabel5.Size = new System.Drawing.Size(83, 20);
             this.guna2HtmlLabel5.TabIndex = 13;
@@ -427,7 +428,7 @@
             this.cb_staffPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cb_staffPay.ItemHeight = 38;
             this.cb_staffPay.Location = new System.Drawing.Point(359, 49);
-            this.cb_staffPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_staffPay.Margin = new System.Windows.Forms.Padding(4);
             this.cb_staffPay.Name = "cb_staffPay";
             this.cb_staffPay.Size = new System.Drawing.Size(305, 44);
             this.cb_staffPay.TabIndex = 14;
@@ -437,7 +438,7 @@
             this.guna2HtmlLabel6.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel6.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel6.Location = new System.Drawing.Point(440, 21);
-            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel6.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             this.guna2HtmlLabel6.Size = new System.Drawing.Size(144, 20);
             this.guna2HtmlLabel6.TabIndex = 15;
@@ -455,7 +456,7 @@
             this.dt_datePay.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dt_datePay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dt_datePay.Location = new System.Drawing.Point(694, 126);
-            this.dt_datePay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dt_datePay.Margin = new System.Windows.Forms.Padding(4);
             this.dt_datePay.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dt_datePay.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dt_datePay.Name = "dt_datePay";
@@ -474,7 +475,7 @@
             this.btn_createOrder.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btn_createOrder.ForeColor = System.Drawing.Color.White;
             this.btn_createOrder.Location = new System.Drawing.Point(821, 750);
-            this.btn_createOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_createOrder.Margin = new System.Windows.Forms.Padding(4);
             this.btn_createOrder.Name = "btn_createOrder";
             this.btn_createOrder.Size = new System.Drawing.Size(162, 44);
             this.btn_createOrder.TabIndex = 17;
@@ -483,7 +484,6 @@
             // 
             // panel_infoPayment
             // 
-            this.panel_infoPayment.BackColor = System.Drawing.Color.Transparent;
             this.panel_infoPayment.BorderColor = System.Drawing.Color.Gray;
             this.panel_infoPayment.BorderRadius = 20;
             this.panel_infoPayment.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
@@ -492,7 +492,6 @@
             this.panel_infoPayment.Controls.Add(this.guna2HtmlLabel21);
             this.panel_infoPayment.Controls.Add(this.guna2PictureBox1);
             this.panel_infoPayment.Controls.Add(this.guna2HtmlLabel17);
-            this.panel_infoPayment.Controls.Add(this.btn_printOrder);
             this.panel_infoPayment.Controls.Add(this.lb_nameStaff);
             this.panel_infoPayment.Controls.Add(this.guna2HtmlLabel14);
             this.panel_infoPayment.Controls.Add(this.guna2HtmlLabel15);
@@ -510,28 +509,80 @@
             this.panel_infoPayment.FillColor = System.Drawing.Color.White;
             this.panel_infoPayment.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel_infoPayment.Location = new System.Drawing.Point(1049, 60);
-            this.panel_infoPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_infoPayment.Margin = new System.Windows.Forms.Padding(4);
             this.panel_infoPayment.Name = "panel_infoPayment";
-            this.panel_infoPayment.Size = new System.Drawing.Size(612, 931);
+            this.panel_infoPayment.Size = new System.Drawing.Size(612, 855);
             this.panel_infoPayment.TabIndex = 18;
+            // 
+            // guna2HtmlLabel7
+            // 
+            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel7.Location = new System.Drawing.Point(14, 342);
+            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
+            this.guna2HtmlLabel7.Size = new System.Drawing.Size(84, 20);
+            this.guna2HtmlLabel7.TabIndex = 34;
+            this.guna2HtmlLabel7.Text = "Chi tiết món";
+            // 
+            // guna2HtmlLabel21
+            // 
+            this.guna2HtmlLabel21.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel21.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel21.Location = new System.Drawing.Point(14, 196);
+            this.guna2HtmlLabel21.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel21.Name = "guna2HtmlLabel21";
+            this.guna2HtmlLabel21.Size = new System.Drawing.Size(66, 20);
+            this.guna2HtmlLabel21.TabIndex = 33;
+            this.guna2HtmlLabel21.Text = "Thông tin";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.Simple_Coffee_Cup_Logo_Template_Download_on_Pngtree;
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(512, 14);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(83, 80);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2PictureBox1.TabIndex = 32;
+            this.guna2PictureBox1.TabStop = false;
+            this.guna2PictureBox1.UseTransparentBackground = true;
             // 
             // guna2HtmlLabel17
             // 
             this.guna2HtmlLabel17.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel17.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel17.Location = new System.Drawing.Point(14, 249);
-            this.guna2HtmlLabel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel17.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel17.Name = "guna2HtmlLabel17";
             this.guna2HtmlLabel17.Size = new System.Drawing.Size(125, 17);
             this.guna2HtmlLabel17.TabIndex = 31;
             this.guna2HtmlLabel17.Text = "Nhân viên thanh toán:";
+            // 
+            // btn_printOrder
+            // 
+            this.btn_printOrder.BorderRadius = 12;
+            this.btn_printOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btn_printOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btn_printOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btn_printOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btn_printOrder.FillColor = System.Drawing.Color.Blue;
+            this.btn_printOrder.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_printOrder.ForeColor = System.Drawing.Color.White;
+            this.btn_printOrder.Location = new System.Drawing.Point(1049, 947);
+            this.btn_printOrder.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_printOrder.Name = "btn_printOrder";
+            this.btn_printOrder.Size = new System.Drawing.Size(618, 44);
+            this.btn_printOrder.TabIndex = 20;
+            this.btn_printOrder.Text = "Xuất hóa đơn";
+            this.btn_printOrder.Click += new System.EventHandler(this.btn_printOrder_Click);
             // 
             // lb_nameStaff
             // 
             this.lb_nameStaff.BackColor = System.Drawing.Color.Transparent;
             this.lb_nameStaff.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nameStaff.Location = new System.Drawing.Point(156, 249);
-            this.lb_nameStaff.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lb_nameStaff.Margin = new System.Windows.Forms.Padding(4);
             this.lb_nameStaff.Name = "lb_nameStaff";
             this.lb_nameStaff.Size = new System.Drawing.Size(85, 17);
             this.lb_nameStaff.TabIndex = 30;
@@ -542,7 +593,7 @@
             this.guna2HtmlLabel14.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel14.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel14.Location = new System.Drawing.Point(14, 274);
-            this.guna2HtmlLabel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel14.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel14.Name = "guna2HtmlLabel14";
             this.guna2HtmlLabel14.Size = new System.Drawing.Size(95, 17);
             this.guna2HtmlLabel14.TabIndex = 29;
@@ -553,8 +604,8 @@
             this.guna2HtmlLabel15.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel15.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel15.ForeColor = System.Drawing.Color.Red;
-            this.guna2HtmlLabel15.Location = new System.Drawing.Point(14, 850);
-            this.guna2HtmlLabel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel15.Location = new System.Drawing.Point(17, 815);
+            this.guna2HtmlLabel15.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel15.Name = "guna2HtmlLabel15";
             this.guna2HtmlLabel15.Size = new System.Drawing.Size(122, 17);
             this.guna2HtmlLabel15.TabIndex = 20;
@@ -564,8 +615,8 @@
             // 
             this.guna2HtmlLabel16.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel16.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel16.Location = new System.Drawing.Point(21, 786);
-            this.guna2HtmlLabel16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel16.Location = new System.Drawing.Point(21, 762);
+            this.guna2HtmlLabel16.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel16.Name = "guna2HtmlLabel16";
             this.guna2HtmlLabel16.Size = new System.Drawing.Size(565, 17);
             this.guna2HtmlLabel16.TabIndex = 28;
@@ -577,8 +628,8 @@
             this.lb_totalPay.BackColor = System.Drawing.Color.Transparent;
             this.lb_totalPay.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_totalPay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(159)))), ((int)(((byte)(110)))));
-            this.lb_totalPay.Location = new System.Drawing.Point(144, 848);
-            this.lb_totalPay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lb_totalPay.Location = new System.Drawing.Point(147, 813);
+            this.lb_totalPay.Margin = new System.Windows.Forms.Padding(4);
             this.lb_totalPay.Name = "lb_totalPay";
             this.lb_totalPay.Size = new System.Drawing.Size(72, 21);
             this.lb_totalPay.TabIndex = 27;
@@ -589,7 +640,7 @@
             this.lb_datePay.BackColor = System.Drawing.Color.Transparent;
             this.lb_datePay.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_datePay.Location = new System.Drawing.Point(156, 274);
-            this.lb_datePay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lb_datePay.Margin = new System.Windows.Forms.Padding(4);
             this.lb_datePay.Name = "lb_datePay";
             this.lb_datePay.Size = new System.Drawing.Size(143, 17);
             this.lb_datePay.TabIndex = 26;
@@ -600,7 +651,7 @@
             this.lb_table.BackColor = System.Drawing.Color.Transparent;
             this.lb_table.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_table.Location = new System.Drawing.Point(156, 224);
-            this.lb_table.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lb_table.Margin = new System.Windows.Forms.Padding(4);
             this.lb_table.Name = "lb_table";
             this.lb_table.Size = new System.Drawing.Size(80, 17);
             this.lb_table.TabIndex = 25;
@@ -611,7 +662,7 @@
             this.lb_idOrder.BackColor = System.Drawing.Color.Transparent;
             this.lb_idOrder.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_idOrder.Location = new System.Drawing.Point(131, 14);
-            this.lb_idOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lb_idOrder.Margin = new System.Windows.Forms.Padding(4);
             this.lb_idOrder.Name = "lb_idOrder";
             this.lb_idOrder.Size = new System.Drawing.Size(47, 25);
             this.lb_idOrder.TabIndex = 24;
@@ -622,7 +673,7 @@
             this.guna2HtmlLabel13.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel13.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel13.Location = new System.Drawing.Point(14, 224);
-            this.guna2HtmlLabel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel13.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel13.Name = "guna2HtmlLabel13";
             this.guna2HtmlLabel13.Size = new System.Drawing.Size(28, 17);
             this.guna2HtmlLabel13.TabIndex = 23;
@@ -633,7 +684,7 @@
             this.guna2HtmlLabel12.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel12.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel12.Location = new System.Drawing.Point(14, 14);
-            this.guna2HtmlLabel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel12.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel12.Name = "guna2HtmlLabel12";
             this.guna2HtmlLabel12.Size = new System.Drawing.Size(108, 25);
             this.guna2HtmlLabel12.TabIndex = 22;
@@ -644,7 +695,7 @@
             this.guna2HtmlLabel11.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel11.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel11.Location = new System.Drawing.Point(487, 154);
-            this.guna2HtmlLabel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel11.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel11.Name = "guna2HtmlLabel11";
             this.guna2HtmlLabel11.Size = new System.Drawing.Size(104, 17);
             this.guna2HtmlLabel11.TabIndex = 21;
@@ -655,7 +706,7 @@
             this.guna2HtmlLabel10.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel10.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel10.Location = new System.Drawing.Point(279, 130);
-            this.guna2HtmlLabel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel10.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel10.Name = "guna2HtmlLabel10";
             this.guna2HtmlLabel10.Size = new System.Drawing.Size(312, 16);
             this.guna2HtmlLabel10.TabIndex = 20;
@@ -667,7 +718,7 @@
             this.guna2HtmlLabel9.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.guna2HtmlLabel9.Location = new System.Drawing.Point(471, 101);
-            this.guna2HtmlLabel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel9.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             this.guna2HtmlLabel9.Size = new System.Drawing.Size(120, 21);
             this.guna2HtmlLabel9.TabIndex = 19;
@@ -676,18 +727,18 @@
             // dg_infoPayment
             // 
             this.dg_infoPayment.AllowUserToAddRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.dg_infoPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle70.BackColor = System.Drawing.Color.White;
+            this.dg_infoPayment.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle70;
             this.dg_infoPayment.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dg_infoPayment.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Raised;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dg_infoPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(234)))), ((int)(((byte)(237)))));
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle71.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dg_infoPayment.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
             this.dg_infoPayment.ColumnHeadersHeight = 32;
             this.dg_infoPayment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dg_infoPayment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -697,20 +748,20 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dg_infoPayment.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle72.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle72.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dg_infoPayment.DefaultCellStyle = dataGridViewCellStyle72;
             this.dg_infoPayment.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(241)))), ((int)(((byte)(243)))));
             this.dg_infoPayment.Location = new System.Drawing.Point(14, 370);
-            this.dg_infoPayment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dg_infoPayment.Margin = new System.Windows.Forms.Padding(4);
             this.dg_infoPayment.Name = "dg_infoPayment";
             this.dg_infoPayment.RowHeadersVisible = false;
-            this.dg_infoPayment.Size = new System.Drawing.Size(577, 408);
+            this.dg_infoPayment.Size = new System.Drawing.Size(577, 377);
             this.dg_infoPayment.TabIndex = 20;
             this.dg_infoPayment.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.LightGrid;
             this.dg_infoPayment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -796,10 +847,21 @@
             this.panel_createOrder.Controls.Add(this.guna2HtmlLabel2);
             this.panel_createOrder.FillColor = System.Drawing.Color.White;
             this.panel_createOrder.Location = new System.Drawing.Point(20, 183);
-            this.panel_createOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_createOrder.Margin = new System.Windows.Forms.Padding(4);
             this.panel_createOrder.Name = "panel_createOrder";
             this.panel_createOrder.Size = new System.Drawing.Size(1000, 808);
             this.panel_createOrder.TabIndex = 19;
+            // 
+            // guna2HtmlLabel20
+            // 
+            this.guna2HtmlLabel20.BackColor = System.Drawing.Color.Transparent;
+            this.guna2HtmlLabel20.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2HtmlLabel20.Location = new System.Drawing.Point(685, 98);
+            this.guna2HtmlLabel20.Margin = new System.Windows.Forms.Padding(4);
+            this.guna2HtmlLabel20.Name = "guna2HtmlLabel20";
+            this.guna2HtmlLabel20.Size = new System.Drawing.Size(65, 20);
+            this.guna2HtmlLabel20.TabIndex = 21;
+            this.guna2HtmlLabel20.Text = "Thời gian";
             // 
             // btn_cancel
             // 
@@ -812,7 +874,7 @@
             this.btn_cancel.Font = new System.Drawing.Font("Roboto", 11.25F);
             this.btn_cancel.ForeColor = System.Drawing.Color.White;
             this.btn_cancel.Location = new System.Drawing.Point(662, 750);
-            this.btn_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(151, 44);
             this.btn_cancel.TabIndex = 20;
@@ -824,7 +886,7 @@
             this.guna2HtmlLabel8.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel8.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel8.Location = new System.Drawing.Point(21, 98);
-            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel8.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             this.guna2HtmlLabel8.Size = new System.Drawing.Size(28, 20);
             this.guna2HtmlLabel8.TabIndex = 19;
@@ -844,28 +906,10 @@
             this.cb_table.ForeColor = System.Drawing.Color.Red;
             this.cb_table.ItemHeight = 38;
             this.cb_table.Location = new System.Drawing.Point(20, 126);
-            this.cb_table.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cb_table.Margin = new System.Windows.Forms.Padding(4);
             this.cb_table.Name = "cb_table";
             this.cb_table.Size = new System.Drawing.Size(305, 44);
             this.cb_table.TabIndex = 18;
-            // 
-            // btn_printOrder
-            // 
-            this.btn_printOrder.BorderRadius = 12;
-            this.btn_printOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_printOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_printOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_printOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_printOrder.FillColor = System.Drawing.Color.Blue;
-            this.btn_printOrder.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_printOrder.ForeColor = System.Drawing.Color.White;
-            this.btn_printOrder.Location = new System.Drawing.Point(14, 873);
-            this.btn_printOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btn_printOrder.Name = "btn_printOrder";
-            this.btn_printOrder.Size = new System.Drawing.Size(581, 44);
-            this.btn_printOrder.TabIndex = 20;
-            this.btn_printOrder.Text = "Xuất hóa đơn";
-            this.btn_printOrder.Click += new System.EventHandler(this.btn_printOrder_Click);
             // 
             // printPreviewDialog1
             // 
@@ -882,7 +926,7 @@
             this.guna2HtmlLabel18.BackColor = System.Drawing.Color.Transparent;
             this.guna2HtmlLabel18.Font = new System.Drawing.Font("Roboto", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2HtmlLabel18.Location = new System.Drawing.Point(20, 22);
-            this.guna2HtmlLabel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2HtmlLabel18.Margin = new System.Windows.Forms.Padding(4);
             this.guna2HtmlLabel18.Name = "guna2HtmlLabel18";
             this.guna2HtmlLabel18.Size = new System.Drawing.Size(287, 37);
             this.guna2HtmlLabel18.TabIndex = 21;
@@ -908,51 +952,6 @@
             this.guna2HtmlLabel19.TabIndex = 23;
             this.guna2HtmlLabel19.Text = "Thông tin xuất hoá đơn";
             // 
-            // guna2HtmlLabel20
-            // 
-            this.guna2HtmlLabel20.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel20.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel20.Location = new System.Drawing.Point(685, 98);
-            this.guna2HtmlLabel20.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel20.Name = "guna2HtmlLabel20";
-            this.guna2HtmlLabel20.Size = new System.Drawing.Size(65, 20);
-            this.guna2HtmlLabel20.TabIndex = 21;
-            this.guna2HtmlLabel20.Text = "Thời gian";
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.Image = global::CoffeeShopManagement.Properties.Resources.Simple_Coffee_Cup_Logo_Template_Download_on_Pngtree;
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(512, 14);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(83, 80);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 32;
-            this.guna2PictureBox1.TabStop = false;
-            this.guna2PictureBox1.UseTransparentBackground = true;
-            // 
-            // guna2HtmlLabel21
-            // 
-            this.guna2HtmlLabel21.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel21.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel21.Location = new System.Drawing.Point(14, 196);
-            this.guna2HtmlLabel21.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel21.Name = "guna2HtmlLabel21";
-            this.guna2HtmlLabel21.Size = new System.Drawing.Size(66, 20);
-            this.guna2HtmlLabel21.TabIndex = 33;
-            this.guna2HtmlLabel21.Text = "Thông tin";
-            // 
-            // guna2HtmlLabel7
-            // 
-            this.guna2HtmlLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.guna2HtmlLabel7.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2HtmlLabel7.Location = new System.Drawing.Point(14, 342);
-            this.guna2HtmlLabel7.Margin = new System.Windows.Forms.Padding(4);
-            this.guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            this.guna2HtmlLabel7.Size = new System.Drawing.Size(84, 20);
-            this.guna2HtmlLabel7.TabIndex = 34;
-            this.guna2HtmlLabel7.Text = "Chi tiết món";
-            // 
             // UC_STAFF_CREATEORDER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
@@ -962,19 +961,20 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.guna2HtmlLabel18);
             this.Controls.Add(this.panel_createOrder);
+            this.Controls.Add(this.btn_printOrder);
             this.Controls.Add(this.panel_infoPayment);
             this.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_STAFF_CREATEORDER";
-            this.Size = new System.Drawing.Size(1920, 1080);
+            this.Size = new System.Drawing.Size(1680, 1009);
             this.Load += new System.EventHandler(this.UC_STAFF_CREATEORDER_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_infoOrder)).EndInit();
             this.panel_infoPayment.ResumeLayout(false);
             this.panel_infoPayment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_infoPayment)).EndInit();
             this.panel_createOrder.ResumeLayout(false);
             this.panel_createOrder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
