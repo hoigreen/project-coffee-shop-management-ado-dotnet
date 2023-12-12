@@ -36,16 +36,12 @@
             this.lblLogo = new System.Windows.Forms.Label();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.panelSidebar = new Guna.UI2.WinForms.Guna2Panel();
+            this.lblMethodSidebar = new System.Windows.Forms.Label();
             this.btnList = new Guna.UI2.WinForms.Guna2Button();
             this.btnCreate = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.lblMethodSidebar = new System.Windows.Forms.Label();
             this.panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.panelSidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_staff_container
@@ -86,8 +82,6 @@
             // panelHeader
             // 
             this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelHeader.Controls.Add(this.guna2PictureBox1);
-            this.panelHeader.Controls.Add(this.guna2PictureBox3);
             this.panelHeader.Controls.Add(this.lblLogoDescription);
             this.panelHeader.Controls.Add(this.lblLogo);
             this.panelHeader.Controls.Add(this.guna2PictureBox2);
@@ -148,6 +142,17 @@
             this.panelSidebar.Size = new System.Drawing.Size(240, 1009);
             this.panelSidebar.TabIndex = 8;
             // 
+            // lblMethodSidebar
+            // 
+            this.lblMethodSidebar.AutoSize = true;
+            this.lblMethodSidebar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMethodSidebar.ForeColor = System.Drawing.Color.Blue;
+            this.lblMethodSidebar.Location = new System.Drawing.Point(12, 30);
+            this.lblMethodSidebar.Name = "lblMethodSidebar";
+            this.lblMethodSidebar.Size = new System.Drawing.Size(103, 23);
+            this.lblMethodSidebar.TabIndex = 12;
+            this.lblMethodSidebar.Text = "Chức năng";
+            // 
             // btnList
             // 
             this.btnList.Animated = true;
@@ -198,43 +203,6 @@
             this.btnCreate.TextOffset = new System.Drawing.Point(10, 0);
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Black;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1706, 23);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(25, 24);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 14;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.ImageRotate = 20F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(1737, 25);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(23, 20);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 13;
-            this.guna2PictureBox3.TabStop = false;
-            this.guna2PictureBox3.UseTransparentBackground = true;
-            // 
-            // lblMethodSidebar
-            // 
-            this.lblMethodSidebar.AutoSize = true;
-            this.lblMethodSidebar.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMethodSidebar.ForeColor = System.Drawing.Color.Blue;
-            this.lblMethodSidebar.Location = new System.Drawing.Point(12, 30);
-            this.lblMethodSidebar.Name = "lblMethodSidebar";
-            this.lblMethodSidebar.Size = new System.Drawing.Size(103, 23);
-            this.lblMethodSidebar.TabIndex = 12;
-            this.lblMethodSidebar.Text = "Chức năng";
-            // 
             // Form_Main_Staff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,8 +223,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.panelSidebar.ResumeLayout(false);
             this.panelSidebar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -272,8 +238,6 @@
         private System.Windows.Forms.Label lblLogo;
         private Guna.UI2.WinForms.Guna2Button btnCreate;
         private Guna.UI2.WinForms.Guna2Button btnList;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private System.Windows.Forms.Label lblMethodSidebar;
     }
 }
