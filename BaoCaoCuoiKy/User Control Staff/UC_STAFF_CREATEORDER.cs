@@ -65,16 +65,6 @@ namespace CoffeeShopManagement.User_Control_Staff
             btn_reduce.Enabled = false;
         }
 
-        private void CreDataTbale_DeTailOrder()
-        {
-            dtDetailOrder.Columns.Add("stt", typeof(int));
-            dtDetailOrder.Columns.Add("Mã món", typeof(string));
-            dtDetailOrder.Columns.Add("Tên món ăn", typeof(string));
-            dtDetailOrder.Columns.Add("Đơn giá", typeof(int));
-            dtDetailOrder.Columns.Add("Số lượng", typeof(int));
-            dtDetailOrder.Columns.Add("Thành tiền", typeof(int));
-        }
-
         private void btn_createOrder_Click(object sender, EventArgs e)
         {
             if (!IsDataTableEmpty(dtDetailOrder))
@@ -86,6 +76,114 @@ namespace CoffeeShopManagement.User_Control_Staff
             {
                 global.notify("Bạn chưa chọn món ăn nào");
             }
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            resetFromCreate();
+        }
+
+        private void btn_reduce_Click(object sender, EventArgs e)
+        {
+            int quantity = Convert.ToInt32(tb_quantity.Text);
+            quantity -= 1;
+            tb_quantity.Text = quantity.ToString();
+            checkButtonQuantity();
+        }
+
+        private void btn_increase_Click(object sender, EventArgs e)
+        {
+            int quantity = Convert.ToInt32(tb_quantity.Text);
+            quantity += 1;
+            tb_quantity.Text = quantity.ToString();
+            checkButtonQuantity();
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            DataRowView selectedRow = (DataRowView)cb_product.SelectedItem;
+            string maMon = selectedRow.Row[0].ToString();
+            DataRow row = dtDetailOrder.NewRow();
+            row["stt"] = sttDetailOrder;
+            row["Mã món"] = maMon;
+            row["Tên món ăn"] = cb_product.Text;
+            row["Đơn giá"] = menu.getPrice_Id(maMon);
+            row["Số lượng"] = tb_quantity.Text;
+            row["Thành tiền"] = (int)row["Đơn giá"] * (int)row["Số lượng"]; ;
+            dtDetailOrder.Rows.Add(row);
+            sttDetailOrder += 1;
+
+            global.addDataGridView(dtDetailOrder, dg_infoOrder);
+            lb_totalMoney.Text = global.FormatPrice(calculateTotalMoney());
+        }
+
+        private void btn_printOrder_Click(object sender, EventArgs e)
+        {
+            Print(panel_infoPayment);
+            global.notify("Xuất hóa đơn thành công");
+            panel_createOrder.Enabled = true;
+            dtDetailOrder.Clear();
+            showInfoPayment(false);
+            setAutoIdOrder();
+        }
+
+        private void tb_quantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cb_category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataRowView selectedRow = (DataRowView)cb_category.SelectedItem;
+            int idCate = Convert.ToInt32(selectedRow.Row[0]);
+
+            dtMenu = menu.getListMenu_Category(idCate);
+            setListCombobox(cb_product, dtMenu);
+        }
+
+        private void Print(Panel pnl)
+        {
+            PrinterSettings ps = new PrinterSettings();
+
+            memoryimg = new Bitmap(pnl.Width, pnl.Height);
+
+            pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height));
+
+            printPreviewDialog1.Document = printDocument1;
+            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+            printPreviewDialog1.ShowDialog();
+        }
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            PrinterSettings ps = new PrinterSettings();
+            int widthInInches = ps.DefaultPageSettings.PaperSize.Width ;
+            int heightInInches = ps.DefaultPageSettings.PaperSize.Height ;
+
+            int memoryimgWidth = memoryimg.Width;
+            int memoryimgHeight = memoryimg.Height;
+
+            int location_X = (widthInInches - memoryimgWidth) / 2;
+            int location_y = (heightInInches - memoryimgHeight) / 2;
+
+            Rectangle pagearea = e.PageBounds;
+            e.Graphics.DrawImage(memoryimg, location_X, location_y);
+        }
+
+        private void setListCombobox(ComboBox combobox, DataTable dataTable)
+        {
+            combobox.DataSource = dataTable;
+            combobox.DisplayMember = dataTable.Columns[1].ColumnName;
+            combobox.ValueMember = dataTable.Columns[0].ColumnName;
+        }
+
+        private void setAutoIdOrder()
+        {
+            string id = order.getIdOrderLastRow();
+            tb_idOrder.Text = global.autoIncrementId(id);
         }
 
         private void handleBeforeCreateOrder()
@@ -118,109 +216,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             TongTien = calculateTotalMoney();
             MaBan = (int)selectedRowCbTable.Row[0];
         }
-        private void btn_printOrder_Click(object sender, EventArgs e)
-        {
-            Print(panel_infoPayment);
-            global.notify("Xuất hóa đơn thành công");
-            panel_createOrder.Enabled = true;
-            dtDetailOrder.Clear();
-            showInfoPayment(false);
-            setAutoIdOrder();
-        }
 
-        private void Print(Panel pnl)
-        {
-            PrinterSettings ps = new PrinterSettings();
-
-            memoryimg = new Bitmap(pnl.Width, pnl.Height);
-
-            pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height));
-
-            printPreviewDialog1.Document = printDocument1;
-            printDocument1.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-            printPreviewDialog1.ShowDialog();
-        }
-
-        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            PrinterSettings ps = new PrinterSettings();
-            int widthInInches = ps.DefaultPageSettings.PaperSize.Width ;
-            int heightInInches = ps.DefaultPageSettings.PaperSize.Height ;
-
-            int memoryimgWidth = memoryimg.Width;
-            int memoryimgHeight = memoryimg.Height;
-
-            int location_X = (widthInInches - memoryimgWidth) / 2;
-            int location_y = (heightInInches - memoryimgHeight) / 2;
-
-            Rectangle pagearea = e.PageBounds;
-            e.Graphics.DrawImage(memoryimg, location_X, location_y);
-        }
-
-       
-
-        private void btn_cancel_Click(object sender, EventArgs e)
-        {
-            resetFromCreate();
-        }
-        private void btn_reduce_Click(object sender, EventArgs e)
-        {
-            int quantity = Convert.ToInt32(tb_quantity.Text);
-            quantity -= 1;
-            tb_quantity.Text = quantity.ToString();
-            checkButtonQuantity();
-        }
-        private void btn_increase_Click(object sender, EventArgs e)
-        {
-            int quantity = Convert.ToInt32(tb_quantity.Text);
-            quantity += 1;
-            tb_quantity.Text = quantity.ToString();
-            checkButtonQuantity();
-        }
-        private void btn_add_Click(object sender, EventArgs e)
-        {
-            DataRowView selectedRow = (DataRowView)cb_product.SelectedItem;
-            string maMon = selectedRow.Row[0].ToString();
-            DataRow row = dtDetailOrder.NewRow();
-            row["stt"] = sttDetailOrder;
-            row["Mã món"] = maMon;
-            row["Tên món ăn"] = cb_product.Text;
-            row["Đơn giá"] = menu.getPrice_Id(maMon);
-            row["Số lượng"] = tb_quantity.Text;
-            row["Thành tiền"] = (int)row["Đơn giá"] * (int)row["Số lượng"]; ;
-            dtDetailOrder.Rows.Add(row);
-            sttDetailOrder += 1;
-
-            global.addDataGridView(dtDetailOrder, dg_infoOrder);
-            lb_totalMoney.Text = global.FormatPrice(calculateTotalMoney());
-        }
-
-        private void tb_quantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-        private void cb_category_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataRowView selectedRow = (DataRowView)cb_category.SelectedItem;
-            int idCate = Convert.ToInt32(selectedRow.Row[0]);
-
-            dtMenu = menu.getListMenu_Category(idCate);
-            setListCombobox(cb_product, dtMenu);
-        }
-        private void setListCombobox(ComboBox combobox, DataTable dataTable)
-        {
-            combobox.DataSource = dataTable;
-            combobox.DisplayMember = dataTable.Columns[1].ColumnName;
-            combobox.ValueMember = dataTable.Columns[0].ColumnName;
-        }
-        private void setAutoIdOrder()
-        {
-            string id = order.getIdOrderLastRow();
-            tb_idOrder.Text = global.autoIncrementId(id);
-        }
         private void HandleNoOpenTable()
         {
             createOrder();
@@ -228,6 +224,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             showInfoPayment(true);
             setInfoPayment();
         }
+
         private void HandleCombineTable()
         {
             createOrder();
@@ -239,6 +236,7 @@ namespace CoffeeShopManagement.User_Control_Staff
                 setInfoPayment();
             }
         }
+
         private void HandleOpenTable()
         {
             createOrder();
@@ -249,6 +247,16 @@ namespace CoffeeShopManagement.User_Control_Staff
                 resetFromCreate();
                 setInfoPayment();
             }
+        }
+
+        private void CreDataTbale_DeTailOrder()
+        {
+            dtDetailOrder.Columns.Add("stt", typeof(int));
+            dtDetailOrder.Columns.Add("Mã món", typeof(string));
+            dtDetailOrder.Columns.Add("Tên món ăn", typeof(string));
+            dtDetailOrder.Columns.Add("Đơn giá", typeof(int));
+            dtDetailOrder.Columns.Add("Số lượng", typeof(int));
+            dtDetailOrder.Columns.Add("Thành tiền", typeof(int));
         }
 
         public void createOrder()
@@ -263,6 +271,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             }
             global.notify("Tạo hóa đơn thành công");
         }
+
         public void setInfoPayment()
         {
             lb_idOrder.Text = "#" + MaHD;
@@ -285,6 +294,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             sttDetailOrder = 1;
             dg_infoOrder.Rows.Clear();
         }
+
         public void showInfoPayment(bool isShow)
         {
             panel_infoPayment.Visible = isShow;
@@ -299,6 +309,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             else 
                 btn_reduce.Enabled=true;
         }
+
         private int calculateTotalMoney()
         {
             int tongThanhTien = 0;

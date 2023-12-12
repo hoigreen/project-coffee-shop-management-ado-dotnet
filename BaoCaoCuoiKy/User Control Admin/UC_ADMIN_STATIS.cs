@@ -32,13 +32,19 @@ namespace BaoCaoCuoiKy.User_Control_Admin
 
         private void UC_QuanLyThongKe_Load(object sender, EventArgs e)
         {
+            setValueLabelStatis();
+            loadCartesianChart();
+            loadPieChart();
+        }
+
+        private void setValueLabelStatis()
+        {
             lblAmountRenevue.Text = global.FormatPrice(order.getTotalRevenue());
             lblAmountStaff.Text = staff.getCountSumStaff().ToString();
             lblAmountOrder.Text = order.getCountSumOrder().ToString();
             lblAmountItems.Text = menu.getCountSumMenu().ToString();
-            loadCartesianChart();
-            loadPieChart();
         }
+
         private void loadCartesianChart()
         {
             dtThongKe = order.getTotalRevenue_Month();
@@ -72,7 +78,7 @@ namespace BaoCaoCuoiKy.User_Control_Admin
             panelChartLine.Controls.Add(chartReportRenevue);
         }
 
-        private void setNotePeChart(int i)
+        private void setNotePieChart(int i)
         {
             if(i == 0) lb_topSaler1.Text = dtTopBestSaler.Rows[0]["Ten"].ToString();
             if(i == 1) lb_topSaler2.Text = dtTopBestSaler.Rows[1]["Ten"].ToString();
@@ -86,7 +92,7 @@ namespace BaoCaoCuoiKy.User_Control_Admin
             dtTopBestSaler = menu.getTopBestSaler();
             System.Windows.Media.Brush[] arrColor = { System.Windows.Media.Brushes.Red, System.Windows.Media.Brushes.Blue, System.Windows.Media.Brushes.Green, System.Windows.Media.Brushes.Yellow, System.Windows.Media.Brushes.Orange };
             for (int i = 0; i < Math.Min(5, dtTopBestSaler.Rows.Count); i++)
-                setNotePeChart(i);
+                setNotePieChart(i);
 
             SeriesCollection seriesCollection = new SeriesCollection();
 

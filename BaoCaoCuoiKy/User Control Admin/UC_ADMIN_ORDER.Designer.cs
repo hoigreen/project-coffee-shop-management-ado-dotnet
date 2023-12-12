@@ -29,7 +29,17 @@
         private void InitializeComponent()
         {
             this.dg_hoadon = new System.Windows.Forms.DataGridView();
+            this.col_maHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_maNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_chitiethoadon = new System.Windows.Forms.DataGridView();
+            this.col_maMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_tenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,16 +64,6 @@
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.col_maHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_maNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_ngay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_maMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_tenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_hoadon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dg_chitiethoadon)).BeginInit();
             this.panelControl.SuspendLayout();
@@ -86,7 +86,37 @@
             this.dg_hoadon.Name = "dg_hoadon";
             this.dg_hoadon.Size = new System.Drawing.Size(911, 459);
             this.dg_hoadon.TabIndex = 0;
-            this.dg_hoadon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_hoadon_CellContentClick);
+            this.dg_hoadon.SelectionChanged += new System.EventHandler(this.DgHoaDon_SelectionChanged);
+            // 
+            // col_maHD
+            // 
+            this.col_maHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_maHD.HeaderText = "Mã hóa đơn";
+            this.col_maHD.Name = "col_maHD";
+            // 
+            // col_ten
+            // 
+            this.col_ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_ten.HeaderText = "Nhân viên thanh toán";
+            this.col_ten.Name = "col_ten";
+            // 
+            // col_maNV
+            // 
+            this.col_maNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_maNV.HeaderText = "Mã nhân viên";
+            this.col_maNV.Name = "col_maNV";
+            // 
+            // col_ngay
+            // 
+            this.col_ngay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_ngay.HeaderText = "Ngày thanh toán";
+            this.col_ngay.Name = "col_ngay";
+            // 
+            // col_tong
+            // 
+            this.col_tong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_tong.HeaderText = "Tổng hóa đơn";
+            this.col_tong.Name = "col_tong";
             // 
             // dg_chitiethoadon
             // 
@@ -103,6 +133,36 @@
             this.dg_chitiethoadon.Name = "dg_chitiethoadon";
             this.dg_chitiethoadon.Size = new System.Drawing.Size(639, 558);
             this.dg_chitiethoadon.TabIndex = 1;
+            // 
+            // col_maMon
+            // 
+            this.col_maMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_maMon.HeaderText = "Mã món ăn";
+            this.col_maMon.Name = "col_maMon";
+            // 
+            // col_tenMon
+            // 
+            this.col_tenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_tenMon.HeaderText = "Tên món ăn";
+            this.col_tenMon.Name = "col_tenMon";
+            // 
+            // col_soLuong
+            // 
+            this.col_soLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_soLuong.HeaderText = "Số lượng";
+            this.col_soLuong.Name = "col_soLuong";
+            // 
+            // col_donGia
+            // 
+            this.col_donGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_donGia.HeaderText = "Đơn giá";
+            this.col_donGia.Name = "col_donGia";
+            // 
+            // col_thanhTien
+            // 
+            this.col_thanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.col_thanhTien.HeaderText = "Thành tiền";
+            this.col_thanhTien.Name = "col_thanhTien";
             // 
             // label1
             // 
@@ -461,66 +521,6 @@
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(0, 18);
             this.label19.TabIndex = 6;
-            // 
-            // col_maHD
-            // 
-            this.col_maHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_maHD.HeaderText = "Mã hóa đơn";
-            this.col_maHD.Name = "col_maHD";
-            // 
-            // col_ten
-            // 
-            this.col_ten.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_ten.HeaderText = "Nhân viên thanh toán";
-            this.col_ten.Name = "col_ten";
-            // 
-            // col_maNV
-            // 
-            this.col_maNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_maNV.HeaderText = "Mã nhân viên";
-            this.col_maNV.Name = "col_maNV";
-            // 
-            // col_ngay
-            // 
-            this.col_ngay.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_ngay.HeaderText = "Ngày thanh toán";
-            this.col_ngay.Name = "col_ngay";
-            // 
-            // col_tong
-            // 
-            this.col_tong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_tong.HeaderText = "Tổng hóa đơn";
-            this.col_tong.Name = "col_tong";
-            // 
-            // col_maMon
-            // 
-            this.col_maMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_maMon.HeaderText = "Mã món ăn";
-            this.col_maMon.Name = "col_maMon";
-            // 
-            // col_tenMon
-            // 
-            this.col_tenMon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_tenMon.HeaderText = "Tên món ăn";
-            this.col_tenMon.Name = "col_tenMon";
-            // 
-            // col_soLuong
-            // 
-            this.col_soLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_soLuong.HeaderText = "Số lượng";
-            this.col_soLuong.Name = "col_soLuong";
-            // 
-            // col_donGia
-            // 
-            this.col_donGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_donGia.HeaderText = "Đơn giá";
-            this.col_donGia.Name = "col_donGia";
-            // 
-            // col_thanhTien
-            // 
-            this.col_thanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.col_thanhTien.HeaderText = "Thành tiền";
-            this.col_thanhTien.Name = "col_thanhTien";
             // 
             // UC_ADMIN_ORDER
             // 

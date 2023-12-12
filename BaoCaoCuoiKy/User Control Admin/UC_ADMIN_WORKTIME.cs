@@ -18,22 +18,16 @@ namespace BaoCaoCuoiKy.User_Control
         {
             InitializeComponent();
         }
-        private string MaCa, TenCa, ThoiGian;
+        private string MaCa, TenCa, ThoiGian, functionSave;
         private int Luong;
 
         private DataTable dtCaLam = new DataTable();
         private XL_WORK_TIME work_time = new XL_WORK_TIME();
         private Global global = new Global();
-        private string functionSave;
 
         private void UC_QuanLyCaLam_Load(object sender, EventArgs e)
         {
-            dg_calam.SelectionChanged += DgCaLam_SelectionChanged;
-            btn_save.Enabled = false;
-            btn_cancelSave.Enabled = false;
-            btnDelete.Enabled = false;
-            btnEdit.Enabled = false;
-            btnClear.Enabled = false;
+            disableButton();
             isEnableTextBox(false);
             resetDataTable();
         }
@@ -107,58 +101,6 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
-        private void updateWorkTime()
-        {
-            getData();
-            if (work_time.UpdateWorkTime(MaCa, TenCa, ThoiGian, Luong))
-            {
-                resetDataTable();
-                global.notify("Cập nhật ca làm thành công");
-            }
-            else
-                global.notify("Cập nhật ca làm không thành công");
-        }
-
-        private void addWorkTime()
-        {
-            getData();
-            if (work_time.AddWorkTime(MaCa, TenCa, ThoiGian, Luong))
-            {
-                resetDataTable();
-                global.notify("Thêm ca làm thành công");
-            }
-            else
-                global.notify("Thêm ca làm không thành công");
-        }
-        
-        private void clearData()
-        {
-            textBoxName.Text = "";
-            textBoxTime.Text = "";
-            textBoxSalary.Text = "";
-        }
-
-        private void resetDataTable()
-        {
-            clearData();
-            dtCaLam = work_time.getListWorkTime();
-            global.addDataGridView(dtCaLam, dg_calam);
-
-        }
-
-        public void isEnableTextBox(bool isEnable)
-        {
-            textBoxId.Enabled = false;
-            textBoxName.Enabled = isEnable;
-            textBoxTime.Enabled = isEnable;
-            textBoxSalary.Enabled = isEnable;
-        }
-
-        private void panelControl_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
             clearData();
@@ -223,12 +165,68 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
+        private void updateWorkTime()
+        {
+            getData();
+            if (work_time.UpdateWorkTime(MaCa, TenCa, ThoiGian, Luong))
+            {
+                resetDataTable();
+                global.notify("Cập nhật ca làm thành công");
+            }
+            else
+                global.notify("Cập nhật ca làm không thành công");
+        }
+
+        private void addWorkTime()
+        {
+            getData();
+            if (work_time.AddWorkTime(MaCa, TenCa, ThoiGian, Luong))
+            {
+                resetDataTable();
+                global.notify("Thêm ca làm thành công");
+            }
+            else
+                global.notify("Thêm ca làm không thành công");
+        }
+        
+        private void clearData()
+        {
+            textBoxName.Text = "";
+            textBoxTime.Text = "";
+            textBoxSalary.Text = "";
+        }
+
+        private void resetDataTable()
+        {
+            clearData();
+            dtCaLam = work_time.getListWorkTime();
+            global.addDataGridView(dtCaLam, dg_calam);
+
+        }
+
+        public void isEnableTextBox(bool isEnable)
+        {
+            textBoxId.Enabled = false;
+            textBoxName.Enabled = isEnable;
+            textBoxTime.Enabled = isEnable;
+            textBoxSalary.Enabled = isEnable;
+        }
+
         private void getData()
         {
             MaCa = textBoxId.Text;
             TenCa = textBoxName.Text;
             ThoiGian = textBoxTime.Text;
             Luong = int.Parse(textBoxSalary.Text);
+        }
+
+        private void disableButton()
+        {
+            btn_save.Enabled = false;
+            btn_cancelSave.Enabled = false;
+            btnDelete.Enabled = false;
+            btnEdit.Enabled = false;
+            btnClear.Enabled = false;
         }
 
         private bool isEmpty()

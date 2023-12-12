@@ -19,29 +19,18 @@ namespace BaoCaoCuoiKy.User_Control
         {
             InitializeComponent();
         }
-        private string MaNV, TenNV, DienThoai, ChucVu, DiaChi, GioiTinh;
+        private string MaNV, TenNV, DienThoai, ChucVu, DiaChi, GioiTinh, functionSave;
         private DateTime NgaySinh, NgayVaoLam;
 
-        private DataTable dtNhanVien = new DataTable();
-        private DataTable dtNgayCong = new DataTable();
         private XL_STAFF staff = new XL_STAFF();
         private XL_WORK_DAY ngaycong = new XL_WORK_DAY();
+        private DataTable dtNhanVien = new DataTable();
+        private DataTable dtNgayCong = new DataTable();
         private Global global = new Global();
-        private string functionSave;
 
         private void UC_QuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            comboBoxGender.Items.Add("Nam");
-            comboBoxGender.Items.Add("Nữ");
-
-            dg_nhanvien.SelectionChanged += DgNhanVien_SelectionChanged;
-
-            btn_save.Enabled = false;
-            btn_cancelSave.Enabled = false;
-            btnEdit.Enabled = false;
-            btnDelete.Enabled = false;
-            btnClear.Enabled = false;
-
+            disableButton();
             isEnableTextBox(false);
             resetDataTable();
         }
@@ -80,40 +69,9 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
-        private void btn_them_Click(object sender, EventArgs e)
-        {
-            clearData();
-            string id = staff.getIdStaffLastRow();
-            textBoxId.Text = global.autoIncrementId(id);
-            isEnableTextBox(true);
-            btn_save.Enabled = true;
-            btn_cancelSave.Enabled = true;
-            btnDelete.Enabled = false;
-            btnEdit.Enabled = false;
-            btnClear.Enabled = true;
-            functionSave = "insert";
-        }
-
-        private void btn_xoa_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Bạn chắc chắn muốn xóa nhân viên?", "Thông báo",
-                MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                if (staff.DeleteStaff(textBoxId.Text))
-                {
-                    textBoxId.Text = "";
-                    resetDataTable();
-                    global.notify("Xóa nhân viên thành công");
-                }
-                else
-                    global.notify("Xóa nhân viên không thành công");
-            }
-        }
-
         private void btn_save_Click(object sender, EventArgs e)
         {
-            if (isEmpty())
+            if (isEmptyInfoStaff())
                 global.notify("Vui lòng nhập đây đủ các trường");
             else
             {
@@ -158,38 +116,6 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
-        private void updateStaff()
-        {
-            getData();
-            if (staff.UpdateStaff(MaNV, TenNV, DienThoai, GioiTinh, ChucVu, DiaChi, NgaySinh, NgayVaoLam))
-            {
-                resetDataTable();
-                global.notify("Cập nhật thông tin nhân viên thành công");
-            }
-            else
-                global.notify("Cập nhật thông tin nhân viên không thành công");
-        }
-
-        private void dg_ngaycong_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void tb_ma_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dt_ngayvaolam_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
             clearData();
@@ -232,11 +158,6 @@ namespace BaoCaoCuoiKy.User_Control
             functionSave = "update";
         }
 
-        private void textBoxId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             if (functionSave == "insert" || functionSave == "update")
@@ -259,6 +180,18 @@ namespace BaoCaoCuoiKy.User_Control
             }
         }
 
+        private void updateStaff()
+        {
+            getData();
+            if (staff.UpdateStaff(MaNV, TenNV, DienThoai, GioiTinh, ChucVu, DiaChi, NgaySinh, NgayVaoLam))
+            {
+                resetDataTable();
+                global.notify("Cập nhật thông tin nhân viên thành công");
+            }
+            else
+                global.notify("Cập nhật thông tin nhân viên không thành công");
+        }
+
         private void addStaff()
         {
             getData();
@@ -271,7 +204,7 @@ namespace BaoCaoCuoiKy.User_Control
                 global.notify("Thêm nhân viên không thành công");
         }
 
-        private bool isEmpty()
+        private bool isEmptyInfoStaff()
         {
             bool isEmpty = true;
             if (textBoxName.Text == "" || textboxPhone.Text == "" || comboBoxGender.Text == "" || textBoxPosition.Text == "" || textBoxAddress.Text == "")
@@ -314,6 +247,15 @@ namespace BaoCaoCuoiKy.User_Control
             dateTimePickerDob.Text = "01/01/2023";
             dateTimePickerStartDate.Text = "01/01/2023";
 
+        }
+
+        private void disableButton()
+        {
+            btn_save.Enabled = false;
+            btn_cancelSave.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnClear.Enabled = false;
         }
 
         public void isEnableTextBox(bool isEnable)

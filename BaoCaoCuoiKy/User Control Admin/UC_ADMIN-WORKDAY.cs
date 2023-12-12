@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
@@ -27,23 +28,33 @@ namespace BaoCaoCuoiKy.User_Control
 
         private void UC_QuanLyNgayCong_Load(object sender, EventArgs e)
         {
+            setListComboBoxWorkTime();
+            setlistComboboxMonth();
+            resetDataTable();
+            dg_ngayCong.Columns["col_ngay"].DefaultCellStyle.Format = "dd/MM/yyyy";
+        }
+
+        private void setListComboBoxWorkTime()
+        {
             dtCaLam = calam.getListIdWorkTime();
             dtCaLam.Rows.Add("--");
             comboBoxShift.DataSource = dtCaLam;
             comboBoxShift.DisplayMember = dtCaLam.Columns[0].ColumnName;
             comboBoxShift.ValueMember = dtCaLam.Columns[0].ColumnName;
+            comboBoxShift.SelectedIndex = comboBoxShift.Items.Count - 1;
+        }
+
+        private void setlistComboboxMonth()
+        {
             comboBoxMonth.Items.Add("--");
             for (int i = 1; i <= 12; i++)
             {
                 comboBoxMonth.Items.Add(i);
             }
             comboBoxMonth.SelectedIndex = 0;
-            comboBoxShift.SelectedIndex = comboBoxShift.Items.Count - 1;
-            resetDataTable();
-            dg_ngayCong.Columns["col_ngay"].DefaultCellStyle.Format = "dd/MM/yyyy";
-            dg_ngayCong.SelectionChanged += DgNgayCong_SelectionChanged;
-            comboBoxShift.SelectedIndexChanged += comboBoxShift_SelectedIndexChanged;
+            
         }
+
         private void DgNgayCong_SelectionChanged(object sender, EventArgs e)
         {
             if (dg_ngayCong.SelectedRows.Count > 0)
@@ -62,7 +73,13 @@ namespace BaoCaoCuoiKy.User_Control
                 dateTimePickerWorkDate.Text = ngayLam;
             }
         }
-        private void cb_ca_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void comboBoxShift_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            resetDataTable();
+        }
+
+        private void comboBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             resetDataTable();
         }
@@ -77,6 +94,12 @@ namespace BaoCaoCuoiKy.User_Control
             global.addDataGridView(dtNgayCong, dg_ngayCong);
         }
 
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            comboBoxShift.Text = "--";
+            comboBoxMonth.Text = "--";
+        }
+
         private void clearData()
         {
             textBoxShiftId.Text = "";
@@ -84,27 +107,6 @@ namespace BaoCaoCuoiKy.User_Control
             textBoxStaffId.Text = "";
             textBoxStaffName.Text = "";
             dateTimePickerWorkDate.Text = "01/01/2023";
-        }
-
-        private void btn_clear_Click(object sender, EventArgs e)
-        {
-            clearData();
-        }       
-
-        private void comboBoxShift_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            resetDataTable();
-        }
-
-        private void comboBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            resetDataTable();
-        }
-
-        private void btnClearFilter_Click(object sender, EventArgs e)
-        {
-            comboBoxShift.Text = "--";
-            comboBoxMonth.Text = "--";
         }
     }
 }

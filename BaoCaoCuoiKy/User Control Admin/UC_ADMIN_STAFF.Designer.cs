@@ -123,6 +123,7 @@
             this.dg_nhanvien.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dg_nhanvien.Size = new System.Drawing.Size(1082, 433);
             this.dg_nhanvien.TabIndex = 1;
+            this.dg_nhanvien.SelectionChanged += new System.EventHandler(this.DgNhanVien_SelectionChanged);
             // 
             // col_ma
             // 
@@ -250,7 +251,6 @@
             this.label9.Size = new System.Drawing.Size(99, 18);
             this.label9.TabIndex = 9;
             this.label9.Text = "Ngày vào làm";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // dg_ngaycong
             // 
@@ -265,7 +265,6 @@
             this.dg_ngaycong.Name = "dg_ngaycong";
             this.dg_ngaycong.Size = new System.Drawing.Size(458, 433);
             this.dg_ngaycong.TabIndex = 22;
-            this.dg_ngaycong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_ngaycong_CellContentClick);
             // 
             // col_maCa
             // 
@@ -486,6 +485,9 @@
             this.comboBoxGender.Font = new System.Drawing.Font("Roboto", 12F);
             this.comboBoxGender.ForeColor = System.Drawing.Color.Black;
             this.comboBoxGender.ItemHeight = 36;
+            this.comboBoxGender.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
             this.comboBoxGender.Location = new System.Drawing.Point(1235, 113);
             this.comboBoxGender.Name = "comboBoxGender";
             this.comboBoxGender.Size = new System.Drawing.Size(380, 42);
@@ -538,7 +540,6 @@
             this.textBoxId.SelectedText = "";
             this.textBoxId.Size = new System.Drawing.Size(407, 43);
             this.textBoxId.TabIndex = 34;
-            this.textBoxId.TextChanged += new System.EventHandler(this.textBoxId_TextChanged);
             // 
             // btnClear
             // 

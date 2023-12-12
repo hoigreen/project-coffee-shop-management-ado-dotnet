@@ -23,42 +23,6 @@ namespace BaoCaoCuoiKy.User_Control
         private XL_DETAIL_ORDER detail_order = new XL_DETAIL_ORDER();
         private Global global = new Global();
 
-        private string MaHD, TenNV, MaNV, Ngay, Tong;
-
-        private void btn_clear_Click(object sender, EventArgs e)
-        {
-            textBoxOrderId.Text = "";
-            textBoxStaffName.Text = "";
-            textBoxStaffId.Text = "";
-            dateTimePickerPayment.Text = "01/01/2023";
-            textBoxTotalPayment.Text = "";
-        }
-
-        private void btn_all_Click(object sender, EventArgs e)
-        {
-            comboBoxMonth.Text = "--";
-        }
-
-        private void dg_hoadon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            resetDataTable();
-        }
-
-        private void btnClearFilter_Click(object sender, EventArgs e)
-        {
-            comboBoxMonth.Text = "--";
-        }
-
         private void UC_QuanLyHoaDon_Load(object sender, EventArgs e)
         {
             comboBoxMonth.Items.Add("--");
@@ -69,8 +33,8 @@ namespace BaoCaoCuoiKy.User_Control
             comboBoxMonth.SelectedIndex = 0;
             resetDataTable();
             dg_hoadon.Columns["col_ngay"].DefaultCellStyle.Format = "dd/MM/yyyy";
-            dg_hoadon.SelectionChanged += DgHoaDon_SelectionChanged;
         }
+
         private void DgHoaDon_SelectionChanged(object sender, EventArgs e)
         {
             if (dg_hoadon.SelectedRows.Count > 0)
@@ -92,6 +56,26 @@ namespace BaoCaoCuoiKy.User_Control
                 global.addDataGridView(dtdetail_order, dg_chitiethoadon);
             }
         }
+
+        private void comboBoxMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            resetDataTable();
+        }
+
+        private void btn_clear_Click(object sender, EventArgs e)
+        {
+            textBoxOrderId.Text = "";
+            textBoxStaffName.Text = "";
+            textBoxStaffId.Text = "";
+            dateTimePickerPayment.Text = "01/01/2023";
+            textBoxTotalPayment.Text = "";
+        }
+
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            comboBoxMonth.Text = "--";
+        }
+
         private void clearData()
         {
             textBoxOrderId.Text = "";
@@ -100,6 +84,7 @@ namespace BaoCaoCuoiKy.User_Control
             dateTimePickerPayment.Text = "";
             textBoxTotalPayment.Text = "";
         }
+
         private void resetDataTable()
         {
             clearData();

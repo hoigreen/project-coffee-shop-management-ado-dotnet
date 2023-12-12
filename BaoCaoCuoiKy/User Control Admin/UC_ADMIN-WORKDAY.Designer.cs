@@ -80,6 +80,7 @@
             this.dg_ngayCong.Name = "dg_ngayCong";
             this.dg_ngayCong.Size = new System.Drawing.Size(1597, 421);
             this.dg_ngayCong.TabIndex = 0;
+            this.dg_ngayCong.SelectionChanged += new System.EventHandler(this.DgNgayCong_SelectionChanged);
             // 
             // col_maCa
             // 

@@ -14,8 +14,6 @@ using System.Xml;
 
 namespace CoffeeShopManagement.User_Control_Staff
 {
-
-    
     public partial class UC_STAFF_TABLE : UserControl
     {
         private XL_TABLE table = new XL_TABLE();
@@ -36,24 +34,8 @@ namespace CoffeeShopManagement.User_Control_Staff
 
         private void UC_STAFF_TABLE_Load(object sender, EventArgs e)
         {
-            
             loadTable();
             setListCombobox(cb_listTable, dtTable);
-        }
-
-        private void panelListTable_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void guna2CircleProgressBar1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_infoTable_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void setListCombobox(ComboBox combobox, DataTable dataTable)
@@ -61,6 +43,27 @@ namespace CoffeeShopManagement.User_Control_Staff
             combobox.DataSource = dataTable;
             combobox.DisplayMember = dataTable.Columns[1].ColumnName;
             combobox.ValueMember = dataTable.Columns[0].ColumnName;
+        }
+
+        private void setDataTableDetailOrder(Array arrIdOrder)
+        {
+            dtDetailOrder.Rows.Clear();
+            foreach (string item in arrIdOrder)
+            {
+                DataTable dataTable = new DataTable();
+                dataTable = detailOrder.getListDetailOrder(item);
+                dtDetailOrder.Merge(dataTable, false, MissingSchemaAction.Add);
+            }
+        }
+
+        private void setValuePanelInfoTable()
+        {
+            lb_nameTable.Text = nameTable;
+            lb_status.Text = statusTable ? "Có người" : "Trống";
+            lb_timeTable.Text = string.IsNullOrEmpty(dateOpenTable) ? "..." : dateOpenTable;
+            lb_idOrder.Text = string.IsNullOrEmpty(idOrder) ? "..." : idOrder;
+            lb_totalPay.Text = totalPay == 0 ? "...":global.FormatPrice(totalPay);
+            global.addDataGridView(dtDetailOrder, dataGridViewTable);
         }
 
         private void btn_openTable_Click(object sender, EventArgs e)
@@ -89,6 +92,25 @@ namespace CoffeeShopManagement.User_Control_Staff
             global.notify("Đóng bàn thành công");
             loadTable();
 
+        }
+
+        private void Button_Table_Click(object sender, EventArgs e)
+        {
+            Guna.UI2.WinForms.Guna2Button clickedButton = (Guna.UI2.WinForms.Guna2Button)sender;
+
+            idTable = (int)clickedButton.Tag;
+            statusTable = table.getStatusTable(idTable);
+            nameTable = (string)clickedButton.Text;
+            idOrder = table.getIdOrderTable(idTable);
+            string[] arrayIdOrder = idOrder.Split(',');
+            totalPay = calculateTotalPay(arrayIdOrder);
+            dateOpenTable = order.getDateTime(arrayIdOrder[arrayIdOrder.Length - 1]);
+            setDataTableDetailOrder(arrayIdOrder);
+            setValuePanelInfoTable();
+
+            btn_closeTable.Visible = statusTable;
+            panelInfoTableNotEmpty.Visible = statusTable;
+            labelEmpty.Visible = !statusTable;
         }
 
         private void loadTable()
@@ -147,45 +169,6 @@ namespace CoffeeShopManagement.User_Control_Staff
                 }
             }
         }
-     
-        private void Button_Table_Click(object sender, EventArgs e)
-        {
-            Guna.UI2.WinForms.Guna2Button clickedButton = (Guna.UI2.WinForms.Guna2Button)sender;
-
-            idTable = (int)clickedButton.Tag;
-            statusTable = table.getStatusTable(idTable);
-            nameTable = (string)clickedButton.Text;
-            idOrder = table.getIdOrderTable(idTable);
-            string[] arrayIdOrder = idOrder.Split(',');
-            totalPay = calculateTotalPay(arrayIdOrder);
-            dateOpenTable = order.getDateTime(arrayIdOrder[arrayIdOrder.Length - 1]);
-            setDataTableDetailOrder(arrayIdOrder);
-            setValuePanelInfoTable();
-
-            btn_closeTable.Visible = statusTable;
-            panelInfoTableNotEmpty.Visible = statusTable;
-            labelEmpty.Visible = !statusTable;
-        }
-
-
-        private void btn_closeTable_Click(object sender, EventArgs e)
-        {
-            table.setStatusTable(idTable, false, "");
-            global.notify("Đóng bàn thành công");
-            loadTable();
-        }
-
-        private void setDataTableDetailOrder(Array arrIdOrder)
-        {
-            dtDetailOrder.Rows.Clear();
-            foreach (string item in arrIdOrder)
-            {
-                DataTable dataTable = new DataTable();
-                dataTable = detailOrder.getListDetailOrder(item);
-                dtDetailOrder.Merge(dataTable, false, MissingSchemaAction.Add);
-            }
-        }
-
 
         private int calculateTotalPay(Array arrIdOrder)
         {
@@ -196,16 +179,6 @@ namespace CoffeeShopManagement.User_Control_Staff
                 tongTien += order.getTotalPay(item);
             }
             return tongTien;
-        }
-
-        private void setValuePanelInfoTable()
-        {
-            lb_nameTable.Text = nameTable;
-            lb_status.Text = statusTable ? "Có người" : "Trống";
-            lb_timeTable.Text = string.IsNullOrEmpty(dateOpenTable) ? "..." : dateOpenTable;
-            lb_idOrder.Text = string.IsNullOrEmpty(idOrder) ? "..." : idOrder;
-            lb_totalPay.Text = totalPay == 0 ? "...":global.FormatPrice(totalPay);
-            global.addDataGridView(dtDetailOrder, dataGridViewTable);
         }
     }
 }
