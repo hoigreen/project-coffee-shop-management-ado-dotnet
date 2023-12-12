@@ -77,14 +77,19 @@ namespace CoffeeShopManagement.User_Control_Staff
 
         private void btn_createOrder_Click(object sender, EventArgs e)
         {
-            DataRowView selectedRowCbStaff = (DataRowView)cb_staffPay.SelectedItem;
-            DataRowView selectedRowCbTable = (DataRowView)cb_table.SelectedItem;
-            MaHD = tb_idOrder.Text;
-            MaNV = selectedRowCbStaff.Row[0].ToString();
-            Ngay = dt_datePay.Value.ToString("dd/MM/yyyy HH:mm:ss");
-            TongTien = calculateTotalMoney();
-            MaBan = (int)selectedRowCbTable.Row[0];
+            if (!IsDataTableEmpty(dtDetailOrder))
+            {
+                handleDataOrder();
+                handleBeforeCreateOrder();
+            }
+            else
+            {
+                global.notify("Bạn chưa chọn món ăn nào");
+            }
+        }
 
+        private void handleBeforeCreateOrder()
+        {
             if (MaBan == 0)
                 HandleNoOpenTable();
             else
@@ -101,6 +106,17 @@ namespace CoffeeShopManagement.User_Control_Staff
                     HandleOpenTable();
             }
             showInfoPayment(true);
+        }
+
+        private void handleDataOrder()
+        {
+            DataRowView selectedRowCbStaff = (DataRowView)cb_staffPay.SelectedItem;
+            DataRowView selectedRowCbTable = (DataRowView)cb_table.SelectedItem;
+            MaHD = tb_idOrder.Text;
+            MaNV = selectedRowCbStaff.Row[0].ToString();
+            Ngay = dt_datePay.Value.ToString("dd/MM/yyyy HH:mm:ss");
+            TongTien = calculateTotalMoney();
+            MaBan = (int)selectedRowCbTable.Row[0];
         }
         private void btn_printOrder_Click(object sender, EventArgs e)
         {
@@ -292,6 +308,11 @@ namespace CoffeeShopManagement.User_Control_Staff
                 tongThanhTien += (int)row["Thành tiền"];
             }
             return tongThanhTien;
+        }
+
+        private bool IsDataTableEmpty(DataTable dataTable)
+        {
+            return dataTable == null || dataTable.Rows.Count == 0;
         }
     }
 }
