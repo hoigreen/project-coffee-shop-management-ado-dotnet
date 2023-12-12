@@ -81,21 +81,22 @@ namespace CoffeeShopManagement.User_Control_Staff
                     MessageBox.Show("Nối bàn thành công");
                     loadTable();
                 }
-            }    
+            }
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btn_closeTable_Click_1(object sender, EventArgs e)
         {
             table.setStatusTable(idTable, false, "");
             global.notify("Đóng bàn thành công");
             loadTable();
+
         }
 
         private void loadTable()
         {
             dtTable = table.getListTable();
             panel_infoTable.Visible = true;
-            panel1.Visible = false;
+            panelInfoTableNotEmpty.Visible = false;
             x = 10;
             y = 10;
             panelListTable.Controls.Clear();
@@ -205,7 +206,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             lb_timeTable.Text = string.IsNullOrEmpty(dateOpenTable) ? "..." : dateOpenTable;
             lb_idOrder.Text = string.IsNullOrEmpty(idOrder) ? "..." : idOrder;
             lb_totalPay.Text = totalPay == 0 ? "...":global.FormatPrice(totalPay);
-            global.addDataGridView(dtDetailOrder, a);
+            global.addDataGridView(dtDetailOrder, dataGridViewTable);
         }
     }
 }
