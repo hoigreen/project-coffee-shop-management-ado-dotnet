@@ -46,9 +46,7 @@ namespace BaoCaoCuoiKy
             this.btnManageWorkTime = new Guna.UI2.WinForms.Guna2Button();
             this.lblInfoSidebar = new System.Windows.Forms.Label();
             this.panelHeader = new System.Windows.Forms.Panel();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblLogo = new System.Windows.Forms.Label();
-            this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lb_name_admin = new System.Windows.Forms.Label();
             this.btnExitWindow = new Guna.UI2.WinForms.Guna2Button();
@@ -62,8 +60,6 @@ namespace BaoCaoCuoiKy
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).BeginInit();
             this.panelHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -324,9 +320,7 @@ namespace BaoCaoCuoiKy
             // panelHeader
             // 
             this.panelHeader.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelHeader.Controls.Add(this.guna2PictureBox1);
             this.panelHeader.Controls.Add(this.lblLogo);
-            this.panelHeader.Controls.Add(this.guna2PictureBox3);
             this.panelHeader.Controls.Add(this.guna2PictureBox2);
             this.panelHeader.Controls.Add(this.lb_name_admin);
             this.panelHeader.Controls.Add(this.btnExitWindow);
@@ -336,19 +330,6 @@ namespace BaoCaoCuoiKy
             this.panelHeader.Name = "panelHeader";
             this.panelHeader.Size = new System.Drawing.Size(1920, 71);
             this.panelHeader.TabIndex = 8;
-            // 
-            // guna2PictureBox1
-            // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.FillColor = System.Drawing.Color.Black;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(1544, 19);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(27, 28);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox1.TabIndex = 12;
-            this.guna2PictureBox1.TabStop = false;
             // 
             // lblLogo
             // 
@@ -360,19 +341,6 @@ namespace BaoCaoCuoiKy
             this.lblLogo.Size = new System.Drawing.Size(154, 19);
             this.lblLogo.TabIndex = 7;
             this.lblLogo.Text = "Quản lý quán coffee";
-            // 
-            // guna2PictureBox3
-            // 
-            this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
-            this.guna2PictureBox3.ImageRotate = 20F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(1579, 21);
-            this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(27, 24);
-            this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2PictureBox3.TabIndex = 11;
-            this.guna2PictureBox3.TabStop = false;
-            this.guna2PictureBox3.UseTransparentBackground = true;
             // 
             // guna2PictureBox2
             // 
@@ -522,8 +490,6 @@ namespace BaoCaoCuoiKy
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox4)).EndInit();
             this.panelHeader.ResumeLayout(false);
             this.panelHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             this.ResumeLayout(false);
 
@@ -544,8 +510,6 @@ namespace BaoCaoCuoiKy
         private Guna.UI2.WinForms.Guna2Button btnManageMenu;
         private Guna.UI2.WinForms.Guna2Button btnManageWorkTime;
         private System.Windows.Forms.Label lblInfoSidebar;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
-        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lb_name_admin;
         private Guna.UI2.WinForms.Guna2Button btnExitWindow;
