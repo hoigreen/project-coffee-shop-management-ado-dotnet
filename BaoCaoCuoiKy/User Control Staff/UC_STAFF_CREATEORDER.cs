@@ -242,7 +242,7 @@ namespace CoffeeShopManagement.User_Control_Staff
         }
         public void setInfoPayment()
         {
-            lb_idOrder.Text = MaHD;
+            lb_idOrder.Text = "#" + MaHD;
             lb_nameStaff.Text = staff.getNameStaff(MaNV);
             lb_table.Text = MaBan == 0 ? "Mang đi" : MaBan.ToString();
             lb_datePay.Text = Ngay;
