@@ -592,7 +592,7 @@
             this.Controls.Add(this.lblTitleFull);
             this.Controls.Add(this.lblTitleEmpty);
             this.Name = "UC_STAFF_TABLE";
-            this.Size = new System.Drawing.Size(1920, 1080);
+            this.Size = new System.Drawing.Size(1680, 1009);
             this.Load += new System.EventHandler(this.UC_STAFF_TABLE_Load);
             this.panel_infoTable.ResumeLayout(false);
             this.panel_infoTable.PerformLayout();

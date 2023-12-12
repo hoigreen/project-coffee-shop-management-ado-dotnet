@@ -68,14 +68,13 @@ namespace CoffeeShopManagement.User_Control_Staff
             DataRowView selectedRow = (DataRowView)cb_listTable.SelectedItem;
             int maBan = Convert.ToInt32(selectedRow.Row[0]);
             if (maBan == idTable)
-                MessageBox.Show("Không thể gộp bàn");
+                MessageBox.Show("Không thể tự nối bàn");
             else if (table.getStatusTable(maBan))
             {
                 MessageBox.Show("Bàn đã có người");
             }
             else
             {
-                MessageBox.Show("" + idOrder);
                 if (table.setStatusTable(maBan, true, idOrder))
                 {
                     MessageBox.Show("Nối bàn thành công");
