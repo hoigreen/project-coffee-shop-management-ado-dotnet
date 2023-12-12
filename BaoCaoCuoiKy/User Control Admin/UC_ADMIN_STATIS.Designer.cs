@@ -50,18 +50,18 @@
             this.chartReportRenevue = new LiveCharts.WinForms.CartesianChart();
             this.label6 = new System.Windows.Forms.Label();
             this.panel_Piechart = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lb_topSaler5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_topSaler4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_topSaler3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_topSaler2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lb_topSaler1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pieChartBestItems = new LiveCharts.WinForms.PieChart();
             this.label8 = new System.Windows.Forms.Label();
-            this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel5 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lb_topSaler1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_topSaler2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_topSaler3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_topSaler4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.lb_topSaler5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2GradientPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.guna2GradientPanel4.SuspendLayout();
@@ -324,6 +324,7 @@
             // panel_Piechart
             // 
             this.panel_Piechart.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Piechart.BorderColor = System.Drawing.Color.Gray;
             this.panel_Piechart.BorderRadius = 20;
             this.panel_Piechart.BorderThickness = 1;
             this.panel_Piechart.Controls.Add(this.lb_topSaler5);
@@ -345,6 +346,98 @@
             this.panel_Piechart.Size = new System.Drawing.Size(787, 610);
             this.panel_Piechart.TabIndex = 9;
             // 
+            // lb_topSaler5
+            // 
+            this.lb_topSaler5.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lb_topSaler5.Location = new System.Drawing.Point(559, 504);
+            this.lb_topSaler5.Name = "lb_topSaler5";
+            this.lb_topSaler5.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler5.TabIndex = 11;
+            this.lb_topSaler5.Text = "Top 5";
+            // 
+            // lb_topSaler4
+            // 
+            this.lb_topSaler4.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler4.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lb_topSaler4.Location = new System.Drawing.Point(559, 410);
+            this.lb_topSaler4.Name = "lb_topSaler4";
+            this.lb_topSaler4.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler4.TabIndex = 10;
+            this.lb_topSaler4.Text = "Top 4";
+            // 
+            // lb_topSaler3
+            // 
+            this.lb_topSaler3.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lb_topSaler3.Location = new System.Drawing.Point(559, 316);
+            this.lb_topSaler3.Name = "lb_topSaler3";
+            this.lb_topSaler3.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler3.TabIndex = 9;
+            this.lb_topSaler3.Text = "Top 3";
+            // 
+            // lb_topSaler2
+            // 
+            this.lb_topSaler2.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lb_topSaler2.Location = new System.Drawing.Point(559, 222);
+            this.lb_topSaler2.Name = "lb_topSaler2";
+            this.lb_topSaler2.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler2.TabIndex = 8;
+            this.lb_topSaler2.Text = "Top 2";
+            // 
+            // lb_topSaler1
+            // 
+            this.lb_topSaler1.BackColor = System.Drawing.Color.Transparent;
+            this.lb_topSaler1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_topSaler1.Location = new System.Drawing.Point(559, 128);
+            this.lb_topSaler1.Name = "lb_topSaler1";
+            this.lb_topSaler1.Size = new System.Drawing.Size(57, 27);
+            this.lb_topSaler1.TabIndex = 7;
+            this.lb_topSaler1.Text = "Top 1";
+            // 
+            // guna2Panel5
+            // 
+            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.guna2Panel5.Location = new System.Drawing.Point(559, 470);
+            this.guna2Panel5.Name = "guna2Panel5";
+            this.guna2Panel5.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel5.TabIndex = 6;
+            // 
+            // guna2Panel4
+            // 
+            this.guna2Panel4.BackColor = System.Drawing.Color.Yellow;
+            this.guna2Panel4.Location = new System.Drawing.Point(559, 376);
+            this.guna2Panel4.Name = "guna2Panel4";
+            this.guna2Panel4.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel4.TabIndex = 5;
+            // 
+            // guna2Panel3
+            // 
+            this.guna2Panel3.BackColor = System.Drawing.Color.Green;
+            this.guna2Panel3.Location = new System.Drawing.Point(559, 282);
+            this.guna2Panel3.Name = "guna2Panel3";
+            this.guna2Panel3.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel3.TabIndex = 4;
+            // 
+            // guna2Panel2
+            // 
+            this.guna2Panel2.BackColor = System.Drawing.Color.Blue;
+            this.guna2Panel2.BorderColor = System.Drawing.Color.White;
+            this.guna2Panel2.Location = new System.Drawing.Point(559, 188);
+            this.guna2Panel2.Name = "guna2Panel2";
+            this.guna2Panel2.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel2.TabIndex = 3;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.BackColor = System.Drawing.Color.Red;
+            this.guna2Panel1.BorderColor = System.Drawing.Color.White;
+            this.guna2Panel1.Location = new System.Drawing.Point(559, 94);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(55, 28);
+            this.guna2Panel1.TabIndex = 2;
+            // 
             // pieChartBestItems
             // 
             this.pieChartBestItems.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -364,98 +457,6 @@
             this.label8.Size = new System.Drawing.Size(229, 25);
             this.label8.TabIndex = 0;
             this.label8.Text = "Top 5 món ăn bán chạy";
-            // 
-            // guna2Panel2
-            // 
-            this.guna2Panel2.BackColor = System.Drawing.Color.Blue;
-            this.guna2Panel2.BorderColor = System.Drawing.Color.White;
-            this.guna2Panel2.Location = new System.Drawing.Point(559, 188);
-            this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(55, 28);
-            this.guna2Panel2.TabIndex = 3;
-            // 
-            // guna2Panel3
-            // 
-            this.guna2Panel3.BackColor = System.Drawing.Color.Green;
-            this.guna2Panel3.Location = new System.Drawing.Point(559, 282);
-            this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(55, 28);
-            this.guna2Panel3.TabIndex = 4;
-            // 
-            // guna2Panel4
-            // 
-            this.guna2Panel4.BackColor = System.Drawing.Color.Yellow;
-            this.guna2Panel4.Location = new System.Drawing.Point(559, 376);
-            this.guna2Panel4.Name = "guna2Panel4";
-            this.guna2Panel4.Size = new System.Drawing.Size(55, 28);
-            this.guna2Panel4.TabIndex = 5;
-            // 
-            // guna2Panel5
-            // 
-            this.guna2Panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.guna2Panel5.Location = new System.Drawing.Point(559, 470);
-            this.guna2Panel5.Name = "guna2Panel5";
-            this.guna2Panel5.Size = new System.Drawing.Size(55, 28);
-            this.guna2Panel5.TabIndex = 6;
-            // 
-            // lb_topSaler1
-            // 
-            this.lb_topSaler1.BackColor = System.Drawing.Color.Transparent;
-            this.lb_topSaler1.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_topSaler1.Location = new System.Drawing.Point(559, 128);
-            this.lb_topSaler1.Name = "lb_topSaler1";
-            this.lb_topSaler1.Size = new System.Drawing.Size(57, 27);
-            this.lb_topSaler1.TabIndex = 7;
-            this.lb_topSaler1.Text = "Top 1";
-            // 
-            // lb_topSaler2
-            // 
-            this.lb_topSaler2.BackColor = System.Drawing.Color.Transparent;
-            this.lb_topSaler2.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lb_topSaler2.Location = new System.Drawing.Point(559, 222);
-            this.lb_topSaler2.Name = "lb_topSaler2";
-            this.lb_topSaler2.Size = new System.Drawing.Size(57, 27);
-            this.lb_topSaler2.TabIndex = 8;
-            this.lb_topSaler2.Text = "Top 2";
-            // 
-            // lb_topSaler3
-            // 
-            this.lb_topSaler3.BackColor = System.Drawing.Color.Transparent;
-            this.lb_topSaler3.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lb_topSaler3.Location = new System.Drawing.Point(559, 316);
-            this.lb_topSaler3.Name = "lb_topSaler3";
-            this.lb_topSaler3.Size = new System.Drawing.Size(57, 27);
-            this.lb_topSaler3.TabIndex = 9;
-            this.lb_topSaler3.Text = "Top 3";
-            // 
-            // lb_topSaler4
-            // 
-            this.lb_topSaler4.BackColor = System.Drawing.Color.Transparent;
-            this.lb_topSaler4.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lb_topSaler4.Location = new System.Drawing.Point(559, 410);
-            this.lb_topSaler4.Name = "lb_topSaler4";
-            this.lb_topSaler4.Size = new System.Drawing.Size(57, 27);
-            this.lb_topSaler4.TabIndex = 10;
-            this.lb_topSaler4.Text = "Top 4";
-            // 
-            // lb_topSaler5
-            // 
-            this.lb_topSaler5.BackColor = System.Drawing.Color.Transparent;
-            this.lb_topSaler5.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lb_topSaler5.Location = new System.Drawing.Point(559, 504);
-            this.lb_topSaler5.Name = "lb_topSaler5";
-            this.lb_topSaler5.Size = new System.Drawing.Size(57, 27);
-            this.lb_topSaler5.TabIndex = 11;
-            this.lb_topSaler5.Text = "Top 5";
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.BackColor = System.Drawing.Color.Red;
-            this.guna2Panel1.BorderColor = System.Drawing.Color.White;
-            this.guna2Panel1.Location = new System.Drawing.Point(559, 94);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(55, 28);
-            this.guna2Panel1.TabIndex = 2;
             // 
             // UC_ADMIN_STATIS
             // 
