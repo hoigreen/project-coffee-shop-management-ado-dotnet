@@ -34,6 +34,7 @@ The Coffee Shop Management project is a comprehensive software solution designed
 ## Technologies 🔧
 - **Programming Language:** C#
 - **User Interface Framework:** .NET WinForms, Guna Framework, LiveCharts
+- **Data Access Technology:** ADO .NET.
 - **Database:** Mircosoft SQL Server
 - **Version Control:** Git, Github
 - **Integrated Development Environment (IDE):** Visual Studio 2022
