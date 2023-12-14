@@ -293,6 +293,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             lb_totalMoney.Text = "0đ";
             sttDetailOrder = 1;
             dg_infoOrder.Rows.Clear();
+            dtDetailOrder.Rows.Clear();
         }
 
         public void showInfoPayment(bool isShow)

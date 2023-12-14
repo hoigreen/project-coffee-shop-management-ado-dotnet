@@ -54,6 +54,15 @@ namespace CoffeeShopManagement.User_Control_Staff
                 dataTable = detailOrder.getListDetailOrder(item);
                 dtDetailOrder.Merge(dataTable, false, MissingSchemaAction.Add);
             }
+            if (!dtDetailOrder.Columns.Contains("STT"))
+            {
+                dtDetailOrder.Columns.Add("STT", typeof(int)).SetOrdinal(0);
+            }
+            int stt = 1;
+            foreach (DataRow row in dtDetailOrder.Rows)
+            {
+                row["STT"] = stt++;
+            }
         }
 
         private void setValuePanelInfoTable()
@@ -64,6 +73,7 @@ namespace CoffeeShopManagement.User_Control_Staff
             lb_idOrder.Text = string.IsNullOrEmpty(idOrder) ? "..." : idOrder;
             lb_totalPay.Text = totalPay == 0 ? "...":global.FormatPrice(totalPay);
             global.addDataGridView(dtDetailOrder, dataGridViewTable);
+           
         }
 
         private void btn_openTable_Click(object sender, EventArgs e)
